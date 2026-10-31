@@ -1,0 +1,36 @@
+STAGE worker-source-preflight
+STAGE hardware-preflight
+STAGE verify-build
+STAGE compile-ma11-compat
+STAGE ma11-compat-preflight
+STAGE prepare-workers
+STAGE native-mapping-checks
+STAGE local-transport-smoke
+LOCAL TRANSPORT SMOKE ma11
+LOCAL TRANSPORT SMOKE ma89
+LOCAL TRANSPORT SMOKE ma8
+LOCAL TRANSPORT SMOKE ma9
+LOCAL TRANSPORT SMOKE cr3
+LOCAL TRANSPORT SMOKE r
+LOCAL TRANSPORT SMOKE c
+LOCAL TRANSPORT SMOKE a
+LOCAL TRANSPORT FAILURE rank0,rank1,rank2,rank3,rank4,rank5,rank6,rank7: RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Traceback (most recent call last):
+  File "/workspace/TempName-New/tools/5090/phase6/baseline.py", line 672, in <module>
+    main()
+  File "/workspace/TempName-New/tools/5090/phase6/baseline.py", line 635, in main
+    return supervise(args)
+           ^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/baseline.py", line 535, in supervise
+    local_smoke_checks(args, build, plan)
+  File "/workspace/TempName-New/tools/5090/phase6/baseline.py", line 460, in local_smoke_checks
+    run_process(command, REPO, env, dest/'process.log', max(900, args.worker_timeout), Peer())
+  File "/workspace/TempName-New/tools/h100/phase6/tp8_dp2_train.py", line 104, in run_process
+    require(process.returncode==0,f'Child exited {process.returncode}; see {log}')
+  File "/workspace/TempName-New/tools/h100/phase6/tp8_dp2_protocol.py", line 24, in require
+    raise ValueError(message)
+ValueError: Child exited 1; see /workspace/Load-5090/logs/5090/phase6/baseline-nine-arm-nccl-staged-v2-1x-50steps-20261101-000148-296025/local-smoke/a/process.log

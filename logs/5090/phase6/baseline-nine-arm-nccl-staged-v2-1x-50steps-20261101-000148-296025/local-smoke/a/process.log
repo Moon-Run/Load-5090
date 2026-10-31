@@ -1,0 +1,296 @@
+COMMAND ['/workspace/venvs/tempname-5090/bin/python', '-m', 'torch.distributed.run', '--standalone', '--nproc-per-node=8', '--max-restarts=0', '/workspace/TempName-New/tools/5090/phase6/local_smoke.py', '--build', '/workspace/TempName-New/logs/5090/phase6/baseline-nine-arm-nccl-staged-v2-1x-50steps-20261030-151053-241177/build', '--arm', 'a', '--out', '/workspace/Load-5090/logs/5090/phase6/baseline-nine-arm-nccl-staged-v2-1x-50steps-20261101-000148-296025/local-smoke/a', '--execute']
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+NCCL version 2.27.3+cuda12.9
+[rank7]:[W1031 16:04:55.270790818 NCCLUtils.cpp:22] Warning: WARNING: NCCL communicator hasn't been destroyed. This may cause memory leaks. To avoid the risk, you can call `destroy_process_group` during normal exit or `_abort_process_group` when handling failures. (function operator())
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 498, in <module>
+[rank7]:     main()
+[rank7]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 494, in main
+[rank7]:     run(args)
+[rank7]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 464, in run
+[rank7]:     report['roles'][role] = role_probe(torch, dist, frontend, reference, args.arm, role, selected)
+[rank7]:                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 296, in role_probe
+[rank7]:     op = constructor(dist.group.WORLD, 2048, 4096, k, **options)
+[rank7]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/workspace/TempName-New/logs/5090/phase6/baseline-nine-arm-nccl-staged-v2-1x-50steps-20261030-151053-241177/build/selective/a/python/flux/gemm_rs_taco.py", line 323, in __init__
+[rank7]:     dist.all_gather_object(digests, identity, group=group)
+[rank7]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+[rank7]:     return func(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 3120, in all_gather_object
+[rank7]:     all_gather(object_size_list, local_size, group=group)
+[rank7]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+[rank7]:     return func(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 3811, in all_gather
+[rank7]:     work = group.allgather([tensor_list], [tensor], opts)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]: RuntimeError: CUDA error: out of memory
+[rank7]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank7]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank7]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank3]:[W1031 16:04:55.278910381 NCCLUtils.cpp:22] Warning: WARNING: NCCL communicator hasn't been destroyed. This may cause memory leaks. To avoid the risk, you can call `destroy_process_group` during normal exit or `_abort_process_group` when handling failures. (function operator())
+[rank1]:[W1031 16:04:55.278937520 NCCLUtils.cpp:22] Warning: WARNING: NCCL communicator hasn't been destroyed. This may cause memory leaks. To avoid the risk, you can call `destroy_process_group` during normal exit or `_abort_process_group` when handling failures. (function operator())
+[rank2]:[W1031 16:04:55.279974590 NCCLUtils.cpp:22] Warning: WARNING: NCCL communicator hasn't been destroyed. This may cause memory leaks. To avoid the risk, you can call `destroy_process_group` during normal exit or `_abort_process_group` when handling failures. (function operator())
+[rank4]:[W1031 16:04:55.280593209 NCCLUtils.cpp:22] Warning: WARNING: NCCL communicator hasn't been destroyed. This may cause memory leaks. To avoid the risk, you can call `destroy_process_group` during normal exit or `_abort_process_group` when handling failures. (function operator())
+[rank6]:[W1031 16:04:55.280658832 NCCLUtils.cpp:22] Warning: WARNING: NCCL communicator hasn't been destroyed. This may cause memory leaks. To avoid the risk, you can call `destroy_process_group` during normal exit or `_abort_process_group` when handling failures. (function operator())
+[rank0]:[W1031 16:04:55.280687906 NCCLUtils.cpp:22] Warning: WARNING: NCCL communicator hasn't been destroyed. This may cause memory leaks. To avoid the risk, you can call `destroy_process_group` during normal exit or `_abort_process_group` when handling failures. (function operator())
+[rank5]:[W1031 16:04:55.281011805 NCCLUtils.cpp:22] Warning: WARNING: NCCL communicator hasn't been destroyed. This may cause memory leaks. To avoid the risk, you can call `destroy_process_group` during normal exit or `_abort_process_group` when handling failures. (function operator())
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 498, in <module>
+[rank3]:     main()
+[rank3]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 494, in main
+[rank3]:     run(args)
+[rank3]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 464, in run
+[rank3]:     report['roles'][role] = role_probe(torch, dist, frontend, reference, args.arm, role, selected)
+[rank3]:                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 296, in role_probe
+[rank3]:     op = constructor(dist.group.WORLD, 2048, 4096, k, **options)
+[rank3]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/workspace/TempName-New/logs/5090/phase6/baseline-nine-arm-nccl-staged-v2-1x-50steps-20261030-151053-241177/build/selective/a/python/flux/gemm_rs_taco.py", line 323, in __init__
+[rank3]:     dist.all_gather_object(digests, identity, group=group)
+[rank3]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+[rank3]:     return func(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 3120, in all_gather_object
+[rank3]:     all_gather(object_size_list, local_size, group=group)
+[rank3]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+[rank3]:     return func(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 3811, in all_gather
+[rank3]:     work = group.allgather([tensor_list], [tensor], opts)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]: RuntimeError: CUDA error: out of memory
+[rank3]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank3]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank3]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 498, in <module>
+[rank1]:     main()
+[rank1]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 494, in main
+[rank1]:     run(args)
+[rank1]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 464, in run
+[rank1]:     report['roles'][role] = role_probe(torch, dist, frontend, reference, args.arm, role, selected)
+[rank1]:                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 296, in role_probe
+[rank1]:     op = constructor(dist.group.WORLD, 2048, 4096, k, **options)
+[rank1]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/workspace/TempName-New/logs/5090/phase6/baseline-nine-arm-nccl-staged-v2-1x-50steps-20261030-151053-241177/build/selective/a/python/flux/gemm_rs_taco.py", line 323, in __init__
+[rank1]:     dist.all_gather_object(digests, identity, group=group)
+[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+[rank1]:     return func(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 3120, in all_gather_object
+[rank1]:     all_gather(object_size_list, local_size, group=group)
+[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+[rank1]:     return func(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 3811, in all_gather
+[rank1]:     work = group.allgather([tensor_list], [tensor], opts)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]: RuntimeError: CUDA error: out of memory
+[rank1]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank1]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank1]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 498, in <module>
+[rank2]:     main()
+[rank2]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 494, in main
+[rank2]:     run(args)
+[rank2]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 464, in run
+[rank2]:     report['roles'][role] = role_probe(torch, dist, frontend, reference, args.arm, role, selected)
+[rank2]:                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 296, in role_probe
+[rank2]:     op = constructor(dist.group.WORLD, 2048, 4096, k, **options)
+[rank2]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/workspace/TempName-New/logs/5090/phase6/baseline-nine-arm-nccl-staged-v2-1x-50steps-20261030-151053-241177/build/selective/a/python/flux/gemm_rs_taco.py", line 323, in __init__
+[rank2]:     dist.all_gather_object(digests, identity, group=group)
+[rank2]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+[rank2]:     return func(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 3120, in all_gather_object
+[rank2]:     all_gather(object_size_list, local_size, group=group)
+[rank2]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+[rank2]:     return func(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 3811, in all_gather
+[rank2]:     work = group.allgather([tensor_list], [tensor], opts)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]: RuntimeError: CUDA error: out of memory
+[rank2]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank2]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank2]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 498, in <module>
+[rank4]:     main()
+[rank4]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 494, in main
+[rank4]:     run(args)
+[rank4]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 464, in run
+[rank4]:     report['roles'][role] = role_probe(torch, dist, frontend, reference, args.arm, role, selected)
+[rank4]:                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 296, in role_probe
+[rank4]:     op = constructor(dist.group.WORLD, 2048, 4096, k, **options)
+[rank4]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/workspace/TempName-New/logs/5090/phase6/baseline-nine-arm-nccl-staged-v2-1x-50steps-20261030-151053-241177/build/selective/a/python/flux/gemm_rs_taco.py", line 323, in __init__
+[rank4]:     dist.all_gather_object(digests, identity, group=group)
+[rank4]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+[rank4]:     return func(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 3120, in all_gather_object
+[rank4]:     all_gather(object_size_list, local_size, group=group)
+[rank4]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+[rank4]:     return func(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 3811, in all_gather
+[rank4]:     work = group.allgather([tensor_list], [tensor], opts)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]: RuntimeError: CUDA error: out of memory
+[rank4]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank4]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank4]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 498, in <module>
+[rank6]:     main()
+[rank6]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 494, in main
+[rank6]:     run(args)
+[rank6]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 464, in run
+[rank6]:     report['roles'][role] = role_probe(torch, dist, frontend, reference, args.arm, role, selected)
+[rank6]:                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 296, in role_probe
+[rank6]:     op = constructor(dist.group.WORLD, 2048, 4096, k, **options)
+[rank6]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/workspace/TempName-New/logs/5090/phase6/baseline-nine-arm-nccl-staged-v2-1x-50steps-20261030-151053-241177/build/selective/a/python/flux/gemm_rs_taco.py", line 323, in __init__
+[rank6]:     dist.all_gather_object(digests, identity, group=group)
+[rank6]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+[rank6]:     return func(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 3120, in all_gather_object
+[rank6]:     all_gather(object_size_list, local_size, group=group)
+[rank6]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+[rank6]:     return func(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 3811, in all_gather
+[rank6]:     work = group.allgather([tensor_list], [tensor], opts)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]: RuntimeError: CUDA error: out of memory
+[rank6]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank6]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank6]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 498, in <module>
+[rank0]:     main()
+[rank0]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 494, in main
+[rank0]:     run(args)
+[rank0]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 464, in run
+[rank0]:     report['roles'][role] = role_probe(torch, dist, frontend, reference, args.arm, role, selected)
+[rank0]:                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 296, in role_probe
+[rank0]:     op = constructor(dist.group.WORLD, 2048, 4096, k, **options)
+[rank0]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/TempName-New/logs/5090/phase6/baseline-nine-arm-nccl-staged-v2-1x-50steps-20261030-151053-241177/build/selective/a/python/flux/gemm_rs_taco.py", line 323, in __init__
+[rank0]:     dist.all_gather_object(digests, identity, group=group)
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 3120, in all_gather_object
+[rank0]:     all_gather(object_size_list, local_size, group=group)
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 3811, in all_gather
+[rank0]:     work = group.allgather([tensor_list], [tensor], opts)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: RuntimeError: CUDA error: out of memory
+[rank0]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank0]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank0]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 498, in <module>
+[rank5]:     main()
+[rank5]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 494, in main
+[rank5]:     run(args)
+[rank5]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 464, in run
+[rank5]:     report['roles'][role] = role_probe(torch, dist, frontend, reference, args.arm, role, selected)
+[rank5]:                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/workspace/TempName-New/tools/5090/phase6/local_smoke.py", line 296, in role_probe
+[rank5]:     op = constructor(dist.group.WORLD, 2048, 4096, k, **options)
+[rank5]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/workspace/TempName-New/logs/5090/phase6/baseline-nine-arm-nccl-staged-v2-1x-50steps-20261030-151053-241177/build/selective/a/python/flux/gemm_rs_taco.py", line 323, in __init__
+[rank5]:     dist.all_gather_object(digests, identity, group=group)
+[rank5]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+[rank5]:     return func(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 3120, in all_gather_object
+[rank5]:     all_gather(object_size_list, local_size, group=group)
+[rank5]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py", line 81, in wrapper
+[rank5]:     return func(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/usr/local/lib/python3.12/dist-packages/torch/distributed/distributed_c10d.py", line 3811, in all_gather
+[rank5]:     work = group.allgather([tensor_list], [tensor], opts)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]: RuntimeError: CUDA error: out of memory
+[rank5]: CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+[rank5]: For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+[rank5]: Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+W1031 16:04:56.391000 486850 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 486870 closing signal SIGTERM
+W1031 16:04:56.394000 486850 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 486871 closing signal SIGTERM
+W1031 16:04:56.396000 486850 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 486873 closing signal SIGTERM
+W1031 16:04:56.398000 486850 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 486874 closing signal SIGTERM
+W1031 16:04:56.400000 486850 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 486875 closing signal SIGTERM
+W1031 16:04:56.402000 486850 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 486876 closing signal SIGTERM
+E1031 16:04:56.768000 486850 torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 1) local_rank: 0 (pid: 486869) of binary: /workspace/venvs/tempname-5090/bin/python
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 896, in <module>
+    main()
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 892, in main
+    run(args)
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 883, in run
+    elastic_launch(
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/launcher/api.py", line 139, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/launcher/api.py", line 270, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/workspace/TempName-New/tools/5090/phase6/local_smoke.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-10-31_16:04:56
+  host      : SL3061
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 486872)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-10-31_16:04:56
+  host      : SL3061
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 486869)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
