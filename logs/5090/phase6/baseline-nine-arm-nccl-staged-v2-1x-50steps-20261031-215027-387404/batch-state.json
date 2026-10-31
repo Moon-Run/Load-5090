@@ -1,0 +1,6 @@
+{
+  "protocol": "rtx5090-phase6-nine-arm-nccl-staged-v2",
+  "status": "failed",
+  "stage": "profile-ma11",
+  "error": "ValueError: Decoder/consumer does not immediately feed LayerNorm"
+}

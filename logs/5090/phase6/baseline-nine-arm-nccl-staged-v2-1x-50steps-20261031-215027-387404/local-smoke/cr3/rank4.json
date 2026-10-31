@@ -1,0 +1,1605 @@
+{
+  "protocol": "rtx5090-local-transport-smoke-v1",
+  "transport_protocol": "rtx5090-nccl-staged-v2",
+  "arm": "cr3",
+  "rank": 4,
+  "completed": true,
+  "performance_measured": false,
+  "roles": {
+    "attn": {
+      "passed": true,
+      "k_local": 512,
+      "cases": {
+        "zero": {
+          "relative_l2": 0.0,
+          "protocol_relative_l2": 0.0,
+          "max_abs": 0.0,
+          "budget_vs_bf16": 0.05,
+          "budget_vs_codec": 0.01,
+          "passed": true
+        },
+        "random": {
+          "relative_l2": 0.004074077327962096,
+          "protocol_relative_l2": 9.15611766812548e-05,
+          "max_abs": 0.002685546875,
+          "budget_vs_bf16": 0.05,
+          "budget_vs_codec": 0.01,
+          "passed": true
+        },
+        "outlier": {
+          "relative_l2": 0.0013217141236335106,
+          "protocol_relative_l2": 2.1981476159281416e-06,
+          "max_abs": 0.265625,
+          "budget_vs_bf16": 0.05,
+          "budget_vs_codec": 0.01,
+          "passed": true
+        },
+        "after_delayed_reuse": {
+          "relative_l2": 0.0,
+          "protocol_relative_l2": 0.0,
+          "max_abs": 0.0,
+          "budget_vs_bf16": 0.05,
+          "budget_vs_codec": 0.01,
+          "passed": true
+        }
+      },
+      "wire": {
+        "passed": true,
+        "pack": {
+          "passed": true,
+          "physical_tiles": 448,
+          "bytes": 14618624
+        },
+        "unpack": {
+          "passed": true,
+          "physical_tiles": 448,
+          "bytes": 14511104
+        },
+        "sent": {
+          "0": {
+            "bytes": 2051072,
+            "sha256": "6f2ffc6b5329333c4f1b96e4bb1f31bc7e5febaca7d289dd3fdf921ab0d47471"
+          },
+          "1": {
+            "bytes": 2097152,
+            "sha256": "18d497642c87e8493aace17eb93553d32b509417b1e519c62fc8a235ae6a10fd"
+          },
+          "2": {
+            "bytes": 2097152,
+            "sha256": "554c7bf3f20939f072d530c7fc9968f59ff01a98e0f91c447effba8d91c1c491"
+          },
+          "3": {
+            "bytes": 2097152,
+            "sha256": "11de46239e7a2f258563ad45b1e06ad0e1e183bfe3f1cc5bcd87aa95158ef201"
+          },
+          "5": {
+            "bytes": 2097152,
+            "sha256": "8e4f597463fda7a31c6c472952df2e5291f4e1f773811a7e0de92143be8bdd71"
+          },
+          "6": {
+            "bytes": 2097152,
+            "sha256": "72e40a42f8922800b05d2bbca214658e663c87b826cceaf06e2f9c6303f67746"
+          },
+          "7": {
+            "bytes": 2081792,
+            "sha256": "06f3f613d7f108321e696dd813cb54645844ee8a23e35f2d07e1894600575085"
+          }
+        },
+        "received": {
+          "0": {
+            "bytes": 2066432,
+            "sha256": "2179c13e57784fe8829153fbfe2b689966579609c7a5f22c38ba9805d36acaef"
+          },
+          "1": {
+            "bytes": 2081792,
+            "sha256": "9c45bfca0cc1d2ba66b07140de26afd5634432bc4633ea31e80295bc0cdfeacb"
+          },
+          "2": {
+            "bytes": 2066432,
+            "sha256": "082cb2ceb10662c3993e4d1867dc455833fd5dba2f848e370d612ff5c11cf359"
+          },
+          "3": {
+            "bytes": 2081792,
+            "sha256": "1dd51f9929c727e4c435ac26c45487e1ae0f0948ad7c5433d372fdc0a6ca8f34"
+          },
+          "5": {
+            "bytes": 2035712,
+            "sha256": "9ed499430038e84d80945ccabbc648ed3e07501af3aaf126650a7dcc601d34d8"
+          },
+          "6": {
+            "bytes": 2081792,
+            "sha256": "cbd4f705530753199b04cd18a433dc19f82f4eda2b76b3af029a1e85e758ceb7"
+          },
+          "7": {
+            "bytes": 2097152,
+            "sha256": "6d61bf3ba52b4656427eb4e31ca58cb8ec7e72f622c9eeb4ae33580026bc9d9a"
+          }
+        },
+        "cross_rank_payload_identity": true
+      },
+      "consumer": {
+        "passed": true,
+        "bitwise_equal": true,
+        "independent_storage": true
+      },
+      "retained_outputs": {
+        "passed": true,
+        "count": 6,
+        "reuse_calls": 7,
+        "independent_storage": true,
+        "unchanged_after_subsequent_calls": true,
+        "rank_delay_seconds": 0.025
+      },
+      "transport": {
+        "protocol": "rtx5090-nccl-staged-v2",
+        "failed": false,
+        "next_slot": 0,
+        "slots": [
+          {
+            "slot": 0,
+            "protocol": "rtx5090-nccl-staged-v2",
+            "native_api": "rtx5090_local_v1",
+            "calls": 6,
+            "producer_calls": 6,
+            "pack_calls": 6,
+            "exchange_calls": 6,
+            "wait_calls": 6,
+            "unpack_calls": 6,
+            "decode_calls": 6,
+            "consumer_calls": 0,
+            "initializations": 1,
+            "native_workspace_bytes": 22283008,
+            "reconfigure_calls": 0,
+            "configuration_scope": "instance",
+            "failed": false,
+            "closed": false,
+            "scratch_policy": "fixed-stream-shared-scratch-private-packets-v1",
+            "shared_scratch_bytes": 71597056,
+            "shared_scratch_ptrs": {
+              "tx_bf16": 140337125261312,
+              "rx_bf16": 140337142038528,
+              "tx_packets": 140337158815744,
+              "tx_wire": 140337179787264,
+              "rx_wire": 140337194467328
+            },
+            "pending_exchange": false,
+            "native_phase": 0,
+            "device": 4,
+            "stream": 0,
+            "peer_memory": false,
+            "send_split_bytes": [
+              2051072,
+              2097152,
+              2097152,
+              2097152,
+              0,
+              2097152,
+              2097152,
+              2081792
+            ],
+            "receive_split_bytes": [
+              2066432,
+              2081792,
+              2066432,
+              2081792,
+              0,
+              2035712,
+              2081792,
+              2097152
+            ],
+            "send_bytes": 14618624,
+            "receive_bytes": 14511104,
+            "synchronization": "fixed_stream_producer_NCCL_work_wait_decode_reuse",
+            "native": {
+              "protocol_version": 1,
+              "initializations": 1,
+              "producer_calls": 6,
+              "decode_calls": 6,
+              "bias_residual_calls": 0,
+              "phase": 0,
+              "failed": false,
+              "bound_k": 512,
+              "reconfigure_calls": 0,
+              "workspace_bytes": 22283008
+            }
+          },
+          {
+            "slot": 1,
+            "protocol": "rtx5090-nccl-staged-v2",
+            "native_api": "rtx5090_local_v1",
+            "calls": 6,
+            "producer_calls": 6,
+            "pack_calls": 6,
+            "exchange_calls": 6,
+            "wait_calls": 6,
+            "unpack_calls": 6,
+            "decode_calls": 6,
+            "consumer_calls": 1,
+            "initializations": 1,
+            "native_workspace_bytes": 22283008,
+            "reconfigure_calls": 0,
+            "configuration_scope": "instance",
+            "failed": false,
+            "closed": false,
+            "scratch_policy": "fixed-stream-shared-scratch-private-packets-v1",
+            "shared_scratch_bytes": 71597056,
+            "shared_scratch_ptrs": {
+              "tx_bf16": 140337209147392,
+              "rx_bf16": 140337225924608,
+              "tx_packets": 140337242701824,
+              "tx_wire": 140337263673344,
+              "rx_wire": 140337278353408
+            },
+            "pending_exchange": false,
+            "native_phase": 0,
+            "device": 4,
+            "stream": 0,
+            "peer_memory": false,
+            "send_split_bytes": [
+              2051072,
+              2097152,
+              2097152,
+              2097152,
+              0,
+              2097152,
+              2097152,
+              2081792
+            ],
+            "receive_split_bytes": [
+              2066432,
+              2081792,
+              2066432,
+              2081792,
+              0,
+              2035712,
+              2081792,
+              2097152
+            ],
+            "send_bytes": 14618624,
+            "receive_bytes": 14511104,
+            "synchronization": "fixed_stream_producer_NCCL_work_wait_decode_reuse",
+            "native": {
+              "protocol_version": 1,
+              "initializations": 1,
+              "producer_calls": 6,
+              "decode_calls": 6,
+              "bias_residual_calls": 1,
+              "phase": 0,
+              "failed": false,
+              "bound_k": 512,
+              "reconfigure_calls": 0,
+              "workspace_bytes": 22283008
+            }
+          }
+        ]
+      },
+      "shared_scratch": {
+        "passed": true,
+        "scratch_policy": "fixed-stream-shared-scratch-private-packets-v1",
+        "instances": 2,
+        "slots_per_instance": 2,
+        "pointers": [
+          [
+            {
+              "shared": {
+                "tx_bf16": 140337125261312,
+                "tx_packets": 140337158815744,
+                "rx_bf16": 140337142038528,
+                "tx_wire": 140337179787264,
+                "rx_wire": 140337194467328
+              },
+              "packet": 140335447539712,
+              "mask": 140338677178368,
+              "native": 783333568
+            },
+            {
+              "shared": {
+                "tx_bf16": 140337209147392,
+                "tx_packets": 140337242701824,
+                "rx_bf16": 140337225924608,
+                "tx_wire": 140337263673344,
+                "rx_wire": 140337278353408
+              },
+              "packet": 140335464316928,
+              "mask": 140338677198848,
+              "native": 783366384
+            }
+          ],
+          [
+            {
+              "shared": {
+                "tx_bf16": 140337125261312,
+                "tx_packets": 140337158815744,
+                "rx_bf16": 140337142038528,
+                "tx_wire": 140337179787264,
+                "rx_wire": 140337194467328
+              },
+              "packet": 140335481094144,
+              "mask": 140338677211136,
+              "native": 783443008
+            },
+            {
+              "shared": {
+                "tx_bf16": 140337209147392,
+                "tx_packets": 140337242701824,
+                "rx_bf16": 140337225924608,
+                "tx_wire": 140337263673344,
+                "rx_wire": 140337278353408
+              },
+              "packet": 140335497871360,
+              "mask": 140338677223424,
+              "native": 783504096
+            }
+          ]
+        ],
+        "calls_before_close": [
+          4,
+          4
+        ],
+        "async_burst_calls": 6,
+        "repeated_bitwise": true,
+        "retained_outputs": 8,
+        "retained_bitwise": true,
+        "output_storage_independent": true,
+        "survivor_after_close_bitwise": true,
+        "reference_checks": [
+          {
+            "relative_l2": 0.004049157665565746,
+            "protocol_relative_l2": 5.501230528466059e-05,
+            "max_abs": 0.0029296875,
+            "budget_vs_bf16": 0.05,
+            "budget_vs_codec": 0.01,
+            "passed": true
+          },
+          {
+            "relative_l2": 0.004060604695918032,
+            "protocol_relative_l2": 2.844699088145663e-05,
+            "max_abs": 0.0029296875,
+            "budget_vs_bf16": 0.05,
+            "budget_vs_codec": 0.01,
+            "passed": true
+          }
+        ],
+        "before_close": [
+          {
+            "protocol": "rtx5090-nccl-staged-v2",
+            "failed": false,
+            "next_slot": 0,
+            "slots": [
+              {
+                "slot": 0,
+                "protocol": "rtx5090-nccl-staged-v2",
+                "native_api": "rtx5090_local_v1",
+                "calls": 2,
+                "producer_calls": 2,
+                "pack_calls": 2,
+                "exchange_calls": 2,
+                "wait_calls": 2,
+                "unpack_calls": 2,
+                "decode_calls": 2,
+                "consumer_calls": 0,
+                "initializations": 1,
+                "native_workspace_bytes": 22283008,
+                "reconfigure_calls": 0,
+                "configuration_scope": "instance",
+                "failed": false,
+                "closed": false,
+                "scratch_policy": "fixed-stream-shared-scratch-private-packets-v1",
+                "shared_scratch_bytes": 71597056,
+                "shared_scratch_ptrs": {
+                  "tx_bf16": 140337125261312,
+                  "rx_bf16": 140337142038528,
+                  "tx_packets": 140337158815744,
+                  "tx_wire": 140337179787264,
+                  "rx_wire": 140337194467328
+                },
+                "pending_exchange": false,
+                "native_phase": 0,
+                "device": 4,
+                "stream": 0,
+                "peer_memory": false,
+                "send_split_bytes": [
+                  2051072,
+                  2097152,
+                  2097152,
+                  2097152,
+                  0,
+                  2097152,
+                  2097152,
+                  2081792
+                ],
+                "receive_split_bytes": [
+                  2066432,
+                  2081792,
+                  2066432,
+                  2081792,
+                  0,
+                  2035712,
+                  2081792,
+                  2097152
+                ],
+                "send_bytes": 14618624,
+                "receive_bytes": 14511104,
+                "synchronization": "fixed_stream_producer_NCCL_work_wait_decode_reuse",
+                "native": {
+                  "protocol_version": 1,
+                  "initializations": 1,
+                  "producer_calls": 2,
+                  "decode_calls": 2,
+                  "bias_residual_calls": 0,
+                  "phase": 0,
+                  "failed": false,
+                  "bound_k": 512,
+                  "reconfigure_calls": 0,
+                  "workspace_bytes": 22283008
+                }
+              },
+              {
+                "slot": 1,
+                "protocol": "rtx5090-nccl-staged-v2",
+                "native_api": "rtx5090_local_v1",
+                "calls": 2,
+                "producer_calls": 2,
+                "pack_calls": 2,
+                "exchange_calls": 2,
+                "wait_calls": 2,
+                "unpack_calls": 2,
+                "decode_calls": 2,
+                "consumer_calls": 0,
+                "initializations": 1,
+                "native_workspace_bytes": 22283008,
+                "reconfigure_calls": 0,
+                "configuration_scope": "instance",
+                "failed": false,
+                "closed": false,
+                "scratch_policy": "fixed-stream-shared-scratch-private-packets-v1",
+                "shared_scratch_bytes": 71597056,
+                "shared_scratch_ptrs": {
+                  "tx_bf16": 140337209147392,
+                  "rx_bf16": 140337225924608,
+                  "tx_packets": 140337242701824,
+                  "tx_wire": 140337263673344,
+                  "rx_wire": 140337278353408
+                },
+                "pending_exchange": false,
+                "native_phase": 0,
+                "device": 4,
+                "stream": 0,
+                "peer_memory": false,
+                "send_split_bytes": [
+                  2051072,
+                  2097152,
+                  2097152,
+                  2097152,
+                  0,
+                  2097152,
+                  2097152,
+                  2081792
+                ],
+                "receive_split_bytes": [
+                  2066432,
+                  2081792,
+                  2066432,
+                  2081792,
+                  0,
+                  2035712,
+                  2081792,
+                  2097152
+                ],
+                "send_bytes": 14618624,
+                "receive_bytes": 14511104,
+                "synchronization": "fixed_stream_producer_NCCL_work_wait_decode_reuse",
+                "native": {
+                  "protocol_version": 1,
+                  "initializations": 1,
+                  "producer_calls": 2,
+                  "decode_calls": 2,
+                  "bias_residual_calls": 0,
+                  "phase": 0,
+                  "failed": false,
+                  "bound_k": 512,
+                  "reconfigure_calls": 0,
+                  "workspace_bytes": 22283008
+                }
+              }
+            ]
+          },
+          {
+            "protocol": "rtx5090-nccl-staged-v2",
+            "failed": false,
+            "next_slot": 0,
+            "slots": [
+              {
+                "slot": 0,
+                "protocol": "rtx5090-nccl-staged-v2",
+                "native_api": "rtx5090_local_v1",
+                "calls": 2,
+                "producer_calls": 2,
+                "pack_calls": 2,
+                "exchange_calls": 2,
+                "wait_calls": 2,
+                "unpack_calls": 2,
+                "decode_calls": 2,
+                "consumer_calls": 0,
+                "initializations": 1,
+                "native_workspace_bytes": 22283008,
+                "reconfigure_calls": 0,
+                "configuration_scope": "instance",
+                "failed": false,
+                "closed": false,
+                "scratch_policy": "fixed-stream-shared-scratch-private-packets-v1",
+                "shared_scratch_bytes": 71597056,
+                "shared_scratch_ptrs": {
+                  "tx_bf16": 140337125261312,
+                  "rx_bf16": 140337142038528,
+                  "tx_packets": 140337158815744,
+                  "tx_wire": 140337179787264,
+                  "rx_wire": 140337194467328
+                },
+                "pending_exchange": false,
+                "native_phase": 0,
+                "device": 4,
+                "stream": 0,
+                "peer_memory": false,
+                "send_split_bytes": [
+                  2051072,
+                  2097152,
+                  2097152,
+                  2097152,
+                  0,
+                  2097152,
+                  2097152,
+                  2081792
+                ],
+                "receive_split_bytes": [
+                  2066432,
+                  2081792,
+                  2066432,
+                  2081792,
+                  0,
+                  2035712,
+                  2081792,
+                  2097152
+                ],
+                "send_bytes": 14618624,
+                "receive_bytes": 14511104,
+                "synchronization": "fixed_stream_producer_NCCL_work_wait_decode_reuse",
+                "native": {
+                  "protocol_version": 1,
+                  "initializations": 1,
+                  "producer_calls": 2,
+                  "decode_calls": 2,
+                  "bias_residual_calls": 0,
+                  "phase": 0,
+                  "failed": false,
+                  "bound_k": 512,
+                  "reconfigure_calls": 0,
+                  "workspace_bytes": 22283008
+                }
+              },
+              {
+                "slot": 1,
+                "protocol": "rtx5090-nccl-staged-v2",
+                "native_api": "rtx5090_local_v1",
+                "calls": 2,
+                "producer_calls": 2,
+                "pack_calls": 2,
+                "exchange_calls": 2,
+                "wait_calls": 2,
+                "unpack_calls": 2,
+                "decode_calls": 2,
+                "consumer_calls": 0,
+                "initializations": 1,
+                "native_workspace_bytes": 22283008,
+                "reconfigure_calls": 0,
+                "configuration_scope": "instance",
+                "failed": false,
+                "closed": false,
+                "scratch_policy": "fixed-stream-shared-scratch-private-packets-v1",
+                "shared_scratch_bytes": 71597056,
+                "shared_scratch_ptrs": {
+                  "tx_bf16": 140337209147392,
+                  "rx_bf16": 140337225924608,
+                  "tx_packets": 140337242701824,
+                  "tx_wire": 140337263673344,
+                  "rx_wire": 140337278353408
+                },
+                "pending_exchange": false,
+                "native_phase": 0,
+                "device": 4,
+                "stream": 0,
+                "peer_memory": false,
+                "send_split_bytes": [
+                  2051072,
+                  2097152,
+                  2097152,
+                  2097152,
+                  0,
+                  2097152,
+                  2097152,
+                  2081792
+                ],
+                "receive_split_bytes": [
+                  2066432,
+                  2081792,
+                  2066432,
+                  2081792,
+                  0,
+                  2035712,
+                  2081792,
+                  2097152
+                ],
+                "send_bytes": 14618624,
+                "receive_bytes": 14511104,
+                "synchronization": "fixed_stream_producer_NCCL_work_wait_decode_reuse",
+                "native": {
+                  "protocol_version": 1,
+                  "initializations": 1,
+                  "producer_calls": 2,
+                  "decode_calls": 2,
+                  "bias_residual_calls": 0,
+                  "phase": 0,
+                  "failed": false,
+                  "bound_k": 512,
+                  "reconfigure_calls": 0,
+                  "workspace_bytes": 22283008
+                }
+              }
+            ]
+          }
+        ],
+        "survivor_after_close": {
+          "protocol": "rtx5090-nccl-staged-v2",
+          "failed": false,
+          "next_slot": 1,
+          "slots": [
+            {
+              "slot": 0,
+              "protocol": "rtx5090-nccl-staged-v2",
+              "native_api": "rtx5090_local_v1",
+              "calls": 3,
+              "producer_calls": 3,
+              "pack_calls": 3,
+              "exchange_calls": 3,
+              "wait_calls": 3,
+              "unpack_calls": 3,
+              "decode_calls": 3,
+              "consumer_calls": 0,
+              "initializations": 1,
+              "native_workspace_bytes": 22283008,
+              "reconfigure_calls": 0,
+              "configuration_scope": "instance",
+              "failed": false,
+              "closed": false,
+              "scratch_policy": "fixed-stream-shared-scratch-private-packets-v1",
+              "shared_scratch_bytes": 71597056,
+              "shared_scratch_ptrs": {
+                "tx_bf16": 140337125261312,
+                "rx_bf16": 140337142038528,
+                "tx_packets": 140337158815744,
+                "tx_wire": 140337179787264,
+                "rx_wire": 140337194467328
+              },
+              "pending_exchange": false,
+              "native_phase": 0,
+              "device": 4,
+              "stream": 0,
+              "peer_memory": false,
+              "send_split_bytes": [
+                2051072,
+                2097152,
+                2097152,
+                2097152,
+                0,
+                2097152,
+                2097152,
+                2081792
+              ],
+              "receive_split_bytes": [
+                2066432,
+                2081792,
+                2066432,
+                2081792,
+                0,
+                2035712,
+                2081792,
+                2097152
+              ],
+              "send_bytes": 14618624,
+              "receive_bytes": 14511104,
+              "synchronization": "fixed_stream_producer_NCCL_work_wait_decode_reuse",
+              "native": {
+                "protocol_version": 1,
+                "initializations": 1,
+                "producer_calls": 3,
+                "decode_calls": 3,
+                "bias_residual_calls": 0,
+                "phase": 0,
+                "failed": false,
+                "bound_k": 512,
+                "reconfigure_calls": 0,
+                "workspace_bytes": 22283008
+              }
+            },
+            {
+              "slot": 1,
+              "protocol": "rtx5090-nccl-staged-v2",
+              "native_api": "rtx5090_local_v1",
+              "calls": 2,
+              "producer_calls": 2,
+              "pack_calls": 2,
+              "exchange_calls": 2,
+              "wait_calls": 2,
+              "unpack_calls": 2,
+              "decode_calls": 2,
+              "consumer_calls": 0,
+              "initializations": 1,
+              "native_workspace_bytes": 22283008,
+              "reconfigure_calls": 0,
+              "configuration_scope": "instance",
+              "failed": false,
+              "closed": false,
+              "scratch_policy": "fixed-stream-shared-scratch-private-packets-v1",
+              "shared_scratch_bytes": 71597056,
+              "shared_scratch_ptrs": {
+                "tx_bf16": 140337209147392,
+                "rx_bf16": 140337225924608,
+                "tx_packets": 140337242701824,
+                "tx_wire": 140337263673344,
+                "rx_wire": 140337278353408
+              },
+              "pending_exchange": false,
+              "native_phase": 0,
+              "device": 4,
+              "stream": 0,
+              "peer_memory": false,
+              "send_split_bytes": [
+                2051072,
+                2097152,
+                2097152,
+                2097152,
+                0,
+                2097152,
+                2097152,
+                2081792
+              ],
+              "receive_split_bytes": [
+                2066432,
+                2081792,
+                2066432,
+                2081792,
+                0,
+                2035712,
+                2081792,
+                2097152
+              ],
+              "send_bytes": 14618624,
+              "receive_bytes": 14511104,
+              "synchronization": "fixed_stream_producer_NCCL_work_wait_decode_reuse",
+              "native": {
+                "protocol_version": 1,
+                "initializations": 1,
+                "producer_calls": 2,
+                "decode_calls": 2,
+                "bias_residual_calls": 0,
+                "phase": 0,
+                "failed": false,
+                "bound_k": 512,
+                "reconfigure_calls": 0,
+                "workspace_bytes": 22283008
+              }
+            }
+          ]
+        }
+      }
+    },
+    "mlp": {
+      "passed": true,
+      "k_local": 2048,
+      "cases": {
+        "zero": {
+          "relative_l2": 0.0,
+          "protocol_relative_l2": 0.0,
+          "max_abs": 0.0,
+          "budget_vs_bf16": 0.05,
+          "budget_vs_codec": 0.01,
+          "passed": true
+        },
+        "random": {
+          "relative_l2": 0.0042307399757141265,
+          "protocol_relative_l2": 0.00016285361705987376,
+          "max_abs": 0.005859375,
+          "budget_vs_bf16": 0.05,
+          "budget_vs_codec": 0.01,
+          "passed": true
+        },
+        "outlier": {
+          "relative_l2": 0.0013805911694233814,
+          "protocol_relative_l2": 1.2968504839766438e-05,
+          "max_abs": 0.2509765625,
+          "budget_vs_bf16": 0.05,
+          "budget_vs_codec": 0.01,
+          "passed": true
+        },
+        "after_delayed_reuse": {
+          "relative_l2": 0.0,
+          "protocol_relative_l2": 0.0,
+          "max_abs": 0.0,
+          "budget_vs_bf16": 0.05,
+          "budget_vs_codec": 0.01,
+          "passed": true
+        }
+      },
+      "wire": {
+        "passed": true,
+        "pack": {
+          "passed": true,
+          "physical_tiles": 448,
+          "bytes": 14664704
+        },
+        "unpack": {
+          "passed": true,
+          "physical_tiles": 448,
+          "bytes": 14495744
+        },
+        "sent": {
+          "0": {
+            "bytes": 2097152,
+            "sha256": "119c461c1509e221301928702f556cc0e4f868e33f05b8f57871906f3159225d"
+          },
+          "1": {
+            "bytes": 2097152,
+            "sha256": "07f6c3de516e1a4af8c3ab5314646ab2c7efb391a5cee2dffaa165534bb424f7"
+          },
+          "2": {
+            "bytes": 2097152,
+            "sha256": "0d3401d916bc1a38aadbadb01c1a494bc3e66871661333e035332cc9d8a3b60c"
+          },
+          "3": {
+            "bytes": 2081792,
+            "sha256": "5dfea4d1fac0f038fbf18a05f171f27f95a02b656190fec9c404960021f41f78"
+          },
+          "5": {
+            "bytes": 2097152,
+            "sha256": "47d9dc56d1af7d2e6a3e1c6af3c6b40bb6551db31298784e2780d16ffd9bd935"
+          },
+          "6": {
+            "bytes": 2097152,
+            "sha256": "58e35434be50bac579444729f6c8438d19c8a7cea0149ccf87f3604d5eb321c8"
+          },
+          "7": {
+            "bytes": 2097152,
+            "sha256": "9f3482b860b1ee70eebbe2ee6ebd1bf7d9e652da887fba87a4e589138da6fc3e"
+          }
+        },
+        "received": {
+          "0": {
+            "bytes": 2035712,
+            "sha256": "b794752732b2159ef3c5f11dd893d0bcff0673ddd8909121940be24d62088a29"
+          },
+          "1": {
+            "bytes": 2081792,
+            "sha256": "66a55aaaf2c3359a113423953761e01e66b0e38092457e077946bee66ef23f7d"
+          },
+          "2": {
+            "bytes": 2066432,
+            "sha256": "5d623f832e1aa0e400b8ca87eca3973c104786869b019da4a6c1a842175d7912"
+          },
+          "3": {
+            "bytes": 2081792,
+            "sha256": "f35cb4cff0b0a23eaa390b22a44d6a52fa60a39a1de6ba5a4a415ddecf4673a4"
+          },
+          "5": {
+            "bytes": 2066432,
+            "sha256": "5208bddb90b2f87ab4295258448d5b0c825e2381d6e56522023a497c364526cf"
+          },
+          "6": {
+            "bytes": 2081792,
+            "sha256": "47baac8041eefbf458ff6510d52429cbee8b9a0ee156c241ffeb35bc1026a30d"
+          },
+          "7": {
+            "bytes": 2081792,
+            "sha256": "592a6bb8e6e5d2af662268a1c286b14584d4594d69387355022c292d499dcd37"
+          }
+        },
+        "cross_rank_payload_identity": true
+      },
+      "consumer": {
+        "passed": true,
+        "bitwise_equal": true,
+        "independent_storage": true
+      },
+      "retained_outputs": {
+        "passed": true,
+        "count": 6,
+        "reuse_calls": 7,
+        "independent_storage": true,
+        "unchanged_after_subsequent_calls": true,
+        "rank_delay_seconds": 0.025
+      },
+      "transport": {
+        "protocol": "rtx5090-nccl-staged-v2",
+        "failed": false,
+        "next_slot": 0,
+        "slots": [
+          {
+            "slot": 0,
+            "protocol": "rtx5090-nccl-staged-v2",
+            "native_api": "rtx5090_local_v1",
+            "calls": 6,
+            "producer_calls": 6,
+            "pack_calls": 6,
+            "exchange_calls": 6,
+            "wait_calls": 6,
+            "unpack_calls": 6,
+            "decode_calls": 6,
+            "consumer_calls": 0,
+            "initializations": 1,
+            "native_workspace_bytes": 22283008,
+            "reconfigure_calls": 0,
+            "configuration_scope": "instance",
+            "failed": false,
+            "closed": false,
+            "scratch_policy": "fixed-stream-shared-scratch-private-packets-v1",
+            "shared_scratch_bytes": 71627776,
+            "shared_scratch_ptrs": {
+              "tx_bf16": 140335405596672,
+              "rx_bf16": 140335430762496,
+              "tx_packets": 140337179787264,
+              "tx_wire": 140337194467328,
+              "rx_wire": 140337263673344
+            },
+            "pending_exchange": false,
+            "native_phase": 0,
+            "device": 4,
+            "stream": 0,
+            "peer_memory": false,
+            "send_split_bytes": [
+              2097152,
+              2097152,
+              2097152,
+              2081792,
+              0,
+              2097152,
+              2097152,
+              2097152
+            ],
+            "receive_split_bytes": [
+              2035712,
+              2081792,
+              2066432,
+              2081792,
+              0,
+              2066432,
+              2081792,
+              2081792
+            ],
+            "send_bytes": 14664704,
+            "receive_bytes": 14495744,
+            "synchronization": "fixed_stream_producer_NCCL_work_wait_decode_reuse",
+            "native": {
+              "protocol_version": 1,
+              "initializations": 1,
+              "producer_calls": 6,
+              "decode_calls": 6,
+              "bias_residual_calls": 0,
+              "phase": 0,
+              "failed": false,
+              "bound_k": 2048,
+              "reconfigure_calls": 0,
+              "workspace_bytes": 22283008
+            }
+          },
+          {
+            "slot": 1,
+            "protocol": "rtx5090-nccl-staged-v2",
+            "native_api": "rtx5090_local_v1",
+            "calls": 6,
+            "producer_calls": 6,
+            "pack_calls": 6,
+            "exchange_calls": 6,
+            "wait_calls": 6,
+            "unpack_calls": 6,
+            "decode_calls": 6,
+            "consumer_calls": 1,
+            "initializations": 1,
+            "native_workspace_bytes": 22283008,
+            "reconfigure_calls": 0,
+            "configuration_scope": "instance",
+            "failed": false,
+            "closed": false,
+            "scratch_policy": "fixed-stream-shared-scratch-private-packets-v1",
+            "shared_scratch_bytes": 71627776,
+            "shared_scratch_ptrs": {
+              "tx_bf16": 140335447539712,
+              "rx_bf16": 140335464316928,
+              "tx_packets": 140335481094144,
+              "tx_wire": 140335497871360,
+              "rx_wire": 140335514648576
+            },
+            "pending_exchange": false,
+            "native_phase": 0,
+            "device": 4,
+            "stream": 0,
+            "peer_memory": false,
+            "send_split_bytes": [
+              2097152,
+              2097152,
+              2097152,
+              2081792,
+              0,
+              2097152,
+              2097152,
+              2097152
+            ],
+            "receive_split_bytes": [
+              2035712,
+              2081792,
+              2066432,
+              2081792,
+              0,
+              2066432,
+              2081792,
+              2081792
+            ],
+            "send_bytes": 14664704,
+            "receive_bytes": 14495744,
+            "synchronization": "fixed_stream_producer_NCCL_work_wait_decode_reuse",
+            "native": {
+              "protocol_version": 1,
+              "initializations": 1,
+              "producer_calls": 6,
+              "decode_calls": 6,
+              "bias_residual_calls": 1,
+              "phase": 0,
+              "failed": false,
+              "bound_k": 2048,
+              "reconfigure_calls": 0,
+              "workspace_bytes": 22283008
+            }
+          }
+        ]
+      },
+      "shared_scratch": {
+        "passed": true,
+        "scratch_policy": "fixed-stream-shared-scratch-private-packets-v1",
+        "instances": 2,
+        "slots_per_instance": 2,
+        "pointers": [
+          [
+            {
+              "shared": {
+                "tx_bf16": 140335405596672,
+                "tx_packets": 140337179787264,
+                "rx_bf16": 140335430762496,
+                "tx_wire": 140337194467328,
+                "rx_wire": 140337263673344
+              },
+              "packet": 140337142038528,
+              "mask": 140335401426944,
+              "native": 783504096
+            },
+            {
+              "shared": {
+                "tx_bf16": 140335447539712,
+                "tx_packets": 140335481094144,
+                "rx_bf16": 140335464316928,
+                "tx_wire": 140335497871360,
+                "rx_wire": 140335514648576
+              },
+              "packet": 140337209147392,
+              "mask": 140335401447424,
+              "native": 783443008
+            }
+          ],
+          [
+            {
+              "shared": {
+                "tx_bf16": 140335405596672,
+                "tx_packets": 140337179787264,
+                "rx_bf16": 140335430762496,
+                "tx_wire": 140337194467328,
+                "rx_wire": 140337263673344
+              },
+              "packet": 140337225924608,
+              "mask": 140335401459712,
+              "native": 783526560
+            },
+            {
+              "shared": {
+                "tx_bf16": 140335447539712,
+                "tx_packets": 140335481094144,
+                "rx_bf16": 140335464316928,
+                "tx_wire": 140335497871360,
+                "rx_wire": 140335514648576
+              },
+              "packet": 140337158815744,
+              "mask": 140335401472000,
+              "native": 783366384
+            }
+          ]
+        ],
+        "calls_before_close": [
+          4,
+          4
+        ],
+        "async_burst_calls": 6,
+        "repeated_bitwise": true,
+        "retained_outputs": 8,
+        "retained_bitwise": true,
+        "output_storage_independent": true,
+        "survivor_after_close_bitwise": true,
+        "reference_checks": [
+          {
+            "relative_l2": 0.004234405801981654,
+            "protocol_relative_l2": 0.00022462000371577023,
+            "max_abs": 0.005859375,
+            "budget_vs_bf16": 0.05,
+            "budget_vs_codec": 0.01,
+            "passed": true
+          },
+          {
+            "relative_l2": 0.004247686035575107,
+            "protocol_relative_l2": 0.00025605263048884353,
+            "max_abs": 0.0068359375,
+            "budget_vs_bf16": 0.05,
+            "budget_vs_codec": 0.01,
+            "passed": true
+          }
+        ],
+        "before_close": [
+          {
+            "protocol": "rtx5090-nccl-staged-v2",
+            "failed": false,
+            "next_slot": 0,
+            "slots": [
+              {
+                "slot": 0,
+                "protocol": "rtx5090-nccl-staged-v2",
+                "native_api": "rtx5090_local_v1",
+                "calls": 2,
+                "producer_calls": 2,
+                "pack_calls": 2,
+                "exchange_calls": 2,
+                "wait_calls": 2,
+                "unpack_calls": 2,
+                "decode_calls": 2,
+                "consumer_calls": 0,
+                "initializations": 1,
+                "native_workspace_bytes": 22283008,
+                "reconfigure_calls": 0,
+                "configuration_scope": "instance",
+                "failed": false,
+                "closed": false,
+                "scratch_policy": "fixed-stream-shared-scratch-private-packets-v1",
+                "shared_scratch_bytes": 71627776,
+                "shared_scratch_ptrs": {
+                  "tx_bf16": 140335405596672,
+                  "rx_bf16": 140335430762496,
+                  "tx_packets": 140337179787264,
+                  "tx_wire": 140337194467328,
+                  "rx_wire": 140337263673344
+                },
+                "pending_exchange": false,
+                "native_phase": 0,
+                "device": 4,
+                "stream": 0,
+                "peer_memory": false,
+                "send_split_bytes": [
+                  2097152,
+                  2097152,
+                  2097152,
+                  2081792,
+                  0,
+                  2097152,
+                  2097152,
+                  2097152
+                ],
+                "receive_split_bytes": [
+                  2035712,
+                  2081792,
+                  2066432,
+                  2081792,
+                  0,
+                  2066432,
+                  2081792,
+                  2081792
+                ],
+                "send_bytes": 14664704,
+                "receive_bytes": 14495744,
+                "synchronization": "fixed_stream_producer_NCCL_work_wait_decode_reuse",
+                "native": {
+                  "protocol_version": 1,
+                  "initializations": 1,
+                  "producer_calls": 2,
+                  "decode_calls": 2,
+                  "bias_residual_calls": 0,
+                  "phase": 0,
+                  "failed": false,
+                  "bound_k": 2048,
+                  "reconfigure_calls": 0,
+                  "workspace_bytes": 22283008
+                }
+              },
+              {
+                "slot": 1,
+                "protocol": "rtx5090-nccl-staged-v2",
+                "native_api": "rtx5090_local_v1",
+                "calls": 2,
+                "producer_calls": 2,
+                "pack_calls": 2,
+                "exchange_calls": 2,
+                "wait_calls": 2,
+                "unpack_calls": 2,
+                "decode_calls": 2,
+                "consumer_calls": 0,
+                "initializations": 1,
+                "native_workspace_bytes": 22283008,
+                "reconfigure_calls": 0,
+                "configuration_scope": "instance",
+                "failed": false,
+                "closed": false,
+                "scratch_policy": "fixed-stream-shared-scratch-private-packets-v1",
+                "shared_scratch_bytes": 71627776,
+                "shared_scratch_ptrs": {
+                  "tx_bf16": 140335447539712,
+                  "rx_bf16": 140335464316928,
+                  "tx_packets": 140335481094144,
+                  "tx_wire": 140335497871360,
+                  "rx_wire": 140335514648576
+                },
+                "pending_exchange": false,
+                "native_phase": 0,
+                "device": 4,
+                "stream": 0,
+                "peer_memory": false,
+                "send_split_bytes": [
+                  2097152,
+                  2097152,
+                  2097152,
+                  2081792,
+                  0,
+                  2097152,
+                  2097152,
+                  2097152
+                ],
+                "receive_split_bytes": [
+                  2035712,
+                  2081792,
+                  2066432,
+                  2081792,
+                  0,
+                  2066432,
+                  2081792,
+                  2081792
+                ],
+                "send_bytes": 14664704,
+                "receive_bytes": 14495744,
+                "synchronization": "fixed_stream_producer_NCCL_work_wait_decode_reuse",
+                "native": {
+                  "protocol_version": 1,
+                  "initializations": 1,
+                  "producer_calls": 2,
+                  "decode_calls": 2,
+                  "bias_residual_calls": 0,
+                  "phase": 0,
+                  "failed": false,
+                  "bound_k": 2048,
+                  "reconfigure_calls": 0,
+                  "workspace_bytes": 22283008
+                }
+              }
+            ]
+          },
+          {
+            "protocol": "rtx5090-nccl-staged-v2",
+            "failed": false,
+            "next_slot": 0,
+            "slots": [
+              {
+                "slot": 0,
+                "protocol": "rtx5090-nccl-staged-v2",
+                "native_api": "rtx5090_local_v1",
+                "calls": 2,
+                "producer_calls": 2,
+                "pack_calls": 2,
+                "exchange_calls": 2,
+                "wait_calls": 2,
+                "unpack_calls": 2,
+                "decode_calls": 2,
+                "consumer_calls": 0,
+                "initializations": 1,
+                "native_workspace_bytes": 22283008,
+                "reconfigure_calls": 0,
+                "configuration_scope": "instance",
+                "failed": false,
+                "closed": false,
+                "scratch_policy": "fixed-stream-shared-scratch-private-packets-v1",
+                "shared_scratch_bytes": 71627776,
+                "shared_scratch_ptrs": {
+                  "tx_bf16": 140335405596672,
+                  "rx_bf16": 140335430762496,
+                  "tx_packets": 140337179787264,
+                  "tx_wire": 140337194467328,
+                  "rx_wire": 140337263673344
+                },
+                "pending_exchange": false,
+                "native_phase": 0,
+                "device": 4,
+                "stream": 0,
+                "peer_memory": false,
+                "send_split_bytes": [
+                  2097152,
+                  2097152,
+                  2097152,
+                  2081792,
+                  0,
+                  2097152,
+                  2097152,
+                  2097152
+                ],
+                "receive_split_bytes": [
+                  2035712,
+                  2081792,
+                  2066432,
+                  2081792,
+                  0,
+                  2066432,
+                  2081792,
+                  2081792
+                ],
+                "send_bytes": 14664704,
+                "receive_bytes": 14495744,
+                "synchronization": "fixed_stream_producer_NCCL_work_wait_decode_reuse",
+                "native": {
+                  "protocol_version": 1,
+                  "initializations": 1,
+                  "producer_calls": 2,
+                  "decode_calls": 2,
+                  "bias_residual_calls": 0,
+                  "phase": 0,
+                  "failed": false,
+                  "bound_k": 2048,
+                  "reconfigure_calls": 0,
+                  "workspace_bytes": 22283008
+                }
+              },
+              {
+                "slot": 1,
+                "protocol": "rtx5090-nccl-staged-v2",
+                "native_api": "rtx5090_local_v1",
+                "calls": 2,
+                "producer_calls": 2,
+                "pack_calls": 2,
+                "exchange_calls": 2,
+                "wait_calls": 2,
+                "unpack_calls": 2,
+                "decode_calls": 2,
+                "consumer_calls": 0,
+                "initializations": 1,
+                "native_workspace_bytes": 22283008,
+                "reconfigure_calls": 0,
+                "configuration_scope": "instance",
+                "failed": false,
+                "closed": false,
+                "scratch_policy": "fixed-stream-shared-scratch-private-packets-v1",
+                "shared_scratch_bytes": 71627776,
+                "shared_scratch_ptrs": {
+                  "tx_bf16": 140335447539712,
+                  "rx_bf16": 140335464316928,
+                  "tx_packets": 140335481094144,
+                  "tx_wire": 140335497871360,
+                  "rx_wire": 140335514648576
+                },
+                "pending_exchange": false,
+                "native_phase": 0,
+                "device": 4,
+                "stream": 0,
+                "peer_memory": false,
+                "send_split_bytes": [
+                  2097152,
+                  2097152,
+                  2097152,
+                  2081792,
+                  0,
+                  2097152,
+                  2097152,
+                  2097152
+                ],
+                "receive_split_bytes": [
+                  2035712,
+                  2081792,
+                  2066432,
+                  2081792,
+                  0,
+                  2066432,
+                  2081792,
+                  2081792
+                ],
+                "send_bytes": 14664704,
+                "receive_bytes": 14495744,
+                "synchronization": "fixed_stream_producer_NCCL_work_wait_decode_reuse",
+                "native": {
+                  "protocol_version": 1,
+                  "initializations": 1,
+                  "producer_calls": 2,
+                  "decode_calls": 2,
+                  "bias_residual_calls": 0,
+                  "phase": 0,
+                  "failed": false,
+                  "bound_k": 2048,
+                  "reconfigure_calls": 0,
+                  "workspace_bytes": 22283008
+                }
+              }
+            ]
+          }
+        ],
+        "survivor_after_close": {
+          "protocol": "rtx5090-nccl-staged-v2",
+          "failed": false,
+          "next_slot": 1,
+          "slots": [
+            {
+              "slot": 0,
+              "protocol": "rtx5090-nccl-staged-v2",
+              "native_api": "rtx5090_local_v1",
+              "calls": 3,
+              "producer_calls": 3,
+              "pack_calls": 3,
+              "exchange_calls": 3,
+              "wait_calls": 3,
+              "unpack_calls": 3,
+              "decode_calls": 3,
+              "consumer_calls": 0,
+              "initializations": 1,
+              "native_workspace_bytes": 22283008,
+              "reconfigure_calls": 0,
+              "configuration_scope": "instance",
+              "failed": false,
+              "closed": false,
+              "scratch_policy": "fixed-stream-shared-scratch-private-packets-v1",
+              "shared_scratch_bytes": 71627776,
+              "shared_scratch_ptrs": {
+                "tx_bf16": 140335405596672,
+                "rx_bf16": 140335430762496,
+                "tx_packets": 140337179787264,
+                "tx_wire": 140337194467328,
+                "rx_wire": 140337263673344
+              },
+              "pending_exchange": false,
+              "native_phase": 0,
+              "device": 4,
+              "stream": 0,
+              "peer_memory": false,
+              "send_split_bytes": [
+                2097152,
+                2097152,
+                2097152,
+                2081792,
+                0,
+                2097152,
+                2097152,
+                2097152
+              ],
+              "receive_split_bytes": [
+                2035712,
+                2081792,
+                2066432,
+                2081792,
+                0,
+                2066432,
+                2081792,
+                2081792
+              ],
+              "send_bytes": 14664704,
+              "receive_bytes": 14495744,
+              "synchronization": "fixed_stream_producer_NCCL_work_wait_decode_reuse",
+              "native": {
+                "protocol_version": 1,
+                "initializations": 1,
+                "producer_calls": 3,
+                "decode_calls": 3,
+                "bias_residual_calls": 0,
+                "phase": 0,
+                "failed": false,
+                "bound_k": 2048,
+                "reconfigure_calls": 0,
+                "workspace_bytes": 22283008
+              }
+            },
+            {
+              "slot": 1,
+              "protocol": "rtx5090-nccl-staged-v2",
+              "native_api": "rtx5090_local_v1",
+              "calls": 2,
+              "producer_calls": 2,
+              "pack_calls": 2,
+              "exchange_calls": 2,
+              "wait_calls": 2,
+              "unpack_calls": 2,
+              "decode_calls": 2,
+              "consumer_calls": 0,
+              "initializations": 1,
+              "native_workspace_bytes": 22283008,
+              "reconfigure_calls": 0,
+              "configuration_scope": "instance",
+              "failed": false,
+              "closed": false,
+              "scratch_policy": "fixed-stream-shared-scratch-private-packets-v1",
+              "shared_scratch_bytes": 71627776,
+              "shared_scratch_ptrs": {
+                "tx_bf16": 140335447539712,
+                "rx_bf16": 140335464316928,
+                "tx_packets": 140335481094144,
+                "tx_wire": 140335497871360,
+                "rx_wire": 140335514648576
+              },
+              "pending_exchange": false,
+              "native_phase": 0,
+              "device": 4,
+              "stream": 0,
+              "peer_memory": false,
+              "send_split_bytes": [
+                2097152,
+                2097152,
+                2097152,
+                2081792,
+                0,
+                2097152,
+                2097152,
+                2097152
+              ],
+              "receive_split_bytes": [
+                2035712,
+                2081792,
+                2066432,
+                2081792,
+                0,
+                2066432,
+                2081792,
+                2081792
+              ],
+              "send_bytes": 14664704,
+              "receive_bytes": 14495744,
+              "synchronization": "fixed_stream_producer_NCCL_work_wait_decode_reuse",
+              "native": {
+                "protocol_version": 1,
+                "initializations": 1,
+                "producer_calls": 2,
+                "decode_calls": 2,
+                "bias_residual_calls": 0,
+                "phase": 0,
+                "failed": false,
+                "bound_k": 2048,
+                "reconfigure_calls": 0,
+                "workspace_bytes": 22283008
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "gpu_uuid": "7bcd5575-3386-f89f-a7c7-ae18bf0a2343",
+  "build_manifest_sha256": "53ffc00337a55ab21afb558862fd028aeb8efb8b23757159768e9210dfe01e60",
+  "reference_sha256": "1a6f8e4ef7a7a20b1709d2a91eeed55832c0cf7d73f351b4dc6e8f152be60b5b",
+  "entrypoint_sha256": "1b7db2f731f8438027645de7730e209bfe5ddaf0dc5273b293bf71bf33fd637e",
+  "native_libraries": {
+    "libflux_cuda.so": {
+      "path": "/workspace/TempName-New/logs/5090/phase6/baseline-nine-arm-nccl-staged-v2-1x-50steps-20261030-151053-241177/build/selective/cr3/python/flux/lib/libflux_cuda.so",
+      "sha256": "bfa635d37a8c78f39a85e336a2c8d3222d8a02bfb9d97338e091c6615554d620"
+    },
+    "libflux_cuda_ths_op.so": {
+      "path": "/workspace/TempName-New/logs/5090/phase6/baseline-nine-arm-nccl-staged-v2-1x-50steps-20261030-151053-241177/build/selective/cr3/python/flux/lib/libflux_cuda_ths_op.so",
+      "sha256": "38d70a52fcaf3e68e2f15c5abfe72e723a02ec2fc2fc89a97502384c2df0ed91"
+    }
+  },
+  "torch": "2.8.0a0+5228986c39.nv25.06",
+  "cuda": "12.9",
+  "nccl": [
+    2,
+    27,
+    3
+  ]
+}
