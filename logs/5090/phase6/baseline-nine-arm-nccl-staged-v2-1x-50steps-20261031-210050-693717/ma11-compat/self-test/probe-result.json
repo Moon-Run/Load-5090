@@ -1,0 +1,34 @@
+{
+  "protocol": "rtx5090-ma11-pytorch-280-softmax-v1",
+  "completed": true,
+  "performance_measured": false,
+  "gpu": 0,
+  "torch": "2.8.0a0+5228986c39.nv25.06",
+  "cuda": "12.9",
+  "name": "NVIDIA GeForce RTX 5090",
+  "capability": [
+    12,
+    0
+  ],
+  "sm_count": 170,
+  "uuid": "4eaa69af-8d93-18a4-4204-f0d489eac16d",
+  "library": {
+    "protocol": "rtx5090-ma11-pytorch-280-softmax-v1",
+    "torch": "2.8.0a0+5228986c39.nv25.06",
+    "source_sha256": "ca5429acf22076e7f7caf44204df3558d882507fbdef5afd95d13d5bd8c10552",
+    "builder_sha256": "02d4ddf25f91a2596b49bca1a584d074231f4c5f845cbb6ef1c4c0b42e03a915",
+    "nvcc_sha256": "df9974db233a0b7a6c6d59c0e5d74e011566104098bcb3553495ff1b95bdeaf6",
+    "library": "/workspace/Load-5090/logs/5090/phase6/baseline-nine-arm-nccl-staged-v2-1x-50steps-20261031-210050-693717/ma11-compat/libma11_softmax_5090.so",
+    "library_sha256": "edc231ff63d0865ee4249f60dd9d53d18519ed5521f21a5eb2e413432d600315",
+    "compile_log_sha256": "b3eda1e6171ee4980233c9651b0d4f2815edbe958753dc9a79d05b1c2a86bd7f",
+    "architecture": "sm_120",
+    "gpu_validated": false
+  },
+  "self_test": {
+    "passed": true,
+    "cases": 6,
+    "forward_bitwise": true,
+    "backward_bitwise": true,
+    "rng_unchanged": true
+  }
+}

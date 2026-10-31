@@ -1,0 +1,11 @@
+COMMAND ['/workspace/venvs/tempname-5090/bin/python', '-m', 'torch.distributed.run', '--standalone', '--nproc-per-node=8', '--max-restarts=0', '/workspace/TempName-New/tools/5090/phase6/local_smoke.py', '--build', '/workspace/TempName-New/logs/5090/phase6/baseline-nine-arm-nccl-staged-v2-1x-50steps-20261030-151053-241177/build', '--arm', 'ma11', '--out', '/workspace/Load-5090/logs/5090/phase6/baseline-nine-arm-nccl-staged-v2-1x-50steps-20261031-210050-693717/local-smoke/ma11', '--execute']
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+NCCL version 2.27.3+cuda12.9
+{"protocol": "rtx5090-local-transport-smoke-v1", "transport_protocol": "rtx5090-nccl-staged-v2", "completed": true, "arm": "ma11", "build_manifest_sha256": "1247f1c2d2c0b124e6fd97a9463d213cfa418081177f1423cfa7d6d448f19cbb", "gpu_validated": true, "performance_measured": false, "rank_records": {"rank0.json": "0cefa52d683b0df2457be93607c17c9b6989354874d7d4a296c7dbb0f6f6d8f8", "rank1.json": "8f997995f16a9a1869f0a357848248e4eccddd98dc1225eb40ab2e0e0acf579c", "rank2.json": "1824a0e0bf12be6eafae19697e740b8f8fe2d92c20c29e9e2e6f39b8ab993312", "rank3.json": "69df4582cd8baf3ac081b48cfb1530b3d82e530f98530211fc0ac1777f4a9d2e", "rank4.json": "af140a0c9b3282be9b966ce1f10a1c5def744c1883710a93738bc7e9600edd7e", "rank5.json": "becbe169a0ae9230a8298db1c360e34bc5a6fbce24f57cdce9f7c4c3e008e8f3", "rank6.json": "c838c5048560acc03a8204fce747c37f1d2401d689273ef9251a58c4301bc728", "rank7.json": "a52b556f4430adf48c37eccb36ef972810aef859b7bbd95778e1164aa3f9e8ef"}}
