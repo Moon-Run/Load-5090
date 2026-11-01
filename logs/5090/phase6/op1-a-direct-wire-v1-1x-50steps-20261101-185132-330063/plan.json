@@ -1,0 +1,207 @@
+{
+  "protocol": "rtx5090-phase6-op1-a-direct-wire-v1",
+  "transport": "rtx5090-nccl-staged-v2",
+  "run_id": "16a2df9fc95b4c609103b4b6b74fbd07",
+  "arms": [
+    "a",
+    "flux-basic",
+    "flux-basic-interleaved"
+  ],
+  "model": {
+    "layers": 32,
+    "hidden": 4096,
+    "ffn": 16384,
+    "heads": 32,
+    "sequence": 2048,
+    "micro_batch": 1,
+    "global_batch": 4,
+    "tp": 8,
+    "dp": 1,
+    "sm_count": 170,
+    "seed": 1234,
+    "token_seed": 4321,
+    "vocab": 32768
+  },
+  "trials": 1,
+  "blocks": 6,
+  "schedule": [
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 0,
+      "arm": "a",
+      "mode": "timing",
+      "directory": "compare1/block00-a"
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 1,
+      "arm": "flux-basic-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-basic-interleaved"
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 2,
+      "arm": "flux-basic",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-basic"
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 3,
+      "arm": "flux-basic-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-basic-interleaved"
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 4,
+      "arm": "flux-basic",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-basic"
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 5,
+      "arm": "a",
+      "mode": "timing",
+      "directory": "compare1/block01-a"
+    },
+    {
+      "trial": 1,
+      "block": 2,
+      "index": 6,
+      "arm": "flux-basic",
+      "mode": "timing",
+      "directory": "compare1/block02-flux-basic"
+    },
+    {
+      "trial": 1,
+      "block": 2,
+      "index": 7,
+      "arm": "a",
+      "mode": "timing",
+      "directory": "compare1/block02-a"
+    },
+    {
+      "trial": 1,
+      "block": 2,
+      "index": 8,
+      "arm": "flux-basic-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block02-flux-basic-interleaved"
+    },
+    {
+      "trial": 1,
+      "block": 3,
+      "index": 9,
+      "arm": "flux-basic",
+      "mode": "timing",
+      "directory": "compare1/block03-flux-basic"
+    },
+    {
+      "trial": 1,
+      "block": 3,
+      "index": 10,
+      "arm": "flux-basic-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block03-flux-basic-interleaved"
+    },
+    {
+      "trial": 1,
+      "block": 3,
+      "index": 11,
+      "arm": "a",
+      "mode": "timing",
+      "directory": "compare1/block03-a"
+    },
+    {
+      "trial": 1,
+      "block": 4,
+      "index": 12,
+      "arm": "a",
+      "mode": "timing",
+      "directory": "compare1/block04-a"
+    },
+    {
+      "trial": 1,
+      "block": 4,
+      "index": 13,
+      "arm": "flux-basic",
+      "mode": "timing",
+      "directory": "compare1/block04-flux-basic"
+    },
+    {
+      "trial": 1,
+      "block": 4,
+      "index": 14,
+      "arm": "flux-basic-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block04-flux-basic-interleaved"
+    },
+    {
+      "trial": 1,
+      "block": 5,
+      "index": 15,
+      "arm": "flux-basic-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block05-flux-basic-interleaved"
+    },
+    {
+      "trial": 1,
+      "block": 5,
+      "index": 16,
+      "arm": "a",
+      "mode": "timing",
+      "directory": "compare1/block05-a"
+    },
+    {
+      "trial": 1,
+      "block": 5,
+      "index": 17,
+      "arm": "flux-basic",
+      "mode": "timing",
+      "directory": "compare1/block05-flux-basic"
+    }
+  ],
+  "communication": {
+    "environment": {
+      "NCCL_VERSION": "2.27.3",
+      "TORCH_NCCL_USE_COMM_NONBLOCKING": "0",
+      "NCCL_NVLS_ENABLE": "0",
+      "NCCL_DEBUG": "WARN",
+      "TORCH_NCCL_ASYNC_ERROR_HANDLING": "1",
+      "NCCL_P2P_DISABLE": "1",
+      "NCCL_SHM_DISABLE": "0"
+    },
+    "config_files": {
+      "/etc/nccl.conf": null,
+      "/root/.nccl.conf": null
+    },
+    "nvls_request": "0"
+  },
+  "environment": {
+    "torch": "2.8.0a0+5228986c39.nv25.06",
+    "cuda": "12.9",
+    "nccl": [
+      2,
+      27,
+      3
+    ],
+    "python": "/workspace/venvs/tempname-5090/bin/python",
+    "python_version": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+    "cxx11_abi": true
+  },
+  "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+  "preflight_sha256": "ee97ab05cd493c616304a598a2d6f0548a73b7a5e4fffc57e9418f91f9802a04",
+  "build": {
+    "root": "/workspace/Load-5090/logs/5090/phase6/op1-a-direct-wire-v1-1x-50steps-20261101-185132-330063/build",
+    "manifest_sha256": "2d797f28e481a3392a4c27d507c7792eb2958e6c79c381e1fb8adcc2b4c3a2b2"
+  }
+}

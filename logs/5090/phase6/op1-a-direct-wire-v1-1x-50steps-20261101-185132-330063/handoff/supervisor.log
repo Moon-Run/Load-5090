@@ -1,0 +1,38 @@
+STAGE worker-source-preflight
+STAGE hardware-preflight
+STAGE verify-build
+STAGE prepare-op1-build
+STAGE compile-op1-build
+Compile RTX5090 OP1 variant: a
+Compile RTX5090 OP1 variant: flux-basic-interleaved
+STAGE prepare-workers
+STAGE native-bitwise-and-mapping-probes
+NATIVE PROBE old-a
+NATIVE PROBE a
+NATIVE PROBE flux-basic-interleaved
+STAGE smoke-a
+STAGE smoke-flux-basic
+STAGE smoke-flux-basic-interleaved
+STAGE profile-a
+STAGE profile-flux-basic
+STAGE profile-flux-basic-interleaved
+STAGE compare1/block00-a
+STAGE compare1/block00-flux-basic-interleaved
+STAGE compare1/block00-flux-basic
+STAGE compare1/block01-flux-basic-interleaved
+STAGE compare1/block01-flux-basic
+STAGE compare1/block01-a
+STAGE compare1/block02-flux-basic
+STAGE compare1/block02-a
+STAGE compare1/block02-flux-basic-interleaved
+STAGE compare1/block03-flux-basic
+STAGE compare1/block03-flux-basic-interleaved
+STAGE compare1/block03-a
+STAGE compare1/block04-a
+STAGE compare1/block04-flux-basic
+STAGE compare1/block04-flux-basic-interleaved
+STAGE compare1/block05-flux-basic-interleaved
+STAGE compare1/block05-a
+STAGE compare1/block05-flux-basic
+STAGE replay-report
+COMPLETED /workspace/Load-5090/logs/5090/phase6/op1-a-direct-wire-v1-1x-50steps-20261101-185132-330063/report.md

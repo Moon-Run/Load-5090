@@ -1,0 +1,448 @@
+{
+  "protocol": "rtx5090-op1-a-bitwise-probe-v1",
+  "completed": true,
+  "rank": 7,
+  "variant": "a",
+  "build_manifest_sha256": "2d797f28e481a3392a4c27d507c7792eb2958e6c79c381e1fb8adcc2b4c3a2b2",
+  "entrypoint_sha256": "23cdd730c32a405075e279d7f8e09ec9379e378d8840d932f20dcb6f9a253349",
+  "gpu_uuid": "dbbd3446-128e-286b-1c04-0aa14c474949",
+  "torch": "2.8.0a0+5228986c39.nv25.06",
+  "cuda": "12.9",
+  "nccl": [
+    2,
+    27,
+    3
+  ],
+  "libraries": {
+    "libflux_cuda.so": {
+      "path": "/workspace/Load-5090/logs/5090/phase6/op1-a-direct-wire-v1-1x-50steps-20261101-185132-330063/build/a/python/flux/lib/libflux_cuda.so",
+      "sha256": "2a4823fc60a939f549ae5459d823854fb50dd42ee3210a40981c7148cb28c8fb"
+    },
+    "libflux_cuda_ths_op.so": {
+      "path": "/workspace/Load-5090/logs/5090/phase6/op1-a-direct-wire-v1-1x-50steps-20261101-185132-330063/build/a/python/flux/lib/libflux_cuda_ths_op.so",
+      "sha256": "437f28d57fc1072520fbfab87b97cad5452de136e4b658a4da72810470cd1941"
+    }
+  },
+  "roles": {
+    "attn": {
+      "k_local": 512,
+      "cases": {
+        "zero": {
+          "input_sha256": "5647f05ec18958947d32874eeb788fa396a05d0bab7c1b71f112ceb7e9b31eee",
+          "weight_sha256": "be8cdc33fd25071a740429c5c56929c04a13efd31a22019cddd19de7d22af85d",
+          "output_sha256": "5647f05ec18958947d32874eeb788fa396a05d0bab7c1b71f112ceb7e9b31eee",
+          "tx": {
+            "0": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "1": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "2": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "3": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "4": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "5": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "6": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50"
+          },
+          "rx": {
+            "0": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "1": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "2": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "3": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "4": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "5": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "6": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50"
+          },
+          "reference": {
+            "relative_l2": 0.0,
+            "protocol_relative_l2": 0.0,
+            "max_abs": 0.0,
+            "budget_vs_bf16": 0.05,
+            "budget_vs_codec": 0.01,
+            "passed": true
+          }
+        },
+        "random": {
+          "input_sha256": "1206aa2526e967f3acdf8c299b144abfe32a5074869c5759ecdac177bafde892",
+          "weight_sha256": "2e46aac7ebc653d779ace49f1209b399400c38aa7eac9dd9f437d15c48db550e",
+          "output_sha256": "4df5fd80d577c01ca94d2ab19a8f38a673d9a3512af4ab3d705f48befd47b37f",
+          "tx": {
+            "0": "921197ae4a2248d2866ede12a5545ff8eaad0f9d75b33f72813fc672c5a28891",
+            "1": "1e9ae0d0036435ff57c9eb0cbcd4964b7d62827e59af08c5044754ae7d97d0a0",
+            "2": "01a044865d3c5d49878b93bd49515fd0e73c30524dc3d2b94266572ac2e52a2b",
+            "3": "3f3b0c80e34f6f657814e484aa281abfeacdde7bfd75374840f3ad5187bf3207",
+            "4": "6344f785ab98e1e15f61d099340f7ea41c99e6c109002f216f4fc749717a4382",
+            "5": "3ffc032b2eace8ada3ec440cd424e55a0c2be05c8a46bd953eb4233ddd33d2b3",
+            "6": "7d0ec17abd35bd1826515b2ec00602d9d8e352a1e32e351f7e3a1fc879a49d9f"
+          },
+          "rx": {
+            "0": "7e5dc02ac5afb56ce96600cb76f12cd88a045907055fdaec00a1ba0b1d4ff9c1",
+            "1": "302cd12640f109ae67cb4fd6405838d4d6fd7c78e436460f1012549d1a10418c",
+            "2": "723ec7b129873d0b8488a7db4421657c3604acade30a27b779cf6e666a9784b1",
+            "3": "f67819539d983b3fbfa59843d65b25c4e441624a9104afe1f39f944ff41ab0cc",
+            "4": "ab5cc61e98e32258499b56ded037589b23aa464044c7ba933ff594f6793faef5",
+            "5": "9719c60f78e4a8b03a34141b3b93da9cbee4230f855254baa26ff27ee8bad035",
+            "6": "6f41df1efc9d8b5df8a53afae31ebb3363fdbebb3d5ce1fd47beb2730de50e83"
+          },
+          "reference": {
+            "relative_l2": 0.024672605455563778,
+            "protocol_relative_l2": 0.00017746852379654522,
+            "max_abs": 0.007080078125,
+            "budget_vs_bf16": 0.05,
+            "budget_vs_codec": 0.01,
+            "passed": true
+          }
+        },
+        "outlier": {
+          "input_sha256": "09064582b932e8948ebfb129d2b16ca33e5c6609e5ab1d6e87ed24ad0dc1983b",
+          "weight_sha256": "78456699c339ddeeadc2f1ca6324c21121706c7b363aac1fc6dc75a47b1ce217",
+          "output_sha256": "43b2bc444987d39aaafbf7191ea473d57a4a90cf3ac168005a3b4a67e89f435c",
+          "tx": {
+            "0": "df9578801dc9631222b6a9c9a438c27b4bdde448316d0ff9739c1564f7bfe87a",
+            "1": "2c0d2573eecf7a3a5651b5ece9bd955a7bbce40a39c891de9228791899554d7f",
+            "2": "4c28fac1e0a57a6df8d329fb16f04cc72afd191f1c2cfbabc9b6d12320e1eee7",
+            "3": "55a6aeece13ca7de40be69cb54854a259be91f18c4dd87ba3addc48b9db01147",
+            "4": "db6847e907a67c59ddbd5679de71a04744835f86554d9055912039edb6212559",
+            "5": "7c4f07806db0f074bc0649a45c0a537800714439a666eb5aa6ff3cddbcd5f9fc",
+            "6": "015b38a48a0dbc094f4e0a7a1cca1154aa373612f2e44ea4cb2a09fd4260f4f8"
+          },
+          "rx": {
+            "0": "e77103280f02eb1531d5439745d59973f58fd756649e72a477ceb29fd1448b4c",
+            "1": "09dd3b9ed015c22578773734a3c9d24fc19de5e8e083b31e82194b2f20ff70d1",
+            "2": "8ab7491bc3e14dadbd0f43a341a87e55b4c778027bfd367f3081293428db0c48",
+            "3": "47c18e0a66855a1f7f1e838897aec3c38e98d7582fa3a04b800320bd1bcc8dbe",
+            "4": "9718470e42b678b66b4a70c7b26921e37599735fb9d21d87f374e60fe09bef02",
+            "5": "d316c00b0ccab8d34c2f46e4a91800f7fae7734573ee2b0c0ec8d2428c942e7a",
+            "6": "40a1d48db6ac08fa2f9f78b5c49501264c0bb63174f1575fb22f33acd5129aa6"
+          },
+          "reference": {
+            "relative_l2": 0.008455335853650955,
+            "protocol_relative_l2": 5.194794073563908e-06,
+            "max_abs": 1.0,
+            "budget_vs_bf16": 0.05,
+            "budget_vs_codec": 0.01,
+            "passed": true
+          }
+        }
+      },
+      "retained_outputs": 6,
+      "reuse_calls": 7,
+      "retention_passed": true,
+      "shared_instances_passed": true,
+      "shared_addresses": {
+        "shared_keys": [
+          "tx_wire",
+          "rx_bf16"
+        ],
+        "instances": [
+          {
+            "shared": {
+              "tx_wire": 140337595023360,
+              "rx_bf16": 140337615994880
+            },
+            "rx_packet": 140337602822144,
+            "native": 204217200,
+            "aliases": {
+              "tx_bf16": 140337615994880,
+              "rx_bf16": 140337615994880,
+              "tx_packets": 140337595023360,
+              "rx_packets": 140337602822144,
+              "tx_wire": 140337595023360,
+              "rx_wire": 140337602822144
+            }
+          },
+          {
+            "shared": {
+              "tx_wire": 140337595023360,
+              "rx_bf16": 140337615994880
+            },
+            "rx_packet": 140335904718848,
+            "native": 776266640,
+            "aliases": {
+              "tx_bf16": 140337615994880,
+              "rx_bf16": 140337615994880,
+              "tx_packets": 140337595023360,
+              "rx_packets": 140335904718848,
+              "tx_wire": 140337595023360,
+              "rx_wire": 140335904718848
+            }
+          }
+        ]
+      },
+      "transport": {
+        "protocol": "rtx5090-op1-a-direct-packet-v1",
+        "native_api": "rtx5090_op1_a_direct_v1",
+        "calls": 10,
+        "producer_calls": 10,
+        "pack_calls": 0,
+        "exchange_calls": 10,
+        "wait_calls": 10,
+        "unpack_calls": 0,
+        "decode_calls": 10,
+        "consumer_calls": 0,
+        "initializations": 10,
+        "native_workspace_bytes": 22283008,
+        "reconfigure_calls": 0,
+        "configuration_scope": "instance",
+        "packet_layout": "compact-peer-soa-h128-v1",
+        "output_ownership": "independent",
+        "gemm_submission_cache": false,
+        "failed": false,
+        "closed": false,
+        "scratch_policy": "op1-a-fixed-stream-shared-tx-local-private-rx-v1",
+        "shared_scratch_bytes": 24576000,
+        "shared_scratch_ptrs": {
+          "tx_wire": 140337595023360,
+          "rx_bf16": 140337615994880
+        },
+        "pending_exchange": false,
+        "native_phase": 0,
+        "device": 7,
+        "stream": 164954416,
+        "peer_memory": false,
+        "send_split_bytes": [
+          1114112,
+          1114112,
+          1114112,
+          1114112,
+          1114112,
+          1114112,
+          1114112,
+          0
+        ],
+        "receive_split_bytes": [
+          1114112,
+          1114112,
+          1114112,
+          1114112,
+          1114112,
+          1114112,
+          1114112,
+          0
+        ],
+        "send_bytes": 7798784,
+        "receive_bytes": 7798784,
+        "synchronization": "fixed_stream_producer_NCCL_work_wait_decode_reuse",
+        "native": {
+          "protocol_version": 2,
+          "initializations": 10,
+          "producer_calls": 10,
+          "decode_calls": 10,
+          "bias_residual_calls": 0,
+          "phase": 0,
+          "failed": false,
+          "bound_k": 512,
+          "reconfigure_calls": 0,
+          "workspace_bytes": 22283008
+        }
+      }
+    },
+    "mlp": {
+      "k_local": 2048,
+      "cases": {
+        "zero": {
+          "input_sha256": "2daeb1f36095b44b318410b3f4e8b5d989dcc7bb023d1426c492dab0a3053e74",
+          "weight_sha256": "7be6087dd24f4ea860fba88d207a70777cf25f82d1b5d247cec1c8b543f02cb8",
+          "output_sha256": "5647f05ec18958947d32874eeb788fa396a05d0bab7c1b71f112ceb7e9b31eee",
+          "tx": {
+            "0": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "1": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "2": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "3": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "4": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "5": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "6": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50"
+          },
+          "rx": {
+            "0": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "1": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "2": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "3": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "4": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "5": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50",
+            "6": "4097e7356f6ca23295a07c7c7f531344511cb9eca4446587a0f0b61a4c3eff50"
+          },
+          "reference": {
+            "relative_l2": 0.0,
+            "protocol_relative_l2": 0.0,
+            "max_abs": 0.0,
+            "budget_vs_bf16": 0.05,
+            "budget_vs_codec": 0.01,
+            "passed": true
+          }
+        },
+        "random": {
+          "input_sha256": "7f5ed192dcba2e3330dd0bb553169bdc8e3c688557638273650df75864e88881",
+          "weight_sha256": "a5993b4e52d6691462d7e34f84b2348c238fc01fca5c9d7cc64da06098ce2069",
+          "output_sha256": "dfbe598aa886ad20ddb317b07ad4f73afb0af36392dc0f1149bfde79d5c2e486",
+          "tx": {
+            "0": "67ff7bed2064dda119b696bd9f47eadaad54447b03db1ea91dcf2dfb3802d19b",
+            "1": "9c8d50890cfc5b6747e547f2d8704c4e908c19d3b85d0b00b04b2154f52cfa5c",
+            "2": "62c19cfe9a045e7999ec3a4a704e46af707c6a62f40242265b7cf004e6bc2268",
+            "3": "fecf6bed586067c5ef3b6e8fb6d3479b8a59c17e21f9fb6c82bb1635dff8579e",
+            "4": "7abf7546bd0bcd55cc26d6ca19e80caeaf1a233264bc67f7f2e3b25a2d112cb9",
+            "5": "af349eb4895655342b6b37d5c35a90e8e6af50c084c36ffb435eac9a95eab97a",
+            "6": "a21c4583a2000aebfd6088b09c7d6b12d62bc93752f5d68de549cb7b06f9d3f6"
+          },
+          "rx": {
+            "0": "bc0a4728bacd7c030ee7222a491b4d2ba1635b288420456c955a3bad228f0dca",
+            "1": "99e1e997899a0042cd12a486609a719e13ca870a2b1536a683ffbb990276be1f",
+            "2": "7c88f09d6e15e3140b3c0708f35e81822dad0b70ba5cac852ff20c4206c9b0f8",
+            "3": "dcf837d2f7f03f021d73cb801a6d63b3584e4a8fe6ba17dd9c122d95ebf77403",
+            "4": "de0b20283f2e4e79502781641bed20caefba9c1e8c8efff13e55b2a80f290c37",
+            "5": "b212778c5624cf4d58f6d4af2355db5a4c71e1d7840409f65aa432db481c13c0",
+            "6": "1177754007d105b62aab497b4a054410f35b0d00f499bccaa31c3fc54800ba55"
+          },
+          "reference": {
+            "relative_l2": 0.02462380343304997,
+            "protocol_relative_l2": 0.000544666512794674,
+            "max_abs": 0.013671875,
+            "budget_vs_bf16": 0.05,
+            "budget_vs_codec": 0.01,
+            "passed": true
+          }
+        },
+        "outlier": {
+          "input_sha256": "71122ff003d233de548f67c58101318e8ccbaec678c7737f1ba6c86ad6fe645b",
+          "weight_sha256": "cb77e90dd86d6dc10e2c85f581dad83aa20166688b311347bc62735962824d74",
+          "output_sha256": "e0307c8727719a608251fbcc934eaed90b1671b05cca78827444fd3757868c8b",
+          "tx": {
+            "0": "9fd7b85da0e6820e6a557b6811f4390a57ffcb7772f46beb9d16296e4a24a8d8",
+            "1": "991a3adefe4dc9ae1502343b2244ba361b265794121819af0585e26a3398bb6b",
+            "2": "774bed8a459ba401598c24c5d13d9624f2a04fd8b0da53170b642f1d89b22a4b",
+            "3": "289eb571dcde15a89c2abbd4694d417b2f00f2c26eaf723232a90d4900ef20ad",
+            "4": "0442de2623ad57437468530299b46508315fc6337f297b95267cc517cb8e2e93",
+            "5": "88a926c20600ec5bc486bff765c64ed6caf90e0e01b34c6dbc00d885f133624b",
+            "6": "1b656544a75bfc8e86517626a5b645fcb4443bb3fc6ce71c7dcfb4db9f66df58"
+          },
+          "rx": {
+            "0": "6722118c5dc19e2fceae9db9d5d55a7100fdd8b074863a7898a3741b379c94fa",
+            "1": "68b71226ecfb4c2b5254f30adff76450276c7d21945ef0d74f53e4a33c441d96",
+            "2": "72d1e004aa99519460788983c74a721e2422b2d5a92e2e9e8cb0d8afcb843a7e",
+            "3": "905896c4f407979fb3175a3a14d53477511bddb19ef4b778edb5c8d908d064d3",
+            "4": "cfde5c65db5ce9ddd630407530dca2a71e0ea3a306eba6c432933c5795979449",
+            "5": "0297a401fb40e2dbc21166fddcb50a3817ed814f4fa0f28ae566bed6e72d0786",
+            "6": "1e5898092b1b33a32dc0652a15d17a5c925388fe44b0d6fde613717efa97206b"
+          },
+          "reference": {
+            "relative_l2": 0.008371255620423908,
+            "protocol_relative_l2": 0.00012147867552679988,
+            "max_abs": 0.732421875,
+            "budget_vs_bf16": 0.05,
+            "budget_vs_codec": 0.01,
+            "passed": true
+          }
+        }
+      },
+      "retained_outputs": 6,
+      "reuse_calls": 7,
+      "retention_passed": true,
+      "shared_instances_passed": true,
+      "shared_addresses": {
+        "shared_keys": [
+          "tx_wire",
+          "rx_bf16"
+        ],
+        "instances": [
+          {
+            "shared": {
+              "tx_wire": 140335923593216,
+              "rx_bf16": 140335934078976
+            },
+            "rx_packet": 140335950856192,
+            "native": 776266640,
+            "aliases": {
+              "tx_bf16": 140335934078976,
+              "rx_bf16": 140335934078976,
+              "tx_packets": 140335923593216,
+              "rx_packets": 140335950856192,
+              "tx_wire": 140335923593216,
+              "rx_wire": 140335950856192
+            }
+          },
+          {
+            "shared": {
+              "tx_wire": 140335923593216,
+              "rx_bf16": 140335934078976
+            },
+            "rx_packet": 140335967633408,
+            "native": 204217200,
+            "aliases": {
+              "tx_bf16": 140335934078976,
+              "rx_bf16": 140335934078976,
+              "tx_packets": 140335923593216,
+              "rx_packets": 140335967633408,
+              "tx_wire": 140335923593216,
+              "rx_wire": 140335967633408
+            }
+          }
+        ]
+      },
+      "transport": {
+        "protocol": "rtx5090-op1-a-direct-packet-v1",
+        "native_api": "rtx5090_op1_a_direct_v1",
+        "calls": 10,
+        "producer_calls": 10,
+        "pack_calls": 0,
+        "exchange_calls": 10,
+        "wait_calls": 10,
+        "unpack_calls": 0,
+        "decode_calls": 10,
+        "consumer_calls": 0,
+        "initializations": 10,
+        "native_workspace_bytes": 22283008,
+        "reconfigure_calls": 0,
+        "configuration_scope": "instance",
+        "packet_layout": "compact-peer-soa-h128-v1",
+        "output_ownership": "independent",
+        "gemm_submission_cache": false,
+        "failed": false,
+        "closed": false,
+        "scratch_policy": "op1-a-fixed-stream-shared-tx-local-private-rx-v1",
+        "shared_scratch_bytes": 24576000,
+        "shared_scratch_ptrs": {
+          "tx_wire": 140335923593216,
+          "rx_bf16": 140335934078976
+        },
+        "pending_exchange": false,
+        "native_phase": 0,
+        "device": 7,
+        "stream": 164954416,
+        "peer_memory": false,
+        "send_split_bytes": [
+          1114112,
+          1114112,
+          1114112,
+          1114112,
+          1114112,
+          1114112,
+          1114112,
+          0
+        ],
+        "receive_split_bytes": [
+          1114112,
+          1114112,
+          1114112,
+          1114112,
+          1114112,
+          1114112,
+          1114112,
+          0
+        ],
+        "send_bytes": 7798784,
+        "receive_bytes": 7798784,
+        "synchronization": "fixed_stream_producer_NCCL_work_wait_decode_reuse",
+        "native": {
+          "protocol_version": 2,
+          "initializations": 10,
+          "producer_calls": 10,
+          "decode_calls": 10,
+          "bias_residual_calls": 0,
+          "phase": 0,
+          "failed": false,
+          "bound_k": 2048,
+          "reconfigure_calls": 0,
+          "workspace_bytes": 22283008
+        }
+      }
+    }
+  },
+  "probe_stream": 164954416,
+  "default_stream": 0
+}

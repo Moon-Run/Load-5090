@@ -1,0 +1,8 @@
+{
+  "completed": true,
+  "arms": {
+    "a": true,
+    "flux-basic": true,
+    "flux-basic-interleaved": true
+  }
+}

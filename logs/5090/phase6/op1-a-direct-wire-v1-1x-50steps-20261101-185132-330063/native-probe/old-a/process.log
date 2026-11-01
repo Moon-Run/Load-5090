@@ -1,0 +1,10 @@
+COMMAND ['/workspace/venvs/tempname-5090/bin/python', '-m', 'torch.distributed.run', '--standalone', '--nproc-per-node=8', '--max-restarts=0', '/workspace/TempName-New/tools/5090/phase6/op1_a_probe.py', '--build', '/workspace/Load-5090/logs/5090/phase6/op1-a-direct-wire-v1-1x-50steps-20261101-185132-330063/build', '--variant', 'old-a', '--out', '/workspace/Load-5090/logs/5090/phase6/op1-a-direct-wire-v1-1x-50steps-20261101-185132-330063/native-probe/old-a', '--execute']
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+NCCL version 2.27.3+cuda12.9
