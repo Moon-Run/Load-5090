@@ -1,5 +1,6 @@
 {
   "protocol": "rtx5090-phase6-op1-abc-staged-v1",
-  "status": "running",
-  "stage": "compile-op1-abc-build"
+  "status": "failed",
+  "stage": "smoke-flux-basic-interleaved",
+  "error": "ValueError: Missing per-module ABC transport evidence"
 }

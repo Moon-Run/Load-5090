@@ -5,3 +5,34 @@ STAGE verify-baseline-reference
 STAGE prepare-op1-abc-build
 STAGE compile-op1-abc-build
 Compile RTX5090 OP1 variant: a
+Compile RTX5090 OP1 variant: flux-basic-interleaved
+STAGE prepare-workers
+STAGE native-reference-wire-and-mapping-probes
+NATIVE PROBE flux-basic-interleaved
+NATIVE PROBE flux-basic-arrival
+NATIVE PROBE flux-basic-selective
+NATIVE PROBE flux-improved
+STAGE smoke-flux-basic-interleaved
+Traceback (most recent call last):
+  File "/workspace/TempName-New/tools/5090/phase6/op1_abc.py", line 405, in <module>
+    main()
+  File "/workspace/TempName-New/tools/5090/phase6/op1_abc.py", line 367, in main
+    return supervise(args)
+           ^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op1_abc.py", line 301, in supervise
+    rows = window(root, job, plan, workers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op1_abc.py", line 96, in window
+    rows = validation.validate_rows([read(directory/f'rank{rank}.json') for rank in range(8)],
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op1_abc_validation.py", line 100, in validate_rows
+    rows = shared.validate_rows(rows, job, plan, worker)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op1_abc_validation.py", line 85, in validate_rows
+    module = ModuleType('rtx5090_op1_abc_shared_validation')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op1_abc_validation.py", line 62, in validate_transport
+    require(set(states) == names, 'Missing per-module ABC transport evidence')
+  File "/workspace/TempName-New/tools/5090/phase6/baseline_protocol.py", line 37, in require
+    raise ValueError(message)
+ValueError: Missing per-module ABC transport evidence

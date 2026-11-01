@@ -1,0 +1,85 @@
+{
+  "protocol": "rtx5090-op1-abc-distributed-probe-v1",
+  "completed": true,
+  "arms": {
+    "flux-basic-interleaved": {
+      "completed": true,
+      "arm": "flux-basic-interleaved",
+      "protocol": "rtx5090-op1-abc-distributed-probe-v1",
+      "directed_links": 56,
+      "actual_sorted_gemm_mapping_passed": true,
+      "performance_measured": false
+    },
+    "flux-basic-arrival": {
+      "completed": true,
+      "arm": "flux-basic-arrival",
+      "protocol": "rtx5090-op1-abc-distributed-probe-v1",
+      "directed_links": 56,
+      "actual_sorted_gemm_mapping_passed": true,
+      "performance_measured": false
+    },
+    "flux-basic-selective": {
+      "completed": true,
+      "arm": "flux-basic-selective",
+      "protocol": "rtx5090-op1-abc-distributed-probe-v1",
+      "directed_links": 56,
+      "actual_sorted_gemm_mapping_passed": true,
+      "performance_measured": false
+    },
+    "flux-improved": {
+      "protocol": "rtx5090-flux-four-native-smoke-v1",
+      "transport_protocol": "rtx5090-nccl-staged-v2",
+      "completed": true,
+      "arm": "c",
+      "build_manifest_sha256": "731116f4b9cdb52c5573541ecbbc575c15382b32cbaed00e7e8b5a3495b7cbad",
+      "gpu_validated": true,
+      "performance_measured": false,
+      "rank_records": {
+        "rank0.json": "c635bb0e8297050554fb03bde97a2e16a9e74e3374a072ccb0f9319dc48f9a08",
+        "rank1.json": "11046c1bcd16b3b300b923d95ef3f5dd4a49e6e5142096a9254178b960ea3bcc",
+        "rank2.json": "31ee877540fddbe025e4e03cc30e397fb326927b7ea8fe788797a3dbd7bb19d6",
+        "rank3.json": "48500fc930fdabff4afcc5283d83f4d917269250d3f7f826d8d724c676c27ff6",
+        "rank4.json": "c5542cb8da71f5d3236ed02c3763c3b341d3a76e2377fddacb923d464d785aa0",
+        "rank5.json": "7cabadf32c14eab25cae66e7b99bce3ad0073aa12fea8effcc3f3343a95fdac7",
+        "rank6.json": "9deec5d88d5d404f09eb2780a35affa2874f307e8413778547eff89fb09682dd",
+        "rank7.json": "2ffdc2a6cadbb85ed713985d42b5d275b1a1008b005cdbd6281f912bfdb9db76"
+      }
+    }
+  },
+  "arrival_packet_output_bitwise": true,
+  "build_manifest_sha256": "731116f4b9cdb52c5573541ecbbc575c15382b32cbaed00e7e8b5a3495b7cbad",
+  "evidence_files": {
+    "flux-basic-interleaved/rank0.json": "afbd8301a0df8aa5404f2e6cef4c6358b571ccef2f8ef5b4350c1bf258ee1838",
+    "flux-basic-interleaved/rank1.json": "57bc03d0b3b802bf086e22cb45227366249c8f65523850e5455d5fea8044ef19",
+    "flux-basic-interleaved/rank2.json": "d10cd4e458a69c2fb385997279885bf6b019d12047fe214952bfbf96550f85df",
+    "flux-basic-interleaved/rank3.json": "6d9dd68170cc9b34d04cb305dbf36d6dc49d51fbe1e1a3e8f4bab9c88963fba1",
+    "flux-basic-interleaved/rank4.json": "d4b07f48d6a35c7be168fee11328d02244158b773d4c0f4ab677b2651939dd6e",
+    "flux-basic-interleaved/rank5.json": "07224e172586051bafcb174cba252b82796fda89bb73c161065c3418a343a2fe",
+    "flux-basic-interleaved/rank6.json": "e3921441c5e584f9bfa4064246209d93ec8344d5f5272a566804734e762e6a5f",
+    "flux-basic-interleaved/rank7.json": "b7dfa5b88bff50c1a58743796bbc1d98c1bb8222e5b8cee203a3aec07d328346",
+    "flux-basic-arrival/rank0.json": "fabaa83565b17f4717694b456b15783018b757a18a47931266e982c3546a13d6",
+    "flux-basic-arrival/rank1.json": "d75021e4a3555b5c16c983ffd962cc9a3e443e40f5a452671df00f17337969fa",
+    "flux-basic-arrival/rank2.json": "e54deed65825f636c55099625ffa082d9d990c140c6e9a56328fd2a5a269aba4",
+    "flux-basic-arrival/rank3.json": "4684d7d1759bcad69dd65fb927157ea3c63132a2585fee8f2a396f31ef19d63e",
+    "flux-basic-arrival/rank4.json": "508a54344eca7af2f33c33c166a920ed67d697ec54564826e40359c2c349b7b2",
+    "flux-basic-arrival/rank5.json": "63137027180a972cb8a0d048bdcd2db4be13040effb39df99e0c2cd1e7750212",
+    "flux-basic-arrival/rank6.json": "b055d6a2ce690b60da3a062cf95de8177850c164348316fd1094bfaa8dd762be",
+    "flux-basic-arrival/rank7.json": "22ec10d864eb2494b5b1901594d008e6920a81bf900502b89d5145dd863ffa67",
+    "flux-basic-selective/rank0.json": "f0e871b9d20699838cab71de7808b7b3e93c6f70219145687c6b39d43f8de8d1",
+    "flux-basic-selective/rank1.json": "09a0a1d7e3ca002fca861ba7ad6cb2e230118b8c4e6f06f0471a80de87a8f6b4",
+    "flux-basic-selective/rank2.json": "9f514748a6983ec4f4bf52bbc9e0adbda59af099aed1c913c6e41420851120a7",
+    "flux-basic-selective/rank3.json": "a9ad493785325cb61cba2866279b05afe578d53ec83a653360f7d2de612ec01d",
+    "flux-basic-selective/rank4.json": "96e057b2be1b03898301d326f383436d95d1c6d55fb5af4e6061c25e3a8ab912",
+    "flux-basic-selective/rank5.json": "d62f03af769a7d2ea3d99f026beb5211b81eeae15daf8f65dd24c65198d86a1a",
+    "flux-basic-selective/rank6.json": "02c71f355a0e2846ec943159cc03bb33696ce5ec737e8979638eb111bf0bae58",
+    "flux-basic-selective/rank7.json": "f1c331dd51e27353331aa219e8cacd014b4c858ed243b2a2069e06f499129e2e",
+    "flux-improved/rank0.json": "c635bb0e8297050554fb03bde97a2e16a9e74e3374a072ccb0f9319dc48f9a08",
+    "flux-improved/rank1.json": "11046c1bcd16b3b300b923d95ef3f5dd4a49e6e5142096a9254178b960ea3bcc",
+    "flux-improved/rank2.json": "31ee877540fddbe025e4e03cc30e397fb326927b7ea8fe788797a3dbd7bb19d6",
+    "flux-improved/rank3.json": "48500fc930fdabff4afcc5283d83f4d917269250d3f7f826d8d724c676c27ff6",
+    "flux-improved/rank4.json": "c5542cb8da71f5d3236ed02c3763c3b341d3a76e2377fddacb923d464d785aa0",
+    "flux-improved/rank5.json": "7cabadf32c14eab25cae66e7b99bce3ad0073aa12fea8effcc3f3343a95fdac7",
+    "flux-improved/rank6.json": "9deec5d88d5d404f09eb2780a35affa2874f307e8413778547eff89fb09682dd",
+    "flux-improved/rank7.json": "2ffdc2a6cadbb85ed713985d42b5d275b1a1008b005cdbd6281f912bfdb9db76"
+  }
+}

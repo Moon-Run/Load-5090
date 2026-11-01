@@ -1,9 +1,0 @@
-{
-  "completed": true,
-  "arms": {
-    "flux-improved": true,
-    "flux-fused": true,
-    "flux-basic": true,
-    "flux-bf16": true
-  }
-}

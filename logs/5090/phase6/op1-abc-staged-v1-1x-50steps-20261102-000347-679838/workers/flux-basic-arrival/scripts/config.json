@@ -1,0 +1,150 @@
+{
+  "megatron_commit": "3ea68ad6042cc1204386ae9364358f7c4de1bc37",
+  "policies": [
+    "flux-basic-arrival"
+  ],
+  "orders": [],
+  "cases": [
+    {
+      "name": "rtx5090-phase6",
+      "hidden": 4096,
+      "ffn": 16384,
+      "heads": 32,
+      "sequence": 2048,
+      "tp": 8,
+      "dp": 1
+    }
+  ],
+  "common": {
+    "layers": 32,
+    "micro_batch": 1,
+    "global_batch": 4,
+    "seed": 1234,
+    "token_seed": 4321,
+    "vocab": 32768
+  },
+  "warmup_steps": 10,
+  "timed_steps": 50,
+  "smoke_warmup_steps": 2,
+  "smoke_steps": 3,
+  "profile_steps": 1,
+  "repetitions": 1,
+  "ring_reduction": true,
+  "scope": "RTX5090 ABC direct H128 packets and completed-chunk decode; deterministic sparse tail mask",
+  "protocol": "rtx5090-phase6-op1-abc-staged-v1",
+  "transport": "rtx5090-nccl-staged-v2",
+  "scope_definition": {
+    "policy": "flux-basic-arrival",
+    "family": "flux_tensor",
+    "scope": "attn_mlp",
+    "roles": [
+      "attn",
+      "mlp"
+    ],
+    "implementation": "rtx5090-flux-basic-arrival-v1",
+    "workspace": "tensor",
+    "output_clone": false,
+    "base": "original",
+    "order": "interleaved",
+    "arrival": true,
+    "interleaved": true,
+    "quantization": "all_remote",
+    "experiment": {
+      "protocol": "rtx5090-phase6-op1-abc-staged-v1",
+      "original_arm": "flux-basic",
+      "producer": "flux-gemmonly-sm89-v2",
+      "gemm_schedule": "StreamkSK-with-CTA-interleave",
+      "may_change_streamk_reduction_assignment": true,
+      "quantization": "all_remote",
+      "interleaved": true,
+      "arrival": true,
+      "selective": false,
+      "calibration_used": false,
+      "cta_order": "rank-rotated-destination-interleaved",
+      "decoder": "basic-ring-bf16-h128-direct-v1",
+      "collective": "NCCL-byte-AllToAll",
+      "chunks": 4,
+      "owns_configuration": true,
+      "owns_output": true,
+      "packet_layout": "H128-AoS-136-or-BF16-256",
+      "original_peer_overlap_preserved": false,
+      "arrival_scope": "completed-row-chunk"
+    }
+  },
+  "arm": "flux-basic-arrival",
+  "graph_forward": false,
+  "double_buffered": false,
+  "role_plan_sha256": {
+    "flux-basic-arrival": {
+      "attn": null,
+      "mlp": null
+    }
+  },
+  "communication": {
+    "environment": {
+      "NCCL_VERSION": "2.27.3",
+      "TORCH_NCCL_USE_COMM_NONBLOCKING": "0",
+      "NCCL_NVLS_ENABLE": "0",
+      "NCCL_DEBUG": "WARN",
+      "TORCH_NCCL_ASYNC_ERROR_HANDLING": "1",
+      "NCCL_P2P_DISABLE": "1",
+      "NCCL_SHM_DISABLE": "0"
+    },
+    "config_files": {
+      "/etc/nccl.conf": null,
+      "/root/.nccl.conf": null
+    },
+    "nvls_request": "0"
+  },
+  "codec_identity": {
+    "implementation": "rtx5090-op1-abc-direct-h128-v1",
+    "source_sha256": "2d23fa766a287c77c7577d1a7b6ed8a3168c689c08aa4b97447a3e22acd52fe1",
+    "reference_sha256": "1a6f8e4ef7a7a20b1709d2a91eeed55832c0cf7d73f351b4dc6e8f152be60b5b",
+    "cuda_source_identity": {
+      "protocol": "rtx5090-op1-abc-direct-h128-v1",
+      "upstream": {
+        "baseline_upstream/LICENSE.txt": "36e053d82c9ff1384a1045bb4cda1f5b569aa6a0e2faa1f9a42e16eb4c13ac78",
+        "baseline_upstream/provenance.json": "ed3ffb67ca7cd7045b796ff9a21e880a8de0b62b1937a1283471892cb2a7a107",
+        "baseline_upstream/taco.cu": "15a9fa3b41f59333c03170a886d1c5d596415cebbc3642447cfcfdd93dffad8e",
+        "baseline_upstream/taco_RS.config": "c5bef55bf028d4e9e4b11b3b580f0214b7d724105e385c9d1f0bb2f47b51f24d",
+        "baseline_codec.cu": "cea609bbefd96135aa4bd08a7db7bb8722880c8f382fa29dc979b42ec054efb9",
+        "basic_quant_receiver.cuh": "bde1ff6b18ab1362d0dccdc2cd7c09cef8f652edfb8bf728f91088468875c3dc"
+      },
+      "source_sha256": {
+        "baseline_codec.cu": "cea609bbefd96135aa4bd08a7db7bb8722880c8f382fa29dc979b42ec054efb9",
+        "basic_quant_receiver.cuh": "bde1ff6b18ab1362d0dccdc2cd7c09cef8f652edfb8bf728f91088468875c3dc",
+        "upstream_kernels.cuh": "0a41c055da37cdcd8890efc7158ff7b9d1944c7aad67413bb34780c522fb5689",
+        "op1_abc_encoder.cuh": "d3c3771af98a80f5f25db42c4f7b722dce8b13d563ebf3625181bbbd2bf8f100",
+        "op1_abc_codec.cu": "fa0eee8d354b1c1efaa023acb1b78df8a375345cbfb6e9455457af2c8d5fb952",
+        "op1_abc.cu": "ea85ab8dad1603fbd0d1299abac78649fe286a649c14e003cc4ad268704323a5"
+      },
+      "recipe_sha256": "fa5c88fb8e047ee2648ee26457d302bee7d2a40a83f634ae9275fd77072078ae"
+    },
+    "receiver_implementation": "basic-ring-bf16-h128-direct-v1"
+  },
+  "codec_library": {
+    "path": "/workspace/Load-5090/logs/5090/phase6/op1-abc-staged-v1-1x-50steps-20261102-000347-679838/build/codec/libop1_abc.so",
+    "sha256": "ed0e6b6e0311ccce8fb22906375064ef9de7cf53b041ef834c73e0dff5c17f84"
+  },
+  "op1_abc_implementation": {
+    "protocol": "rtx5090-phase6-op1-abc-staged-v1",
+    "original_arm": "flux-basic",
+    "producer": "flux-gemmonly-sm89-v2",
+    "gemm_schedule": "StreamkSK-with-CTA-interleave",
+    "may_change_streamk_reduction_assignment": true,
+    "quantization": "all_remote",
+    "interleaved": true,
+    "arrival": true,
+    "selective": false,
+    "calibration_used": false,
+    "cta_order": "rank-rotated-destination-interleaved",
+    "decoder": "basic-ring-bf16-h128-direct-v1",
+    "collective": "NCCL-byte-AllToAll",
+    "chunks": 4,
+    "owns_configuration": true,
+    "owns_output": true,
+    "packet_layout": "H128-AoS-136-or-BF16-256",
+    "original_peer_overlap_preserved": false,
+    "arrival_scope": "completed-row-chunk"
+  }
+}
