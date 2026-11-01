@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/workspace/venvs/tempname-5090/bin/python",
+    "-m",
+    "torch.distributed.run",
+    "--standalone",
+    "--nproc-per-node=8",
+    "--max-restarts=0",
+    "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py",
+    "--build",
+    "/workspace/Load-5090/logs/5090/phase6/flux-quant-four-arm-v1-1x-50steps-20261101-201716-772182/build",
+    "--arm",
+    "c",
+    "--out",
+    "/workspace/Load-5090/logs/5090/phase6/flux-quant-four-arm-v1-1x-50steps-20261101-203719-996417/native-probe/flux-improved",
+    "--execute"
+  ]
+}
