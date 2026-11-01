@@ -1,0 +1,7 @@
+STAGE worker-source-preflight
+STAGE hardware-preflight
+STAGE verify-comparator-build
+STAGE verify-baseline-reference
+STAGE prepare-op1-abc-build
+STAGE compile-op1-abc-build
+Compile RTX5090 OP1 variant: a

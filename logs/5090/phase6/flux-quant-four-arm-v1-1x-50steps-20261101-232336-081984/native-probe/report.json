@@ -1,0 +1,43 @@
+{
+  "completed": true,
+  "arms": {
+    "flux-improved": {
+      "protocol": "rtx5090-flux-four-native-smoke-v1",
+      "transport_protocol": "rtx5090-nccl-staged-v2",
+      "completed": true,
+      "arm": "c",
+      "build_manifest_sha256": "c92aa10c81d3772453d489456b1d94f5b61f884658fd961937a8c373ccc82816",
+      "gpu_validated": true,
+      "performance_measured": false,
+      "rank_records": {
+        "rank0.json": "4c86b9b367be8d8bd0af439ebae05c8a5ecf8ef01e0336924ea2891796d43233",
+        "rank1.json": "fbbde1a2512910192aca8a8b26694af777113c218e3fac2bce88f32b66b89b00",
+        "rank2.json": "279c93c6547959ce52b62e463e868dfd5eedc5be97a81068dce321de9b5f7d70",
+        "rank3.json": "e7ca5fbedac27af78611b6acabe0c71e31f353167ed297d0522ec5c97323cff7",
+        "rank4.json": "e8446e5bb3badf3b7f9d36057a9ce6536f180c5cf60e8f7f6a2c8f641199f2e0",
+        "rank5.json": "860fa3928944b8aa306fdd26903f94d7bddce4ddf781be54677267bbd118ee64",
+        "rank6.json": "d360b3460257049311d999d2bf2600ec70de70573fc0c95dc4e8d1db8371595f",
+        "rank7.json": "e690580f1f33aabb066c2c33165bf214810a08be32e4e95162f0f19e0e4416bf"
+      }
+    },
+    "flux-fused": {
+      "protocol": "rtx5090-flux-four-native-smoke-v1",
+      "transport_protocol": "rtx5090-nccl-staged-v2",
+      "completed": true,
+      "arm": "a",
+      "build_manifest_sha256": "c92aa10c81d3772453d489456b1d94f5b61f884658fd961937a8c373ccc82816",
+      "gpu_validated": true,
+      "performance_measured": false,
+      "rank_records": {
+        "rank0.json": "1484a588fbbb1916625f5e12b16a64a4155df3fdc411d7b6a66a5c26cef95295",
+        "rank1.json": "d7b3292f99f10c7da629c4565232b6fc0d5dfa0feaaffa6d0746f7a5ffcf51e3",
+        "rank2.json": "ee6eeed8467edc004d5c8cafbd6aea9cc9a07f2788bcd20a6c2291b6f1ca13c7",
+        "rank3.json": "ca0c76472738ad7eb58885cccd0672c57b10142fe0b1136e39689a42e9097eba",
+        "rank4.json": "5c27f5d7cb5f11f99fbf8ef4a4057ba5467765afdf46a8307e6ca38c96acb605",
+        "rank5.json": "c6d83eca0cc1fcf99bfcbcf54da1cd67d0bbce2f37d588fcbd5c5e6e74fd397a",
+        "rank6.json": "09e350b01605068416d0ee51056ba1bfe4e45ecb564684eeacfb8a7b83b2dce7",
+        "rank7.json": "476e2c49ee1b4dd192b9e3d4917054cb75e09a5ed3376e9cfd2c85e0b2791e8a"
+      }
+    }
+  }
+}

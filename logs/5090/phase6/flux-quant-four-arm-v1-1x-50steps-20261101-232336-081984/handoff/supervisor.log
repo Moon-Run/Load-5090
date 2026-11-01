@@ -1,0 +1,34 @@
+STAGE worker-source-preflight
+STAGE hardware-preflight
+STAGE verify-flux_four-build
+STAGE prepare-workers
+STAGE native-reference-wire-and-mapping-probes
+NATIVE PROBE flux-improved
+NATIVE PROBE flux-fused
+STAGE smoke-flux-improved
+STAGE smoke-flux-fused
+STAGE smoke-flux-basic
+STAGE smoke-flux-bf16
+STAGE profile-flux-improved
+STAGE profile-flux-fused
+STAGE profile-flux-basic
+STAGE profile-flux-bf16
+STAGE compare1/block00-flux-bf16
+STAGE compare1/block00-flux-improved
+STAGE compare1/block00-flux-basic
+STAGE compare1/block00-flux-fused
+STAGE compare1/block01-flux-improved
+STAGE compare1/block01-flux-fused
+STAGE compare1/block01-flux-bf16
+STAGE compare1/block01-flux-basic
+STAGE compare1/block02-flux-basic
+STAGE compare1/block02-flux-bf16
+STAGE compare1/block02-flux-fused
+STAGE compare1/block02-flux-improved
+STAGE compare1/block03-flux-basic
+STAGE compare1/block03-flux-bf16
+STAGE compare1/block03-flux-fused
+STAGE compare1/block03-flux-improved
+STAGE compare1/block04-flux-bf16
+STAGE compare1/block04-flux-improved
+STAGE compare1/block04-flux-basic
