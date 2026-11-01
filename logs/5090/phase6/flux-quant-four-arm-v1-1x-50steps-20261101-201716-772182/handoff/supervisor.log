@@ -1,0 +1,26 @@
+STAGE worker-source-preflight
+STAGE hardware-preflight
+STAGE verify-build
+STAGE prepare-flux_four-build
+STAGE compile-flux_four-build
+Compile RTX5090 Flux baseline variant: a
+Compile RTX5090 Flux baseline variant: c
+STAGE prepare-workers
+STAGE native-reference-wire-and-mapping-probes
+NATIVE PROBE flux-improved
+LOCAL TRANSPORT FAILURE rank0,rank1,rank2,rank3,rank4,rank5,rank6,rank7: RuntimeError: All-remote instances have unexpected masks
+Traceback (most recent call last):
+  File "/workspace/TempName-New/tools/5090/phase6/flux_baseline.py", line 436, in <module>
+    main()
+  File "/workspace/TempName-New/tools/5090/phase6/flux_baseline.py", line 398, in main
+    return supervise(args)
+           ^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/flux_baseline.py", line 304, in supervise
+    native_checks(args, build, plan)
+  File "/workspace/TempName-New/tools/5090/phase6/flux_baseline.py", line 173, in native_checks
+    run_process(command, REPO, env, dest/'process.log', max(900, args.worker_timeout), base.Peer())
+  File "/workspace/TempName-New/tools/h100/phase6/tp8_dp2_train.py", line 104, in run_process
+    require(process.returncode==0,f'Child exited {process.returncode}; see {log}')
+  File "/workspace/TempName-New/tools/h100/phase6/tp8_dp2_protocol.py", line 24, in require
+    raise ValueError(message)
+ValueError: Child exited 1; see /workspace/Load-5090/logs/5090/phase6/flux-quant-four-arm-v1-1x-50steps-20261101-201716-772182/native-probe/flux-improved/process.log

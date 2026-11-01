@@ -1,0 +1,6 @@
+{
+  "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+  "status": "failed",
+  "stage": "native-reference-wire-and-mapping-probes",
+  "error": "ValueError: Child exited 1; see /workspace/Load-5090/logs/5090/phase6/flux-quant-four-arm-v1-1x-50steps-20261101-200546-250921/native-probe/flux-improved/process.log"
+}

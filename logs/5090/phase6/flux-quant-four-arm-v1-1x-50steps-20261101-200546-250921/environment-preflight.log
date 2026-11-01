@@ -1,0 +1,477 @@
+COMMAND ['/workspace/venvs/tempname-5090/bin/python', '/workspace/TempName-New/tools/5090/phase6/baseline_preflight.py', '--out', '/workspace/Load-5090/logs/5090/phase6/flux-quant-four-arm-v1-1x-50steps-20261101-200546-250921/environment-preflight.json', '--cuda-home', '/usr/local/cuda-12.9', '--build-cuda-home', '/usr/local/cuda-12.9']
+{"memory_observation_stage": "after_cuda_context_initialization_before_apex_probes", "devices": [{"name": "NVIDIA GeForce RTX 5090", "uuid": "8821459f-2e9c-7abe-cb19-0f34795e52c2", "capability": [12, 0], "sm_count": 170, "total_memory_bytes": 33670758400, "cuda_device": 0, "free_memory_bytes": 33134673920, "cuda_total_memory_bytes": 33670758400, "used_memory_bytes": 536084480, "torch_allocated_bytes": 0, "torch_reserved_bytes": 0}, {"name": "NVIDIA GeForce RTX 5090", "uuid": "44cfdc76-9dc0-0f1f-cb4f-bc8f4ccfd0da", "capability": [12, 0], "sm_count": 170, "total_memory_bytes": 33670758400, "cuda_device": 1, "free_memory_bytes": 33134673920, "cuda_total_memory_bytes": 33670758400, "used_memory_bytes": 536084480, "torch_allocated_bytes": 0, "torch_reserved_bytes": 0}, {"name": "NVIDIA GeForce RTX 5090", "uuid": "01353343-54aa-25f3-79ef-3ddb242fedc4", "capability": [12, 0], "sm_count": 170, "total_memory_bytes": 33670758400, "cuda_device": 2, "free_memory_bytes": 33134673920, "cuda_total_memory_bytes": 33670758400, "used_memory_bytes": 536084480, "torch_allocated_bytes": 0, "torch_reserved_bytes": 0}, {"name": "NVIDIA GeForce RTX 5090", "uuid": "72c4d907-1d65-2ed5-e856-bb3933631695", "capability": [12, 0], "sm_count": 170, "total_memory_bytes": 33670758400, "cuda_device": 3, "free_memory_bytes": 33134673920, "cuda_total_memory_bytes": 33670758400, "used_memory_bytes": 536084480, "torch_allocated_bytes": 0, "torch_reserved_bytes": 0}, {"name": "NVIDIA GeForce RTX 5090", "uuid": "7ac91b20-519c-8a7d-a983-5ae1d1ac4790", "capability": [12, 0], "sm_count": 170, "total_memory_bytes": 33670758400, "cuda_device": 4, "free_memory_bytes": 33134673920, "cuda_total_memory_bytes": 33670758400, "used_memory_bytes": 536084480, "torch_allocated_bytes": 0, "torch_reserved_bytes": 0}, {"name": "NVIDIA GeForce RTX 5090", "uuid": "1ed6b59b-d882-5cd9-c540-f71177abf326", "capability": [12, 0], "sm_count": 170, "total_memory_bytes": 33670758400, "cuda_device": 5, "free_memory_bytes": 33134673920, "cuda_total_memory_bytes": 33670758400, "used_memory_bytes": 536084480, "torch_allocated_bytes": 0, "torch_reserved_bytes": 0}, {"name": "NVIDIA GeForce RTX 5090", "uuid": "d4e8f72a-044b-a24e-818f-0560f0b97483", "capability": [12, 0], "sm_count": 170, "total_memory_bytes": 33670758400, "cuda_device": 6, "free_memory_bytes": 33134673920, "cuda_total_memory_bytes": 33670758400, "used_memory_bytes": 536084480, "torch_allocated_bytes": 0, "torch_reserved_bytes": 0}, {"name": "NVIDIA GeForce RTX 5090", "uuid": "dbbd3446-128e-286b-1c04-0aa14c474949", "capability": [12, 0], "sm_count": 170, "total_memory_bytes": 33670758400, "cuda_device": 7, "free_memory_bytes": 33134673920, "cuda_total_memory_bytes": 33670758400, "used_memory_bytes": 536084480, "torch_allocated_bytes": 0, "torch_reserved_bytes": 0}]}
+{
+  "completed": false,
+  "environment_probe_passed": true,
+  "collective_probe_passed": false,
+  "build_toolkit": {
+    "root": "/usr/local/cuda-12.9",
+    "version": "12.9",
+    "nvcc": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Tue_May_27_02:21:03_PDT_2025\nCuda compilation tools, release 12.9, V12.9.86\nBuild cuda_12.9.r12.9/compiler.36037853_0"
+  },
+  "runtime_toolkit": {
+    "root": "/usr/local/cuda-12.9",
+    "version": "12.9",
+    "nvcc": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Tue_May_27_02:21:03_PDT_2025\nCuda compilation tools, release 12.9, V12.9.86\nBuild cuda_12.9.r12.9/compiler.36037853_0"
+  },
+  "devices": [
+    {
+      "name": "NVIDIA GeForce RTX 5090",
+      "uuid": "8821459f-2e9c-7abe-cb19-0f34795e52c2",
+      "capability": [
+        12,
+        0
+      ],
+      "sm_count": 170,
+      "total_memory_bytes": 33670758400,
+      "cuda_device": 0,
+      "free_memory_bytes": 33134673920,
+      "cuda_total_memory_bytes": 33670758400,
+      "used_memory_bytes": 536084480,
+      "torch_allocated_bytes": 0,
+      "torch_reserved_bytes": 0
+    },
+    {
+      "name": "NVIDIA GeForce RTX 5090",
+      "uuid": "44cfdc76-9dc0-0f1f-cb4f-bc8f4ccfd0da",
+      "capability": [
+        12,
+        0
+      ],
+      "sm_count": 170,
+      "total_memory_bytes": 33670758400,
+      "cuda_device": 1,
+      "free_memory_bytes": 33134673920,
+      "cuda_total_memory_bytes": 33670758400,
+      "used_memory_bytes": 536084480,
+      "torch_allocated_bytes": 0,
+      "torch_reserved_bytes": 0
+    },
+    {
+      "name": "NVIDIA GeForce RTX 5090",
+      "uuid": "01353343-54aa-25f3-79ef-3ddb242fedc4",
+      "capability": [
+        12,
+        0
+      ],
+      "sm_count": 170,
+      "total_memory_bytes": 33670758400,
+      "cuda_device": 2,
+      "free_memory_bytes": 33134673920,
+      "cuda_total_memory_bytes": 33670758400,
+      "used_memory_bytes": 536084480,
+      "torch_allocated_bytes": 0,
+      "torch_reserved_bytes": 0
+    },
+    {
+      "name": "NVIDIA GeForce RTX 5090",
+      "uuid": "72c4d907-1d65-2ed5-e856-bb3933631695",
+      "capability": [
+        12,
+        0
+      ],
+      "sm_count": 170,
+      "total_memory_bytes": 33670758400,
+      "cuda_device": 3,
+      "free_memory_bytes": 33134673920,
+      "cuda_total_memory_bytes": 33670758400,
+      "used_memory_bytes": 536084480,
+      "torch_allocated_bytes": 0,
+      "torch_reserved_bytes": 0
+    },
+    {
+      "name": "NVIDIA GeForce RTX 5090",
+      "uuid": "7ac91b20-519c-8a7d-a983-5ae1d1ac4790",
+      "capability": [
+        12,
+        0
+      ],
+      "sm_count": 170,
+      "total_memory_bytes": 33670758400,
+      "cuda_device": 4,
+      "free_memory_bytes": 33134673920,
+      "cuda_total_memory_bytes": 33670758400,
+      "used_memory_bytes": 536084480,
+      "torch_allocated_bytes": 0,
+      "torch_reserved_bytes": 0
+    },
+    {
+      "name": "NVIDIA GeForce RTX 5090",
+      "uuid": "1ed6b59b-d882-5cd9-c540-f71177abf326",
+      "capability": [
+        12,
+        0
+      ],
+      "sm_count": 170,
+      "total_memory_bytes": 33670758400,
+      "cuda_device": 5,
+      "free_memory_bytes": 33134673920,
+      "cuda_total_memory_bytes": 33670758400,
+      "used_memory_bytes": 536084480,
+      "torch_allocated_bytes": 0,
+      "torch_reserved_bytes": 0
+    },
+    {
+      "name": "NVIDIA GeForce RTX 5090",
+      "uuid": "d4e8f72a-044b-a24e-818f-0560f0b97483",
+      "capability": [
+        12,
+        0
+      ],
+      "sm_count": 170,
+      "total_memory_bytes": 33670758400,
+      "cuda_device": 6,
+      "free_memory_bytes": 33134673920,
+      "cuda_total_memory_bytes": 33670758400,
+      "used_memory_bytes": 536084480,
+      "torch_allocated_bytes": 0,
+      "torch_reserved_bytes": 0
+    },
+    {
+      "name": "NVIDIA GeForce RTX 5090",
+      "uuid": "dbbd3446-128e-286b-1c04-0aa14c474949",
+      "capability": [
+        12,
+        0
+      ],
+      "sm_count": 170,
+      "total_memory_bytes": 33670758400,
+      "cuda_device": 7,
+      "free_memory_bytes": 33134673920,
+      "cuda_total_memory_bytes": 33670758400,
+      "used_memory_bytes": 536084480,
+      "torch_allocated_bytes": 0,
+      "torch_reserved_bytes": 0
+    }
+  ],
+  "memory_observation_stage": "after_cuda_context_initialization_before_apex_probes",
+  "memory_observation_scope": "device-wide point-in-time usage; not an idle or capacity guarantee",
+  "host": "SL3060",
+  "peer_access": [
+    [
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true
+    ]
+  ],
+  "unavailable_peer_links": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      7,
+      0
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      7,
+      3
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      7,
+      5
+    ],
+    [
+      7,
+      6
+    ]
+  ],
+  "peer_access_required": false,
+  "topology": "\t\u001b[4mGPU0\tGPU1\tGPU2\tGPU3\tGPU4\tGPU5\tGPU6\tGPU7\tNIC0\tNIC1\tCPU Affinity\tNUMA Affinity\tGPU NUMA ID\u001b[0m\nGPU0\t X \tNODE\tNODE\tNODE\tSYS\tSYS\tSYS\tSYS\tNODE\tNODE\t0-31,64-95\t0\t\tN/A\nGPU1\tNODE\t X \tNODE\tNODE\tSYS\tSYS\tSYS\tSYS\tNODE\tNODE\t0-31,64-95\t0\t\tN/A\nGPU2\tNODE\tNODE\t X \tNODE\tSYS\tSYS\tSYS\tSYS\tNODE\tNODE\t0-31,64-95\t0\t\tN/A\nGPU3\tNODE\tNODE\tNODE\t X \tSYS\tSYS\tSYS\tSYS\tNODE\tNODE\t0-31,64-95\t0\t\tN/A\nGPU4\tSYS\tSYS\tSYS\tSYS\t X \tNODE\tNODE\tNODE\tSYS\tSYS\t32-63,96-127\t1\t\tN/A\nGPU5\tSYS\tSYS\tSYS\tSYS\tNODE\t X \tNODE\tNODE\tSYS\tSYS\t32-63,96-127\t1\t\tN/A\nGPU6\tSYS\tSYS\tSYS\tSYS\tNODE\tNODE\t X \tNODE\tSYS\tSYS\t32-63,96-127\t1\t\tN/A\nGPU7\tSYS\tSYS\tSYS\tSYS\tNODE\tNODE\tNODE\t X \tSYS\tSYS\t32-63,96-127\t1\t\tN/A\nNIC0\tNODE\tNODE\tNODE\tNODE\tSYS\tSYS\tSYS\tSYS\t X \tPIX\t\t\t\t\nNIC1\tNODE\tNODE\tNODE\tNODE\tSYS\tSYS\tSYS\tSYS\tPIX\t X \t\t\t\t\n\nLegend:\n\n  X    = Self\n  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)\n  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node\n  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)\n  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)\n  PIX  = Connection traversing at most a single PCIe bridge\n  NV#  = Connection traversing a bonded set of # NVLinks\n\nNIC Legend:\n\n  NIC0: mlx5_0\n  NIC1: mlx5_1\n\n",
+  "nvidia_smi": "index, name, uuid, driver_version, memory.total [MiB], memory.free [MiB], memory.used [MiB]\n0, NVIDIA GeForce RTX 5090, GPU-8821459f-2e9c-7abe-cb19-0f34795e52c2, 595.84, 32607 MiB, 31458 MiB, 654 MiB\n1, NVIDIA GeForce RTX 5090, GPU-44cfdc76-9dc0-0f1f-cb4f-bc8f4ccfd0da, 595.84, 32607 MiB, 31458 MiB, 654 MiB\n2, NVIDIA GeForce RTX 5090, GPU-01353343-54aa-25f3-79ef-3ddb242fedc4, 595.84, 32607 MiB, 31458 MiB, 654 MiB\n3, NVIDIA GeForce RTX 5090, GPU-72c4d907-1d65-2ed5-e856-bb3933631695, 595.84, 32607 MiB, 31458 MiB, 654 MiB\n4, NVIDIA GeForce RTX 5090, GPU-7ac91b20-519c-8a7d-a983-5ae1d1ac4790, 595.84, 32607 MiB, 31458 MiB, 654 MiB\n5, NVIDIA GeForce RTX 5090, GPU-1ed6b59b-d882-5cd9-c540-f71177abf326, 595.84, 32607 MiB, 31458 MiB, 654 MiB\n6, NVIDIA GeForce RTX 5090, GPU-d4e8f72a-044b-a24e-818f-0560f0b97483, 595.84, 32607 MiB, 31458 MiB, 654 MiB\n7, NVIDIA GeForce RTX 5090, GPU-dbbd3446-128e-286b-1c04-0aa14c474949, 595.84, 32607 MiB, 31458 MiB, 654 MiB\n",
+  "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+  "environment": {
+    "torch": "2.8.0a0+5228986c39.nv25.06",
+    "cuda": "12.9",
+    "nccl": [
+      2,
+      27,
+      3
+    ],
+    "python": "/workspace/venvs/tempname-5090/bin/python",
+    "python_version": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+    "cxx11_abi": true
+  },
+  "bf16_and_apex_probe_passed": true,
+  "transport": "rtx5090-nccl-staged-v2",
+  "limitation": "Environment/Apex probes alone do not validate distributed communication or native model kernels"
+}

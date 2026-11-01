@@ -1,0 +1,139 @@
+COMMAND ['/workspace/venvs/tempname-5090/bin/python', '-m', 'torch.distributed.run', '--standalone', '--nproc-per-node=8', '--max-restarts=0', '/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py', '--build', '/workspace/Load-5090/logs/5090/phase6/flux-quant-four-arm-v1-1x-50steps-20261101-201716-772182/build', '--arm', 'c', '--out', '/workspace/Load-5090/logs/5090/phase6/flux-quant-four-arm-v1-1x-50steps-20261101-201716-772182/native-probe/flux-improved', '--execute']
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+NCCL version 2.27.3+cuda12.9
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 37, in <module>
+[rank0]:     probe.main()
+[rank0]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 492, in main
+[rank0]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 462, in run
+[rank0]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 352, in role_probe
+[rank0]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 224, in shared_scratch_probe
+[rank0]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 258, in validate_shared_scratch
+[rank0]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 35, in require
+[rank0]:     
+[rank0]: RuntimeError: All-remote instances have unexpected masks
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 37, in <module>
+[rank4]:     probe.main()
+[rank4]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 492, in main
+[rank4]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 462, in run
+[rank4]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 352, in role_probe
+[rank4]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 224, in shared_scratch_probe
+[rank4]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 258, in validate_shared_scratch
+[rank4]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 35, in require
+[rank4]:     
+[rank4]: RuntimeError: All-remote instances have unexpected masks
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 37, in <module>
+[rank3]:     probe.main()
+[rank3]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 492, in main
+[rank3]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 462, in run
+[rank3]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 352, in role_probe
+[rank3]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 224, in shared_scratch_probe
+[rank3]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 258, in validate_shared_scratch
+[rank3]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 35, in require
+[rank3]:     
+[rank3]: RuntimeError: All-remote instances have unexpected masks
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 37, in <module>
+[rank2]:     probe.main()
+[rank2]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 492, in main
+[rank2]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 462, in run
+[rank2]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 352, in role_probe
+[rank2]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 224, in shared_scratch_probe
+[rank2]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 258, in validate_shared_scratch
+[rank2]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 35, in require
+[rank2]:     
+[rank2]: RuntimeError: All-remote instances have unexpected masks
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 37, in <module>
+[rank5]:     probe.main()
+[rank5]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 492, in main
+[rank5]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 462, in run
+[rank5]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 352, in role_probe
+[rank5]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 224, in shared_scratch_probe
+[rank5]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 258, in validate_shared_scratch
+[rank5]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 35, in require
+[rank5]:     
+[rank5]: RuntimeError: All-remote instances have unexpected masks
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 37, in <module>
+[rank7]:     probe.main()
+[rank7]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 492, in main
+[rank7]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 462, in run
+[rank7]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 352, in role_probe
+[rank7]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 224, in shared_scratch_probe
+[rank7]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 258, in validate_shared_scratch
+[rank7]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 35, in require
+[rank7]:     
+[rank7]: RuntimeError: All-remote instances have unexpected masks
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 37, in <module>
+[rank1]:     probe.main()
+[rank1]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 492, in main
+[rank1]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 462, in run
+[rank1]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 352, in role_probe
+[rank1]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 224, in shared_scratch_probe
+[rank1]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 258, in validate_shared_scratch
+[rank1]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 35, in require
+[rank1]:     
+[rank1]: RuntimeError: All-remote instances have unexpected masks
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 37, in <module>
+[rank6]:     probe.main()
+[rank6]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 492, in main
+[rank6]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 462, in run
+[rank6]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 352, in role_probe
+[rank6]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 224, in shared_scratch_probe
+[rank6]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 258, in validate_shared_scratch
+[rank6]:   File "/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py", line 35, in require
+[rank6]:     
+[rank6]: RuntimeError: All-remote instances have unexpected masks
+W1101 12:24:48.058000 711053 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 711073 closing signal SIGTERM
+W1101 12:24:48.061000 711053 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 711074 closing signal SIGTERM
+W1101 12:24:48.063000 711053 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 711076 closing signal SIGTERM
+W1101 12:24:48.066000 711053 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 711077 closing signal SIGTERM
+W1101 12:24:48.068000 711053 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 711078 closing signal SIGTERM
+W1101 12:24:48.070000 711053 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 711079 closing signal SIGTERM
+W1101 12:24:48.072000 711053 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 711080 closing signal SIGTERM
+E1101 12:24:48.752000 711053 torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 1) local_rank: 2 (pid: 711075) of binary: /workspace/venvs/tempname-5090/bin/python
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 896, in <module>
+    main()
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 892, in main
+    run(args)
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 883, in run
+    elastic_launch(
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/launcher/api.py", line 139, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/launcher/api.py", line 270, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/workspace/TempName-New/tools/5090/phase6/flux_baseline_probe.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-11-01_12:24:48
+  host      : SL3060
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 711075)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
