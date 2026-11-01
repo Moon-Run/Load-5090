@@ -1,0 +1,982 @@
+{
+  "protocol": "rtx5090-phase6-op1-abc-staged-v1",
+  "transport": "rtx5090-nccl-staged-v2",
+  "completed": true,
+  "arms": [
+    "flux-basic-interleaved",
+    "flux-basic-arrival",
+    "flux-basic-selective",
+    "flux-improved"
+  ],
+  "definitions": {
+    "flux-basic-interleaved": {
+      "policy": "flux-basic-interleaved",
+      "family": "flux_tensor",
+      "scope": "attn_mlp",
+      "roles": [
+        "attn",
+        "mlp"
+      ],
+      "implementation": "rtx5090-flux-basic-interleaved-v1",
+      "workspace": "tensor",
+      "output_clone": false,
+      "base": "original",
+      "order": "interleaved",
+      "arrival": false,
+      "interleaved": true,
+      "quantization": "all_remote"
+    },
+    "flux-basic-arrival": {
+      "policy": "flux-basic-arrival",
+      "family": "flux_tensor",
+      "scope": "attn_mlp",
+      "roles": [
+        "attn",
+        "mlp"
+      ],
+      "implementation": "rtx5090-flux-basic-arrival-v1",
+      "workspace": "tensor",
+      "output_clone": false,
+      "base": "original",
+      "order": "interleaved",
+      "arrival": true,
+      "interleaved": true,
+      "quantization": "all_remote"
+    },
+    "flux-basic-selective": {
+      "policy": "flux-basic-selective",
+      "family": "flux_tensor",
+      "scope": "attn_mlp",
+      "roles": [
+        "attn",
+        "mlp"
+      ],
+      "implementation": "rtx5090-flux-basic-selective-v1",
+      "workspace": "tensor",
+      "output_clone": false,
+      "base": "original",
+      "order": "interleaved",
+      "arrival": true,
+      "interleaved": true,
+      "quantization": "selective-tail-1/64"
+    },
+    "flux-improved": {
+      "policy": "flux-improved",
+      "family": "candidate",
+      "scope": "attn_mlp",
+      "roles": [
+        "attn",
+        "mlp"
+      ],
+      "implementation": "rtx5090-flux-improved-v1",
+      "workspace": "double",
+      "output_clone": false,
+      "base": "original",
+      "order": "original",
+      "arrival": false,
+      "interleaved": false,
+      "quantization": "all_remote"
+    }
+  },
+  "trials": 1,
+  "blocks": 2,
+  "counterbalanced_order": false,
+  "pairwise_ci_available": false,
+  "model": {
+    "layers": 32,
+    "hidden": 4096,
+    "ffn": 16384,
+    "heads": 32,
+    "sequence": 2048,
+    "micro_batch": 1,
+    "global_batch": 4,
+    "tp": 8,
+    "dp": 1,
+    "sm_count": 170,
+    "seed": 1234,
+    "token_seed": 4321,
+    "vocab": 32768
+  },
+  "timing": {
+    "warmup_steps": 10,
+    "timed_steps": 50,
+    "smoke_warmup_steps": 2,
+    "smoke_steps": 3
+  },
+  "timing_windows": 8,
+  "timing_rank_records": 64,
+  "formal_optimizer_steps": 400,
+  "all_windows_retained": true,
+  "comparisons": {
+    "compare1": {
+      "arms": {
+        "flux-basic-interleaved": {
+          "mean_ms": 966.7383488360792,
+          "median_ms": 966.7383488360792,
+          "min_ms": 966.7231449298561,
+          "max_ms": 966.7535527423024,
+          "tokens_per_second": 8473.854388690483,
+          "reduction_vs_improved_percent": 1.927654358096098,
+          "max_peak_allocated_gib": 18.41277027130127,
+          "max_peak_reserved_gib": 18.609375,
+          "max_native_workspace_gib": 0.0,
+          "max_peak_allocated_plus_taco_workspace_gib": 18.41277027130127
+        },
+        "flux-basic-arrival": {
+          "mean_ms": 1077.6828040275723,
+          "median_ms": 1077.6828040275723,
+          "min_ms": 1071.3817933760583,
+          "max_ms": 1083.9838146790862,
+          "tokens_per_second": 7601.494585776474,
+          "reduction_vs_improved_percent": -9.327286515711886,
+          "max_peak_allocated_gib": 18.448872089385986,
+          "max_peak_reserved_gib": 18.6015625,
+          "max_native_workspace_gib": 0.0,
+          "max_peak_allocated_plus_taco_workspace_gib": 18.448872089385986
+        },
+        "flux-basic-selective": {
+          "mean_ms": 1074.4018385186791,
+          "median_ms": 1074.4018385186791,
+          "min_ms": 1071.8464410118759,
+          "max_ms": 1076.9572360254824,
+          "tokens_per_second": 7624.707726947525,
+          "reduction_vs_improved_percent": -8.994443628270066,
+          "max_peak_allocated_gib": 19.27403688430786,
+          "max_peak_reserved_gib": 19.4296875,
+          "max_native_workspace_gib": 0.0,
+          "max_peak_allocated_plus_taco_workspace_gib": 19.27403688430786
+        },
+        "flux-improved": {
+          "mean_ms": 985.7400090806186,
+          "median_ms": 985.7400090806186,
+          "min_ms": 985.6341885589063,
+          "max_ms": 985.8458296023309,
+          "tokens_per_second": 8310.507765268172,
+          "reduction_vs_improved_percent": 0.0,
+          "max_peak_allocated_gib": 17.67808961868286,
+          "max_peak_reserved_gib": 17.880859375,
+          "max_native_workspace_gib": 2.656341552734375,
+          "max_peak_allocated_plus_taco_workspace_gib": 20.334431171417236
+        }
+      },
+      "pairs": {
+        "flux-basic-interleaved/flux-basic-arrival": {
+          "percent": 10.293189274788194,
+          "ci95": null,
+          "paired_blocks": 2,
+          "faster_blocks": 2
+        },
+        "flux-basic-interleaved/flux-basic-selective": {
+          "percent": 10.02052970579108,
+          "ci95": null,
+          "paired_blocks": 2,
+          "faster_blocks": 2
+        },
+        "flux-basic-interleaved/flux-improved": {
+          "percent": 1.9276538051164582,
+          "ci95": null,
+          "paired_blocks": 2,
+          "faster_blocks": 2
+        },
+        "flux-basic-arrival/flux-basic-selective": {
+          "percent": -0.30394522644698885,
+          "ci95": null,
+          "paired_blocks": 2,
+          "faster_blocks": 1
+        },
+        "flux-basic-arrival/flux-improved": {
+          "percent": -9.325418440409038,
+          "ci95": null,
+          "paired_blocks": 2,
+          "faster_blocks": 0
+        },
+        "flux-basic-selective/flux-improved": {
+          "percent": -8.994135967030115,
+          "ci95": null,
+          "paired_blocks": 2,
+          "faster_blocks": 0
+        }
+      }
+    }
+  },
+  "all_samples": [
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 0,
+      "arm": "flux-basic-selective",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-basic-selective",
+      "ms_per_step": 1076.9572360254824,
+      "peak_allocated_gib": 19.27403688430786,
+      "peak_reserved_gib": 19.4296875,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_taco_workspace_gib": 19.27403688430786
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 1,
+      "arm": "flux-improved",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-improved",
+      "ms_per_step": 985.6341885589063,
+      "peak_allocated_gib": 17.67808961868286,
+      "peak_reserved_gib": 17.880859375,
+      "native_workspace_gib": 2.656341552734375,
+      "peak_allocated_plus_taco_workspace_gib": 20.334431171417236
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 2,
+      "arm": "flux-basic-arrival",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-basic-arrival",
+      "ms_per_step": 1083.9838146790862,
+      "peak_allocated_gib": 18.448872089385986,
+      "peak_reserved_gib": 18.6015625,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_taco_workspace_gib": 18.448872089385986
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 3,
+      "arm": "flux-basic-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-basic-interleaved",
+      "ms_per_step": 966.7535527423024,
+      "peak_allocated_gib": 18.41277027130127,
+      "peak_reserved_gib": 18.609375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_taco_workspace_gib": 18.41277027130127
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 4,
+      "arm": "flux-basic-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-basic-interleaved",
+      "ms_per_step": 966.7231449298561,
+      "peak_allocated_gib": 18.41277027130127,
+      "peak_reserved_gib": 18.609375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_taco_workspace_gib": 18.41277027130127
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 5,
+      "arm": "flux-basic-arrival",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-basic-arrival",
+      "ms_per_step": 1071.3817933760583,
+      "peak_allocated_gib": 18.448872089385986,
+      "peak_reserved_gib": 18.6015625,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_taco_workspace_gib": 18.448872089385986
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 6,
+      "arm": "flux-improved",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-improved",
+      "ms_per_step": 985.8458296023309,
+      "peak_allocated_gib": 17.67808961868286,
+      "peak_reserved_gib": 17.880859375,
+      "native_workspace_gib": 2.656341552734375,
+      "peak_allocated_plus_taco_workspace_gib": 20.334431171417236
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 7,
+      "arm": "flux-basic-selective",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-basic-selective",
+      "ms_per_step": 1071.8464410118759,
+      "peak_allocated_gib": 19.27403688430786,
+      "peak_reserved_gib": 19.4296875,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_taco_workspace_gib": 19.27403688430786
+    }
+  ],
+  "numerical_equivalence_required": false,
+  "reduction_changes_allowed": true,
+  "original_peer_overlap_preserved": false,
+  "limitation": "Fixed single-node RTX5090 TP8 workload. A exchanges one complete packet; B/C exchange four output-row waves and enqueue each decoder after its NCCL completion event. GEMM completes before communication; no original cross-GPU tile-arrival overlap. C quantizes a deterministic last 1/64 of groups and keeps the remainder BF16, without measured 5090 arrival calibration. Flux improved retains the separately documented original-order fused implementation. GEMM, codec, decoder, transport and rounding can differ; gains are end-to-end combinations. No historical pooling or filtering of negative gains. The 2-block short run does not complete the balanced ordering cycle; paired point estimates only, without confidence intervals.",
+  "run_id": "5f811d649c674478b5d803c8c0378c1e",
+  "correctness_passed": true,
+  "execution_path_validated": true,
+  "numerical_comparisons": {
+    "flux-basic-interleaved/flux-basic-arrival": {
+      "paired_windows": 4,
+      "all_trajectories_identical": true,
+      "final_parameters_identical_windows": 4,
+      "max_loss_abs_difference": 0.0,
+      "max_loss_relative_difference": 0.0,
+      "max_grad_norm_abs_difference": 0.0,
+      "max_grad_norm_relative_difference": 0.0,
+      "windows": [
+        {
+          "trial": 0,
+          "block": -1,
+          "mode": "profile",
+          "max_loss_abs_difference": 0.0,
+          "max_loss_relative_difference": 0.0,
+          "max_grad_norm_abs_difference": 0.0,
+          "max_grad_norm_relative_difference": 0.0,
+          "final_parameters_identical": true,
+          "trajectory_identical": true
+        },
+        {
+          "trial": 0,
+          "block": -1,
+          "mode": "smoke",
+          "max_loss_abs_difference": 0.0,
+          "max_loss_relative_difference": 0.0,
+          "max_grad_norm_abs_difference": 0.0,
+          "max_grad_norm_relative_difference": 0.0,
+          "final_parameters_identical": true,
+          "trajectory_identical": true,
+          "smoke_projection_outputs_identical": true,
+          "smoke_parameter_trajectory_identical": true
+        },
+        {
+          "trial": 1,
+          "block": 0,
+          "mode": "timing",
+          "max_loss_abs_difference": 0.0,
+          "max_loss_relative_difference": 0.0,
+          "max_grad_norm_abs_difference": 0.0,
+          "max_grad_norm_relative_difference": 0.0,
+          "final_parameters_identical": true,
+          "trajectory_identical": true
+        },
+        {
+          "trial": 1,
+          "block": 1,
+          "mode": "timing",
+          "max_loss_abs_difference": 0.0,
+          "max_loss_relative_difference": 0.0,
+          "max_grad_norm_abs_difference": 0.0,
+          "max_grad_norm_relative_difference": 0.0,
+          "final_parameters_identical": true,
+          "trajectory_identical": true
+        }
+      ],
+      "equivalence_required": false,
+      "reduction_changes_allowed": true
+    },
+    "flux-basic-interleaved/flux-basic-selective": {
+      "paired_windows": 4,
+      "all_trajectories_identical": false,
+      "final_parameters_identical_windows": 0,
+      "max_loss_abs_difference": 1.6673240661621094,
+      "max_loss_relative_difference": 4.171730719575192,
+      "max_grad_norm_abs_difference": 11.912910305317153,
+      "max_grad_norm_relative_difference": 12.292467770671525,
+      "windows": [
+        {
+          "trial": 0,
+          "block": -1,
+          "mode": "profile",
+          "max_loss_abs_difference": 0.001873016357421875,
+          "max_loss_relative_difference": 0.0002108143918820573,
+          "max_grad_norm_abs_difference": 0.00011329136458781974,
+          "max_grad_norm_relative_difference": 0.0004368238910292557,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        },
+        {
+          "trial": 0,
+          "block": -1,
+          "mode": "smoke",
+          "max_loss_abs_difference": 0.006701469421386719,
+          "max_loss_relative_difference": 0.0006639073546398488,
+          "max_grad_norm_abs_difference": 0.33858224303839446,
+          "max_grad_norm_relative_difference": 0.05752478265402186,
+          "final_parameters_identical": false,
+          "trajectory_identical": false,
+          "smoke_projection_outputs_identical": false,
+          "smoke_parameter_trajectory_identical": false
+        },
+        {
+          "trial": 1,
+          "block": 0,
+          "mode": "timing",
+          "max_loss_abs_difference": 1.6673240661621094,
+          "max_loss_relative_difference": 4.171730719575192,
+          "max_grad_norm_abs_difference": 11.912910305317153,
+          "max_grad_norm_relative_difference": 12.292467770671525,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        },
+        {
+          "trial": 1,
+          "block": 1,
+          "mode": "timing",
+          "max_loss_abs_difference": 1.6673240661621094,
+          "max_loss_relative_difference": 4.171730719575192,
+          "max_grad_norm_abs_difference": 11.912910305317153,
+          "max_grad_norm_relative_difference": 12.292467770671525,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        }
+      ],
+      "equivalence_required": false,
+      "reduction_changes_allowed": true
+    },
+    "flux-basic-interleaved/flux-improved": {
+      "paired_windows": 4,
+      "all_trajectories_identical": false,
+      "final_parameters_identical_windows": 0,
+      "max_loss_abs_difference": 4.251189231872559,
+      "max_loss_relative_difference": 11.583094694080799,
+      "max_grad_norm_abs_difference": 56.269137883737315,
+      "max_grad_norm_relative_difference": 35.99187180289652,
+      "windows": [
+        {
+          "trial": 0,
+          "block": -1,
+          "mode": "profile",
+          "max_loss_abs_difference": 0.0023908615112304688,
+          "max_loss_relative_difference": 0.00026908395000641315,
+          "max_grad_norm_abs_difference": 0.00026133354927682095,
+          "max_grad_norm_relative_difference": 0.0010061850785881496,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        },
+        {
+          "trial": 0,
+          "block": -1,
+          "mode": "smoke",
+          "max_loss_abs_difference": 0.007282257080078125,
+          "max_loss_relative_difference": 0.0007459065010694322,
+          "max_grad_norm_abs_difference": 0.2238683484521342,
+          "max_grad_norm_relative_difference": 0.037307885009005844,
+          "final_parameters_identical": false,
+          "trajectory_identical": false,
+          "smoke_projection_outputs_identical": false,
+          "smoke_parameter_trajectory_identical": false
+        },
+        {
+          "trial": 1,
+          "block": 0,
+          "mode": "timing",
+          "max_loss_abs_difference": 4.251189231872559,
+          "max_loss_relative_difference": 11.583094694080799,
+          "max_grad_norm_abs_difference": 56.269137883737315,
+          "max_grad_norm_relative_difference": 35.99187180289652,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        },
+        {
+          "trial": 1,
+          "block": 1,
+          "mode": "timing",
+          "max_loss_abs_difference": 4.251189231872559,
+          "max_loss_relative_difference": 11.583094694080799,
+          "max_grad_norm_abs_difference": 56.269137883737315,
+          "max_grad_norm_relative_difference": 35.99187180289652,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        }
+      ],
+      "equivalence_required": false,
+      "reduction_changes_allowed": true
+    },
+    "flux-basic-arrival/flux-basic-selective": {
+      "paired_windows": 4,
+      "all_trajectories_identical": false,
+      "final_parameters_identical_windows": 0,
+      "max_loss_abs_difference": 1.6673240661621094,
+      "max_loss_relative_difference": 4.171730719575192,
+      "max_grad_norm_abs_difference": 11.912910305317153,
+      "max_grad_norm_relative_difference": 12.292467770671525,
+      "windows": [
+        {
+          "trial": 0,
+          "block": -1,
+          "mode": "profile",
+          "max_loss_abs_difference": 0.001873016357421875,
+          "max_loss_relative_difference": 0.0002108143918820573,
+          "max_grad_norm_abs_difference": 0.00011329136458781974,
+          "max_grad_norm_relative_difference": 0.0004368238910292557,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        },
+        {
+          "trial": 0,
+          "block": -1,
+          "mode": "smoke",
+          "max_loss_abs_difference": 0.006701469421386719,
+          "max_loss_relative_difference": 0.0006639073546398488,
+          "max_grad_norm_abs_difference": 0.33858224303839446,
+          "max_grad_norm_relative_difference": 0.05752478265402186,
+          "final_parameters_identical": false,
+          "trajectory_identical": false,
+          "smoke_projection_outputs_identical": false,
+          "smoke_parameter_trajectory_identical": false
+        },
+        {
+          "trial": 1,
+          "block": 0,
+          "mode": "timing",
+          "max_loss_abs_difference": 1.6673240661621094,
+          "max_loss_relative_difference": 4.171730719575192,
+          "max_grad_norm_abs_difference": 11.912910305317153,
+          "max_grad_norm_relative_difference": 12.292467770671525,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        },
+        {
+          "trial": 1,
+          "block": 1,
+          "mode": "timing",
+          "max_loss_abs_difference": 1.6673240661621094,
+          "max_loss_relative_difference": 4.171730719575192,
+          "max_grad_norm_abs_difference": 11.912910305317153,
+          "max_grad_norm_relative_difference": 12.292467770671525,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        }
+      ],
+      "equivalence_required": false,
+      "reduction_changes_allowed": true
+    },
+    "flux-basic-arrival/flux-improved": {
+      "paired_windows": 4,
+      "all_trajectories_identical": false,
+      "final_parameters_identical_windows": 0,
+      "max_loss_abs_difference": 4.251189231872559,
+      "max_loss_relative_difference": 11.583094694080799,
+      "max_grad_norm_abs_difference": 56.269137883737315,
+      "max_grad_norm_relative_difference": 35.99187180289652,
+      "windows": [
+        {
+          "trial": 0,
+          "block": -1,
+          "mode": "profile",
+          "max_loss_abs_difference": 0.0023908615112304688,
+          "max_loss_relative_difference": 0.00026908395000641315,
+          "max_grad_norm_abs_difference": 0.00026133354927682095,
+          "max_grad_norm_relative_difference": 0.0010061850785881496,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        },
+        {
+          "trial": 0,
+          "block": -1,
+          "mode": "smoke",
+          "max_loss_abs_difference": 0.007282257080078125,
+          "max_loss_relative_difference": 0.0007459065010694322,
+          "max_grad_norm_abs_difference": 0.2238683484521342,
+          "max_grad_norm_relative_difference": 0.037307885009005844,
+          "final_parameters_identical": false,
+          "trajectory_identical": false,
+          "smoke_projection_outputs_identical": false,
+          "smoke_parameter_trajectory_identical": false
+        },
+        {
+          "trial": 1,
+          "block": 0,
+          "mode": "timing",
+          "max_loss_abs_difference": 4.251189231872559,
+          "max_loss_relative_difference": 11.583094694080799,
+          "max_grad_norm_abs_difference": 56.269137883737315,
+          "max_grad_norm_relative_difference": 35.99187180289652,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        },
+        {
+          "trial": 1,
+          "block": 1,
+          "mode": "timing",
+          "max_loss_abs_difference": 4.251189231872559,
+          "max_loss_relative_difference": 11.583094694080799,
+          "max_grad_norm_abs_difference": 56.269137883737315,
+          "max_grad_norm_relative_difference": 35.99187180289652,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        }
+      ],
+      "equivalence_required": false,
+      "reduction_changes_allowed": true
+    },
+    "flux-basic-selective/flux-improved": {
+      "paired_windows": 4,
+      "all_trajectories_identical": false,
+      "final_parameters_identical_windows": 0,
+      "max_loss_abs_difference": 2.8837958574295044,
+      "max_loss_relative_difference": 25.00937178493927,
+      "max_grad_norm_abs_difference": 49.71627522131752,
+      "max_grad_norm_relative_difference": 49.76030160601812,
+      "windows": [
+        {
+          "trial": 0,
+          "block": -1,
+          "mode": "profile",
+          "max_loss_abs_difference": 0.0005178451538085938,
+          "max_loss_relative_difference": 5.828184477602008e-05,
+          "max_grad_norm_abs_difference": 0.0003746249138646407,
+          "max_grad_norm_relative_difference": 0.0014423789040521988,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        },
+        {
+          "trial": 0,
+          "block": -1,
+          "mode": "smoke",
+          "max_loss_abs_difference": 0.004570960998535156,
+          "max_loss_relative_difference": 0.0003711794670922259,
+          "max_grad_norm_abs_difference": 0.11471389458626025,
+          "max_grad_norm_relative_difference": 0.019117185693065825,
+          "final_parameters_identical": false,
+          "trajectory_identical": false,
+          "smoke_projection_outputs_identical": false,
+          "smoke_parameter_trajectory_identical": false
+        },
+        {
+          "trial": 1,
+          "block": 0,
+          "mode": "timing",
+          "max_loss_abs_difference": 2.8837958574295044,
+          "max_loss_relative_difference": 25.00937178493927,
+          "max_grad_norm_abs_difference": 49.71627522131752,
+          "max_grad_norm_relative_difference": 49.76030160601812,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        },
+        {
+          "trial": 1,
+          "block": 1,
+          "mode": "timing",
+          "max_loss_abs_difference": 2.8837958574295044,
+          "max_loss_relative_difference": 25.00937178493927,
+          "max_grad_norm_abs_difference": 49.71627522131752,
+          "max_grad_norm_relative_difference": 49.76030160601812,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        }
+      ],
+      "equivalence_required": false,
+      "reduction_changes_allowed": true
+    }
+  },
+  "native_staged_runtime_validated": true,
+  "hardware": {
+    "host": "SL3060",
+    "devices": [
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "8821459f-2e9c-7abe-cb19-0f34795e52c2",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "44cfdc76-9dc0-0f1f-cb4f-bc8f4ccfd0da",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "01353343-54aa-25f3-79ef-3ddb242fedc4",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "72c4d907-1d65-2ed5-e856-bb3933631695",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "7ac91b20-519c-8a7d-a983-5ae1d1ac4790",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "1ed6b59b-d882-5cd9-c540-f71177abf326",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "d4e8f72a-044b-a24e-818f-0560f0b97483",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "dbbd3446-128e-286b-1c04-0aa14c474949",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      }
+    ],
+    "local_rank": 0,
+    "peer_access": [
+      [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+      ]
+    ],
+    "transport": "rtx5090-nccl-staged-v2"
+  },
+  "environment": {
+    "torch": "2.8.0a0+5228986c39.nv25.06",
+    "cuda": "12.9",
+    "nccl": [
+      2,
+      27,
+      3
+    ],
+    "python": "/workspace/venvs/tempname-5090/bin/python",
+    "python_version": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+    "cxx11_abi": true
+  },
+  "worker_records": {
+    "results/smoke-flux-basic-interleaved/rank0.json": "75fa83de981afec6bbc2ede0cb1bec9362961bf84af5b09ca007578912802784",
+    "results/smoke-flux-basic-interleaved/rank1.json": "86bcc9f21a9fb10d76a10d1c4defd55a1e8da770476b5cee2ddeba8b340691ce",
+    "results/smoke-flux-basic-interleaved/rank2.json": "4e2c4d7f0a2a724b5d92846bb53fa1ac8a8a5f246a77e74f9702d6de70d25536",
+    "results/smoke-flux-basic-interleaved/rank3.json": "eb241b81906873276905d00a4e3465fe056e34d99f32d463f5e121ceae8822e4",
+    "results/smoke-flux-basic-interleaved/rank4.json": "9071a7a55c79c7d0a883a8463e8dabb941fe791cd07f2feb4bbd946f7632a672",
+    "results/smoke-flux-basic-interleaved/rank5.json": "c7fd9d9e3ca7e0b250ff1a04743e2864333d46a145f6671460f3d730845844a5",
+    "results/smoke-flux-basic-interleaved/rank6.json": "437da075382553561ec4cd4dea78eaa2a8b191be623aea8916305ead73984c80",
+    "results/smoke-flux-basic-interleaved/rank7.json": "50e78fdbe7361e3c3a192b9bd94d2261fcfb807ebb02507e732ad98587b45ade",
+    "results/smoke-flux-basic-arrival/rank0.json": "74511051003bfa1fdccd8e0d508c578a24461dd37ade6bea22035d07b36d5b7c",
+    "results/smoke-flux-basic-arrival/rank1.json": "9c9f4ce8aaffafd69ec4065356b1f09ba2a89ab1de1b28ce68fec016431ae09c",
+    "results/smoke-flux-basic-arrival/rank2.json": "c025f035615e3e2fb839e9e1a95369acfbe57263f2e38b16236784b601f42a34",
+    "results/smoke-flux-basic-arrival/rank3.json": "887501f57a16f031eda899b2b7efac459877a2851dcf77db345466a7e70251ac",
+    "results/smoke-flux-basic-arrival/rank4.json": "a85db2f79217397038f1e42ca59a0db68c921b619caa5e8c9aab800f52b97705",
+    "results/smoke-flux-basic-arrival/rank5.json": "f08496e84f9d39246ebf16b3dec203ad0c1c61bef1efeee86f5e7fe1fee5b783",
+    "results/smoke-flux-basic-arrival/rank6.json": "3c02b51da43c35cb232f805b309384e594916d210ac55974a0f38740a54813a6",
+    "results/smoke-flux-basic-arrival/rank7.json": "f96dc07493b3775c6f4176a69c68e6944efe4453b28ce2ed9aebd79c7f69674a",
+    "results/smoke-flux-basic-selective/rank0.json": "2df07c5b40fb7b02aa70cf6646f188190d72ba290c4c442f61bc1b763d08ec2e",
+    "results/smoke-flux-basic-selective/rank1.json": "258cab08ebdf46b1923d1085cfb5491e27eb29b2828bfdaeef67389c39721f4b",
+    "results/smoke-flux-basic-selective/rank2.json": "01a135d087c66d7d4b1ad75ee7e79c89b6681bc9b817fa121db8e491d69bfea7",
+    "results/smoke-flux-basic-selective/rank3.json": "e019bc6fad1b0f4c51a07732b24db60f70ac632782bbea4fdbb0c864b23f3687",
+    "results/smoke-flux-basic-selective/rank4.json": "924caa5abdd9f725ed25117caf0045eace7e518fa9b8546ac9cdee092522e1ba",
+    "results/smoke-flux-basic-selective/rank5.json": "ffe0ba94767a5c4fe70001fa62664f75d6d7eb0a26792263855f88a4caf1e281",
+    "results/smoke-flux-basic-selective/rank6.json": "2907cc35080e6129507fb24ac300e42ef2cb5b0016e9298f5ba7815ab6c10cb8",
+    "results/smoke-flux-basic-selective/rank7.json": "a47b58e02886ef3c49f8d89da3ff064e6f1ba68fcafd9c6243bc5f699ae32cff",
+    "results/smoke-flux-improved/rank0.json": "dbafa2dd4c81629078d8c9e201996641a9c8eb6a62d5b5ea3a1a87f279aa7091",
+    "results/smoke-flux-improved/rank1.json": "877f950e2379260e91206c5524cfd956d788fadccf561708441d8109e1eb556d",
+    "results/smoke-flux-improved/rank2.json": "8feae29fefa9375ef38511ba9dfabc2413307feeb58ccfd19400c8cb18294e3e",
+    "results/smoke-flux-improved/rank3.json": "30d678aba5917c111f39deaea87f1eeb05d69301182e97d9548bd71f53faabc1",
+    "results/smoke-flux-improved/rank4.json": "a73efefba3b5e6089064b1c888b773ac40dee122275c1d121aa2d93029ed203c",
+    "results/smoke-flux-improved/rank5.json": "7133a0b9903e40d8458f7dc3cbe6558934c7ff9381c62dc3d3aa739a42e2cc3d",
+    "results/smoke-flux-improved/rank6.json": "2ae7932966b1e4e925df21e84390a4b842258b674f862aac4edf77087b934823",
+    "results/smoke-flux-improved/rank7.json": "da1f4091f307b76e8202e5551d066666e0ff214195c5dae0a5312b2ad84094d1",
+    "results/profile-flux-basic-interleaved/rank0.json": "a2c9bdb9226969402b9ce390eac2652105bc2f116692c17ab15473214edc5995",
+    "results/profile-flux-basic-interleaved/rank1.json": "a0741f324af7f91ab97954e6125c8798aab1b15c17d7a45f4996ffe121916e94",
+    "results/profile-flux-basic-interleaved/rank2.json": "a116383d0b362ebd32b23c1d43faa091bf3ae32b433452115c173031e5b781a9",
+    "results/profile-flux-basic-interleaved/rank3.json": "5a11341c792866e7b1c21602c8fd013d2b20bbdfda10716de99bea32fe2459bb",
+    "results/profile-flux-basic-interleaved/rank4.json": "5828a0cb37244c336a71520c60c2e71ebc160afe55443072fa654c6b681ef529",
+    "results/profile-flux-basic-interleaved/rank5.json": "4acf30b703a56c92f3536288daaba2892e2e45d9627b78def743b872b460cfb6",
+    "results/profile-flux-basic-interleaved/rank6.json": "f821065952cce9d585d064d5d559817f0743a90fdda065fdc3622a7ea38c41df",
+    "results/profile-flux-basic-interleaved/rank7.json": "2b9f4cb60057ad3a5f32122c18ac49a245dcc8b89abf31e57067bde56b5caf36",
+    "results/profile-flux-basic-arrival/rank0.json": "998d7c6a878550aa741ff5d60a4c8916bc2116099669b9de7f96cfd5e0d16762",
+    "results/profile-flux-basic-arrival/rank1.json": "c65819ec716f23af24f9e5d6f8e103f6d1af7f35809bcafdb206c94e66f75ea4",
+    "results/profile-flux-basic-arrival/rank2.json": "a9c08127c4767bad8ccdd49da4d40a99c568ae9ddd9b6c21f829ec42a5127308",
+    "results/profile-flux-basic-arrival/rank3.json": "0024bfceba062872f8dc78c5adcec83c4d86bfa8ab65128525052916db94e228",
+    "results/profile-flux-basic-arrival/rank4.json": "d3d58330c75dbf397635d0b9f346116d5910222ff4d43a68acb9853d5622b797",
+    "results/profile-flux-basic-arrival/rank5.json": "2292a791dafc25dc8255d54e2934c714aac23a6df59b0183cacf9503c8bc27bd",
+    "results/profile-flux-basic-arrival/rank6.json": "08e28fea4f77d61d345f67bf7060966abe8532f12bf80054a286dc0a24c908b8",
+    "results/profile-flux-basic-arrival/rank7.json": "3d030ccb163e74eae7afcfca3d5a7fa36e572607c95dcb5cb8609b5eff33da4b",
+    "results/profile-flux-basic-selective/rank0.json": "77123338ac4fd246596b8e1a6e7a0456f9f4d685b8e2078b18b8d3a6d367ab30",
+    "results/profile-flux-basic-selective/rank1.json": "2a909a1b37fc984c7d688df919a2084074d4f7b5f417b81e8c66140b7e265990",
+    "results/profile-flux-basic-selective/rank2.json": "49feedb7680c00c791d609e3b371d309f261dc6d42d68fbb5b603b719b44a31f",
+    "results/profile-flux-basic-selective/rank3.json": "6a1a178d006345e054e302df0296570070685c96934776e76c135df75438b55f",
+    "results/profile-flux-basic-selective/rank4.json": "7d0083e941b7922d83b7a04339c7c786b7570c1b154efa97c28c1676444b99da",
+    "results/profile-flux-basic-selective/rank5.json": "6cc810f36faa236c7179f8b361778a16ba663c4a005104bd416729bc791e0d33",
+    "results/profile-flux-basic-selective/rank6.json": "5ea2d5c5d376b34dafc3827d408977aac40ab51adde5866d4e36b2caa7b558db",
+    "results/profile-flux-basic-selective/rank7.json": "4c2be506298dab638a80d4430ef8745f6cefa53be1c14d7456f14c4c91ff575b",
+    "results/profile-flux-improved/rank0.json": "8c0a0b28d610057e3dfcf47552a71923e7e98a01f1d6b482e3c7b051575d7bb6",
+    "results/profile-flux-improved/rank1.json": "1273de39b65e12ebd76f59853dc32f6b8912912e978d17a5b498ef39b7ab5e7d",
+    "results/profile-flux-improved/rank2.json": "087967e00c39bbf238ef6308a8eba0885375cae7016af72d3aee875273d1680a",
+    "results/profile-flux-improved/rank3.json": "a2eb9572c59fcb637e259c84e7743b48e6fcdc4fa3af5c8ccf16587c898623b5",
+    "results/profile-flux-improved/rank4.json": "cda7f50485363492e0ae90b821e2abd19a226eab7c7ff5d229b2bc2b2db892a8",
+    "results/profile-flux-improved/rank5.json": "c62abb7c4d007aa81cf53a8169f4e3d679d26d2b2467694183474d1b1e408e9c",
+    "results/profile-flux-improved/rank6.json": "51442b3113bb10aefcb2fc3fb5f200e3f917e7791e2c859605e02adc424e1edc",
+    "results/profile-flux-improved/rank7.json": "3420e192bc0f7a52a08a5e49b9d55043c5a440d25cca83987a6a765129fb41c3",
+    "results/compare1/block00-flux-basic-selective/rank0.json": "db31bd8f7de74f49a11d5ce983e7781435f7eb64a2334b51f9278435c5582e35",
+    "results/compare1/block00-flux-basic-selective/rank1.json": "b0780a03174262373fce69ca64cddde5c5d86a51633f623025e20cce9197a0c0",
+    "results/compare1/block00-flux-basic-selective/rank2.json": "e10fde88d2a100be6004f2b4254c9f719b9fdfd69e632140b9c2df61ae91f21b",
+    "results/compare1/block00-flux-basic-selective/rank3.json": "1b69d06ad20d98fbf63ab29a8003f592fa75aea0eaeff82f1c7152cbaec09306",
+    "results/compare1/block00-flux-basic-selective/rank4.json": "43f79f66bd8300a7e08212de9c777d2f8fa18d59b6fd908b8f44db83deb59e54",
+    "results/compare1/block00-flux-basic-selective/rank5.json": "f3df994c52531695815d41e0254394deb4d59dd092aef20ce691da16ee4fa316",
+    "results/compare1/block00-flux-basic-selective/rank6.json": "8ad78c879236279b7cc0bbfd8e246d1698f36e76506375ad837cd2d6cdb15af2",
+    "results/compare1/block00-flux-basic-selective/rank7.json": "a026070a129626bdd11a876d4f302c20296b137f68ef65fb78e445e340f889bc",
+    "results/compare1/block00-flux-improved/rank0.json": "4a90ec7f209623edd28dc9f197c7bc074fbb3207eef9c517ce8090995ba9d2f9",
+    "results/compare1/block00-flux-improved/rank1.json": "a25de510700b13e8190608c1dd15589073fe0d1822d28b4f1953ea5a46cd693d",
+    "results/compare1/block00-flux-improved/rank2.json": "f628ce0c656b3bda33aefa477da0c4641dba216475d5b22bc00d2dde9a0fddd9",
+    "results/compare1/block00-flux-improved/rank3.json": "fa442cdba264f8e3efc8e72b6c5ed533de7e4781d03829af376dfe4883d4c335",
+    "results/compare1/block00-flux-improved/rank4.json": "2c6c62af80719eae73c1b4a66bfd6b5665fca8ef2632c148be3d33b2f87a4e9d",
+    "results/compare1/block00-flux-improved/rank5.json": "72bd191b6aa07ea8bd8e488a9c8ef78994572722d6679b230b6152026c88265a",
+    "results/compare1/block00-flux-improved/rank6.json": "c2333f556282c8929d7060aba794cea6af56be94fd2cbb988367c961d978909c",
+    "results/compare1/block00-flux-improved/rank7.json": "609362ac5010830508c73cfb0be25c0049cd5b2bf49e1a159a8b0c55a8cfb356",
+    "results/compare1/block00-flux-basic-arrival/rank0.json": "b79ed3b2322d7bfe80e539936f77a6ddbb83e001b967d58beb9e8bd2230fd92b",
+    "results/compare1/block00-flux-basic-arrival/rank1.json": "f3a940758464ded6868b2de1f5e80f855afc53fd978c31befbb8f9c1fa9d18c2",
+    "results/compare1/block00-flux-basic-arrival/rank2.json": "1b1eae0c3773c15adad2bd9c000be81df6ad49339d0539dfa5a3b7786acfbcdd",
+    "results/compare1/block00-flux-basic-arrival/rank3.json": "54bd0a5ce299395288bf373b959200d2249879d5c860d74275cf52ff9777661c",
+    "results/compare1/block00-flux-basic-arrival/rank4.json": "61956d786093ceb64b1fc9fda6c9371d11d342a4fdaa7c0af02ba39d91dcaa67",
+    "results/compare1/block00-flux-basic-arrival/rank5.json": "5a80b54040b89cdfeda102f6259b3825912d937f1ca377c68dd06506f8c69038",
+    "results/compare1/block00-flux-basic-arrival/rank6.json": "cacc62c0175c089b904ae2dd8da4c20088d181c3995f6d708e9c47f4c05aec19",
+    "results/compare1/block00-flux-basic-arrival/rank7.json": "f17d69432217b7594f528a9d2420700e3eae8a2561bfc31892504a5f15bf2d82",
+    "results/compare1/block00-flux-basic-interleaved/rank0.json": "f55e1bc562cc11f4604c389b8da39e1928106fef6832c708197aabe2b4158d9d",
+    "results/compare1/block00-flux-basic-interleaved/rank1.json": "409cf3f993f505429dedab02df47eab8611d5eaa0ccb8c2ebbaacc3934cbe664",
+    "results/compare1/block00-flux-basic-interleaved/rank2.json": "100c23746c562a41ba95bce5e35db4d436609da1dfe681107fe4cae4d77820e4",
+    "results/compare1/block00-flux-basic-interleaved/rank3.json": "c2d536241bb206f25eb61a308ea041a26ab658a8cbf68d4cbb4c398a4fe9b5d2",
+    "results/compare1/block00-flux-basic-interleaved/rank4.json": "827aa4761c461a9c753b885e3dae93233738de6f9e618bc807f0d2c21aeb7c3e",
+    "results/compare1/block00-flux-basic-interleaved/rank5.json": "78948373dba207ff532304fdf8f6554769ca71e694380e45dcc0905c3e99f340",
+    "results/compare1/block00-flux-basic-interleaved/rank6.json": "285aaef590996c7d73cbf52257c9e3900ef98b56b5f45b0062c09c5a238f2ba2",
+    "results/compare1/block00-flux-basic-interleaved/rank7.json": "94152bbe2ceaec8e1d81994a22f0a1f5507273afc333b9e4647e8319297b74c2",
+    "results/compare1/block01-flux-basic-interleaved/rank0.json": "98213a8dae1ffcfd171b798ab64df67891165c6c8feb49f9f697f592fa51fdb0",
+    "results/compare1/block01-flux-basic-interleaved/rank1.json": "d8e387d79b33ad09fbd73ed8eaba4d0c72e8582a3b691fe6aba7f5bd98989f56",
+    "results/compare1/block01-flux-basic-interleaved/rank2.json": "8f126b518feb04e2e4fd3916467772ef6d0415af9ef202d165a83dc42fa526c6",
+    "results/compare1/block01-flux-basic-interleaved/rank3.json": "dcc5bc9fb2056a6221f2cf45b745b67687798a0d2cc913110633200a13ce56e0",
+    "results/compare1/block01-flux-basic-interleaved/rank4.json": "8bfe3f41ff7420e49dac122c58de51aac200f868248c5a34081005feabe5466b",
+    "results/compare1/block01-flux-basic-interleaved/rank5.json": "3ebe964bfa11879c53a1f20a07ad7ebf34b9633eaac372d5889dfcc35a90c86a",
+    "results/compare1/block01-flux-basic-interleaved/rank6.json": "7c5d8f070a9e484af0cb8c554d19b4cc76c8d368333d14272647295abd92c97e",
+    "results/compare1/block01-flux-basic-interleaved/rank7.json": "5de49c3088fa2c19c7b6c39bf0225a8064b1a6636005a792cda8a00792b9e0ff",
+    "results/compare1/block01-flux-basic-arrival/rank0.json": "6e6fdc46600bb79c753f60a3883007969135e136a5964e18b248a3bc73011a8d",
+    "results/compare1/block01-flux-basic-arrival/rank1.json": "93a0a3f7c34951d255cd9b91f94df0141808736287d11815cf8c673f14efc7e5",
+    "results/compare1/block01-flux-basic-arrival/rank2.json": "36512eb6d09c4dd9e34ac2bd7e69fdd4cf4400e4096075ed0e8df96fa4cac816",
+    "results/compare1/block01-flux-basic-arrival/rank3.json": "9e6db06779e95f780276b5f2372834959dda771e85dac3534dfe96fc5234a0db",
+    "results/compare1/block01-flux-basic-arrival/rank4.json": "41694ab9457df5f1b139aef92c4e561238d858d536d114c0ce0da1b1f8d33e6a",
+    "results/compare1/block01-flux-basic-arrival/rank5.json": "60aedd4bea3ba36d8c8ffaba29b4317239fc4a1dcf6994c1db00f7133cc378a3",
+    "results/compare1/block01-flux-basic-arrival/rank6.json": "2af70b3e7bfdd789c772e7f21f4793b162dea45366cfd3d52089e0cb78b2db81",
+    "results/compare1/block01-flux-basic-arrival/rank7.json": "7d3213d108c17437a162171dd7d28b70551ee34bb042ec18380ffde2069acac4",
+    "results/compare1/block01-flux-improved/rank0.json": "9652435e32e1a0465b78b125fe4f1464ce294625d0e5a00c6be9d9411939560b",
+    "results/compare1/block01-flux-improved/rank1.json": "76146465f1a21dca3378303ac3a3d1b59171a6bcfc2ae41094461e87106cce51",
+    "results/compare1/block01-flux-improved/rank2.json": "5c27a478c931a2df06c50e4f20864e28d6d3bcc898306742817852c9c46e9672",
+    "results/compare1/block01-flux-improved/rank3.json": "3c880d83342fd7ff0dbd726fd7eb7cda478fd346fa9b7ebb43f7fc9af6ac3310",
+    "results/compare1/block01-flux-improved/rank4.json": "d7f2c5f7bb642f216978273bfa470419348b4939edb83a8d367b5bf097198aef",
+    "results/compare1/block01-flux-improved/rank5.json": "b538536b927aedf26082003376eb908380570d1614a4f8d5fdfecfdc8196fb28",
+    "results/compare1/block01-flux-improved/rank6.json": "c57bb6fc32c772be8a059748c6b3a54ad7c45659118c4d44d31c45d80c202131",
+    "results/compare1/block01-flux-improved/rank7.json": "28915065e9037b88038f505734580d5f116c81eacf11e021d7daaeb1c9164036",
+    "results/compare1/block01-flux-basic-selective/rank0.json": "133ec67b839cafaccb1ea4dea3bd75d0d960a0127d0a4ee6785c702aff98b3c0",
+    "results/compare1/block01-flux-basic-selective/rank1.json": "e89ca62d4ff65bb516586b9b1f33ad8d53f1128b8ebd32d0a7ef834442e72851",
+    "results/compare1/block01-flux-basic-selective/rank2.json": "a064a6678a3744153e93bbc6fe783be72598f32ffb4aba5234b0ac997ce2ff4a",
+    "results/compare1/block01-flux-basic-selective/rank3.json": "eeafef9416edea30156a1308c3c5fa1c523c2ee43c0d9128a5113148ba798e16",
+    "results/compare1/block01-flux-basic-selective/rank4.json": "a1a8cb2ac29ee9d463bafcac76b097f18504a5f7714ebe9f1cf4e23ecc8e3117",
+    "results/compare1/block01-flux-basic-selective/rank5.json": "75fe149058a49388f9e4043301cc7de9f63159280e049add48cb1a576f4decf1",
+    "results/compare1/block01-flux-basic-selective/rank6.json": "07b7bd511995b28ed7b71d46b515d1d51400f8fd5951d25fea2436099aa17c28",
+    "results/compare1/block01-flux-basic-selective/rank7.json": "ec01fc0e77484a6a8f99fb844b98aa9fb0191e1900ce96405fc32395d6503a92"
+  },
+  "profile_summary_sha256": "2594ab1a9ed14435afa604fb3fcb7c1ff186cbdb30f720432f1a7e2881e79982",
+  "plan_sha256": "919bbc40fe7f862bc474cf80fbbaf7ec8c057acb92734e2a8067faf109ceccdb",
+  "native_probe_sha256": "5c5302316f7a7524ef6ec81c76b3172d999bcb7ff43e4707882c28474b7a7b9c",
+  "build": {
+    "root": "/workspace/Load-5090/logs/5090/phase6/op1-abc-staged-v1-1x-50steps-20261102-000347-679838/build",
+    "manifest_sha256": "731116f4b9cdb52c5573541ecbbc575c15382b32cbaed00e7e8b5a3495b7cbad"
+  }
+}

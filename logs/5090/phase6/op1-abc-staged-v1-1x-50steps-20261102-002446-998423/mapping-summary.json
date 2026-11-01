@@ -1,0 +1,8 @@
+{
+  "completed": true,
+  "evidence_files": {
+    "mapping/flux-improved-attn.log": "475613eba9fad6126c3947f218c53f21c679197f5433a94841e25b5dbddfc847",
+    "mapping/flux-improved-mlp.log": "6b113bd4ffc8b9aea6f2087af1d70d04c9a0801a118a5fe93b7b96e09deb65d6"
+  },
+  "build_manifest_sha256": "731116f4b9cdb52c5573541ecbbc575c15382b32cbaed00e7e8b5a3495b7cbad"
+}

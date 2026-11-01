@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/workspace/venvs/tempname-5090/bin/python",
+    "-m",
+    "torch.distributed.run",
+    "--standalone",
+    "--nproc-per-node=8",
+    "--max-restarts=0",
+    "/workspace/TempName-New/tools/5090/phase6/op1_abc_probe.py",
+    "--build",
+    "/workspace/Load-5090/logs/5090/phase6/op1-abc-staged-v1-1x-50steps-20261102-000347-679838/build",
+    "--arm",
+    "flux-basic-interleaved",
+    "--out",
+    "/workspace/Load-5090/logs/5090/phase6/op1-abc-staged-v1-1x-50steps-20261102-002446-998423/native-probe/flux-basic-interleaved",
+    "--execute"
+  ]
+}

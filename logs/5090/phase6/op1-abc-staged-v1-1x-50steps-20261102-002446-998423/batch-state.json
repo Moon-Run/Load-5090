@@ -1,0 +1,8 @@
+{
+  "protocol": "rtx5090-phase6-op1-abc-staged-v1",
+  "status": "completed",
+  "stage": "done",
+  "timing_windows": 8,
+  "formal_optimizer_steps": 400,
+  "report": "/workspace/Load-5090/logs/5090/phase6/op1-abc-staged-v1-1x-50steps-20261102-002446-998423/report.md"
+}

@@ -1,0 +1,27 @@
+STAGE worker-source-preflight
+STAGE hardware-preflight
+STAGE verify-op1-abc-build
+STAGE prepare-workers
+STAGE native-reference-wire-and-mapping-probes
+NATIVE PROBE flux-basic-interleaved
+NATIVE PROBE flux-basic-arrival
+NATIVE PROBE flux-basic-selective
+NATIVE PROBE flux-improved
+STAGE smoke-flux-basic-interleaved
+STAGE smoke-flux-basic-arrival
+STAGE smoke-flux-basic-selective
+STAGE smoke-flux-improved
+STAGE profile-flux-basic-interleaved
+STAGE profile-flux-basic-arrival
+STAGE profile-flux-basic-selective
+STAGE profile-flux-improved
+STAGE compare1/block00-flux-basic-selective
+STAGE compare1/block00-flux-improved
+STAGE compare1/block00-flux-basic-arrival
+STAGE compare1/block00-flux-basic-interleaved
+STAGE compare1/block01-flux-basic-interleaved
+STAGE compare1/block01-flux-basic-arrival
+STAGE compare1/block01-flux-improved
+STAGE compare1/block01-flux-basic-selective
+STAGE replay-report
+COMPLETED /workspace/Load-5090/logs/5090/phase6/op1-abc-staged-v1-1x-50steps-20261102-002446-998423/report.md

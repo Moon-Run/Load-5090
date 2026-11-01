@@ -1,0 +1,29 @@
+{
+  "pid": 1015076,
+  "command": [
+    "/workspace/venvs/tempname-5090/bin/python",
+    "/workspace/TempName-New/tools/5090/phase6/op1_abc.py",
+    "--execute",
+    "--inside",
+    "--out",
+    "/workspace/Load-5090/logs/5090/phase6/op1-abc-staged-v1-1x-50steps-20261102-002446-998423",
+    "--python",
+    "/workspace/venvs/tempname-5090/bin/python",
+    "--megatron",
+    "/workspace/Megatron-LM",
+    "--cuda-home",
+    "/usr/local/cuda-12.9",
+    "--build-cuda-home",
+    "/usr/local/cuda-12.9",
+    "--trials",
+    "1",
+    "--blocks",
+    "2",
+    "--jobs",
+    "2",
+    "--worker-timeout",
+    "3600",
+    "--abc-build",
+    "/workspace/Load-5090/logs/5090/phase6/op1-abc-staged-v1-1x-50steps-20261102-000347-679838/build"
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "protocol": "rtx5090-phase6-op1-abc-staged-v1",
+  "transport": "rtx5090-nccl-staged-v2",
+  "run_id": "5f811d649c674478b5d803c8c0378c1e",
+  "arms": [
+    "flux-basic-interleaved",
+    "flux-basic-arrival",
+    "flux-basic-selective",
+    "flux-improved"
+  ],
+  "model": {
+    "layers": 32,
+    "hidden": 4096,
+    "ffn": 16384,
+    "heads": 32,
+    "sequence": 2048,
+    "micro_batch": 1,
+    "global_batch": 4,
+    "tp": 8,
+    "dp": 1,
+    "sm_count": 170,
+    "seed": 1234,
+    "token_seed": 4321,
+    "vocab": 32768
+  },
+  "trials": 1,
+  "blocks": 2,
+  "schedule": [
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 0,
+      "arm": "flux-basic-selective",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-basic-selective"
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 1,
+      "arm": "flux-improved",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-improved"
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 2,
+      "arm": "flux-basic-arrival",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-basic-arrival"
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 3,
+      "arm": "flux-basic-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-basic-interleaved"
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 4,
+      "arm": "flux-basic-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-basic-interleaved"
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 5,
+      "arm": "flux-basic-arrival",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-basic-arrival"
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 6,
+      "arm": "flux-improved",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-improved"
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 7,
+      "arm": "flux-basic-selective",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-basic-selective"
+    }
+  ],
+  "communication": {
+    "environment": {
+      "NCCL_VERSION": "2.27.3",
+      "TORCH_NCCL_USE_COMM_NONBLOCKING": "0",
+      "NCCL_NVLS_ENABLE": "0",
+      "NCCL_DEBUG": "WARN",
+      "TORCH_NCCL_ASYNC_ERROR_HANDLING": "1",
+      "NCCL_P2P_DISABLE": "1",
+      "NCCL_SHM_DISABLE": "0"
+    },
+    "config_files": {
+      "/etc/nccl.conf": null,
+      "/root/.nccl.conf": null
+    },
+    "nvls_request": "0"
+  },
+  "environment": {
+    "torch": "2.8.0a0+5228986c39.nv25.06",
+    "cuda": "12.9",
+    "nccl": [
+      2,
+      27,
+      3
+    ],
+    "python": "/workspace/venvs/tempname-5090/bin/python",
+    "python_version": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+    "cxx11_abi": true
+  },
+  "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+  "preflight_sha256": "92119d7a884c822f8d864136cdf82a20b7060717334c1e6d5ee166ee8b59db9f",
+  "build": {
+    "root": "/workspace/Load-5090/logs/5090/phase6/op1-abc-staged-v1-1x-50steps-20261102-000347-679838/build",
+    "manifest_sha256": "731116f4b9cdb52c5573541ecbbc575c15382b32cbaed00e7e8b5a3495b7cbad"
+  }
+}
