@@ -1,0 +1,8 @@
+{
+  "protocol": "rtx5090-phase6-nine-arm-nccl-staged-v2",
+  "status": "completed",
+  "stage": "done",
+  "timing_windows": 162,
+  "formal_optimizer_steps": 8100,
+  "report": "/workspace/Load-5090/logs/5090/phase6/baseline-nine-arm-nccl-staged-v2-1x-50steps-20261101-124230-640474/report.md"
+}

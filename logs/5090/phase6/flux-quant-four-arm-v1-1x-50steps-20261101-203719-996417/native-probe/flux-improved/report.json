@@ -1,0 +1,19 @@
+{
+  "protocol": "rtx5090-flux-four-native-smoke-v1",
+  "transport_protocol": "rtx5090-nccl-staged-v2",
+  "completed": true,
+  "arm": "c",
+  "build_manifest_sha256": "c92aa10c81d3772453d489456b1d94f5b61f884658fd961937a8c373ccc82816",
+  "gpu_validated": true,
+  "performance_measured": false,
+  "rank_records": {
+    "rank0.json": "e0103879cd104954fc9bc5bbe03f38f243a8c65e7b31151f224a81061d0fd356",
+    "rank1.json": "5f28191b064ff2d4b10b766487a257e34405593eddfc4210f158cf64669577f3",
+    "rank2.json": "a87cfccf0e011e0d19200e4388771b45d4e8b561eca60c1acac05128d3640f5c",
+    "rank3.json": "e19cedb9c328020e459ea96c09194251dbd099d109194868d6cc9786f7f1d013",
+    "rank4.json": "29a45de939dfd073f1c834f7b1bc9ebf237d641bf1bac2f0e40d6ddb6fb71df4",
+    "rank5.json": "1f8a84bf40c3e838e2e26e1cffa5f7e5203599593f7ce20e232b44efca66ca84",
+    "rank6.json": "32bb773c054439a788da7ab7af0e958ad780b4f5a6dfcb0eb220c13a3495e5b0",
+    "rank7.json": "aaffa94b2ab75c4c36ed172b8302776253e4c332512f5228e2b338b7f4b950a6"
+  }
+}

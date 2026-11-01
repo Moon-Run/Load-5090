@@ -1,0 +1,40 @@
+STAGE worker-source-preflight
+STAGE hardware-preflight
+STAGE prepare-build
+STAGE compile
+Compile RTX5090 native arm: ma11
+Compile RTX5090 native arm: ma89
+Compile RTX5090 native arm: cr3
+Compile RTX5090 native arm: r
+Compile RTX5090 native arm: c
+Compile RTX5090 native arm: a
+Compile RTX5090 native arm: flux-basic
+STAGE compile-ma11-compat
+STAGE ma11-compat-preflight
+STAGE prepare-workers
+STAGE native-mapping-checks
+STAGE local-transport-smoke
+LOCAL TRANSPORT SMOKE ma11
+LOCAL TRANSPORT SMOKE ma89
+LOCAL TRANSPORT SMOKE ma8
+LOCAL TRANSPORT SMOKE ma9
+LOCAL TRANSPORT SMOKE cr3
+LOCAL TRANSPORT SMOKE r
+LOCAL TRANSPORT SMOKE c
+LOCAL TRANSPORT SMOKE a
+STAGE smoke-ma11
+STAGE smoke-ma89
+STAGE smoke-ma8
+Traceback (most recent call last):
+  File "/workspace/TempName-New/tools/5090/phase6/baseline.py", line 672, in <module>
+    main()
+  File "/workspace/TempName-New/tools/5090/phase6/baseline.py", line 635, in main
+    return supervise(args)
+           ^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/baseline.py", line 566, in supervise
+    run_process(command, build/'megatron', worker_environment(args, build, scripts, job, dest, plan),
+  File "/workspace/TempName-New/tools/h100/phase6/tp8_dp2_train.py", line 104, in run_process
+    require(process.returncode==0,f'Child exited {process.returncode}; see {log}')
+  File "/workspace/TempName-New/tools/h100/phase6/tp8_dp2_protocol.py", line 24, in require
+    raise ValueError(message)
+ValueError: Child exited 1; see /workspace/Load-5090/logs/5090/phase6/baseline-nine-arm-nccl-staged-v2-1x-50steps-20261101-013331-414102/results/smoke-ma8/process.log

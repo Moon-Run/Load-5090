@@ -1,0 +1,39 @@
+COMMAND ['/workspace/venvs/tempname-5090/bin/python', '-m', 'torch.distributed.run', '--standalone', '--nproc-per-node=8', '--max-restarts=0', '/workspace/Load-5090/logs/5090/phase6/flux-quant-four-arm-v1-1x-50steps-20261101-214204-981363/workers/flux-bf16/scripts/worker.py', '--num-layers', '32', '--hidden-size', '4096', '--ffn-hidden-size', '16384', '--num-attention-heads', '32', '--seq-length', '2048', '--max-position-embeddings', '2048', '--micro-batch-size', '1', '--global-batch-size', '4', '--seed', '1234', '--vocab-size', '32768', '--tensor-model-parallel-size', '8', '--transformer-impl', 'local', '--position-embedding-type', 'learned_absolute', '--untie-embeddings-and-output-weights', '--no-persist-layer-norm', '--no-masked-softmax-fusion', '--no-bias-gelu-fusion', '--no-bias-dropout-fusion', '--no-rope-fusion', '--train-iters', '1000', '--bf16', '--optimizer', 'adam', '--lr', '1e-4', '--min-lr', '1e-4', '--lr-decay-style', 'constant', '--weight-decay', '0.01', '--adam-beta1', '0.9', '--adam-beta2', '0.95', '--clip-grad', '1.0', '--init-method-std', '0.02', '--hidden-dropout', '0', '--attention-dropout', '0', '--no-gradient-accumulation-fusion', '--pipeline-model-parallel-size', '1', '--context-parallel-size', '1', '--sequence-parallel', '--mock-data', '--tokenizer-type', 'NullTokenizer', '--split', '100,0,0', '--num-workers', '0', '--eval-iters', '0', '--timing-log-level', '0', '--no-check-for-nan-in-loss-and-grad', '--distributed-timeout-minutes', '5']
+W1101 14:17:30.322000 880569 torch/distributed/elastic/agent/server/api.py:719] Received 15 death signal, shutting down workers
+W1101 14:17:30.325000 880569 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 880692 closing signal SIGTERM
+W1101 14:17:30.326000 880569 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 880693 closing signal SIGTERM
+W1101 14:17:30.328000 880569 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 880694 closing signal SIGTERM
+W1101 14:17:30.330000 880569 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 880695 closing signal SIGTERM
+W1101 14:17:30.332000 880569 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 880696 closing signal SIGTERM
+W1101 14:17:30.333000 880569 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 880697 closing signal SIGTERM
+W1101 14:17:30.334000 880569 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 880698 closing signal SIGTERM
+W1101 14:17:30.335000 880569 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 880699 closing signal SIGTERM
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 896, in <module>
+    main()
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 892, in main
+    run(args)
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 883, in run
+    elastic_launch(
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/launcher/api.py", line 139, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/launcher/api.py", line 261, in launch_agent
+    result = agent.run()
+             ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/elastic/metrics/api.py", line 138, in wrapper
+    result = f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/elastic/agent/server/api.py", line 711, in run
+    result = self._invoke_run(role)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/elastic/agent/server/api.py", line 870, in _invoke_run
+    time.sleep(monitor_interval)
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/elastic/multiprocessing/api.py", line 84, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 880569 got signal: 15

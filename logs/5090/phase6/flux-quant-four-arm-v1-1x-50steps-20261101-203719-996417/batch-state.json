@@ -1,0 +1,8 @@
+{
+  "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+  "status": "completed",
+  "stage": "done",
+  "timing_windows": 32,
+  "formal_optimizer_steps": 1600,
+  "report": "/workspace/Load-5090/logs/5090/phase6/flux-quant-four-arm-v1-1x-50steps-20261101-203719-996417/report.md"
+}

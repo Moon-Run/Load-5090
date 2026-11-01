@@ -1,0 +1,1578 @@
+{
+  "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+  "run_id": "4b4d47bb1126457aa557da47e265580c",
+  "completed": true,
+  "execution_validated": true,
+  "profiles": {
+    "flux-improved/rank0": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-improved",
+      "rank": 0,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 0,
+          "per_call_reconfigurations": 0,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 128
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 671.4725000000001,
+          "decoder_us": 19.183500000000002,
+          "decoder_start_to_layernorm_end_us": 41.39111328125,
+          "producer_end_to_layernorm_end_us": 720.017578125
+        },
+        "mlp": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 0,
+          "per_call_reconfigurations": 0,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 124,
+            "transformer_engine": 4
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 647.351,
+          "decoder_us": 19.311999999999998,
+          "decoder_start_to_layernorm_end_us": 41.263671875,
+          "producer_end_to_layernorm_end_us": 527.733642578125
+        }
+      }
+    },
+    "flux-improved/rank1": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-improved",
+      "rank": 1,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 0,
+          "per_call_reconfigurations": 0,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 128
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 669.979,
+          "decoder_us": 19.232,
+          "decoder_start_to_layernorm_end_us": 40.95947265625,
+          "producer_end_to_layernorm_end_us": 747.15380859375
+        },
+        "mlp": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 0,
+          "per_call_reconfigurations": 0,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 124,
+            "transformer_engine": 4
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 651.435,
+          "decoder_us": 19.3275,
+          "decoder_start_to_layernorm_end_us": 41.0712890625,
+          "producer_end_to_layernorm_end_us": 521.1259765625
+        }
+      }
+    },
+    "flux-improved/rank2": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-improved",
+      "rank": 2,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 0,
+          "per_call_reconfigurations": 0,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 128
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 692.06,
+          "decoder_us": 27.039,
+          "decoder_start_to_layernorm_end_us": 53.31103515625,
+          "producer_end_to_layernorm_end_us": 538.513427734375
+        },
+        "mlp": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 0,
+          "per_call_reconfigurations": 0,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 124,
+            "transformer_engine": 4
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 627.4594999999999,
+          "decoder_us": 27.183,
+          "decoder_start_to_layernorm_end_us": 53.534423828125,
+          "producer_end_to_layernorm_end_us": 373.76513671875
+        }
+      }
+    },
+    "flux-improved/rank3": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-improved",
+      "rank": 3,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 0,
+          "per_call_reconfigurations": 0,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 128
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 662.075,
+          "decoder_us": 27.103,
+          "decoder_start_to_layernorm_end_us": 53.56689453125,
+          "producer_end_to_layernorm_end_us": 590.819091796875
+        },
+        "mlp": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 0,
+          "per_call_reconfigurations": 0,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 124,
+            "transformer_engine": 4
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 638.267,
+          "decoder_us": 27.247500000000002,
+          "decoder_start_to_layernorm_end_us": 53.630859375,
+          "producer_end_to_layernorm_end_us": 374.167724609375
+        }
+      }
+    },
+    "flux-improved/rank4": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-improved",
+      "rank": 4,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 0,
+          "per_call_reconfigurations": 0,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 128
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 678.9784999999999,
+          "decoder_us": 27.136,
+          "decoder_start_to_layernorm_end_us": 53.662841796875,
+          "producer_end_to_layernorm_end_us": 501.4306640625
+        },
+        "mlp": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 0,
+          "per_call_reconfigurations": 0,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 124,
+            "transformer_engine": 4
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 634.624,
+          "decoder_us": 27.135,
+          "decoder_start_to_layernorm_end_us": 53.583251953125,
+          "producer_end_to_layernorm_end_us": 363.0009765625
+        }
+      }
+    },
+    "flux-improved/rank5": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-improved",
+      "rank": 5,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 0,
+          "per_call_reconfigurations": 0,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 128
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 673.1279999999999,
+          "decoder_us": 27.039,
+          "decoder_start_to_layernorm_end_us": 53.806884765625,
+          "producer_end_to_layernorm_end_us": 578.59619140625
+        },
+        "mlp": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 0,
+          "per_call_reconfigurations": 0,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 124,
+            "transformer_engine": 4
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 621.713,
+          "decoder_us": 26.976,
+          "decoder_start_to_layernorm_end_us": 53.47119140625,
+          "producer_end_to_layernorm_end_us": 374.39208984375
+        }
+      }
+    },
+    "flux-improved/rank6": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-improved",
+      "rank": 6,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 0,
+          "per_call_reconfigurations": 0,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 128
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 680.4845,
+          "decoder_us": 27.247500000000002,
+          "decoder_start_to_layernorm_end_us": 53.503173828125,
+          "producer_end_to_layernorm_end_us": 513.523681640625
+        },
+        "mlp": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 0,
+          "per_call_reconfigurations": 0,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 124,
+            "transformer_engine": 4
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 651.3875,
+          "decoder_us": 27.2955,
+          "decoder_start_to_layernorm_end_us": 53.598388671875,
+          "producer_end_to_layernorm_end_us": 364.407470703125
+        }
+      }
+    },
+    "flux-improved/rank7": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-improved",
+      "rank": 7,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 0,
+          "per_call_reconfigurations": 0,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 128
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 692.985,
+          "decoder_us": 19.296,
+          "decoder_start_to_layernorm_end_us": 41.08740234375,
+          "producer_end_to_layernorm_end_us": 690.7685546875
+        },
+        "mlp": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 0,
+          "per_call_reconfigurations": 0,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 124,
+            "transformer_engine": 4
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 628.8254999999999,
+          "decoder_us": 19.328,
+          "decoder_start_to_layernorm_end_us": 41.103515625,
+          "producer_end_to_layernorm_end_us": 487.14111328125
+        }
+      }
+    },
+    "flux-fused/rank0": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-fused",
+      "rank": 0,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 128,
+          "per_call_reconfigurations": 128,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 128
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 785.5699999999999,
+          "decoder_us": 36.5595,
+          "decoder_start_to_layernorm_end_us": 60.04638671875,
+          "producer_end_to_layernorm_end_us": 751.474609375
+        },
+        "mlp": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 128,
+          "per_call_reconfigurations": 128,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 124,
+            "transformer_engine": 4
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 741.082,
+          "decoder_us": 36.6395,
+          "decoder_start_to_layernorm_end_us": 60.286865234375,
+          "producer_end_to_layernorm_end_us": 444.856201171875
+        }
+      }
+    },
+    "flux-fused/rank1": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-fused",
+      "rank": 1,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 128,
+          "per_call_reconfigurations": 128,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 128
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 747.9594999999999,
+          "decoder_us": 36.672,
+          "decoder_start_to_layernorm_end_us": 60.110595703125,
+          "producer_end_to_layernorm_end_us": 727.571044921875
+        },
+        "mlp": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 128,
+          "per_call_reconfigurations": 128,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 124,
+            "transformer_engine": 4
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 703.6759999999999,
+          "decoder_us": 36.703,
+          "decoder_start_to_layernorm_end_us": 60.38232421875,
+          "producer_end_to_layernorm_end_us": 491.3193359375
+        }
+      }
+    },
+    "flux-fused/rank2": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-fused",
+      "rank": 2,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 128,
+          "per_call_reconfigurations": 128,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 128
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 775.4715,
+          "decoder_us": 50.783,
+          "decoder_start_to_layernorm_end_us": 79.4697265625,
+          "producer_end_to_layernorm_end_us": 644.19189453125
+        },
+        "mlp": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 128,
+          "per_call_reconfigurations": 128,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 124,
+            "transformer_engine": 4
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 719.2935,
+          "decoder_us": 50.751,
+          "decoder_start_to_layernorm_end_us": 79.58203125,
+          "producer_end_to_layernorm_end_us": 404.165771484375
+        }
+      }
+    },
+    "flux-fused/rank3": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-fused",
+      "rank": 3,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 128,
+          "per_call_reconfigurations": 128,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 128
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 802.4475,
+          "decoder_us": 50.543499999999995,
+          "decoder_start_to_layernorm_end_us": 79.214599609375,
+          "producer_end_to_layernorm_end_us": 669.169189453125
+        },
+        "mlp": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 128,
+          "per_call_reconfigurations": 128,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 124,
+            "transformer_engine": 4
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 771.846,
+          "decoder_us": 50.687,
+          "decoder_start_to_layernorm_end_us": 79.43798828125,
+          "producer_end_to_layernorm_end_us": 416.662841796875
+        }
+      }
+    },
+    "flux-fused/rank4": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-fused",
+      "rank": 4,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 128,
+          "per_call_reconfigurations": 128,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 128
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 758.9785,
+          "decoder_us": 50.687,
+          "decoder_start_to_layernorm_end_us": 79.45458984375,
+          "producer_end_to_layernorm_end_us": 643.173095703125
+        },
+        "mlp": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 128,
+          "per_call_reconfigurations": 128,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 124,
+            "transformer_engine": 4
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 714.8375,
+          "decoder_us": 50.5275,
+          "decoder_start_to_layernorm_end_us": 79.56689453125,
+          "producer_end_to_layernorm_end_us": 397.705078125
+        }
+      }
+    },
+    "flux-fused/rank5": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-fused",
+      "rank": 5,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 128,
+          "per_call_reconfigurations": 128,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 128
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 793.3665,
+          "decoder_us": 50.431,
+          "decoder_start_to_layernorm_end_us": 78.92626953125,
+          "producer_end_to_layernorm_end_us": 617.17138671875
+        },
+        "mlp": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 128,
+          "per_call_reconfigurations": 128,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 124,
+            "transformer_engine": 4
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 742.012,
+          "decoder_us": 50.463,
+          "decoder_start_to_layernorm_end_us": 79.406005859375,
+          "producer_end_to_layernorm_end_us": 387.207763671875
+        }
+      }
+    },
+    "flux-fused/rank6": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-fused",
+      "rank": 6,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 128,
+          "per_call_reconfigurations": 128,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 128
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 777.1,
+          "decoder_us": 50.75,
+          "decoder_start_to_layernorm_end_us": 79.325927734375,
+          "producer_end_to_layernorm_end_us": 575.731201171875
+        },
+        "mlp": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 128,
+          "per_call_reconfigurations": 128,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 124,
+            "transformer_engine": 4
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 737.071,
+          "decoder_us": 50.974,
+          "decoder_start_to_layernorm_end_us": 80.061767578125,
+          "producer_end_to_layernorm_end_us": 381.62353515625
+        }
+      }
+    },
+    "flux-fused/rank7": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-fused",
+      "rank": 7,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 128,
+          "per_call_reconfigurations": 128,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 128
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 773.76,
+          "decoder_us": 36.542500000000004,
+          "decoder_start_to_layernorm_end_us": 367.4638671875,
+          "producer_end_to_layernorm_end_us": 727.040771484375
+        },
+        "mlp": {
+          "projection_calls": 128,
+          "transport": "rtx5090-nccl-staged-v2",
+          "local_gemm_kernels": 128,
+          "packet_pack_kernels": 128,
+          "packet_unpack_kernels": 128,
+          "decoder_kernels": 128,
+          "nccl_alltoall_calls": 128,
+          "nccl_kernels": 128,
+          "nccl_memcpy_events": 0,
+          "producer_workspace_memsets": 128,
+          "native_ipc_barriers": 0,
+          "original_peer_overlap_preserved": false,
+          "output_clones": 128,
+          "per_call_reconfigurations": 128,
+          "consumer_add_kernels": 256,
+          "layernorm_successors": 128,
+          "layernorm_backends": {
+            "apex": 124,
+            "transformer_engine": 4
+          },
+          "fused_consumer": false,
+          "compute_stream": 7,
+          "cpu_us": 741.1725,
+          "decoder_us": 36.6395,
+          "decoder_start_to_layernorm_end_us": 239.114990234375,
+          "producer_end_to_layernorm_end_us": 606.14794921875
+        }
+      }
+    },
+    "flux-basic/rank0": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-basic",
+      "rank": 0,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "receiver": "basic_quant_decode_reduce_kernel",
+          "encode_kernels": 128,
+          "decode_kernels": 128,
+          "separate_bf16_adds": 0,
+          "gemm_algorithm": "Sm89 GemmV2 compiled for SM120"
+        },
+        "mlp": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "receiver": "basic_quant_decode_reduce_kernel",
+          "encode_kernels": 128,
+          "decode_kernels": 128,
+          "separate_bf16_adds": 0,
+          "gemm_algorithm": "Sm89 GemmV2 compiled for SM120"
+        }
+      }
+    },
+    "flux-basic/rank1": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-basic",
+      "rank": 1,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "receiver": "basic_quant_decode_reduce_kernel",
+          "encode_kernels": 128,
+          "decode_kernels": 128,
+          "separate_bf16_adds": 0,
+          "gemm_algorithm": "Sm89 GemmV2 compiled for SM120"
+        },
+        "mlp": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "receiver": "basic_quant_decode_reduce_kernel",
+          "encode_kernels": 128,
+          "decode_kernels": 128,
+          "separate_bf16_adds": 0,
+          "gemm_algorithm": "Sm89 GemmV2 compiled for SM120"
+        }
+      }
+    },
+    "flux-basic/rank2": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-basic",
+      "rank": 2,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "receiver": "basic_quant_decode_reduce_kernel",
+          "encode_kernels": 128,
+          "decode_kernels": 128,
+          "separate_bf16_adds": 0,
+          "gemm_algorithm": "Sm89 GemmV2 compiled for SM120"
+        },
+        "mlp": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "receiver": "basic_quant_decode_reduce_kernel",
+          "encode_kernels": 128,
+          "decode_kernels": 128,
+          "separate_bf16_adds": 0,
+          "gemm_algorithm": "Sm89 GemmV2 compiled for SM120"
+        }
+      }
+    },
+    "flux-basic/rank3": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-basic",
+      "rank": 3,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "receiver": "basic_quant_decode_reduce_kernel",
+          "encode_kernels": 128,
+          "decode_kernels": 128,
+          "separate_bf16_adds": 0,
+          "gemm_algorithm": "Sm89 GemmV2 compiled for SM120"
+        },
+        "mlp": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "receiver": "basic_quant_decode_reduce_kernel",
+          "encode_kernels": 128,
+          "decode_kernels": 128,
+          "separate_bf16_adds": 0,
+          "gemm_algorithm": "Sm89 GemmV2 compiled for SM120"
+        }
+      }
+    },
+    "flux-basic/rank4": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-basic",
+      "rank": 4,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "receiver": "basic_quant_decode_reduce_kernel",
+          "encode_kernels": 128,
+          "decode_kernels": 128,
+          "separate_bf16_adds": 0,
+          "gemm_algorithm": "Sm89 GemmV2 compiled for SM120"
+        },
+        "mlp": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "receiver": "basic_quant_decode_reduce_kernel",
+          "encode_kernels": 128,
+          "decode_kernels": 128,
+          "separate_bf16_adds": 0,
+          "gemm_algorithm": "Sm89 GemmV2 compiled for SM120"
+        }
+      }
+    },
+    "flux-basic/rank5": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-basic",
+      "rank": 5,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "receiver": "basic_quant_decode_reduce_kernel",
+          "encode_kernels": 128,
+          "decode_kernels": 128,
+          "separate_bf16_adds": 0,
+          "gemm_algorithm": "Sm89 GemmV2 compiled for SM120"
+        },
+        "mlp": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "receiver": "basic_quant_decode_reduce_kernel",
+          "encode_kernels": 128,
+          "decode_kernels": 128,
+          "separate_bf16_adds": 0,
+          "gemm_algorithm": "Sm89 GemmV2 compiled for SM120"
+        }
+      }
+    },
+    "flux-basic/rank6": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-basic",
+      "rank": 6,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "receiver": "basic_quant_decode_reduce_kernel",
+          "encode_kernels": 128,
+          "decode_kernels": 128,
+          "separate_bf16_adds": 0,
+          "gemm_algorithm": "Sm89 GemmV2 compiled for SM120"
+        },
+        "mlp": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "receiver": "basic_quant_decode_reduce_kernel",
+          "encode_kernels": 128,
+          "decode_kernels": 128,
+          "separate_bf16_adds": 0,
+          "gemm_algorithm": "Sm89 GemmV2 compiled for SM120"
+        }
+      }
+    },
+    "flux-basic/rank7": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-basic",
+      "rank": 7,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "receiver": "basic_quant_decode_reduce_kernel",
+          "encode_kernels": 128,
+          "decode_kernels": 128,
+          "separate_bf16_adds": 0,
+          "gemm_algorithm": "Sm89 GemmV2 compiled for SM120"
+        },
+        "mlp": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "receiver": "basic_quant_decode_reduce_kernel",
+          "encode_kernels": 128,
+          "decode_kernels": 128,
+          "separate_bf16_adds": 0,
+          "gemm_algorithm": "Sm89 GemmV2 compiled for SM120"
+        }
+      }
+    },
+    "flux-bf16/rank0": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-bf16",
+      "rank": 0,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "gemm_algorithm": "original Sm89 StreamkSK / SM120",
+          "reduce_scatter_calls": 128,
+          "encode_kernels": 0,
+          "decode_kernels": 0,
+          "all_to_all_calls": 0,
+          "quantization": "none"
+        },
+        "mlp": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "gemm_algorithm": "original Sm89 StreamkSK / SM120",
+          "reduce_scatter_calls": 128,
+          "encode_kernels": 0,
+          "decode_kernels": 0,
+          "all_to_all_calls": 0,
+          "quantization": "none"
+        }
+      }
+    },
+    "flux-bf16/rank1": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-bf16",
+      "rank": 1,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "gemm_algorithm": "original Sm89 StreamkSK / SM120",
+          "reduce_scatter_calls": 128,
+          "encode_kernels": 0,
+          "decode_kernels": 0,
+          "all_to_all_calls": 0,
+          "quantization": "none"
+        },
+        "mlp": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "gemm_algorithm": "original Sm89 StreamkSK / SM120",
+          "reduce_scatter_calls": 128,
+          "encode_kernels": 0,
+          "decode_kernels": 0,
+          "all_to_all_calls": 0,
+          "quantization": "none"
+        }
+      }
+    },
+    "flux-bf16/rank2": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-bf16",
+      "rank": 2,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "gemm_algorithm": "original Sm89 StreamkSK / SM120",
+          "reduce_scatter_calls": 128,
+          "encode_kernels": 0,
+          "decode_kernels": 0,
+          "all_to_all_calls": 0,
+          "quantization": "none"
+        },
+        "mlp": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "gemm_algorithm": "original Sm89 StreamkSK / SM120",
+          "reduce_scatter_calls": 128,
+          "encode_kernels": 0,
+          "decode_kernels": 0,
+          "all_to_all_calls": 0,
+          "quantization": "none"
+        }
+      }
+    },
+    "flux-bf16/rank3": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-bf16",
+      "rank": 3,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "gemm_algorithm": "original Sm89 StreamkSK / SM120",
+          "reduce_scatter_calls": 128,
+          "encode_kernels": 0,
+          "decode_kernels": 0,
+          "all_to_all_calls": 0,
+          "quantization": "none"
+        },
+        "mlp": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "gemm_algorithm": "original Sm89 StreamkSK / SM120",
+          "reduce_scatter_calls": 128,
+          "encode_kernels": 0,
+          "decode_kernels": 0,
+          "all_to_all_calls": 0,
+          "quantization": "none"
+        }
+      }
+    },
+    "flux-bf16/rank4": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-bf16",
+      "rank": 4,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "gemm_algorithm": "original Sm89 StreamkSK / SM120",
+          "reduce_scatter_calls": 128,
+          "encode_kernels": 0,
+          "decode_kernels": 0,
+          "all_to_all_calls": 0,
+          "quantization": "none"
+        },
+        "mlp": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "gemm_algorithm": "original Sm89 StreamkSK / SM120",
+          "reduce_scatter_calls": 128,
+          "encode_kernels": 0,
+          "decode_kernels": 0,
+          "all_to_all_calls": 0,
+          "quantization": "none"
+        }
+      }
+    },
+    "flux-bf16/rank5": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-bf16",
+      "rank": 5,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "gemm_algorithm": "original Sm89 StreamkSK / SM120",
+          "reduce_scatter_calls": 128,
+          "encode_kernels": 0,
+          "decode_kernels": 0,
+          "all_to_all_calls": 0,
+          "quantization": "none"
+        },
+        "mlp": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "gemm_algorithm": "original Sm89 StreamkSK / SM120",
+          "reduce_scatter_calls": 128,
+          "encode_kernels": 0,
+          "decode_kernels": 0,
+          "all_to_all_calls": 0,
+          "quantization": "none"
+        }
+      }
+    },
+    "flux-bf16/rank6": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-bf16",
+      "rank": 6,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "gemm_algorithm": "original Sm89 StreamkSK / SM120",
+          "reduce_scatter_calls": 128,
+          "encode_kernels": 0,
+          "decode_kernels": 0,
+          "all_to_all_calls": 0,
+          "quantization": "none"
+        },
+        "mlp": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "gemm_algorithm": "original Sm89 StreamkSK / SM120",
+          "reduce_scatter_calls": 128,
+          "encode_kernels": 0,
+          "decode_kernels": 0,
+          "all_to_all_calls": 0,
+          "quantization": "none"
+        }
+      }
+    },
+    "flux-bf16/rank7": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "arm": "flux-bf16",
+      "rank": 7,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "row_forward": {
+        "attn": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "gemm_algorithm": "original Sm89 StreamkSK / SM120",
+          "reduce_scatter_calls": 128,
+          "encode_kernels": 0,
+          "decode_kernels": 0,
+          "all_to_all_calls": 0,
+          "quantization": "none"
+        },
+        "mlp": {
+          "calls": 128,
+          "route": "flux_tensor",
+          "gemm_algorithm": "original Sm89 StreamkSK / SM120",
+          "reduce_scatter_calls": 128,
+          "encode_kernels": 0,
+          "decode_kernels": 0,
+          "all_to_all_calls": 0,
+          "quantization": "none"
+        }
+      }
+    }
+  },
+  "evidence_files": {
+    "results/profile-flux-improved/rank0-profile.json.gz": "219b41645b18e55dcb6c55881468dbe3812a63fb0b5a6b42c272119584a9727b",
+    "results/profile-flux-improved/rank1-profile.json.gz": "1dbf4b40e4ed219ada2c7d9e971f5e548575abc3b1d2026d38044357fb25afd1",
+    "results/profile-flux-improved/rank2-profile.json.gz": "93e23f3a1329a07839edffc0b582288a76c0be7747aceef44e9b84c3f6fe24e4",
+    "results/profile-flux-improved/rank3-profile.json.gz": "ec8b5a5bae0f68e9956dc25f5ff08c5a0711d19c1c76f63dd3c3e4d6cccfe746",
+    "results/profile-flux-improved/rank4-profile.json.gz": "635af84b4d641190b20f96388c6e63a815e399391393bcd325b3b2a75318189b",
+    "results/profile-flux-improved/rank5-profile.json.gz": "ae3d900ee0103676b0d9a73755294c0ba5c65b01936e33717c0ae657b5f3ee23",
+    "results/profile-flux-improved/rank6-profile.json.gz": "1e4ef212d25559fadccb0de59157dc71a0862773842fdc71dacd2517e156aab3",
+    "results/profile-flux-improved/rank7-profile.json.gz": "8037c0f27a398433f1b801ad48a13e590495be24098400e3ebbed0fc2d9d2e12",
+    "results/profile-flux-fused/rank0-profile.json.gz": "636016a1816bd373ea5993026ffd840936731eff8209d61024148eccb583704b",
+    "results/profile-flux-fused/rank1-profile.json.gz": "1fe1384b14a5237239d8dfc4ae8ad91499375f13dc8cccaf61470a115ea6e2b3",
+    "results/profile-flux-fused/rank2-profile.json.gz": "61c1865b220475dec0ff042f1737aa92ce257588c98032dde427c54009c26967",
+    "results/profile-flux-fused/rank3-profile.json.gz": "ec8e60d9cef5fcad10f06208f1b416ff81d3f76f501febe11760c3f9e14f90d4",
+    "results/profile-flux-fused/rank4-profile.json.gz": "ab3ce698f657c3a18a5ff7c4d6d28fc809dcf3e63683f4f9cb76b752f1687661",
+    "results/profile-flux-fused/rank5-profile.json.gz": "eed075a30258f236f932ee50bd4c0a98e181f75b21d6f6629f36cc677d32925f",
+    "results/profile-flux-fused/rank6-profile.json.gz": "54ad734b39d2d9022049e3085cd9da00fe866e0deb7126f0895a2764aa9c6b9c",
+    "results/profile-flux-fused/rank7-profile.json.gz": "eb7380ef81143977823d87406beaee6261936ddd3740ef8ba8ff1236a0f24b50",
+    "results/profile-flux-basic/rank0-profile.json.gz": "503071ea27903f628f44f36644333c2e98c0bf0ac41b9a415a91e5042abd99d2",
+    "results/profile-flux-basic/rank1-profile.json.gz": "e099e3d2f8ff038731bfe35106b9362c6de9599d9f7e13867759e79283305f68",
+    "results/profile-flux-basic/rank2-profile.json.gz": "a5562053b7e7a43bd94d40f2480f6386320f6ae1c43a1f2bbd37a4eda5b4575f",
+    "results/profile-flux-basic/rank3-profile.json.gz": "1e65d7ab01b7adb9193b30edc90fe4f365a9f77c5169d381b44284532ed6e736",
+    "results/profile-flux-basic/rank4-profile.json.gz": "72c5703bba961230bad731a6e2a16b7ca1308a6064e8acf047162a6e445249b8",
+    "results/profile-flux-basic/rank5-profile.json.gz": "fdc5bd9c4d9f9bccfae707864d1e1b801db048f2cd549a8ae6f3df551ef1db2a",
+    "results/profile-flux-basic/rank6-profile.json.gz": "97acf365430c0c204870185270ffa85c90136cb7687b908469eacf3e404a0dfd",
+    "results/profile-flux-basic/rank7-profile.json.gz": "0fb1b07b79c38a93c74402bba99901b18bb108638cc723cb61760477713490d2",
+    "results/profile-flux-bf16/rank0-profile.json.gz": "26ee22bc4d915db08a59d4240bdd0e9c9e886ef377f18d48779cbbb1a54eedae",
+    "results/profile-flux-bf16/rank1-profile.json.gz": "815cc2534d3852497cbbdb37a2227abcdb6c621f45a9ce93ee30474abd03c900",
+    "results/profile-flux-bf16/rank2-profile.json.gz": "8436dffdde35439103fbf000d10a95183b507dad269829bb5b53f0a7b084f0bf",
+    "results/profile-flux-bf16/rank3-profile.json.gz": "53349be05ad00dda0231871793c5fc0f3b7a289d3aebb9ba63c2ab7ac9f63fe9",
+    "results/profile-flux-bf16/rank4-profile.json.gz": "3b95cff67e33fc383d1b196d394c1c44e4c1e38777d87754bd7e68dd594e15f3",
+    "results/profile-flux-bf16/rank5-profile.json.gz": "b240c13a17e6015e45929a7e889073daf70894db837b2c0ce2779c5859734ebd",
+    "results/profile-flux-bf16/rank6-profile.json.gz": "646533ec7b751cebe991db2cee0343b8044bc940503c4f272b4d8662b42bf4f6",
+    "results/profile-flux-bf16/rank7-profile.json.gz": "6109f1f25555bc71084820e383ab34ba436b59ed2be2b700c7e26d4c87c680a0"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "completed": true,
+  "evidence_files": {
+    "mapping/a-attn.log": "7fa5e83b7929984f7eead89a0e5c44e0317bf2ccc76680bcf1d329eccec9a8e0",
+    "mapping/a-mlp.log": "8685398cb011302c4b453bfb96d9787634c093483eaa6950af4870becc7867ec"
+  },
+  "build_manifest_sha256": "2d797f28e481a3392a4c27d507c7792eb2958e6c79c381e1fb8adcc2b4c3a2b2"
+}

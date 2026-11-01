@@ -1,0 +1,158 @@
+{
+  "completed": true,
+  "transport": "rtx5090-nccl-staged-v2",
+  "arms": {
+    "ma11": {
+      "protocol": "rtx5090-local-transport-smoke-v1",
+      "transport_protocol": "rtx5090-nccl-staged-v2",
+      "completed": true,
+      "arm": "ma11",
+      "build_manifest_sha256": "ab369fa730217909e88c0a5343ee4dad10b7fa94e345d5030516fa53c277ed80",
+      "gpu_validated": true,
+      "performance_measured": false,
+      "rank_records": {
+        "rank0.json": "b7a868db022462f8eaeb9d3cdc6bb3ce9e9030e16c1fd07b34b38dc4877c12e9",
+        "rank1.json": "350ca739f987dbe8a3de5c6d68afc4966a34bf83a499e5e258fea7faef43ee97",
+        "rank2.json": "6cf887e0747b51dff027d0b2a5128e4f3ee2cb30dd470b124fe02c16a89b5dc5",
+        "rank3.json": "aff77c246d97719dc381ca2e0346e4a700ec7a020b86ab1822506466da88c5bd",
+        "rank4.json": "4d7f61caade3448c56891549f224cc181422d962db0b1fadcb6cfc5449543ae2",
+        "rank5.json": "536090b604861a8d5f2afbe8caa91c03d87f1cf82ad3499682c742710aee90ee",
+        "rank6.json": "239ab838ad7a62e3c59647d9e47c934536bb2861c830218cfc277786d3def794",
+        "rank7.json": "ede80e76a16b58bd8cb0935198c398474a502dd9aa0d30e013a6193a598b9a4f"
+      }
+    },
+    "ma89": {
+      "protocol": "rtx5090-local-transport-smoke-v1",
+      "transport_protocol": "rtx5090-nccl-staged-v2",
+      "completed": true,
+      "arm": "ma89",
+      "build_manifest_sha256": "ab369fa730217909e88c0a5343ee4dad10b7fa94e345d5030516fa53c277ed80",
+      "gpu_validated": true,
+      "performance_measured": false,
+      "rank_records": {
+        "rank0.json": "24d1d54c2d7c02c4832b38c4c416645fcedea12608f11f13cb0bd6cb6784ef40",
+        "rank1.json": "ae7a6cc14c964521706300769961976b9c6f8d78249e68b911d88f9812eafec2",
+        "rank2.json": "f69c8e4f7242fbd1c553404c019e3dc5f6dab2669fbea6b2d65b98224d87f40b",
+        "rank3.json": "bdf48a952000e5ac6a7084afcb097f1fccdf6b4e56f7752935f97f78c920c131",
+        "rank4.json": "18bbfd4f477ac765c0c19c623a1055f1a8e247dc48af0ed4518630898845e5de",
+        "rank5.json": "a93edbc2140eca98ba74f052ff24b12a6f95bc044ac8f18e51ab9b28cd27a1c1",
+        "rank6.json": "cfec259724e27fdd54b7de49188c33339acc4bae08faed61e1eae384952775fc",
+        "rank7.json": "5253e921cb628acdccf107ae749533607842bbc2751180c3e1876679a92f296e"
+      }
+    },
+    "ma8": {
+      "protocol": "rtx5090-local-transport-smoke-v1",
+      "transport_protocol": "rtx5090-nccl-staged-v2",
+      "completed": true,
+      "arm": "ma8",
+      "build_manifest_sha256": "ab369fa730217909e88c0a5343ee4dad10b7fa94e345d5030516fa53c277ed80",
+      "gpu_validated": true,
+      "performance_measured": false,
+      "rank_records": {
+        "rank0.json": "0774af6088f145ffd5e64b49238e9f037261ad7ef76a890ef895d0789747fa79",
+        "rank1.json": "8df562a1d79f04a7eabf524f0787661ed68b9e75c83f85e7cf9d31707de70c3a",
+        "rank2.json": "05609f4b2a79c84a89b7c4ece19ef2e55888f0917b9a342a095a10674a17ba01",
+        "rank3.json": "79d8dce81fc8657f90c4aaac46cbe24189c22a3fc5159f48d6d9b08c1f003539",
+        "rank4.json": "ec46c50f376025ecf5bc5bb64a353d5c501969b83cac4806dd30ae3be25132d4",
+        "rank5.json": "943c4c8963220f970857520967bcf5e1158dd2b68a02cc2df634b4026b5b7eba",
+        "rank6.json": "b03603204ecc42beca6a1ba308f343383372cf6a1b9aaa7c182435884dd51c01",
+        "rank7.json": "c3d1368e65b0bd85089f62015b6b95ee5ba63be6749a0f260a8d2be5b74c39ea"
+      }
+    },
+    "ma9": {
+      "protocol": "rtx5090-local-transport-smoke-v1",
+      "transport_protocol": "rtx5090-nccl-staged-v2",
+      "completed": true,
+      "arm": "ma9",
+      "build_manifest_sha256": "ab369fa730217909e88c0a5343ee4dad10b7fa94e345d5030516fa53c277ed80",
+      "gpu_validated": true,
+      "performance_measured": false,
+      "rank_records": {
+        "rank0.json": "2d28782e121d25559a5b06cdb2b55ef9daae7c87833b35bec2ea5e606202b64a",
+        "rank1.json": "87b03092903f3671735a05d6645f6d05768a86d2c247d5e89dd36ef1a8383169",
+        "rank2.json": "47f0d220044206ad925cf82f6e0c28f12c9c506f24bdf99c1981af4e9e518e6f",
+        "rank3.json": "32d4b08f34a204e908972c4b3765146d5bc2cb399bc5327902f6e31e7f97f9ce",
+        "rank4.json": "75de1d2e2b237b25def275072f40da51d8397417b7751d6058abf37547da775c",
+        "rank5.json": "c3d22a2cfc50e53a419f7a06e00b7866f33c6e5b1d837a88fa240c855182e81c",
+        "rank6.json": "4d48f2680bb303e69738ac991f142de4191813b651c90ca363aefdeed215d737",
+        "rank7.json": "66210e3ea73363c1f721bef7969f1f524a1ad720aa92d8e10aced1a0b70d04c7"
+      }
+    },
+    "cr3": {
+      "protocol": "rtx5090-local-transport-smoke-v1",
+      "transport_protocol": "rtx5090-nccl-staged-v2",
+      "completed": true,
+      "arm": "cr3",
+      "build_manifest_sha256": "ab369fa730217909e88c0a5343ee4dad10b7fa94e345d5030516fa53c277ed80",
+      "gpu_validated": true,
+      "performance_measured": false,
+      "rank_records": {
+        "rank0.json": "f0d0313d7b6e00ccd33f69f632d520c8ccfc80f035e9aa38993cb365c7da76c6",
+        "rank1.json": "73cccaf0b8ec12af9925bbafa0eeadd95a7803c31710f8c552fa3cbb51551157",
+        "rank2.json": "942d164cfe62fd831032dbddfafd432c997eb83ba88dc3173cf39b00c5404edf",
+        "rank3.json": "d55bd7ac942021322eefdd2032741da710495ea8b226b47b3b1d3c01d89df73b",
+        "rank4.json": "a1585f02ec48d455e5e466c0576b4b10147bce606da6daa595a02b460c61ddc3",
+        "rank5.json": "b0ee2e47659bb5aafd07d89ba0c914591048a4246af267ee1559524a4e4cb391",
+        "rank6.json": "c5980a1a79069d3c452adcb447a026fae12965e9e24a3c1e42ad1f09b7420897",
+        "rank7.json": "a754f578ab0bc9f35f5e4f508e0b0c990f2bc6b2339cbc721c8a0ddc3631c2f0"
+      }
+    },
+    "r": {
+      "protocol": "rtx5090-local-transport-smoke-v1",
+      "transport_protocol": "rtx5090-nccl-staged-v2",
+      "completed": true,
+      "arm": "r",
+      "build_manifest_sha256": "ab369fa730217909e88c0a5343ee4dad10b7fa94e345d5030516fa53c277ed80",
+      "gpu_validated": true,
+      "performance_measured": false,
+      "rank_records": {
+        "rank0.json": "52ae2ee926dfad9d06a4f6332ade0f54c1f487dc0b5772c84eb3a039a0f8b726",
+        "rank1.json": "da2f3c931dedb0448d62c6c10c88c84a06d6bf62845ac9993128af117b01db9b",
+        "rank2.json": "bae80a2b41de1064742fe321d63472ee4733d3fa1d15bae7238325553d7f4d4a",
+        "rank3.json": "0e5dde9c11dc4adacd5f5d30b6902381cc36049599b19e36b78431dfa4d19ba7",
+        "rank4.json": "69fd5e9380c0f74b062a7688e9f1d581d7182bb4440bbdf9667c3f8a3e15230c",
+        "rank5.json": "d2bb6cf5261a53a69410c7de7db015dd1eb258bd04958d4ddca70fe87b245fbe",
+        "rank6.json": "467c42d73c8e4a48646681e431dcaf70f228142e9df2e996abdb8d4e2fb0f0a3",
+        "rank7.json": "09aa489ed56eb0e122120ec214130bce5f5f41979d0fbe1c86e9bc5ff47c777d"
+      }
+    },
+    "c": {
+      "protocol": "rtx5090-local-transport-smoke-v1",
+      "transport_protocol": "rtx5090-nccl-staged-v2",
+      "completed": true,
+      "arm": "c",
+      "build_manifest_sha256": "ab369fa730217909e88c0a5343ee4dad10b7fa94e345d5030516fa53c277ed80",
+      "gpu_validated": true,
+      "performance_measured": false,
+      "rank_records": {
+        "rank0.json": "4aff618d1a131c3ac5a332c19c2c35fc6695fcbb803e144439989a430589ccb5",
+        "rank1.json": "ef15ab89eaed62f76bca6824f0a2f5e3a7482ae664681cafbc1b3c16f4d128d8",
+        "rank2.json": "ea8cee5366bb1e1faf9e5253009a41a369de6d6e4c0a68e66b0fc96858a655ac",
+        "rank3.json": "07626f29096e459a40361768734b44bb11cf189e8f766f04f909b7729b37d4ba",
+        "rank4.json": "2281f57c3e5ac03963f0790034b85b7e00a28bd6f0ad169f736d39fd9d0c45cc",
+        "rank5.json": "54c7b8671aef04317767c207969887cea1cc6b57bcbc87eeef246c744ee24d7b",
+        "rank6.json": "21551c0d2aee9c2f5f7cf7c0fe65ee16bd17d1fcd3d189afad9a6be3da38265f",
+        "rank7.json": "1163e5137e13d346a41eb2297395ac355b06e061538e9ecfcf0d9289afefa49c"
+      }
+    },
+    "a": {
+      "protocol": "rtx5090-local-transport-smoke-v1",
+      "transport_protocol": "rtx5090-nccl-staged-v2",
+      "completed": true,
+      "arm": "a",
+      "build_manifest_sha256": "ab369fa730217909e88c0a5343ee4dad10b7fa94e345d5030516fa53c277ed80",
+      "gpu_validated": true,
+      "performance_measured": false,
+      "rank_records": {
+        "rank0.json": "1884a8766a99896ecf10937e81f000ad531b86a7839a9437b72b4a0855e8dec3",
+        "rank1.json": "e9a6a7acd1c6399bbb29fa4b3ad553aae608e547b6c17706d6b13ad0f659b027",
+        "rank2.json": "ae6dab53f91e0f9787bb5103bd07c624cc2c2cf60a658aa337bb3b81b3b4fbaa",
+        "rank3.json": "45210b2a7679b2921e0fd6b0fd277a4ccf0b1803d69f1622138a8b72abf897fe",
+        "rank4.json": "21e754b2fc73ee8b7ba68ca34be696f00898a506a2b4fe01267ff54790161f03",
+        "rank5.json": "667253a9deb5588cf205d9376a932f8f3a9fe646c2161ca26cad6218dba703fa",
+        "rank6.json": "2d3f4edb4afa8f05c4b424c4d276525cd13e962eaa6076504ce620d932203845",
+        "rank7.json": "ee25e84747764a5d9b4806f9888b4e1f8fc7bb7d3f8c53500bd324dbc011c696"
+      }
+    }
+  }
+}

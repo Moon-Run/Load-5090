@@ -1,0 +1,44 @@
+{
+  "protocol": "rtx5090-op1-a-bitwise-probe-v1",
+  "completed": true,
+  "old_new_output_bitwise": true,
+  "old_new_packets_bitwise": true,
+  "directed_links": 56,
+  "roles": [
+    "attn",
+    "mlp"
+  ],
+  "cases": [
+    "zero",
+    "random",
+    "outlier"
+  ],
+  "actual_sorted_gemm_mapping_passed": true,
+  "build_manifest_sha256": "2d797f28e481a3392a4c27d507c7792eb2958e6c79c381e1fb8adcc2b4c3a2b2",
+  "evidence_files": {
+    "old-a/rank0.json": "dd2bdeeae0089c4ec0feeae0fb5c3156ae0c53a26668520d845a847a342c3b91",
+    "old-a/rank1.json": "aeaecbbad4495e5e0d66eed19c1c27909190bbd986ee11074680bd1fc8901bfa",
+    "old-a/rank2.json": "247bbdb90cf24a38f84ad5317da2a34ac2e74ee38587c73092885d844cc68afa",
+    "old-a/rank3.json": "136bcffd387d80675ea4613546b085d5d48ab605834f8201a177995ea3558d8b",
+    "old-a/rank4.json": "3b16e18453ca9941d918a39cc0449ff81dc6489a9f5570ddc1458045b52434da",
+    "old-a/rank5.json": "ed4ef5b5ce540416dbb3eb32e638d4ee306dbb24e4e18d922df7ea011044f584",
+    "old-a/rank6.json": "dfe175f2447bb8e73f8c9b05a1615f432db257207b933bd51259c98b2c58afe2",
+    "old-a/rank7.json": "20995026b7b5508e70a91a82826dfe427091a48a7b51c63cc6c3fc7cac50468c",
+    "a/rank0.json": "026c329239ed92ec953defe28ffa0b3cd555ae5fa31096b93a5145ef3a3b28d5",
+    "a/rank1.json": "09088eda4f76cdd787263f7fc10339c02727f55177b572f0d3aa512b198ccd8f",
+    "a/rank2.json": "eef49d4eb80093e340b0ebd93ffcf9ee70b3a497df7d43fdd2191c0666a89b6a",
+    "a/rank3.json": "0952fe1f7a9f807ba7095ef412ae15e4505ab75c59fb551a2f8edc262ff01b8c",
+    "a/rank4.json": "1fee17683b100a82d325a445e6f3f0ea2cc0ab0ef689610cacad6c5b6efe115b",
+    "a/rank5.json": "ea3a887ef9b5bdc4da626a5824a8492149f6b843cafd5d36c2ff7995a0b7b26c",
+    "a/rank6.json": "3ee175fdbe2eafe8c0bc3d9727620204320a9ad4544a0fcbdb03d83d79f0ef8f",
+    "a/rank7.json": "97a4e23c0ac4b315e8102160bb7a9fe40d60fc94a645b162c17e7e9200fe1144",
+    "flux-basic-interleaved/rank0.json": "6628e53283c7f8d286a9533fe63dcba958fe89bdda1c45e915e18160d94cd99f",
+    "flux-basic-interleaved/rank1.json": "dbb28da01807259a43d7fffb05194fe77b0a1d5a1907ba7d198bca323bdf8b2f",
+    "flux-basic-interleaved/rank2.json": "cd679d9da12348133ea851fec4b09a5629c873171979ab9f6704bd576baf7e14",
+    "flux-basic-interleaved/rank3.json": "6375be986bea8c09c6b0720657c2f18079a393e8a1f3015d762ad62977d43ef8",
+    "flux-basic-interleaved/rank4.json": "cf5b24dc5d6b76275d830ae4451cb86dcba45aeed88b1268db846c0d0b97a514",
+    "flux-basic-interleaved/rank5.json": "8de427627b05ead754bfbde679973915b28f9c973aed15dd0ee94614aef33520",
+    "flux-basic-interleaved/rank6.json": "17c43d835c188aae7326f482cdc879ecf47ecbbeb3a2724edef5247588e9c8c4",
+    "flux-basic-interleaved/rank7.json": "b9c93dcb2c3fca878ebc66ca8bc8b96b1c6253e1fa73fd85c5350959df3ebb11"
+  }
+}
