@@ -1,0 +1,18 @@
+{
+  "completed": true,
+  "evidence_files": {
+    "mapping/ma11-attn/mapping.log": "06b5673a4fb093481c3c53dd83c011c3fbb7f236886303ca521c92251846544c",
+    "mapping/ma11-mlp/mapping.log": "beb0b9b7ac695443b87f1af324f9538275174d72f718bbcf443fa458af109360",
+    "mapping/ma89-attn/mapping.log": "c2a1c986e081983866d9fe777344a91f8e46046281f25938f09d81f50532fa0a",
+    "mapping/ma89-mlp/mapping.log": "016b64bca76daaebf065e555e130e6bc4cb94ee5caa83b83aee254dfd42d7928",
+    "mapping/ma8-attn/mapping.log": "f7a93f7fa878ba39b75c802c7a2426aaff117dbe269b74971e5713235626b413",
+    "mapping/ma8-mlp/mapping.log": "1b470440c8c0494bce3ba9f409479ed11235e124d1b42b122187ccd270c382a4",
+    "mapping/r-attn/mapping.log": "42f3af8f24c014afaf5f1c473432db245adc40f7b5cc3ab962b669a3998905e3",
+    "mapping/r-mlp/mapping.log": "55bc66f49e0c9ea4ede7dd866777c6dfead138ce9eb2710120f312a28817ff77",
+    "mapping/c-attn/mapping.log": "36e718c124836c9f946df1118d723ed86dcd6786e80ea6f304c8c64def6fcc84",
+    "mapping/c-mlp/mapping.log": "71f54ced5f91b0c9d11e2f7e0116cba483f628776dbec56fe2fac719fd2d56df",
+    "mapping/a-attn/mapping.log": "a3a41609a2bfac8b32337ce3d975166cd447038afa9acf420f8e89cbfa0e9fbb",
+    "mapping/a-mlp/mapping.log": "11ed7d03cfd9996b3370f8359e71622b211bc3d6580115ebfc9d0c43c695fa44"
+  },
+  "build_manifest_sha256": "ab369fa730217909e88c0a5343ee4dad10b7fa94e345d5030516fa53c277ed80"
+}
