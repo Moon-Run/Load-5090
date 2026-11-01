@@ -1,0 +1,138 @@
+{
+  "protocol": "rtx5090-phase6-op2-abc-ma11-v1",
+  "transport": "rtx5090-nccl-staged-v2",
+  "run_id": "3750dc961b404d938a0d09064b3e95e6",
+  "arms": [
+    "flux-basic-interleaved",
+    "flux-basic-arrival",
+    "flux-basic-selective"
+  ],
+  "model": {
+    "layers": 32,
+    "hidden": 4096,
+    "ffn": 16384,
+    "heads": 32,
+    "sequence": 2048,
+    "micro_batch": 1,
+    "global_batch": 4,
+    "tp": 8,
+    "dp": 1,
+    "sm_count": 170,
+    "seed": 1234,
+    "token_seed": 4321,
+    "vocab": 32768
+  },
+  "trials": 1,
+  "blocks": 2,
+  "schedule": [
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 0,
+      "arm": "flux-basic-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-basic-interleaved"
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 1,
+      "arm": "flux-basic-selective",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-basic-selective"
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 2,
+      "arm": "flux-basic-arrival",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-basic-arrival"
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 3,
+      "arm": "flux-basic-selective",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-basic-selective"
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 4,
+      "arm": "flux-basic-arrival",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-basic-arrival"
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 5,
+      "arm": "flux-basic-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-basic-interleaved"
+    }
+  ],
+  "communication": {
+    "environment": {
+      "NCCL_VERSION": "2.27.3",
+      "TORCH_NCCL_USE_COMM_NONBLOCKING": "0",
+      "NCCL_NVLS_ENABLE": "0",
+      "NCCL_DEBUG": "WARN",
+      "TORCH_NCCL_ASYNC_ERROR_HANDLING": "1",
+      "NCCL_P2P_DISABLE": "1",
+      "NCCL_SHM_DISABLE": "0"
+    },
+    "config_files": {
+      "/etc/nccl.conf": null,
+      "/root/.nccl.conf": null
+    },
+    "nvls_request": "0"
+  },
+  "environment": {
+    "torch": "2.8.0a0+5228986c39.nv25.06",
+    "cuda": "12.9",
+    "nccl": [
+      2,
+      27,
+      3
+    ],
+    "python": "/workspace/venvs/tempname-5090/bin/python",
+    "python_version": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+    "cxx11_abi": true
+  },
+  "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+  "preflight_sha256": "ce89b3aa186f50a7c66ef07ba4165de7cba32680d66033491fcad2e4708d7bb4",
+  "ma9_compat": {
+    "protocol": "rtx5090-op2-ma9-standalone-sm120-v1",
+    "torch": "2.8.0a0+5228986c39.nv25.06",
+    "architecture": "sm_120",
+    "gpu_validated": false,
+    "source_sha256": "a907fb334a1a7c6f232943cb2c4fb3b3faf142bbe223b8b61699edfa0e0df84d",
+    "builder_sha256": "217a643b73f6767c65b304a7539714a14f0b205eda5462a6e2242db5643ce95a",
+    "nvcc_sha256": "df9974db233a0b7a6c6d59c0e5d74e011566104098bcb3553495ff1b95bdeaf6",
+    "library": "/workspace/Load-5090/logs/5090/phase6/op2-abc-ma11-v1-1x-50steps-20261102-013244-945721/ma9-compat/libop2_ma9_zero_count.so",
+    "library_sha256": "2d320eb80c9482b295c44eef409b2d94c004ec33136f8257156a0af3e70ba57c",
+    "compile_log_sha256": "fe6c8b858168edfa03c22e2d25c472c901c3b3ec7cbbab3e8969a66aecb679e2"
+  },
+  "ma11_compat": {
+    "protocol": "rtx5090-ma11-pytorch-280-softmax-v1",
+    "torch": "2.8.0a0+5228986c39.nv25.06",
+    "source_sha256": "ca5429acf22076e7f7caf44204df3558d882507fbdef5afd95d13d5bd8c10552",
+    "builder_sha256": "02d4ddf25f91a2596b49bca1a584d074231f4c5f845cbb6ef1c4c0b42e03a915",
+    "nvcc_sha256": "df9974db233a0b7a6c6d59c0e5d74e011566104098bcb3553495ff1b95bdeaf6",
+    "library": "/workspace/Load-5090/logs/5090/phase6/op2-abc-ma11-v1-1x-50steps-20261102-013244-945721/ma11-compat/libma11_softmax_5090.so",
+    "library_sha256": "5c1be77f8c4713009ed5990966d7b0e99341d28984855ae2c32f994b2ae909e6",
+    "compile_log_sha256": "1801ecd575a59457d6b297b96398174ff167a642065a954499a1b78704d1a054",
+    "architecture": "sm_120",
+    "gpu_validated": false
+  },
+  "ma11_probe": {
+    "result_sha256": "cfbede90a18fc116f94d6ab1e0bf9210809a5613c0da8d2bdfb552e07b4519e7"
+  },
+  "build": {
+    "root": "/workspace/Load-5090/logs/5090/phase6/op1-abc-staged-v1-1x-50steps-20261102-000347-679838/build",
+    "manifest_sha256": "731116f4b9cdb52c5573541ecbbc575c15382b32cbaed00e7e8b5a3495b7cbad"
+  }
+}

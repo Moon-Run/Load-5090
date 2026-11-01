@@ -1,0 +1,80 @@
+[
+  {
+    "trial": 1,
+    "block": 0,
+    "index": 0,
+    "arm": "flux-basic-interleaved",
+    "mode": "timing",
+    "directory": "compare1/block00-flux-basic-interleaved",
+    "ms_per_step": 861.0248244740069,
+    "peak_allocated_gib": 19.411821842193604,
+    "peak_reserved_gib": 19.451171875,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_taco_workspace_gib": 19.411821842193604
+  },
+  {
+    "trial": 1,
+    "block": 0,
+    "index": 1,
+    "arm": "flux-basic-selective",
+    "mode": "timing",
+    "directory": "compare1/block00-flux-basic-selective",
+    "ms_per_step": 997.4568279273808,
+    "peak_allocated_gib": 20.281084537506104,
+    "peak_reserved_gib": 20.310546875,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_taco_workspace_gib": 20.281084537506104
+  },
+  {
+    "trial": 1,
+    "block": 0,
+    "index": 2,
+    "arm": "flux-basic-arrival",
+    "mode": "timing",
+    "directory": "compare1/block00-flux-basic-arrival",
+    "ms_per_step": 990.5796329118311,
+    "peak_allocated_gib": 19.432940006256104,
+    "peak_reserved_gib": 19.462890625,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_taco_workspace_gib": 19.432940006256104
+  },
+  {
+    "trial": 1,
+    "block": 1,
+    "index": 3,
+    "arm": "flux-basic-selective",
+    "mode": "timing",
+    "directory": "compare1/block01-flux-basic-selective",
+    "ms_per_step": 1006.5297841839492,
+    "peak_allocated_gib": 20.281084537506104,
+    "peak_reserved_gib": 20.310546875,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_taco_workspace_gib": 20.281084537506104
+  },
+  {
+    "trial": 1,
+    "block": 1,
+    "index": 4,
+    "arm": "flux-basic-arrival",
+    "mode": "timing",
+    "directory": "compare1/block01-flux-basic-arrival",
+    "ms_per_step": 998.8472490943968,
+    "peak_allocated_gib": 19.432940006256104,
+    "peak_reserved_gib": 19.462890625,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_taco_workspace_gib": 19.432940006256104
+  },
+  {
+    "trial": 1,
+    "block": 1,
+    "index": 5,
+    "arm": "flux-basic-interleaved",
+    "mode": "timing",
+    "directory": "compare1/block01-flux-basic-interleaved",
+    "ms_per_step": 861.4253318868577,
+    "peak_allocated_gib": 19.411821842193604,
+    "peak_reserved_gib": 19.451171875,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_taco_workspace_gib": 19.411821842193604
+  }
+]

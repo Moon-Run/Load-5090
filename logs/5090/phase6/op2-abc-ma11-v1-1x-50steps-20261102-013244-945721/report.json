@@ -1,0 +1,874 @@
+{
+  "protocol": "rtx5090-phase6-op2-abc-ma11-v1",
+  "transport": "rtx5090-nccl-staged-v2",
+  "completed": true,
+  "arms": [
+    "flux-basic-interleaved",
+    "flux-basic-arrival",
+    "flux-basic-selective"
+  ],
+  "definitions": {
+    "flux-basic-interleaved": {
+      "policy": "flux-basic-interleaved",
+      "family": "flux_tensor",
+      "scope": "attn_mlp",
+      "roles": [
+        "attn",
+        "mlp"
+      ],
+      "implementation": "rtx5090-flux-basic-interleaved-v1",
+      "workspace": "tensor",
+      "output_clone": false,
+      "base": "original",
+      "order": "interleaved",
+      "arrival": false,
+      "interleaved": true,
+      "quantization": "all_remote",
+      "experiment": {
+        "protocol": "rtx5090-phase6-op1-abc-staged-v1",
+        "original_arm": "flux-basic",
+        "producer": "flux-gemmonly-sm89-v2",
+        "gemm_schedule": "StreamkSK-with-CTA-interleave",
+        "may_change_streamk_reduction_assignment": true,
+        "quantization": "all_remote",
+        "interleaved": true,
+        "arrival": false,
+        "selective": false,
+        "calibration_used": false,
+        "cta_order": "rank-rotated-destination-interleaved",
+        "decoder": "basic-ring-bf16-h128-direct-v1",
+        "collective": "NCCL-byte-AllToAll",
+        "chunks": 1,
+        "owns_configuration": true,
+        "owns_output": true,
+        "packet_layout": "H128-AoS-136-or-BF16-256",
+        "original_peer_overlap_preserved": false,
+        "arrival_scope": "whole-exchange"
+      },
+      "op2": {
+        "protocol": "rtx5090-phase6-op2-abc-ma11-v1",
+        "projection": {
+          "protocol": "rtx5090-phase6-op1-abc-staged-v1",
+          "original_arm": "flux-basic",
+          "producer": "flux-gemmonly-sm89-v2",
+          "gemm_schedule": "StreamkSK-with-CTA-interleave",
+          "may_change_streamk_reduction_assignment": true,
+          "quantization": "all_remote",
+          "interleaved": true,
+          "arrival": false,
+          "selective": false,
+          "calibration_used": false,
+          "cta_order": "rank-rotated-destination-interleaved",
+          "decoder": "basic-ring-bf16-h128-direct-v1",
+          "collective": "NCCL-byte-AllToAll",
+          "chunks": 1,
+          "owns_configuration": true,
+          "owns_output": true,
+          "packet_layout": "H128-AoS-136-or-BF16-256",
+          "original_peer_overlap_preserved": false,
+          "arrival_scope": "whole-exchange"
+        },
+        "optimizations": {
+          "ma8": "retain-owned-forward-column-input-v2",
+          "ma9": "ordered-fp32-gradient-zero-count",
+          "ma11": "pytorch28-exact-causal-softmax"
+        },
+        "repeated_ma89_installation": false,
+        "cr3_consumer_fusion": false
+      }
+    },
+    "flux-basic-arrival": {
+      "policy": "flux-basic-arrival",
+      "family": "flux_tensor",
+      "scope": "attn_mlp",
+      "roles": [
+        "attn",
+        "mlp"
+      ],
+      "implementation": "rtx5090-flux-basic-arrival-v1",
+      "workspace": "tensor",
+      "output_clone": false,
+      "base": "original",
+      "order": "interleaved",
+      "arrival": true,
+      "interleaved": true,
+      "quantization": "all_remote",
+      "experiment": {
+        "protocol": "rtx5090-phase6-op1-abc-staged-v1",
+        "original_arm": "flux-basic",
+        "producer": "flux-gemmonly-sm89-v2",
+        "gemm_schedule": "StreamkSK-with-CTA-interleave",
+        "may_change_streamk_reduction_assignment": true,
+        "quantization": "all_remote",
+        "interleaved": true,
+        "arrival": true,
+        "selective": false,
+        "calibration_used": false,
+        "cta_order": "rank-rotated-destination-interleaved",
+        "decoder": "basic-ring-bf16-h128-direct-v1",
+        "collective": "NCCL-byte-AllToAll",
+        "chunks": 4,
+        "owns_configuration": true,
+        "owns_output": true,
+        "packet_layout": "H128-AoS-136-or-BF16-256",
+        "original_peer_overlap_preserved": false,
+        "arrival_scope": "completed-row-chunk"
+      },
+      "op2": {
+        "protocol": "rtx5090-phase6-op2-abc-ma11-v1",
+        "projection": {
+          "protocol": "rtx5090-phase6-op1-abc-staged-v1",
+          "original_arm": "flux-basic",
+          "producer": "flux-gemmonly-sm89-v2",
+          "gemm_schedule": "StreamkSK-with-CTA-interleave",
+          "may_change_streamk_reduction_assignment": true,
+          "quantization": "all_remote",
+          "interleaved": true,
+          "arrival": true,
+          "selective": false,
+          "calibration_used": false,
+          "cta_order": "rank-rotated-destination-interleaved",
+          "decoder": "basic-ring-bf16-h128-direct-v1",
+          "collective": "NCCL-byte-AllToAll",
+          "chunks": 4,
+          "owns_configuration": true,
+          "owns_output": true,
+          "packet_layout": "H128-AoS-136-or-BF16-256",
+          "original_peer_overlap_preserved": false,
+          "arrival_scope": "completed-row-chunk"
+        },
+        "optimizations": {
+          "ma8": "retain-owned-forward-column-input-v2",
+          "ma9": "ordered-fp32-gradient-zero-count",
+          "ma11": "pytorch28-exact-causal-softmax"
+        },
+        "repeated_ma89_installation": false,
+        "cr3_consumer_fusion": false
+      }
+    },
+    "flux-basic-selective": {
+      "policy": "flux-basic-selective",
+      "family": "flux_tensor",
+      "scope": "attn_mlp",
+      "roles": [
+        "attn",
+        "mlp"
+      ],
+      "implementation": "rtx5090-flux-basic-selective-v1",
+      "workspace": "tensor",
+      "output_clone": false,
+      "base": "original",
+      "order": "interleaved",
+      "arrival": true,
+      "interleaved": true,
+      "quantization": "selective-tail-1/64",
+      "experiment": {
+        "protocol": "rtx5090-phase6-op1-abc-staged-v1",
+        "original_arm": "flux-basic",
+        "producer": "flux-gemmonly-sm89-v2",
+        "gemm_schedule": "StreamkSK-with-CTA-interleave",
+        "may_change_streamk_reduction_assignment": true,
+        "quantization": "selective-tail-1/64",
+        "interleaved": true,
+        "arrival": true,
+        "selective": true,
+        "calibration_used": false,
+        "cta_order": "rank-rotated-destination-interleaved",
+        "decoder": "basic-ring-bf16-h128-direct-v1",
+        "collective": "NCCL-byte-AllToAll",
+        "chunks": 4,
+        "owns_configuration": true,
+        "owns_output": true,
+        "packet_layout": "H128-AoS-136-or-BF16-256",
+        "original_peer_overlap_preserved": false,
+        "arrival_scope": "completed-row-chunk"
+      },
+      "op2": {
+        "protocol": "rtx5090-phase6-op2-abc-ma11-v1",
+        "projection": {
+          "protocol": "rtx5090-phase6-op1-abc-staged-v1",
+          "original_arm": "flux-basic",
+          "producer": "flux-gemmonly-sm89-v2",
+          "gemm_schedule": "StreamkSK-with-CTA-interleave",
+          "may_change_streamk_reduction_assignment": true,
+          "quantization": "selective-tail-1/64",
+          "interleaved": true,
+          "arrival": true,
+          "selective": true,
+          "calibration_used": false,
+          "cta_order": "rank-rotated-destination-interleaved",
+          "decoder": "basic-ring-bf16-h128-direct-v1",
+          "collective": "NCCL-byte-AllToAll",
+          "chunks": 4,
+          "owns_configuration": true,
+          "owns_output": true,
+          "packet_layout": "H128-AoS-136-or-BF16-256",
+          "original_peer_overlap_preserved": false,
+          "arrival_scope": "completed-row-chunk"
+        },
+        "optimizations": {
+          "ma8": "retain-owned-forward-column-input-v2",
+          "ma9": "ordered-fp32-gradient-zero-count",
+          "ma11": "pytorch28-exact-causal-softmax"
+        },
+        "repeated_ma89_installation": false,
+        "cr3_consumer_fusion": false
+      }
+    }
+  },
+  "trials": 1,
+  "blocks": 2,
+  "counterbalanced_order": false,
+  "pairwise_ci_available": false,
+  "model": {
+    "layers": 32,
+    "hidden": 4096,
+    "ffn": 16384,
+    "heads": 32,
+    "sequence": 2048,
+    "micro_batch": 1,
+    "global_batch": 4,
+    "tp": 8,
+    "dp": 1,
+    "sm_count": 170,
+    "seed": 1234,
+    "token_seed": 4321,
+    "vocab": 32768
+  },
+  "timing": {
+    "warmup_steps": 10,
+    "timed_steps": 50,
+    "smoke_warmup_steps": 2,
+    "smoke_steps": 3
+  },
+  "timing_windows": 6,
+  "timing_rank_records": 48,
+  "formal_optimizer_steps": 300,
+  "all_windows_retained": true,
+  "comparisons": {
+    "compare1": {
+      "arms": {
+        "flux-basic-interleaved": {
+          "mean_ms": 861.2250781804323,
+          "median_ms": 861.2250781804323,
+          "min_ms": 861.0248244740069,
+          "max_ms": 861.4253318868577,
+          "tokens_per_second": 9512.031416116894,
+          "reduction_vs_a_percent": 0.0,
+          "max_peak_allocated_gib": 19.411821842193604,
+          "max_peak_reserved_gib": 19.451171875,
+          "max_native_workspace_gib": 0.0,
+          "max_peak_allocated_plus_taco_workspace_gib": 19.411821842193604
+        },
+        "flux-basic-arrival": {
+          "mean_ms": 994.713441003114,
+          "median_ms": 994.713441003114,
+          "min_ms": 990.5796329118311,
+          "max_ms": 998.8472490943968,
+          "tokens_per_second": 8235.537655687871,
+          "reduction_vs_a_percent": -15.499823008488267,
+          "max_peak_allocated_gib": 19.432940006256104,
+          "max_peak_reserved_gib": 19.462890625,
+          "max_native_workspace_gib": 0.0,
+          "max_peak_allocated_plus_taco_workspace_gib": 19.432940006256104
+        },
+        "flux-basic-selective": {
+          "mean_ms": 1001.993306055665,
+          "median_ms": 1001.993306055665,
+          "min_ms": 997.4568279273808,
+          "max_ms": 1006.5297841839492,
+          "tokens_per_second": 8175.703321060809,
+          "reduction_vs_a_percent": -16.345114818607364,
+          "max_peak_allocated_gib": 20.281084537506104,
+          "max_peak_reserved_gib": 20.310546875,
+          "max_native_workspace_gib": 0.0,
+          "max_peak_allocated_plus_taco_workspace_gib": 20.281084537506104
+        }
+      },
+      "pairs": {
+        "flux-basic-interleaved/flux-basic-arrival": {
+          "percent": 13.419035434391924,
+          "ci95": null,
+          "paired_blocks": 2,
+          "faster_blocks": 2
+        },
+        "flux-basic-interleaved/flux-basic-selective": {
+          "percent": 14.047940594592667,
+          "ci95": null,
+          "paired_blocks": 2,
+          "faster_blocks": 2
+        },
+        "flux-basic-arrival/flux-basic-selective": {
+          "percent": 0.7263780940257036,
+          "ci95": null,
+          "paired_blocks": 2,
+          "faster_blocks": 2
+        }
+      }
+    }
+  },
+  "all_samples": [
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 0,
+      "arm": "flux-basic-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-basic-interleaved",
+      "ms_per_step": 861.0248244740069,
+      "peak_allocated_gib": 19.411821842193604,
+      "peak_reserved_gib": 19.451171875,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_taco_workspace_gib": 19.411821842193604
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 1,
+      "arm": "flux-basic-selective",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-basic-selective",
+      "ms_per_step": 997.4568279273808,
+      "peak_allocated_gib": 20.281084537506104,
+      "peak_reserved_gib": 20.310546875,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_taco_workspace_gib": 20.281084537506104
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 2,
+      "arm": "flux-basic-arrival",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-basic-arrival",
+      "ms_per_step": 990.5796329118311,
+      "peak_allocated_gib": 19.432940006256104,
+      "peak_reserved_gib": 19.462890625,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_taco_workspace_gib": 19.432940006256104
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 3,
+      "arm": "flux-basic-selective",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-basic-selective",
+      "ms_per_step": 1006.5297841839492,
+      "peak_allocated_gib": 20.281084537506104,
+      "peak_reserved_gib": 20.310546875,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_taco_workspace_gib": 20.281084537506104
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 4,
+      "arm": "flux-basic-arrival",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-basic-arrival",
+      "ms_per_step": 998.8472490943968,
+      "peak_allocated_gib": 19.432940006256104,
+      "peak_reserved_gib": 19.462890625,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_taco_workspace_gib": 19.432940006256104
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 5,
+      "arm": "flux-basic-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-basic-interleaved",
+      "ms_per_step": 861.4253318868577,
+      "peak_allocated_gib": 19.411821842193604,
+      "peak_reserved_gib": 19.451171875,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_taco_workspace_gib": 19.411821842193604
+    }
+  ],
+  "numerical_equivalence_required": false,
+  "reduction_changes_allowed": true,
+  "original_peer_overlap_preserved": false,
+  "mechanism_stack": [
+    "ma8_activation_cache",
+    "ma9_zero_count",
+    "ma11_softmax"
+  ],
+  "increment_over_unoptimized_validated": false,
+  "limitation": "Three ABC projection paths with the same MA8 cache, MA9 zero statistic and MA11 softmax. MA11 already includes MA89: shared improvements are installed once. No CR3 consumer fusion is transplanted. Original ABC codec, chunks and CUDA connections stay fixed. No contemporaneous unoptimized or MA89-only control: this run cannot isolate their incremental gains. No historical pooling; all windows and negative gains retained. 2-block short run has incomplete counterbalancing and no confidence interval.",
+  "run_id": "3750dc961b404d938a0d09064b3e95e6",
+  "correctness_passed": true,
+  "execution_path_validated": true,
+  "numerical_comparisons": {
+    "flux-basic-interleaved/flux-basic-arrival": {
+      "paired_windows": 4,
+      "all_trajectories_identical": true,
+      "final_parameters_identical_windows": 4,
+      "max_loss_abs_difference": 0.0,
+      "max_loss_relative_difference": 0.0,
+      "max_grad_norm_abs_difference": 0.0,
+      "max_grad_norm_relative_difference": 0.0,
+      "windows": [
+        {
+          "trial": 0,
+          "block": -1,
+          "mode": "profile",
+          "max_loss_abs_difference": 0.0,
+          "max_loss_relative_difference": 0.0,
+          "max_grad_norm_abs_difference": 0.0,
+          "max_grad_norm_relative_difference": 0.0,
+          "final_parameters_identical": true,
+          "trajectory_identical": true
+        },
+        {
+          "trial": 0,
+          "block": -1,
+          "mode": "smoke",
+          "max_loss_abs_difference": 0.0,
+          "max_loss_relative_difference": 0.0,
+          "max_grad_norm_abs_difference": 0.0,
+          "max_grad_norm_relative_difference": 0.0,
+          "final_parameters_identical": true,
+          "trajectory_identical": true,
+          "smoke_projection_outputs_identical": true,
+          "smoke_parameter_trajectory_identical": true
+        },
+        {
+          "trial": 1,
+          "block": 0,
+          "mode": "timing",
+          "max_loss_abs_difference": 0.0,
+          "max_loss_relative_difference": 0.0,
+          "max_grad_norm_abs_difference": 0.0,
+          "max_grad_norm_relative_difference": 0.0,
+          "final_parameters_identical": true,
+          "trajectory_identical": true
+        },
+        {
+          "trial": 1,
+          "block": 1,
+          "mode": "timing",
+          "max_loss_abs_difference": 0.0,
+          "max_loss_relative_difference": 0.0,
+          "max_grad_norm_abs_difference": 0.0,
+          "max_grad_norm_relative_difference": 0.0,
+          "final_parameters_identical": true,
+          "trajectory_identical": true
+        }
+      ],
+      "equivalence_required": false,
+      "reduction_changes_allowed": true
+    },
+    "flux-basic-interleaved/flux-basic-selective": {
+      "paired_windows": 4,
+      "all_trajectories_identical": false,
+      "final_parameters_identical_windows": 0,
+      "max_loss_abs_difference": 1.6673240661621094,
+      "max_loss_relative_difference": 4.171730719575192,
+      "max_grad_norm_abs_difference": 11.912910305317153,
+      "max_grad_norm_relative_difference": 12.292467770671525,
+      "windows": [
+        {
+          "trial": 0,
+          "block": -1,
+          "mode": "profile",
+          "max_loss_abs_difference": 0.001873016357421875,
+          "max_loss_relative_difference": 0.0002108143918820573,
+          "max_grad_norm_abs_difference": 0.00011329136458781974,
+          "max_grad_norm_relative_difference": 0.0004368238910292557,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        },
+        {
+          "trial": 0,
+          "block": -1,
+          "mode": "smoke",
+          "max_loss_abs_difference": 0.006701469421386719,
+          "max_loss_relative_difference": 0.0006639073546398488,
+          "max_grad_norm_abs_difference": 0.33858224303839446,
+          "max_grad_norm_relative_difference": 0.05752478265402186,
+          "final_parameters_identical": false,
+          "trajectory_identical": false,
+          "smoke_projection_outputs_identical": false,
+          "smoke_parameter_trajectory_identical": false
+        },
+        {
+          "trial": 1,
+          "block": 0,
+          "mode": "timing",
+          "max_loss_abs_difference": 1.6673240661621094,
+          "max_loss_relative_difference": 4.171730719575192,
+          "max_grad_norm_abs_difference": 11.912910305317153,
+          "max_grad_norm_relative_difference": 12.292467770671525,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        },
+        {
+          "trial": 1,
+          "block": 1,
+          "mode": "timing",
+          "max_loss_abs_difference": 1.6673240661621094,
+          "max_loss_relative_difference": 4.171730719575192,
+          "max_grad_norm_abs_difference": 11.912910305317153,
+          "max_grad_norm_relative_difference": 12.292467770671525,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        }
+      ],
+      "equivalence_required": false,
+      "reduction_changes_allowed": true
+    },
+    "flux-basic-arrival/flux-basic-selective": {
+      "paired_windows": 4,
+      "all_trajectories_identical": false,
+      "final_parameters_identical_windows": 0,
+      "max_loss_abs_difference": 1.6673240661621094,
+      "max_loss_relative_difference": 4.171730719575192,
+      "max_grad_norm_abs_difference": 11.912910305317153,
+      "max_grad_norm_relative_difference": 12.292467770671525,
+      "windows": [
+        {
+          "trial": 0,
+          "block": -1,
+          "mode": "profile",
+          "max_loss_abs_difference": 0.001873016357421875,
+          "max_loss_relative_difference": 0.0002108143918820573,
+          "max_grad_norm_abs_difference": 0.00011329136458781974,
+          "max_grad_norm_relative_difference": 0.0004368238910292557,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        },
+        {
+          "trial": 0,
+          "block": -1,
+          "mode": "smoke",
+          "max_loss_abs_difference": 0.006701469421386719,
+          "max_loss_relative_difference": 0.0006639073546398488,
+          "max_grad_norm_abs_difference": 0.33858224303839446,
+          "max_grad_norm_relative_difference": 0.05752478265402186,
+          "final_parameters_identical": false,
+          "trajectory_identical": false,
+          "smoke_projection_outputs_identical": false,
+          "smoke_parameter_trajectory_identical": false
+        },
+        {
+          "trial": 1,
+          "block": 0,
+          "mode": "timing",
+          "max_loss_abs_difference": 1.6673240661621094,
+          "max_loss_relative_difference": 4.171730719575192,
+          "max_grad_norm_abs_difference": 11.912910305317153,
+          "max_grad_norm_relative_difference": 12.292467770671525,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        },
+        {
+          "trial": 1,
+          "block": 1,
+          "mode": "timing",
+          "max_loss_abs_difference": 1.6673240661621094,
+          "max_loss_relative_difference": 4.171730719575192,
+          "max_grad_norm_abs_difference": 11.912910305317153,
+          "max_grad_norm_relative_difference": 12.292467770671525,
+          "final_parameters_identical": false,
+          "trajectory_identical": false
+        }
+      ],
+      "equivalence_required": false,
+      "reduction_changes_allowed": true
+    }
+  },
+  "native_staged_runtime_validated": true,
+  "hardware": {
+    "host": "SL3060",
+    "devices": [
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "8821459f-2e9c-7abe-cb19-0f34795e52c2",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "44cfdc76-9dc0-0f1f-cb4f-bc8f4ccfd0da",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "01353343-54aa-25f3-79ef-3ddb242fedc4",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "72c4d907-1d65-2ed5-e856-bb3933631695",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "7ac91b20-519c-8a7d-a983-5ae1d1ac4790",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "1ed6b59b-d882-5cd9-c540-f71177abf326",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "d4e8f72a-044b-a24e-818f-0560f0b97483",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "dbbd3446-128e-286b-1c04-0aa14c474949",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      }
+    ],
+    "local_rank": 0,
+    "peer_access": [
+      [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+      ]
+    ],
+    "transport": "rtx5090-nccl-staged-v2"
+  },
+  "environment": {
+    "torch": "2.8.0a0+5228986c39.nv25.06",
+    "cuda": "12.9",
+    "nccl": [
+      2,
+      27,
+      3
+    ],
+    "python": "/workspace/venvs/tempname-5090/bin/python",
+    "python_version": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+    "cxx11_abi": true
+  },
+  "worker_records": {
+    "results/smoke-flux-basic-interleaved/rank0.json": "c3e7f2ba30f7ec4dbd29562028f36236fc0458e2585a8d4d4b398d202b2b072b",
+    "results/smoke-flux-basic-interleaved/rank1.json": "d12da6a15ca86f7d491103454446160440af59654b8c6c4f3485db8fd89fdd3e",
+    "results/smoke-flux-basic-interleaved/rank2.json": "716ec87bbdedf55a55764a912c46b88939e421dea348598c04c2cee222e0c97b",
+    "results/smoke-flux-basic-interleaved/rank3.json": "2c60d68cfb94ecde6b17afa79486a0efcd5054cd6d9b2a1c26a58f2a0193241e",
+    "results/smoke-flux-basic-interleaved/rank4.json": "4eabbbb7017f588685e7aa14ca5bf12b4b136767e3af33da157a32fd8ca3e001",
+    "results/smoke-flux-basic-interleaved/rank5.json": "6592ca88e49df68bc041272209e582f864b0e8640c7b4b5f70c6057815e50a4a",
+    "results/smoke-flux-basic-interleaved/rank6.json": "aad4022f3b55e3f46bf7907a295e8ca9541fecbc5d21a7153b0412a4daa2f77d",
+    "results/smoke-flux-basic-interleaved/rank7.json": "77867b5ac64a9bd9524c1b071822f4cabf41562af8b9184356f0c9e8e17d26ab",
+    "results/smoke-flux-basic-arrival/rank0.json": "fe380205fdd99111c7c4e7df321bc8b52fff05e5a6553260d385c74ffc5c6731",
+    "results/smoke-flux-basic-arrival/rank1.json": "d209d47a0d8568b603df320cc937f4830fd7b9bedc799259c76e9a698e459a1c",
+    "results/smoke-flux-basic-arrival/rank2.json": "2308d6585c07cca4b9a1362bd1e24f8b72c14f4374967deaeda30debc0bae493",
+    "results/smoke-flux-basic-arrival/rank3.json": "eb12e0a0ab8f25124c7247a01bbbece9de063c1d0e654961f7c9178461c2a0f2",
+    "results/smoke-flux-basic-arrival/rank4.json": "a0469846345f7c3ef575bfe00fb07cba589397dd32f1fc4e96bb6abaa605e2fa",
+    "results/smoke-flux-basic-arrival/rank5.json": "904a43c8ca26579720b68d09b19df9e735eddd14fb7febd55d4740d28b451169",
+    "results/smoke-flux-basic-arrival/rank6.json": "8c1333969ef8fc758b3e6b4c15423bca1a00167cb4da625e59bc72943932c641",
+    "results/smoke-flux-basic-arrival/rank7.json": "1fb76eca7493226cbf46aaf6000ce39a10433def828160ef087836d03fe66b44",
+    "results/smoke-flux-basic-selective/rank0.json": "23bb3d3a588ef2207b9a04ca2881bee70cdcf8bc8cd31ff23b20e2a9b9b92a0f",
+    "results/smoke-flux-basic-selective/rank1.json": "196660042f7f1dcc28843cc01a4e59a12d04902ec3a788d5dfb048ef454bde10",
+    "results/smoke-flux-basic-selective/rank2.json": "99fea4003f784acaeae95ae79b73299ebfc25db6ef6be505a4e411f943c291e1",
+    "results/smoke-flux-basic-selective/rank3.json": "58ea0af22f25dfb5c8fc5110584c0b4ffeee62b2bfe9ceb89bec0dbb02a02f45",
+    "results/smoke-flux-basic-selective/rank4.json": "89dd544e554eaa7cae24967f56b2080cbc68a5b22dbb095f0d2bcc9ea04fa405",
+    "results/smoke-flux-basic-selective/rank5.json": "b2d6520421b344ad8df13bb30d17b3c0177d761f3d68dc58cd38bd0803a356be",
+    "results/smoke-flux-basic-selective/rank6.json": "daea5ac7e04c6a1f3b9dc52750ffab1e43ff1af2a186afd29d668538161451a2",
+    "results/smoke-flux-basic-selective/rank7.json": "6cb9bb38c4af935f25193b6d1d8988c3c1148cbbbeef91dfed01fb278fb4356e",
+    "results/profile-flux-basic-interleaved/rank0.json": "5a6d3031bc8a67e362e03d32b2df6424d1bdda13f6a63e40d207be16dc39f84f",
+    "results/profile-flux-basic-interleaved/rank1.json": "afe5c1309b799be22ea876ee3875f8522e41889cc53a24e4f0e0cd68b54ede3a",
+    "results/profile-flux-basic-interleaved/rank2.json": "c652969ff8d3a5c4d8435cbb677fff05e5dba44b719960cf4724bbfd9be4a228",
+    "results/profile-flux-basic-interleaved/rank3.json": "ab544cedba1ad8f0887fb201afc9d946cad863c16c4999b22f100f687ae9ffc4",
+    "results/profile-flux-basic-interleaved/rank4.json": "9131e3895ba6eb9fe47be7b9dc648dcbaf7cb4163374614e8b88abbe21fbadb9",
+    "results/profile-flux-basic-interleaved/rank5.json": "c43fc7baf1d2285de0e5579679abcc1a31c392523545bf60b41b439fdca95b25",
+    "results/profile-flux-basic-interleaved/rank6.json": "6431c93eae649c6557de15d2c0a2b416015e3f02d3c21facae2db85541aa70cc",
+    "results/profile-flux-basic-interleaved/rank7.json": "376cec08b04ac03c1fbb204866b4f4c7aa76ca1fde680c61a1f3b87c356144fb",
+    "results/profile-flux-basic-arrival/rank0.json": "7c080c0d4bdaae655913271e611ae4f1e7eed63a7e1fcf80f66cda03f28e7ab7",
+    "results/profile-flux-basic-arrival/rank1.json": "f1755870db509d355f4e31a936edd5e1d89ff4e6b5701b180614fd62689244ab",
+    "results/profile-flux-basic-arrival/rank2.json": "c96c2fde7bcf9642785d7e7e5e1debae6b41515bff9ae7688cf12495d07b2e30",
+    "results/profile-flux-basic-arrival/rank3.json": "44ec72239123387abc93ec545ee70623c89c5cce362cd6e070c1803f613e9044",
+    "results/profile-flux-basic-arrival/rank4.json": "abcfb6791f2f9ba8d935ebe8d7fb99d3c511a789cab0ca465b9ed3cf66e56b5d",
+    "results/profile-flux-basic-arrival/rank5.json": "b09e5b25c0bff00a9fd049e7fd6036dfe56c4bd9a39060828e31d85347abe148",
+    "results/profile-flux-basic-arrival/rank6.json": "0041a6bca99d1867ad0eb5993173223f3c42aa5096bb146ee58a41d01da1491c",
+    "results/profile-flux-basic-arrival/rank7.json": "54b1b5e49685ca0a016ad0669035345dd6fccb1cd37529aed473b077e6be8321",
+    "results/profile-flux-basic-selective/rank0.json": "d2b524f743748ce84f9f43355e3d594f30b214cf8ba6485c1388f89f7fd16b3d",
+    "results/profile-flux-basic-selective/rank1.json": "8c9c0fc7e154cc8911700d1ecdfb13f26f0a2cfa6d711cade3ac5e3459ff3cde",
+    "results/profile-flux-basic-selective/rank2.json": "cb463268eff7761aa833f0a060d7c4977b85c798acb6e8c400ab3e0788662f57",
+    "results/profile-flux-basic-selective/rank3.json": "e40e90d4f7e1a1daab34e5079848aae3cc55431012605b1f06af82ec14832606",
+    "results/profile-flux-basic-selective/rank4.json": "788e4d21f00ba57d4b6c497e8fd3640bff6c6fe014beaaee1f9be2ab5f58f167",
+    "results/profile-flux-basic-selective/rank5.json": "d155ee86922074a59ee3a1669e481a80375f8449c1dc43ac6abdf77ece385e50",
+    "results/profile-flux-basic-selective/rank6.json": "1b50d8bda6b8526cb4be5ea58738c3e19fc334e745b9291a901e26ee7e714a49",
+    "results/profile-flux-basic-selective/rank7.json": "c573d7a4a2df35042001f368bf6bbfa7cfa0cceb6d3371d286257d1ae0e22022",
+    "results/compare1/block00-flux-basic-interleaved/rank0.json": "d5084e086f3f894285791766e01ea879b745d58dce7c858660be6c7f5fc8abd0",
+    "results/compare1/block00-flux-basic-interleaved/rank1.json": "10565c0773f377567cb8e77bf9e5735fe7ff39f4fc7f30b5603816a8cff10d9e",
+    "results/compare1/block00-flux-basic-interleaved/rank2.json": "cd8279bbd30cd0d85696bd4ffbdeeda2d4f82bcc08ba4cb272b4b6c67feada13",
+    "results/compare1/block00-flux-basic-interleaved/rank3.json": "52a6bf644cececcd851ac4f490e518127303efcbae6f96f3b1ff3cdc1e000f0c",
+    "results/compare1/block00-flux-basic-interleaved/rank4.json": "5beb1a6571369be296fc0a24af62d5150a0ab1be3d8d57b7dcc56ad9adb52649",
+    "results/compare1/block00-flux-basic-interleaved/rank5.json": "f851000f43efc443dabaa5bffcc3ac715bd78bd5e171c599f588681751380f34",
+    "results/compare1/block00-flux-basic-interleaved/rank6.json": "f2e92da4894c23bab42c6320bb7f35c320b7a85423ca9fd083748fc0cadeeb0f",
+    "results/compare1/block00-flux-basic-interleaved/rank7.json": "717f73dc22405ed40b68a874a16c1c8fd4b1b4c11460a1525bdc6b2cad2c0e01",
+    "results/compare1/block00-flux-basic-selective/rank0.json": "1b4029cfb1cccc35e86fdadd76908c31e6fbd96843ffdf29f27c56fc099ac253",
+    "results/compare1/block00-flux-basic-selective/rank1.json": "cc693a4fee7b7ed3c1cc2a101706d0693067bfa6c3a5479b652b9c6a60ba4524",
+    "results/compare1/block00-flux-basic-selective/rank2.json": "4f419421ad2f018f213fd06f9b9d96973213bed5ae7e60d28b75199fb5f6f301",
+    "results/compare1/block00-flux-basic-selective/rank3.json": "39f685aa2921aac514440df163d15d1dd345c008a1962fba26f0251800314244",
+    "results/compare1/block00-flux-basic-selective/rank4.json": "39215aa7b2f632eb3b1084edba70b873c13ed2a176dcb1fa4b25c33fc1baa26b",
+    "results/compare1/block00-flux-basic-selective/rank5.json": "58bd3bf48520d668ac74141370ccf4c096789c3ee42caf8da1756ba3d798e2fa",
+    "results/compare1/block00-flux-basic-selective/rank6.json": "8ce0797ccbc5d0898f3a5e72d5f96fdb9cf1f9b46c1b653d89d3edfd497c9ba4",
+    "results/compare1/block00-flux-basic-selective/rank7.json": "c1a734b03b138e0684c5726f8958f783f31b9629da13cb7a00c17b5d30d0a8ac",
+    "results/compare1/block00-flux-basic-arrival/rank0.json": "12f037165528e1c88b99cb27af66f46337803aac25b2a1ee5ab96da7f8d3160b",
+    "results/compare1/block00-flux-basic-arrival/rank1.json": "180a00e8d4f2480f8c255dd68211e9d5dd36149a2314d713f438811af47a93ed",
+    "results/compare1/block00-flux-basic-arrival/rank2.json": "03729a8edbc70d81eafb4d0c49e2072e2dbed5dc29d50b5eddc1247b2fb3653f",
+    "results/compare1/block00-flux-basic-arrival/rank3.json": "b1d9797ddceac30240d2af0de1c76534332f55d3e630b06ef091a4b058550c4f",
+    "results/compare1/block00-flux-basic-arrival/rank4.json": "38d70cdf9d21f737b1f843da7b8991b8ca6bd3ce09d3e4789bbb7a86b54ee020",
+    "results/compare1/block00-flux-basic-arrival/rank5.json": "f3f51915a3c688b6e4e3169f573b9917227654adaafa1acaa558e1c44fb9d778",
+    "results/compare1/block00-flux-basic-arrival/rank6.json": "d1acc5372c74c12570d1bacc104b20fa83c224bf1ac1db6b8e46a86e270e4a9f",
+    "results/compare1/block00-flux-basic-arrival/rank7.json": "91bcd6314be633ed568cdba8c9f91c46943f8fcc4002ba92653ab1f81506efc2",
+    "results/compare1/block01-flux-basic-selective/rank0.json": "2b26bd47f16a231051bc2e74f8ec3c90f230606002d5ec68c28e9871d261c6b7",
+    "results/compare1/block01-flux-basic-selective/rank1.json": "797c26fd5abcd6060554f3476e8aad8589bd78b707c20ad76063b5b55cf75fad",
+    "results/compare1/block01-flux-basic-selective/rank2.json": "f3a5fae85d6ed7de95eba09c92473691939f0ea9ce61165580924315e72c66c0",
+    "results/compare1/block01-flux-basic-selective/rank3.json": "5ea49a0c9de5dc02e04632a7bf4515f8366cdcb47fc5e50b3cc73e057ef1c6f4",
+    "results/compare1/block01-flux-basic-selective/rank4.json": "d92e72a436cfb9382071e162d128b88bd8d5e555e6203ef8c899f07640925c86",
+    "results/compare1/block01-flux-basic-selective/rank5.json": "7f69cfea61f8b6b934e3e75ca0237c9f2135876804403443f995d34bbc461929",
+    "results/compare1/block01-flux-basic-selective/rank6.json": "96db9bf17806e3c4269f3081a3b25b911b7511ad97666fbaacefea6b5c00afe8",
+    "results/compare1/block01-flux-basic-selective/rank7.json": "9aea41fe0d311de235128f38ef8228c3fde9acc2d447516c05b17fb78bae35ed",
+    "results/compare1/block01-flux-basic-arrival/rank0.json": "0042dc18ade292e535a5918ccc51328c0078481464caa2b21bedf9c750ce4cc8",
+    "results/compare1/block01-flux-basic-arrival/rank1.json": "7a47e814990b0524f53205f3d9f33307cf73ab82706dcea67a075c681e0a3a38",
+    "results/compare1/block01-flux-basic-arrival/rank2.json": "5e5696f18774025dd0b67c89d5125c7fe23db3a1607d730165cd38d2ac0236a8",
+    "results/compare1/block01-flux-basic-arrival/rank3.json": "60f9541bf91cc987700bace040a57fb56cfb168c48038a8d7767ff5340abe218",
+    "results/compare1/block01-flux-basic-arrival/rank4.json": "8f52d8e495470bbf1836d88d9574665f1cb6985f9073d98f76ae0cb03027804e",
+    "results/compare1/block01-flux-basic-arrival/rank5.json": "0279516356cbd8d78a1813dbdc47cf661b8dabb868a5366056e16ff73d6b6e5a",
+    "results/compare1/block01-flux-basic-arrival/rank6.json": "6e5df63efbf8e133a5b0ba0fa3a2488c5e16c016c223749732c6704ce43ac793",
+    "results/compare1/block01-flux-basic-arrival/rank7.json": "24b52855f244e1260f5a82ebc178e51f7c6cbd9f5d78f5ee5eb69e6972ca4f64",
+    "results/compare1/block01-flux-basic-interleaved/rank0.json": "8a2526223ac04b4bba57004b49bfba6a4c9a7487f1db6b1945ff3797a8267d8c",
+    "results/compare1/block01-flux-basic-interleaved/rank1.json": "1a091bd862339886c66ad61b8328a4e069af3fccdb5108f1081c5f6fb2dbaa62",
+    "results/compare1/block01-flux-basic-interleaved/rank2.json": "8d69efb1d4702a6f969f01d0ea647d26d9033e2242f03745af3808e1f48861a5",
+    "results/compare1/block01-flux-basic-interleaved/rank3.json": "2d5c4492891139591be2c1d5eb9f4c2882072a7ecb433b68741c08fef99457bf",
+    "results/compare1/block01-flux-basic-interleaved/rank4.json": "f2b55759263f9dc88fdab4d44a26046e9a4a9d92680b043ec468d3575f8cb787",
+    "results/compare1/block01-flux-basic-interleaved/rank5.json": "9877f027dd67e4263c5a8bc5eeba20d2b7a6df52893dd0c6d591ddc9e37692bd",
+    "results/compare1/block01-flux-basic-interleaved/rank6.json": "4b10058538d760fd6b8dce69fb9b0c9ce8e33f28c293a879061f9be8d7d96ef1",
+    "results/compare1/block01-flux-basic-interleaved/rank7.json": "3d23e2e7a1d462b44ffb8dd06ecc98e810910de0c0039f59ed89d0756e1dd5f8"
+  },
+  "profile_summary_sha256": "cb81c3fba63fae4b8d3007ddec8301166328d542b356c0e2939be9860d82a8b9",
+  "plan_sha256": "40cddf03761a95ca800e9e0a131e5d27d54fbad95fc275216b55a23accf10c91",
+  "native_probe_sha256": "e4ba8cb82f5a9835cd2d0f56d72262984335869a86399b071e4f2b99261c2342",
+  "build": {
+    "root": "/workspace/Load-5090/logs/5090/phase6/op1-abc-staged-v1-1x-50steps-20261102-000347-679838/build",
+    "manifest_sha256": "731116f4b9cdb52c5573541ecbbc575c15382b32cbaed00e7e8b5a3495b7cbad"
+  },
+  "optimization_libraries": {
+    "ma9": {
+      "path": "/workspace/Load-5090/logs/5090/phase6/op2-abc-ma11-v1-1x-50steps-20261102-013244-945721/ma9-compat/libop2_ma9_zero_count.so",
+      "sha256": "2d320eb80c9482b295c44eef409b2d94c004ec33136f8257156a0af3e70ba57c"
+    },
+    "ma11": {
+      "path": "/workspace/Load-5090/logs/5090/phase6/op2-abc-ma11-v1-1x-50steps-20261102-013244-945721/ma11-compat/libma11_softmax_5090.so",
+      "sha256": "5c1be77f8c4713009ed5990966d7b0e99341d28984855ae2c32f994b2ae909e6"
+    }
+  },
+  "ma11_probe": {
+    "result_sha256": "cfbede90a18fc116f94d6ab1e0bf9210809a5613c0da8d2bdfb552e07b4519e7"
+  }
+}

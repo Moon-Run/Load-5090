@@ -1,0 +1,1 @@
+COMMAND ['/usr/local/cuda-12.9/bin/nvcc', '--shared', '--cudart=shared', '-O3', '-std=c++17', '-Xcompiler=-fPIC', '-arch=sm_120', '/workspace/Load-5090/logs/5090/phase6/op2-abc-ma11-v1-1x-50steps-20261102-013244-945721/ma9-compat/ma9.cu', '-o', '/workspace/Load-5090/logs/5090/phase6/op2-abc-ma11-v1-1x-50steps-20261102-013244-945721/ma9-compat/libop2_ma9_zero_count.so']

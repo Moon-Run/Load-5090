@@ -1,0 +1,20 @@
+{
+  "out": "/workspace/Load-5090/logs/5090/phase6/op2-abc-ma11-v1-1x-50steps-20261102-013244-945721",
+  "python": "/workspace/venvs/tempname-5090/bin/python",
+  "megatron": "/workspace/Megatron-LM",
+  "cuda_home": "/usr/local/cuda-12.9",
+  "build_cuda_home": "/usr/local/cuda-12.9",
+  "baseline_build": null,
+  "flux_build": null,
+  "abc_build": "/workspace/Load-5090/logs/5090/phase6/op1-abc-staged-v1-1x-50steps-20261102-000347-679838/build",
+  "trials": 1,
+  "blocks": 2,
+  "jobs": 2,
+  "worker_timeout": 3600,
+  "execute": true,
+  "foreground": false,
+  "preflight_only": false,
+  "transport_smoke_only": false,
+  "report": false,
+  "inside": false
+}

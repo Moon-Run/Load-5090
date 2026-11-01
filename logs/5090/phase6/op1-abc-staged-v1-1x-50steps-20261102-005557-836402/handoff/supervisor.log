@@ -1,0 +1,29 @@
+STAGE worker-source-preflight
+STAGE hardware-preflight
+STAGE verify-op1-abc-build
+STAGE prepare-workers
+STAGE native-reference-wire-and-mapping-probes
+NATIVE PROBE flux-basic-interleaved
+NATIVE PROBE flux-basic-arrival
+NATIVE PROBE flux-basic-selective
+NATIVE PROBE flux-improved
+STAGE smoke-flux-basic-interleaved
+STAGE smoke-flux-basic-arrival
+STAGE smoke-flux-basic-selective
+STAGE smoke-flux-improved
+STAGE profile-flux-basic-interleaved
+STAGE profile-flux-basic-arrival
+STAGE profile-flux-basic-selective
+Traceback (most recent call last):
+  File "/workspace/TempName-New/tools/5090/phase6/op1_abc.py", line 405, in <module>
+    main()
+  File "/workspace/TempName-New/tools/5090/phase6/op1_abc.py", line 367, in main
+    return supervise(args)
+           ^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op1_abc.py", line 298, in supervise
+    run_process(command, builder.base_root(build)/'megatron',
+  File "/workspace/TempName-New/tools/h100/phase6/tp8_dp2_train.py", line 104, in run_process
+    require(process.returncode==0,f'Child exited {process.returncode}; see {log}')
+  File "/workspace/TempName-New/tools/h100/phase6/tp8_dp2_protocol.py", line 24, in require
+    raise ValueError(message)
+ValueError: Child exited 1; see /workspace/Load-5090/logs/5090/phase6/op1-abc-staged-v1-1x-50steps-20261102-005557-836402/results/profile-flux-basic-selective/process.log

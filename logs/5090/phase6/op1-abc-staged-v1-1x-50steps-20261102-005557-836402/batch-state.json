@@ -1,0 +1,6 @@
+{
+  "protocol": "rtx5090-phase6-op1-abc-staged-v1",
+  "status": "failed",
+  "stage": "profile-flux-basic-selective",
+  "error": "ValueError: Child exited 1; see /workspace/Load-5090/logs/5090/phase6/op1-abc-staged-v1-1x-50steps-20261102-005557-836402/results/profile-flux-basic-selective/process.log"
+}

@@ -1,0 +1,58 @@
+{
+  "protocol": "rtx5090-phase6-op2-abc-ma11-v1",
+  "completed": true,
+  "arms": {
+    "flux-basic-interleaved": {
+      "completed": true,
+      "arm": "flux-basic-interleaved",
+      "protocol": "rtx5090-op1-abc-distributed-probe-v1",
+      "directed_links": 56,
+      "actual_sorted_gemm_mapping_passed": true,
+      "performance_measured": false
+    },
+    "flux-basic-arrival": {
+      "completed": true,
+      "arm": "flux-basic-arrival",
+      "protocol": "rtx5090-op1-abc-distributed-probe-v1",
+      "directed_links": 56,
+      "actual_sorted_gemm_mapping_passed": true,
+      "performance_measured": false
+    },
+    "flux-basic-selective": {
+      "completed": true,
+      "arm": "flux-basic-selective",
+      "protocol": "rtx5090-op1-abc-distributed-probe-v1",
+      "directed_links": 56,
+      "actual_sorted_gemm_mapping_passed": true,
+      "performance_measured": false
+    }
+  },
+  "arrival_packet_output_bitwise": true,
+  "build_manifest_sha256": "731116f4b9cdb52c5573541ecbbc575c15382b32cbaed00e7e8b5a3495b7cbad",
+  "evidence_files": {
+    "flux-basic-interleaved/rank0.json": "c405e549cdb455ba1399118d4e4ce81b972532a029cdd1cd64f66342929d3600",
+    "flux-basic-interleaved/rank1.json": "be77970ee60c6f60211604dc560b6a516a1bc42627ab417bf6a98c7735759b55",
+    "flux-basic-interleaved/rank2.json": "2977a18d649056a718a4c6d9b327e5339c407be59a0224965cbc7c3b5d563972",
+    "flux-basic-interleaved/rank3.json": "34fa0d41856667f9d0ef15eb932116e63787e3ebacd9377c41bba2b19712728b",
+    "flux-basic-interleaved/rank4.json": "44b3eb58364992fd8144ae4b018f52648b28b7977f59e083cc0d679e062cd77f",
+    "flux-basic-interleaved/rank5.json": "edbcd39be0878b696f88f91ae82d6a1c3af3563c01578cccad1f58e37ea35df7",
+    "flux-basic-interleaved/rank6.json": "b4965776848b4906381c15594548d6aab024dbbd45eed441c12b725e29eb2c90",
+    "flux-basic-interleaved/rank7.json": "48b4fa6dbb139374c48bb8a02bc9f587544c2c94dd2f045a63ef5a36eb13031a",
+    "flux-basic-arrival/rank0.json": "7a893d718330e4f9de42ddc47e4f166e0dc1309758fe093d619419b3cd8a3862",
+    "flux-basic-arrival/rank1.json": "785103bb89847b4662b43e81845eb7096165aae3ca34663527750182938354c6",
+    "flux-basic-arrival/rank2.json": "d442ce7d8d98982ebb8631e4830d4b6533a028e818243d4f8d58995f82ede5c1",
+    "flux-basic-arrival/rank3.json": "b2e11fa3d3e10f423283f8420ca0292d4c5c39e1d70243f81a89ccfdd376c969",
+    "flux-basic-arrival/rank4.json": "4836a0d42590d2e3ef627e27901fe38760843561afe1387abe066424dae01c47",
+    "flux-basic-arrival/rank5.json": "f75cec65b3bbe1b79a38411d2caf3cf1af19790c007e26ed951915b2dceff3ff",
+    "flux-basic-arrival/rank6.json": "9d54c282546275ef80e5d8f6ee07ad78f49586ec0f19c757ec0450d9637ad077",
+    "flux-basic-arrival/rank7.json": "1741924ef910bb05b9d441623da110dcdcc869a2425f47ab4d63cc8a06ed0042",
+    "flux-basic-selective/rank0.json": "c3794f49fb4ecb56dacfe917df91e5130d1970528ca7c19917c2ca8386294506",
+    "flux-basic-selective/rank1.json": "62a7e8f1b34b37877306c23848790a34304d8ac317c4bfd25920b94b885abb23",
+    "flux-basic-selective/rank2.json": "a0b6babdf80a45ce30dbae8dfe59ee025e064a760a24bcc22b092b5f6808c247",
+    "flux-basic-selective/rank3.json": "5d43f80e248540a20abb89c727a5aa5a997a3a9e2608f18795449d75af3f4f8c",
+    "flux-basic-selective/rank4.json": "8b87aae4593cbff376a2bef1552e8e54acd7fe5308a7658b6e8e186ce53296d2",
+    "flux-basic-selective/rank5.json": "12f4d964e2137de622fe041d2ee78ec5b15d077423fdeffdec966d197035655e",
+    "flux-basic-selective/rank6.json": "cb2e1e988599d5ea7c9d62f4793d095e8bd385a7cbaede8ae479ee6cff2432c9",
+    "flux-basic-selective/rank7.json": "67cae926551d23abff96ba986aa7352362f56668e920d85137f66b66530ca5e5"
+  }
+}
