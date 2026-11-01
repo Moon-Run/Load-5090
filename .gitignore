@@ -2,7 +2,7 @@
 # Keep process logs, JSON/CSV/Markdown reports, compressed profile traces,
 # worker scripts and controller snapshots as experiment evidence.
 # In particular, do not ignore logs/, outputs/, *.log, *.json or *.json.gz.
-
+/logs/5090/phase6/flux-quant-four-arm-v1-1x-50steps-20261101-220324-139713
 # CUDA compilation intermediates.
 *.i
 *.ii

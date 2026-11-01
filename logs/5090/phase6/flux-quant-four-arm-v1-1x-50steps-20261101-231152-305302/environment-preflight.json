@@ -1,0 +1,19 @@
+{
+  "completed": false,
+  "environment_probe_passed": false,
+  "collective_probe_passed": false,
+  "build_toolkit": {
+    "root": "/usr/local/cuda-12.9",
+    "version": "12.9",
+    "nvcc": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Tue_May_27_02:21:03_PDT_2025\nCuda compilation tools, release 12.9, V12.9.86\nBuild cuda_12.9.r12.9/compiler.36037853_0"
+  },
+  "runtime_toolkit": {
+    "root": "/usr/local/cuda-12.9",
+    "version": "12.9",
+    "nvcc": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Tue_May_27_02:21:03_PDT_2025\nCuda compilation tools, release 12.9, V12.9.86\nBuild cuda_12.9.r12.9/compiler.36037853_0"
+  },
+  "devices": [],
+  "memory_observation_stage": "after_cuda_context_initialization_before_apex_probes",
+  "memory_observation_scope": "device-wide point-in-time usage; not an idle or capacity guarantee",
+  "error": "ValueError: Child exited 1; see /workspace/Load-5090/logs/5090/phase6/flux-quant-four-arm-v1-1x-50steps-20261101-231152-305302/environment-preflight.log"
+}
