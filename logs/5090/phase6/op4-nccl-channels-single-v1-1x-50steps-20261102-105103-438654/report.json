@@ -1,0 +1,98 @@
+{
+  "protocol": "rtx5090-phase6-op4-nccl-channels-single-v1",
+  "completed": true,
+  "arms": [
+    "candidate"
+  ],
+  "trials": 1,
+  "blocks": 2,
+  "measured_configuration": "op3-combined",
+  "nccl_overrides": {
+    "candidate": {
+      "NCCL_MIN_NCHANNELS": "16",
+      "NCCL_MAX_NCHANNELS": "16"
+    }
+  },
+  "target_ms": 60.0,
+  "timing_windows": 2,
+  "formal_optimizer_steps": 100,
+  "timing_rank_records": 16,
+  "all_windows_retained": true,
+  "operator_only": false,
+  "full_step_completed": true,
+  "concurrent_control": false,
+  "counterbalanced_order": false,
+  "pairwise_ci_available": false,
+  "comparisons": {
+    "compare1": {
+      "arms": {
+        "candidate": {
+          "mean_ms": 832.2487896867096,
+          "median_ms": 832.2487896867096,
+          "min_ms": 831.0114610381424,
+          "max_ms": 833.4861183352768,
+          "tokens_per_second": 9843.21046965269
+        }
+      },
+      "historical_delta_ms": 17.94628769159317
+    }
+  },
+  "all_samples": [
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 0,
+      "arm": "candidate",
+      "mode": "timing",
+      "directory": "compare1/block00-candidate",
+      "ms_per_step": 833.4861183352768,
+      "peak_allocated_gib": 19.422869205474854,
+      "peak_reserved_gib": 19.47265625,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_taco_workspace_gib": 19.422869205474854
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 0,
+      "arm": "candidate",
+      "mode": "timing",
+      "directory": "compare1/block01-candidate",
+      "ms_per_step": 831.0114610381424,
+      "peak_allocated_gib": 19.422869205474854,
+      "peak_reserved_gib": 19.47265625,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_taco_workspace_gib": 19.422869205474854
+    }
+  ],
+  "operator_batches": [],
+  "historical_reference_ms": 850.1950773783028,
+  "historical_comparison_is_causal": false,
+  "target_validated": false,
+  "correctness_passed": true,
+  "execution_path_validated": true,
+  "historical_full_model_smoke_gradient_hash_equality_required": false,
+  "limitation": "Only the OP4 candidate is measured. No concurrent control, paired gain, bootstrap confidence interval or validated 60 ms improvement is available. The read-only reference is historical and any difference is observational, not a causal performance gain. Full-model smoke gradient hashes may differ from the historical reference; hash differences do not measure their numerical magnitude. Operator timing does not measure a complete training step.",
+  "run_id": "ea2f274d46014b7480d23cca70aac142",
+  "plan_sha256": "a2bc21d90dad2b0e6e10cd354c56459a06824a66b59fe9a908b9f117f1d00bda",
+  "child_reports": {
+    "compare1/block00-candidate/report.json": "80dad6029d67fdec4c812335190a603c995693ae30d5c6a5a51ae1b2d6a907ad",
+    "compare1/block00-candidate-launch.json": "f1ded27baf4fc052d4d69ba07a9335c032da89552c8d5f59bc2adc321ce4bc93",
+    "compare1/block01-candidate/report.json": "f8cedef9079fbc31ac8417a66e1ac18d766b6cabdb33ad23c31ea2fc8d1ed28b",
+    "compare1/block01-candidate-launch.json": "0561a4b433ab4cd59bce227b4fd6d1762aadf99b064110eb0177b82b54cd1fba"
+  },
+  "candidate_evidence_sha256": "70a44da91d26cf605f56dd227a5e4b8b28ee723a88450e596d06d46e5f7104f7",
+  "build": {
+    "root": "/workspace/Load-5090/logs/5090/phase6/op3-two-arm-v1-2x-50steps-20261102-022324-519378/build",
+    "manifest_sha256": "504ed86b52497e113ea7a4def201f4c0dc8504e7cee04f1d8d3974a0e4df9964"
+  },
+  "reference": {
+    "root": "/workspace/Load-5090/logs/5090/phase6/op3-combined-v2-1x-50steps-20261102-100813-883313",
+    "report_sha256": "4924c3833c8580370d67d212d0e3837432d6efce014762cd8e0ded5a82c24fed",
+    "operator_report_sha256": "7ab05e1d07fa6d5b05acf981579ebf486d6227ed462cea91ac10688ad1d6cf19",
+    "evidence_sha256": "af50cf2973e2f399a3b3166cbe38055fd0dcc119b747045b1d1424a2beb332f0",
+    "historical_mean_ms": 850.1950773783028,
+    "read_only": true,
+    "reference_gpu_jobs": 0
+  }
+}
