@@ -1,0 +1,19 @@
+STAGE worker-source-preflight
+STAGE hardware-preflight
+STAGE verify-op3-build
+STAGE compile-ma9-compat
+STAGE compile-ma11-compat
+STAGE ma11-compat-preflight
+STAGE prepare-workers
+STAGE native-reference-wire-and-mapping-probes
+NATIVE PROBE op3-combined
+STAGE operator-correctness-latency-profile
+STAGE smoke-op3-combined
+STAGE profile-op3-combined
+STAGE compare1/block00-op3-combined
+STAGE compare1/block01-op3-combined
+STAGE compare1/block02-op3-combined
+STAGE compare1/block03-op3-combined
+STAGE compare1/block04-op3-combined
+STAGE compare1/block05-op3-combined
+STAGE compare1/block06-op3-combined

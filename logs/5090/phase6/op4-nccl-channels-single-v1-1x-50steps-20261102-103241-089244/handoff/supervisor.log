@@ -1,0 +1,20 @@
+STAGE compare1/block00-candidate
+Traceback (most recent call last):
+  File "/workspace/TempName-New/tools/5090/phase6/op4.py", line 414, in <module>
+    main()
+  File "/workspace/TempName-New/tools/5090/phase6/op4.py", line 384, in main
+    return supervise(args)
+           ^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op4.py", line 319, in supervise
+    evidence[job['directory']] = audit_candidate(child, args.reference_batch)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op4_evidence.py", line 257, in audit_candidate
+    check = compare_rows(*records, job['mode'])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op4_evidence.py", line 104, in compare_rows
+    load('validation').equivalent(reference, candidate, smoke=mode == 'smoke')
+  File "/workspace/TempName-New/tools/5090/phase6/baseline_validation.py", line 31, in equivalent
+    require([{key: row[key] for key in keys} for row in rows]
+  File "/workspace/TempName-New/tools/h100/phase6/common.py", line 18, in require
+    raise ValueError(message)
+ValueError: Equivalent policy family changed loss, gradients or parameter updates

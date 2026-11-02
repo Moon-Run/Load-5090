@@ -1,0 +1,29 @@
+{
+  "protocol": "rtx5090-op3-combined-probe-v2",
+  "completed": true,
+  "arms": {
+    "op3-combined": {
+      "completed": true,
+      "arm": "op3-combined",
+      "protocol": "rtx5090-op3-combined-probe-v2",
+      "directed_links": 56,
+      "actual_sorted_gemm_mapping_passed": true,
+      "upstream_packet_decode_bitwise": true,
+      "fused_two_rounding_bitwise": true,
+      "performance_measured": false
+    }
+  },
+  "raw_projection_packet_output_bitwise": true,
+  "fused_two_rounding_bitwise": true,
+  "build_manifest_sha256": "504ed86b52497e113ea7a4def201f4c0dc8504e7cee04f1d8d3974a0e4df9964",
+  "evidence_files": {
+    "op3-combined/rank0.json": "3a1fbfc946566eef1e9a8fcb406b6be11fe9751508235c7455b8bbc77f22b92b",
+    "op3-combined/rank1.json": "f9f6175fc54c51f087c6ff70cacf2fa3181cb85d34e7c486d591f725daa861f2",
+    "op3-combined/rank2.json": "79d6ba87f3829094e8b491f206accc2f6937af962a51f755627730b6e3952bf6",
+    "op3-combined/rank3.json": "1f5151c4dbfcf04150b870faa42712d403661d4d3c25ab6608800d090dbe795d",
+    "op3-combined/rank4.json": "c9b4ce2eb2f8d80f1eb9e7812e7ca2cbdc1937e04e0d2f67240a433b72fcc321",
+    "op3-combined/rank5.json": "1534ff1b0b460399741a6232cff55e31657a2d7903ad676f524de5c1d443b572",
+    "op3-combined/rank6.json": "494e8377aea894e11e553824bea8b6fd3f43fab7378e14100e86abff6f4f9c0a",
+    "op3-combined/rank7.json": "dec0fbe107b28d1010c3efab164f0d5a45bbaef35662297b08841edd4a9eab8e"
+  }
+}

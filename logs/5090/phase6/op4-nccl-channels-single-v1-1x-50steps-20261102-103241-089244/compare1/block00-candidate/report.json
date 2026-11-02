@@ -1,0 +1,362 @@
+{
+  "protocol": "rtx5090-phase6-op3-combined-v2",
+  "transport": "rtx5090-nccl-staged-v2",
+  "completed": true,
+  "arms": [
+    "op3-combined"
+  ],
+  "definitions": {
+    "op3-combined": {
+      "policy": "op3-combined",
+      "family": "flux_tensor",
+      "scope": "attn_mlp",
+      "roles": [
+        "attn",
+        "mlp"
+      ],
+      "implementation": "rtx5090-op3-combined-v1",
+      "workspace": "tensor",
+      "output_clone": false,
+      "base": "original",
+      "order": "interleaved",
+      "arrival": false,
+      "interleaved": true,
+      "quantization": "all_remote",
+      "experiment": {
+        "protocol": "rtx5090-phase6-op3-combined-v2",
+        "original_arm": "flux-basic",
+        "producer": "flux-gemmonly-sm89-v2",
+        "gemm_schedule": "StreamkSK-with-CTA-interleave",
+        "may_change_streamk_reduction_assignment": true,
+        "quantization": "all_remote",
+        "interleaved": true,
+        "arrival": false,
+        "selective": false,
+        "calibration_used": false,
+        "cta_order": "rank-rotated-destination-interleaved",
+        "decoder": "r-packed-source-prefetch",
+        "collective": "NCCL-byte-AllToAll",
+        "chunks": 1,
+        "owns_configuration": true,
+        "owns_output": true,
+        "packet_layout": "H128-AoS-136",
+        "original_peer_overlap_preserved": false,
+        "arrival_scope": "whole-exchange",
+        "foundation": "OP2-A-MA89-MA11",
+        "optimizations": {
+          "ma8": "retain-owned-forward-column-input-v2",
+          "ma9": "ordered-fp32-gradient-zero-count",
+          "ma11": "pytorch28-exact-causal-softmax"
+        },
+        "repeated_ma89_installation": false,
+        "encoder": "warp-owned-four-groups",
+        "r_decoder": true,
+        "cr3_consumer_fusion": true,
+        "consumer_rounding": "BF16-projection-plus-bias-then-residual"
+      }
+    }
+  },
+  "trials": 1,
+  "blocks": 1,
+  "counterbalanced_order": false,
+  "pairwise_ci_available": false,
+  "model": {
+    "layers": 32,
+    "hidden": 4096,
+    "ffn": 16384,
+    "heads": 32,
+    "sequence": 2048,
+    "micro_batch": 1,
+    "global_batch": 4,
+    "tp": 8,
+    "dp": 1,
+    "sm_count": 170,
+    "seed": 1234,
+    "token_seed": 4321,
+    "vocab": 32768
+  },
+  "timing": {
+    "warmup_steps": 10,
+    "timed_steps": 50,
+    "smoke_warmup_steps": 2,
+    "smoke_steps": 3
+  },
+  "timing_windows": 1,
+  "timing_rank_records": 8,
+  "formal_optimizer_steps": 50,
+  "all_windows_retained": true,
+  "comparisons": {
+    "compare1": {
+      "arms": {
+        "op3-combined": {
+          "mean_ms": 832.2443965822458,
+          "median_ms": 832.2443965822458,
+          "min_ms": 832.2443965822458,
+          "max_ms": 832.2443965822458,
+          "tokens_per_second": 9843.262428250466,
+          "max_peak_allocated_gib": 19.422869205474854,
+          "max_peak_reserved_gib": 19.47265625,
+          "max_native_workspace_gib": 0.0,
+          "max_peak_allocated_plus_taco_workspace_gib": 19.422869205474854
+        }
+      },
+      "pairs": {}
+    }
+  },
+  "all_samples": [
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 0,
+      "arm": "op3-combined",
+      "mode": "timing",
+      "directory": "compare1/block00-op3-combined",
+      "ms_per_step": 832.2443965822458,
+      "peak_allocated_gib": 19.422869205474854,
+      "peak_reserved_gib": 19.47265625,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_taco_workspace_gib": 19.422869205474854
+    }
+  ],
+  "reduction_changes_allowed": false,
+  "raw_projection_bitwise_required": true,
+  "operator_gradient_equivalence_required": true,
+  "full_training_cross_arm_comparison": false,
+  "original_peer_overlap_preserved": false,
+  "mechanism_stack": [
+    "ma8_activation_cache",
+    "ma9_zero_count",
+    "ma11_softmax",
+    "r_prefetch_decoder",
+    "cr3_consumer_fusion",
+    "warp_owned_encoder"
+  ],
+  "increment_over_unoptimized_validated": false,
+  "limitation": "Single combined configuration. All windows are retained. Operator forward/gradient equivalence is checked against the unfused autograd reference before measurement. No concurrent performance control, paired gain, paired confidence interval or historical pooling.",
+  "run_id": "adb3a9f06d04497f97d5be0e1f5bd27a",
+  "correctness_passed": true,
+  "execution_path_validated": true,
+  "numerical_comparisons": {},
+  "native_staged_runtime_validated": true,
+  "hardware": {
+    "host": "SL3060",
+    "devices": [
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "8821459f-2e9c-7abe-cb19-0f34795e52c2",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "44cfdc76-9dc0-0f1f-cb4f-bc8f4ccfd0da",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "01353343-54aa-25f3-79ef-3ddb242fedc4",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "72c4d907-1d65-2ed5-e856-bb3933631695",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "7ac91b20-519c-8a7d-a983-5ae1d1ac4790",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "1ed6b59b-d882-5cd9-c540-f71177abf326",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "d4e8f72a-044b-a24e-818f-0560f0b97483",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      },
+      {
+        "name": "NVIDIA GeForce RTX 5090",
+        "uuid": "dbbd3446-128e-286b-1c04-0aa14c474949",
+        "sm_count": 170,
+        "capability": [
+          12,
+          0
+        ]
+      }
+    ],
+    "local_rank": 0,
+    "peer_access": [
+      [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+      ]
+    ],
+    "transport": "rtx5090-nccl-staged-v2"
+  },
+  "environment": {
+    "torch": "2.8.0a0+5228986c39.nv25.06",
+    "cuda": "12.9",
+    "nccl": [
+      2,
+      27,
+      3
+    ],
+    "python": "/workspace/venvs/tempname-5090/bin/python",
+    "python_version": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+    "cxx11_abi": true
+  },
+  "worker_records": {
+    "results/smoke-op3-combined/rank0.json": "99ca75ef21e76572427917e4189ea931885e0b28938c0c258a9650f7ec04380b",
+    "results/smoke-op3-combined/rank1.json": "ac43882baf6e681911f6d667707f0fbd10908d0f412a1aa268be57643b7a269e",
+    "results/smoke-op3-combined/rank2.json": "fdce5941f47f33c3a0bbe56409580d7e41e83bf150394530ad138090b064d23c",
+    "results/smoke-op3-combined/rank3.json": "288d7e59b08d4bbd8a36c2fdbafc4f46c2efa90e131e2c6a20d5ee52f53756c2",
+    "results/smoke-op3-combined/rank4.json": "0ee2fdeafe7565150fc42292456e8d6946550bb0fafc8f5e2243bf80ad2b7d19",
+    "results/smoke-op3-combined/rank5.json": "1156e0d6f4bc693d6d81793d5e154bf0a9d4ebe60697be7bf8b7c38f98b9ff93",
+    "results/smoke-op3-combined/rank6.json": "4c35c708d70ee7dc1a90af285ed71497338e746a7c60b3b9b5fc2afde2ab6e9b",
+    "results/smoke-op3-combined/rank7.json": "982f0b744e9e8faab1bc0267ae05537ec26b616f4cd507c4b625a1762fec7948",
+    "results/profile-op3-combined/rank0.json": "81d11beb40510611fc18dd8f6c255a6dd9fd13a409990dcb641ae59d9154aa94",
+    "results/profile-op3-combined/rank1.json": "6a84ede802738117d06e8bc145bfe0f3b240dc768e0afd1d1f6a2883220547c1",
+    "results/profile-op3-combined/rank2.json": "ff74ef1bcf9410783bb73098735c0540ccf2c5ed1b693dd84da48636a408838f",
+    "results/profile-op3-combined/rank3.json": "682c611388be45de9f36f16dedadd051a017e0982ab1f4d62ed5c3701b5ac4e0",
+    "results/profile-op3-combined/rank4.json": "84c6bdecf252b1d31563ac2bd56a2aaf2feeec95c2254de2204c2dfca04fea8d",
+    "results/profile-op3-combined/rank5.json": "84fcc3f730399504133e4cad0e0cdadaba8f003ae41680102905f30f5f474217",
+    "results/profile-op3-combined/rank6.json": "7161c158a031fde4f77d4f6e84ef316d50845c7c2cf4a9a3b757264ce486105b",
+    "results/profile-op3-combined/rank7.json": "6e06315cf837fec9436bb34cd888c9a50b805a6f9d8e0de4445556cbfff52713",
+    "results/compare1/block00-op3-combined/rank0.json": "11f7bdb21036177904fcd3e10a0dfb1efa0d0958d55823a21d60e46baca95abc",
+    "results/compare1/block00-op3-combined/rank1.json": "2ae49613dc584dfd1c3b625e105a5ce1b93cbcb618fa5da6f48f164b3796ea62",
+    "results/compare1/block00-op3-combined/rank2.json": "e03acbd814173a0852407e53701176222a87e2918958a8be433951082af213c7",
+    "results/compare1/block00-op3-combined/rank3.json": "d62643ea048de24c4aea0ae41278b6af470c3a38d7c34cd12cea0c20512b8adf",
+    "results/compare1/block00-op3-combined/rank4.json": "04957f2b77909480fe677f6b1c4f99f629bcdcfe94d43ebee79e4d66a7a519bc",
+    "results/compare1/block00-op3-combined/rank5.json": "159dd60042d9ed8749c455daaad87bddb263512e99a90dadd600b9a892c97a06",
+    "results/compare1/block00-op3-combined/rank6.json": "0cde968f06e4dbc40cc4f1963e41992beff6977472210fca2c5338d5c0b1216a",
+    "results/compare1/block00-op3-combined/rank7.json": "5c248bc4e6ddf3dd3e8091670fee22e572394203b021ea7a1b2b986d85181774"
+  },
+  "profile_summary_sha256": "ceed2af1589d026af1db2a322d3f05838e51bdcdaf22849ad1e5bfc4c894a132",
+  "plan_sha256": "61cb94208f29c7b36a4d11d9fa0c447de4f308af211678206dc657d4421a6ed6",
+  "native_probe_sha256": "2801ffb2bec39ddfe5f3f92ff06051e770bd0153f519092e9a5cce25264a8205",
+  "build": {
+    "root": "/workspace/Load-5090/logs/5090/phase6/op3-two-arm-v1-2x-50steps-20261102-022324-519378/build",
+    "manifest_sha256": "504ed86b52497e113ea7a4def201f4c0dc8504e7cee04f1d8d3974a0e4df9964"
+  },
+  "operator_report_sha256": "58c5759f9187443babaa65438885e67e3a4fe2cb970db0f45288674a31bf2d30",
+  "operator_gradients_validated": true,
+  "optimization_libraries": {
+    "ma9": {
+      "path": "/workspace/Load-5090/logs/5090/phase6/op4-nccl-channels-single-v1-1x-50steps-20261102-103241-089244/compare1/block00-candidate/ma9-compat/libop2_ma9_zero_count.so",
+      "sha256": "64be4af9f5ffd41faa8eb56bd94f4b00f4fdedaf4179143d6fcf13c2790d4b2a"
+    },
+    "ma11": {
+      "path": "/workspace/Load-5090/logs/5090/phase6/op4-nccl-channels-single-v1-1x-50steps-20261102-103241-089244/compare1/block00-candidate/ma11-compat/libma11_softmax_5090.so",
+      "sha256": "f8edd635c9052a17c3d6d5c834492e12dbdc913f927328d023649da597630546"
+    }
+  },
+  "ma11_probe": {
+    "result_sha256": "50a7ac8773442e8fe02a0d8604a650e62ac24015290a856be1d96bb84afc860a"
+  }
+}

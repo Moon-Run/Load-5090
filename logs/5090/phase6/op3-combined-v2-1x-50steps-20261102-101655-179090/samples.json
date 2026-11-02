@@ -1,0 +1,93 @@
+[
+  {
+    "trial": 1,
+    "block": 0,
+    "index": 0,
+    "arm": "op3-combined",
+    "mode": "timing",
+    "directory": "compare1/block00-op3-combined",
+    "ms_per_step": 848.8928365148604,
+    "peak_allocated_gib": 19.422869205474854,
+    "peak_reserved_gib": 19.47265625,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_taco_workspace_gib": 19.422869205474854
+  },
+  {
+    "trial": 1,
+    "block": 1,
+    "index": 1,
+    "arm": "op3-combined",
+    "mode": "timing",
+    "directory": "compare1/block01-op3-combined",
+    "ms_per_step": 849.1351423226297,
+    "peak_allocated_gib": 19.422869205474854,
+    "peak_reserved_gib": 19.47265625,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_taco_workspace_gib": 19.422869205474854
+  },
+  {
+    "trial": 1,
+    "block": 2,
+    "index": 2,
+    "arm": "op3-combined",
+    "mode": "timing",
+    "directory": "compare1/block02-op3-combined",
+    "ms_per_step": 848.8596588000655,
+    "peak_allocated_gib": 19.422869205474854,
+    "peak_reserved_gib": 19.47265625,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_taco_workspace_gib": 19.422869205474854
+  },
+  {
+    "trial": 1,
+    "block": 3,
+    "index": 3,
+    "arm": "op3-combined",
+    "mode": "timing",
+    "directory": "compare1/block03-op3-combined",
+    "ms_per_step": 849.0083349496126,
+    "peak_allocated_gib": 19.422869205474854,
+    "peak_reserved_gib": 19.47265625,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_taco_workspace_gib": 19.422869205474854
+  },
+  {
+    "trial": 1,
+    "block": 4,
+    "index": 4,
+    "arm": "op3-combined",
+    "mode": "timing",
+    "directory": "compare1/block04-op3-combined",
+    "ms_per_step": 848.9113329909742,
+    "peak_allocated_gib": 19.422869205474854,
+    "peak_reserved_gib": 19.47265625,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_taco_workspace_gib": 19.422869205474854
+  },
+  {
+    "trial": 1,
+    "block": 5,
+    "index": 5,
+    "arm": "op3-combined",
+    "mode": "timing",
+    "directory": "compare1/block05-op3-combined",
+    "ms_per_step": 848.4784305468202,
+    "peak_allocated_gib": 19.422869205474854,
+    "peak_reserved_gib": 19.47265625,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_taco_workspace_gib": 19.422869205474854
+  },
+  {
+    "trial": 1,
+    "block": 6,
+    "index": 6,
+    "arm": "op3-combined",
+    "mode": "timing",
+    "directory": "compare1/block06-op3-combined",
+    "ms_per_step": 848.4766619093716,
+    "peak_allocated_gib": 19.422869205474854,
+    "peak_reserved_gib": 19.47265625,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_taco_workspace_gib": 19.422869205474854
+  }
+]
