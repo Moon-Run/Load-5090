@@ -1,0 +1,8 @@
+{
+  "protocol": "rtx5090-phase6-op3-two-arm-v1",
+  "status": "completed",
+  "stage": "done",
+  "timing_windows": 80,
+  "formal_optimizer_steps": 4000,
+  "report": "/workspace/Load-5090/logs/5090/phase6/op3-two-arm-v1-2x-50steps-20261102-022324-519378/report.md"
+}

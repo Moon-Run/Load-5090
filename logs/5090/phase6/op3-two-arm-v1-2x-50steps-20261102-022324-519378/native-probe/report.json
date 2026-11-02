@@ -1,0 +1,47 @@
+{
+  "protocol": "rtx5090-op3-distributed-probe-v1",
+  "completed": true,
+  "arms": {
+    "op3-r": {
+      "completed": true,
+      "arm": "op3-r",
+      "protocol": "rtx5090-op3-distributed-probe-v1",
+      "directed_links": 56,
+      "actual_sorted_gemm_mapping_passed": true,
+      "upstream_packet_decode_bitwise": true,
+      "fused_two_rounding_bitwise": true,
+      "performance_measured": false
+    },
+    "op3-improved": {
+      "completed": true,
+      "arm": "op3-improved",
+      "protocol": "rtx5090-op3-distributed-probe-v1",
+      "directed_links": 56,
+      "actual_sorted_gemm_mapping_passed": true,
+      "upstream_packet_decode_bitwise": true,
+      "fused_two_rounding_bitwise": false,
+      "performance_measured": false
+    }
+  },
+  "raw_projection_packet_output_bitwise": true,
+  "fused_two_rounding_bitwise": true,
+  "build_manifest_sha256": "504ed86b52497e113ea7a4def201f4c0dc8504e7cee04f1d8d3974a0e4df9964",
+  "evidence_files": {
+    "op3-r/rank0.json": "ab65cedc5b61c2f88e92cc1395a51ba7147ec3caf9c94569882c935aca4d39eb",
+    "op3-r/rank1.json": "c909512c2ae2074a4c9bc117118bd74b8e8fd3b121c2a577262d64c0f2b88c23",
+    "op3-r/rank2.json": "d207dfd000eb9365ea478c1fd80743ff124cc7e19574b223308e0bf148a228fa",
+    "op3-r/rank3.json": "f6a134df725683f91bb30b15ce6856e0d9476ba1d24e74d399aa8deddc0b4152",
+    "op3-r/rank4.json": "8c1655d3cd1db37033c322321f8ce5d15947dbe3dfb713059ca35bb4b00bd40a",
+    "op3-r/rank5.json": "13bbe77e96171e84e8faa192063e6b7ec9bc7e022693fdbc07a69b898915591f",
+    "op3-r/rank6.json": "df87e26898011b24330a0c57c3e092b011e8c99946f5ebef0cb4349548bde70b",
+    "op3-r/rank7.json": "22030c7de2a5e35f5d658859bcc5e4a1c855ddf0fcc208b234630298a32e3a29",
+    "op3-improved/rank0.json": "8fa0ace12fc1d370ebbc99b7e655e5ab0fecb7ea1e3189853bddd44084a0849c",
+    "op3-improved/rank1.json": "b05b1934a88513a7856e82c6ce83172f6aae3fc217033187ce76762467796fda",
+    "op3-improved/rank2.json": "d55fd0c4bf99da448df34d546dac9d6b62ed292b177cce38979f29351b8f12b4",
+    "op3-improved/rank3.json": "a6264e588a15ce7eb993570b46806c0bd2c98ebd7fec0d1857b4df95bb45de24",
+    "op3-improved/rank4.json": "ced33cd364d6751f4cdcb6fd6194a1abd0c3d9a63576714a43aed6fd1e5f5701",
+    "op3-improved/rank5.json": "4385bd5176583393bedf1fafab1ed9e88ef1dc9c35fc0a5a6f999b3614ccfd90",
+    "op3-improved/rank6.json": "490625e3b6689df73a6c51e75f55129a178d13d5ced1c32d8c61389c82d6133e",
+    "op3-improved/rank7.json": "fcd235484a3edfedc6f3caf6e95300a7c612c56bcf0380cf470786b6c5150417"
+  }
+}
