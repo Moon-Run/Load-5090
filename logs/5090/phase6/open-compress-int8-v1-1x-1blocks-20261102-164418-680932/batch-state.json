@@ -1,5 +1,0 @@
-{
-  "protocol": "rtx5090-open-compress-int8-three-arm-v1",
-  "status": "running",
-  "stage": "smoke-flux-int8-interleaved"
-}
