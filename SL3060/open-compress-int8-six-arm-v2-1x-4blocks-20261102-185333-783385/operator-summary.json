@@ -1,0 +1,534 @@
+{
+  "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+  "run_id": "32cb6ec7c64f446a863e783f0c4bc570",
+  "completed": true,
+  "evidence_files": {
+    "operator/flux-bf16/rank0.json": "c161449661839a0dbab811aed83a55811b11884e5e9433041c8aee97c1e18859",
+    "operator/flux-bf16/rank0-profile.json.gz": "d8de36c70dad9e120ad73737afb00db8429b3d38401a2404c03a451b2b1e40c1",
+    "operator/flux-bf16/rank1.json": "daf4799d56b2b4917cb4a338cb9fbb504eea2960c142be73af71ebf1288bf433",
+    "operator/flux-bf16/rank1-profile.json.gz": "a2c648e069127167ad888e2cb2be0471c75bb5f4d39b9e0ece611ca22bc3c813",
+    "operator/flux-bf16/rank2.json": "390c3d1a1447b54211bb8efd9a65c9e9afdc1e21176420d84b45a509ab01c345",
+    "operator/flux-bf16/rank2-profile.json.gz": "349e401cba89da22be73052abac00b436c45a52b9ae1cec519b9b45831a9dc51",
+    "operator/flux-bf16/rank3.json": "bbcb10b215ed1077a8c200aa665f3c41b500e5eb66dc9d9a6b7e329598c44956",
+    "operator/flux-bf16/rank3-profile.json.gz": "c2ebdd29efdf85f8d5cca131b666d259a23a7c1999faeddb1372b0e384a4dc34",
+    "operator/flux-bf16/rank4.json": "0cdce1d75541c2709b5d19c5547943b046aff26c7444145488294aa2fa5bc010",
+    "operator/flux-bf16/rank4-profile.json.gz": "f485466d9e4c7637a9258d453384cab1bd7698ac09c6b1059d07b49b67e919c6",
+    "operator/flux-bf16/rank5.json": "8e15b3ab911a6517311f712da17784ed902f7535c68dfaeb5afd2ab370ded84b",
+    "operator/flux-bf16/rank5-profile.json.gz": "fecb941b35bb4894131b128d9db62c108cf255339516d2d5884cd7b07fc784ec",
+    "operator/flux-bf16/rank6.json": "09b293e3d846889ec44ce64489ff1ce251fd1604e413a3d4c57212792d0c0d93",
+    "operator/flux-bf16/rank6-profile.json.gz": "2521cefff40c8fb569c983e830f849ba67c7f73a4d24901d97f56436b6e490ce",
+    "operator/flux-bf16/rank7.json": "4d6861ecf037344427fc174cab40ec03c78722928b459f41362c2d1454d9d48c",
+    "operator/flux-bf16/rank7-profile.json.gz": "83c7bcc96cff71010c7eccfda97d9283b47bba3fcbedbc7d4577f0e42975b2b1",
+    "operator/flux-int8/rank0.json": "10b6d624c7532234596dd3c457f9d7b8fe8e8362b1d48b2eb4ec3e2df960024e",
+    "operator/flux-int8/rank0-profile.json.gz": "f01e2f1753859094767ef53e4f3a055545122f0438d0b9d515ab8ddfeadd6f4f",
+    "operator/flux-int8/rank1.json": "13f1f8ce8adb4ee704beb491243f5fefb6ea7f9ba12b5081258a7502a0a74fcc",
+    "operator/flux-int8/rank1-profile.json.gz": "35b44ea8e92ebb17deb535fb9b3a93192e3e66cfb2e6b94a2b62058dd2d33e4c",
+    "operator/flux-int8/rank2.json": "4a7abee2e60bdbbf3ec32f35318e07d70ec0fe9df0bd16a90ef688d767293eeb",
+    "operator/flux-int8/rank2-profile.json.gz": "e0dd0be2510ade6d7a850907e192a34787820a0d9a4b359c5830183a2157cfa8",
+    "operator/flux-int8/rank3.json": "45e1658590d97962d87c199d211c38aaefeb22c645db7e05f8fae3479156a569",
+    "operator/flux-int8/rank3-profile.json.gz": "037e2e270c952cafdacb675477ed063e46331a91f557a0fdef265ca7416c22d1",
+    "operator/flux-int8/rank4.json": "b7ed09e39086a0461f6e7ca475ce27d9d69a5994258c8e90e3c42183e826c174",
+    "operator/flux-int8/rank4-profile.json.gz": "05a536c0e2d602505e37bfa766383e014736b91540ff5530b1b9c4a3ae186e14",
+    "operator/flux-int8/rank5.json": "576354282cd72800df4e327ea6309311acde159a99abf9f9d1773e122be8e563",
+    "operator/flux-int8/rank5-profile.json.gz": "5ac3fb1c564012568f2387b3d07029d692b14952d09922a02c0895bf14614055",
+    "operator/flux-int8/rank6.json": "dbd92f1ba3f8bc6c3a9ad53ab1eae4637bc14540d11d0a4c706f861de76aaca8",
+    "operator/flux-int8/rank6-profile.json.gz": "6c15ad760abbf4386b3207ae4643f8b0d01e025354c7e464ef43e42dbe22d79b",
+    "operator/flux-int8/rank7.json": "3749a2e1422a64eaa3b4e5aa9a39dbfa124a490227f69c2d5ca6550b8bf5864a",
+    "operator/flux-int8/rank7-profile.json.gz": "a723e50421eaf84e466456a4e6da2e0e8f48624349937e46f1fd87ec25d69851",
+    "operator/flux-int8-interleaved/rank0.json": "806c1ce93cc01e0c3b5b2ea71c2c1cd41af41725696798c8888cc133dc6a714e",
+    "operator/flux-int8-interleaved/rank0-profile.json.gz": "b3fd9272daf10b58d38d2e46c4cc28d7abee8e27d6ef74e7cb23c0fba050c68e",
+    "operator/flux-int8-interleaved/rank1.json": "e9bb80409f20047acc92a1383e0924938c0d857636f2b7866b7686a88698b8cc",
+    "operator/flux-int8-interleaved/rank1-profile.json.gz": "166764de55fc02dd959cb304748e27818908ca193114b772a071c583b76957d2",
+    "operator/flux-int8-interleaved/rank2.json": "7f34d811688086dda48603a0dfe4ac071112236709eb582d577fd377fb984c47",
+    "operator/flux-int8-interleaved/rank2-profile.json.gz": "c1f875aa27c9320cac0d2c8129d07eb6390cb85c9056b3689a839e4a09e34a39",
+    "operator/flux-int8-interleaved/rank3.json": "5e9d9fce23360778978bc4574b0d7ff08123271a94b3ed6ef1be9b1b84af6e41",
+    "operator/flux-int8-interleaved/rank3-profile.json.gz": "7520ec769c1eea83c1f3d16ac20c462bd101c72bd137b316a3da9cee01ede9ef",
+    "operator/flux-int8-interleaved/rank4.json": "d6e7b01ab8aee66bb1a92f20491e7ab359f1fd58df6cfcdde01525310a046b3c",
+    "operator/flux-int8-interleaved/rank4-profile.json.gz": "c09578d8157935ca3a8052c11ef6f174866462ee60a374f84eb4d327fc11a14a",
+    "operator/flux-int8-interleaved/rank5.json": "8ac239944191dbafaa36fa7080d3336c7d5b7580d072f02e8981b4e23a4e95af",
+    "operator/flux-int8-interleaved/rank5-profile.json.gz": "98bb9e17983785e2a87b69a07063d4322efd75b4f0825c06ba7df4d19b289fa4",
+    "operator/flux-int8-interleaved/rank6.json": "afee0d5453c9e65636883c9eeb4a90a56bea7332e6ca1f596fbd49c9b3be70cd",
+    "operator/flux-int8-interleaved/rank6-profile.json.gz": "eba700f9bcde54cba20bdb688f469597c14f7ba9c3c94278eb554bad97f3a910",
+    "operator/flux-int8-interleaved/rank7.json": "0a77ea8450b6e30f3b8a6acee5666eb3524c14234f264fb5577ea817e140f360",
+    "operator/flux-int8-interleaved/rank7-profile.json.gz": "425ebc31d637aa23722eba9cbe0c104a8edbd752893dbc5d5587f44429740eda",
+    "operator/megatron-bf16/rank0.json": "abdcb2ad344a481bf7e0e3c219a4342349a4cb719c72ff02528a0aab6ac4d737",
+    "operator/megatron-bf16/rank0-profile.json.gz": "01f7e80b42e2d0b9d8abbbd71defdb7237662ffa662e865e760f074f5acedd2a",
+    "operator/megatron-bf16/rank1.json": "67010e3f8d9eab1d882123d8bd5b5d739e6a85173b1290a539d1322aad0e50b8",
+    "operator/megatron-bf16/rank1-profile.json.gz": "e75d8cec543e2b8973e4d81fa4739f1fb86a27fae7453ce944ebf3a76b077027",
+    "operator/megatron-bf16/rank2.json": "c44361c02c4aa0df6ebc2b59f33874fceafcd7a6a43580cc7d727bcf8b47953c",
+    "operator/megatron-bf16/rank2-profile.json.gz": "9340ccd722c7951e9f791d42fb98fa5c9dbbcad5cd7bb8b8ffbebc401263bd69",
+    "operator/megatron-bf16/rank3.json": "bfc6b35f0d79e07d1aedf16ac438bb9cc60508bf18882058575b7373a52316ee",
+    "operator/megatron-bf16/rank3-profile.json.gz": "25b3648a724a7fa314744d1c815ece28dbacfa39e06c7c392614bf8db274dae4",
+    "operator/megatron-bf16/rank4.json": "60272c0bb5195caf6f1a58f8191ca51a832b4470a008d5c94399689e527badc5",
+    "operator/megatron-bf16/rank4-profile.json.gz": "78508aea18d5b41e7d519c9c8319329cee2aa608192bc3e0b51e0534dd216b07",
+    "operator/megatron-bf16/rank5.json": "e90432a3f02009f85045d7e2b53ae82539cb01d754f26dd5d7000886fb7261fd",
+    "operator/megatron-bf16/rank5-profile.json.gz": "03c6aa982192af2282bf1c9bc6b722a7e4b691c2c0b8984b31f620167bbbacda",
+    "operator/megatron-bf16/rank6.json": "7c5f18a55a37cd4e07d08cb012669df73698abd8fdb4d706367c74f4771731bd",
+    "operator/megatron-bf16/rank6-profile.json.gz": "4a141b055b7324d097cd5266bfcbe1855fc21b8a88845e24bf3564b67cf58dd1",
+    "operator/megatron-bf16/rank7.json": "e34f49e9919ae21f19e7c23e5926a5607b3808be0da7fc2f262d3b910e8bcc63",
+    "operator/megatron-bf16/rank7-profile.json.gz": "b0cbdc9be9083f67475504d65abc8340c5605f4367dafe987124018e1c84c5fc",
+    "operator/megatron-int8/rank0.json": "f54a8429495dc9faca73acc72dd04f9db1a98a0a592af5acd0358dcd7d1298a1",
+    "operator/megatron-int8/rank0-profile.json.gz": "fdb32ffd8426655cc1fb21c1bceb344361000051f9f880186874d5e52d5ef464",
+    "operator/megatron-int8/rank1.json": "518cc3e94d6a4b33b85f7098cc4aaf40a35e4128fc1236505ed0a16fb7d7fcf8",
+    "operator/megatron-int8/rank1-profile.json.gz": "6527151e30493f7fb8792d33774a38aff4a99fe79f64f9807458f5e6eb80002a",
+    "operator/megatron-int8/rank2.json": "2942222bbb441eefe7bc3c87529bd396e5904a29aa474712185404acd37d2b42",
+    "operator/megatron-int8/rank2-profile.json.gz": "55eaaed0ed9b03cd7d51a45da0fc73cb4cd22fd15a1178c089e4ff0ff1d28db2",
+    "operator/megatron-int8/rank3.json": "fc140da636f98605dfbac6b9548da09e234f77ed358cc52eb4d413cc29fa46d5",
+    "operator/megatron-int8/rank3-profile.json.gz": "5d1fe263822c0ea3866c029e07b5edd6e9880820eb4605a8a652538c346a6659",
+    "operator/megatron-int8/rank4.json": "479d2192d127f1e862dd6cff2326ec6b612b8e88fcc2886809fa86c75181931a",
+    "operator/megatron-int8/rank4-profile.json.gz": "5b8159b31dc64058887f62a4b8efb5220513922ba9a43978e46ad7496898ff2d",
+    "operator/megatron-int8/rank5.json": "5dd2f04b2cc041ed432c475cd5514f93fb07363694544d8badc18ff9c6963202",
+    "operator/megatron-int8/rank5-profile.json.gz": "bc0fe7bf55b50a5a794f711b28b8f5e6a3dd7dd9099cf3c8f242e0235f3f81a3",
+    "operator/megatron-int8/rank6.json": "f92272fb08f6071e68e5608c2fe71e11f78f9b7db290f94d0a0b59128c4a6dc8",
+    "operator/megatron-int8/rank6-profile.json.gz": "5d317c6208672ae0dc96e13b4c7a9db54228a77a88f1b0b91961761a56b09d72",
+    "operator/megatron-int8/rank7.json": "a0eba112ec06349a29e86768491c4d207bd6180d97b6ab503a98e278ae9ebc42",
+    "operator/megatron-int8/rank7-profile.json.gz": "89d97e67069fb2f936e30221df842f1ec9cd1cef67105fd09461c3d143d0df67",
+    "operator/flux-int8-remote-first/rank0.json": "a0e4523136f8fc564176267aa5efe81f50f046cde2026afc7e2e87f9c454c359",
+    "operator/flux-int8-remote-first/rank0-profile.json.gz": "3b7f886ced237738450ae7a10b0b60aec0b9eef1923d0009977408955f03ba16",
+    "operator/flux-int8-remote-first/rank1.json": "468771fe2c9e0074e9ec44761796b5c0434ea6c2d4a38e792ea7ea12905700b1",
+    "operator/flux-int8-remote-first/rank1-profile.json.gz": "93c2439f7a90382399321186f33c1332a86a47a407f908b14f708c02e612ec71",
+    "operator/flux-int8-remote-first/rank2.json": "79b50d363a749c1c201c71482399ace72d32d1cdbe2ea7d65d25799470e9eb63",
+    "operator/flux-int8-remote-first/rank2-profile.json.gz": "c3518268fbc3fdedd503d1eebe6164dd903330b541a9d1069d4fa74186622c96",
+    "operator/flux-int8-remote-first/rank3.json": "28c2bb06bda37252af4cb62fbb8e7d785f39989af574d4070b83e172d2e89f41",
+    "operator/flux-int8-remote-first/rank3-profile.json.gz": "fadbd144a033042ae68f7f3265c65511bba069ffe0d03a0a2e30d24e37e21e90",
+    "operator/flux-int8-remote-first/rank4.json": "d70aef70f5bf6e6fa733d643268a0b1d65092717ce10b1f2c043542aaa50f376",
+    "operator/flux-int8-remote-first/rank4-profile.json.gz": "a8c211585626e27aaad3086ae68ab4920b2162379090d3790c87e23ae833d768",
+    "operator/flux-int8-remote-first/rank5.json": "20ad81e6c897af53067993d14df9583236b9da46a35f2fdcc89eff82d0965db0",
+    "operator/flux-int8-remote-first/rank5-profile.json.gz": "fb16acb957b1920f1a9b7c1292d8082a3e7de0a07dc2fdce4090c9375685b220",
+    "operator/flux-int8-remote-first/rank6.json": "68e4652fd7a5e812088849a4c83c90a34e375134166a3816930bba58b7379a46",
+    "operator/flux-int8-remote-first/rank6-profile.json.gz": "6d038bcf8f42a73a9d49ffb2c35a3558360ac9a8b6286a39b433d60bf049c0d1",
+    "operator/flux-int8-remote-first/rank7.json": "2d8153bd659db619615f6c27765df80f25ae50e8a6638d63dea0b5e6f531bdcd",
+    "operator/flux-int8-remote-first/rank7-profile.json.gz": "193aca8ad2b41be01c883f143ee9a6b4f341ad792af1e9b2c8abb7d744723960"
+  },
+  "measurements": {
+    "flux-bf16": {
+      "attn": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.06606207966804505,
+          "mean_max_rank_wall_ms": 0.0691593810915947,
+          "max_peak_allocated_gib": 0.0313725471496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.5170924758911133,
+          "mean_max_rank_wall_ms": 0.5190484598278999,
+          "max_peak_allocated_gib": 0.0333256721496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 2097152
+        }
+      },
+      "mlp": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.21992959976196289,
+          "mean_max_rank_wall_ms": 0.22226588800549507,
+          "max_peak_allocated_gib": 0.048462867736816406,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.6618969535827637,
+          "mean_max_rank_wall_ms": 0.6638970971107483,
+          "max_peak_allocated_gib": 0.050415992736816406,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 2097152
+        }
+      }
+    },
+    "flux-int8": {
+      "attn": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.0698470389842987,
+          "mean_max_rank_wall_ms": 0.07625168189406395,
+          "max_peak_allocated_gib": 0.0450444221496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.40467072010040284,
+          "mean_max_rank_wall_ms": 0.4070677235722542,
+          "max_peak_allocated_gib": 0.0469975471496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 2097152
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.03660031974315643,
+          "mean_max_rank_wall_ms": 0.039971452206373215,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.2884473609924316,
+          "mean_max_rank_wall_ms": 0.2904079109430313,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.02782144069671631,
+          "mean_max_rank_wall_ms": 0.030541718006134033,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.04433023989200592,
+          "mean_max_rank_wall_ms": 0.04688704386353493,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        }
+      },
+      "mlp": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.22005504131317138,
+          "mean_max_rank_wall_ms": 0.22243106737732887,
+          "max_peak_allocated_gib": 0.0633249282836914,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.5257471942901611,
+          "mean_max_rank_wall_ms": 0.5279139615595341,
+          "max_peak_allocated_gib": 0.0656437873840332,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 2489856
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.031420800685882565,
+          "mean_max_rank_wall_ms": 0.0343124195933342,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.28684096336364745,
+          "mean_max_rank_wall_ms": 0.2889426425099373,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.024963200092315674,
+          "mean_max_rank_wall_ms": 0.027574561536312103,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.03910272002220154,
+          "mean_max_rank_wall_ms": 0.04156835377216339,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        }
+      }
+    },
+    "flux-int8-interleaved": {
+      "attn": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.06782016038894653,
+          "mean_max_rank_wall_ms": 0.07196091115474701,
+          "max_peak_allocated_gib": 0.0450444221496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.7640019130706787,
+          "mean_max_rank_wall_ms": 0.7671920955181122,
+          "max_peak_allocated_gib": 0.0469975471496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 2097152
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.03400447964668274,
+          "mean_max_rank_wall_ms": 0.03717698156833649,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.3951020860671997,
+          "mean_max_rank_wall_ms": 0.397272314876318,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.02465024024248123,
+          "mean_max_rank_wall_ms": 0.02695878967642784,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.04307904005050659,
+          "mean_max_rank_wall_ms": 0.0454467348754406,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        }
+      },
+      "mlp": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.22241471767425539,
+          "mean_max_rank_wall_ms": 0.2253725565969944,
+          "max_peak_allocated_gib": 0.0633249282836914,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.904362850189209,
+          "mean_max_rank_wall_ms": 0.9747116267681122,
+          "max_peak_allocated_gib": 0.0656437873840332,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 2489856
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.03319552004337311,
+          "mean_max_rank_wall_ms": 0.0364619679749012,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.3085478401184082,
+          "mean_max_rank_wall_ms": 0.3106089308857918,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.02560000002384186,
+          "mean_max_rank_wall_ms": 0.02805408090353012,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.040034559965133665,
+          "mean_max_rank_wall_ms": 0.04233216866850853,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        }
+      }
+    },
+    "megatron-bf16": {
+      "attn": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.14956480026245117,
+          "mean_max_rank_wall_ms": 0.15770237892866135,
+          "max_peak_allocated_gib": 0.0450444221496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 16777216
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.5507462406158448,
+          "mean_max_rank_wall_ms": 0.5556241422891617,
+          "max_peak_allocated_gib": 0.0450444221496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 16777216
+        }
+      },
+      "mlp": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.2927443218231201,
+          "mean_max_rank_wall_ms": 0.29808225110173225,
+          "max_peak_allocated_gib": 0.0626225471496582,
+          "max_peak_reserved_gib": 0.087890625,
+          "max_incremental_allocated_bytes": 16777216
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.7362918376922607,
+          "mean_max_rank_wall_ms": 0.7387898862361908,
+          "max_peak_allocated_gib": 0.0626225471496582,
+          "max_peak_reserved_gib": 0.087890625,
+          "max_incremental_allocated_bytes": 16777216
+        }
+      }
+    },
+    "megatron-int8": {
+      "attn": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.15176384210586547,
+          "mean_max_rank_wall_ms": 0.15848824754357338,
+          "max_peak_allocated_gib": 0.0591435432434082,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 16777216
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.8019494533538818,
+          "mean_max_rank_wall_ms": 0.8062526397407055,
+          "max_peak_allocated_gib": 0.0591435432434082,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 16777216
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.03207423985004425,
+          "mean_max_rank_wall_ms": 0.035151075571775436,
+          "max_peak_allocated_gib": 0.0591435432434082,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.5490841579437256,
+          "mean_max_rank_wall_ms": 0.5516651086509228,
+          "max_peak_allocated_gib": 0.0591435432434082,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.02388287991285324,
+          "mean_max_rank_wall_ms": 0.026118922978639603,
+          "max_peak_allocated_gib": 0.0591435432434082,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.03449407994747162,
+          "mean_max_rank_wall_ms": 0.036551374942064285,
+          "max_peak_allocated_gib": 0.0591435432434082,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 0
+        }
+      },
+      "mlp": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.29613823890686036,
+          "mean_max_rank_wall_ms": 0.30089039355516434,
+          "max_peak_allocated_gib": 0.0908207893371582,
+          "max_peak_reserved_gib": 0.126953125,
+          "max_incremental_allocated_bytes": 16777216
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.9177516746520996,
+          "mean_max_rank_wall_ms": 0.9208748303353786,
+          "max_peak_allocated_gib": 0.0908207893371582,
+          "max_peak_reserved_gib": 0.123046875,
+          "max_incremental_allocated_bytes": 16777216
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.036695679426193235,
+          "mean_max_rank_wall_ms": 0.04044974222779274,
+          "max_peak_allocated_gib": 0.0908207893371582,
+          "max_peak_reserved_gib": 0.123046875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.33650495529174806,
+          "mean_max_rank_wall_ms": 0.33856485038995743,
+          "max_peak_allocated_gib": 0.0908207893371582,
+          "max_peak_reserved_gib": 0.123046875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.03200383961200714,
+          "mean_max_rank_wall_ms": 0.035227760672569275,
+          "max_peak_allocated_gib": 0.0908207893371582,
+          "max_peak_reserved_gib": 0.123046875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.05645120024681091,
+          "mean_max_rank_wall_ms": 0.06018908694386482,
+          "max_peak_allocated_gib": 0.0908207893371582,
+          "max_peak_reserved_gib": 0.123046875,
+          "max_incremental_allocated_bytes": 0
+        }
+      }
+    },
+    "flux-int8-remote-first": {
+      "attn": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.068646399974823,
+          "mean_max_rank_wall_ms": 0.07365476340055466,
+          "max_peak_allocated_gib": 0.0450444221496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.8682201671600341,
+          "mean_max_rank_wall_ms": 0.8716650679707527,
+          "max_peak_allocated_gib": 0.0469975471496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 2097152
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.04075648009777069,
+          "mean_max_rank_wall_ms": 0.044680219143629074,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.7092582416534424,
+          "mean_max_rank_wall_ms": 0.7116633839905262,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.02778752028942108,
+          "mean_max_rank_wall_ms": 0.03046249970793724,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.09337408065795898,
+          "mean_max_rank_wall_ms": 0.09646127000451088,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        }
+      },
+      "mlp": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.22370880126953124,
+          "mean_max_rank_wall_ms": 0.2280816249549389,
+          "max_peak_allocated_gib": 0.0633249282836914,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.8802515125274658,
+          "mean_max_rank_wall_ms": 0.8833011612296104,
+          "max_peak_allocated_gib": 0.0656437873840332,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 2489856
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.047686400413513186,
+          "mean_max_rank_wall_ms": 0.05212593823671341,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.3186016035079956,
+          "mean_max_rank_wall_ms": 0.32833095639944077,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.09492607951164246,
+          "mean_max_rank_wall_ms": 0.09912403300404549,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.07907583951950073,
+          "mean_max_rank_wall_ms": 0.08467201143503189,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        }
+      }
+    }
+  },
+  "limitation": "Forward-only operator probes use no_grad in every arm; full training retains autograd/backward. Components timed separately; their sums do not predict integrated latency. Operator process is independent of full-model process. Peaks include live operator buffers. Wall time includes Python and synchronization; CUDA events cover caller stream with NCCL wait dependencies."
+}
