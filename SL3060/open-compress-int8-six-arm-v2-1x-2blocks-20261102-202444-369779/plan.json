@@ -1,0 +1,164 @@
+{
+  "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+  "transport": "rtx5090-nccl-staged-v2",
+  "run_id": "ffad7c2a8d85496ba5c2ba52e27cc7e9",
+  "arms": [
+    "flux-bf16",
+    "flux-int8",
+    "flux-int8-interleaved",
+    "megatron-bf16",
+    "megatron-int8",
+    "flux-int8-remote-first"
+  ],
+  "model": {
+    "layers": 32,
+    "hidden": 4096,
+    "ffn": 16384,
+    "heads": 32,
+    "sequence": 2048,
+    "micro_batch": 1,
+    "global_batch": 4,
+    "tp": 8,
+    "dp": 1,
+    "sm_count": 170,
+    "seed": 1234,
+    "token_seed": 4321,
+    "vocab": 32768
+  },
+  "trials": 1,
+  "blocks": 2,
+  "schedule": [
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 0,
+      "arm": "megatron-bf16",
+      "mode": "timing",
+      "directory": "compare1/block00-megatron-bf16"
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 1,
+      "arm": "megatron-int8",
+      "mode": "timing",
+      "directory": "compare1/block00-megatron-int8"
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 2,
+      "arm": "flux-int8-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-int8-interleaved"
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 3,
+      "arm": "flux-int8-remote-first",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-int8-remote-first"
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 4,
+      "arm": "flux-int8",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-int8"
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 5,
+      "arm": "flux-bf16",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-bf16"
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 6,
+      "arm": "flux-int8-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-int8-interleaved"
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 7,
+      "arm": "megatron-bf16",
+      "mode": "timing",
+      "directory": "compare1/block01-megatron-bf16"
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 8,
+      "arm": "flux-int8",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-int8"
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 9,
+      "arm": "megatron-int8",
+      "mode": "timing",
+      "directory": "compare1/block01-megatron-int8"
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 10,
+      "arm": "flux-bf16",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-bf16"
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 11,
+      "arm": "flux-int8-remote-first",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-int8-remote-first"
+    }
+  ],
+  "place": 60,
+  "build_jobs": 128,
+  "communication": {
+    "environment": {
+      "NCCL_VERSION": "2.27.3",
+      "TORCH_NCCL_USE_COMM_NONBLOCKING": "0",
+      "NCCL_NVLS_ENABLE": "0",
+      "NCCL_DEBUG": "WARN",
+      "TORCH_NCCL_ASYNC_ERROR_HANDLING": "1",
+      "NCCL_P2P_DISABLE": "1",
+      "NCCL_SHM_DISABLE": "0"
+    },
+    "config_files": {
+      "/etc/nccl.conf": null,
+      "/root/.nccl.conf": null
+    },
+    "nvls_request": "0"
+  },
+  "environment": {
+    "torch": "2.8.0a0+5228986c39.nv25.06",
+    "cuda": "12.9",
+    "nccl": [
+      2,
+      27,
+      3
+    ],
+    "python": "/workspace/venvs/tempname-5090/bin/python",
+    "python_version": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+    "cxx11_abi": true
+  },
+  "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+  "preflight_sha256": "feafce6f25315eab0018a958e7adab5f1560fd1ba1ee304762265c8eca77cee7",
+  "build": {
+    "root": "/workspace/SL3061/open-compress-int8-six-arm-v2-1x-1blocks-20261102-171639-582516/build",
+    "manifest_sha256": "6b9fcd3d21f88bf4289f52c721ffd96e78454d841237658632386bc6d28d2915"
+  }
+}
