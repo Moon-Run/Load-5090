@@ -1,0 +1,31 @@
+{
+  "pid": 1544447,
+  "command": [
+    "/workspace/venvs/tempname-5090/bin/python",
+    "/workspace/TempName-New/tools/5090/phase6/op5.py",
+    "--execute",
+    "--inside",
+    "--out",
+    "/workspace/Load-5090/logs/5090/phase6/op5-shm-recv-ce-p2p-ll-single-v2-1x-50steps-20261102-155717-096675",
+    "--python",
+    "/workspace/venvs/tempname-5090/bin/python",
+    "--megatron",
+    "/workspace/Megatron-LM",
+    "--cuda-home",
+    "/usr/local/cuda-12.9",
+    "--build-cuda-home",
+    "/usr/local/cuda-12.9",
+    "--trials",
+    "1",
+    "--blocks",
+    "1",
+    "--jobs",
+    "2",
+    "--worker-timeout",
+    "3600",
+    "--reference-batch",
+    "/workspace/Load-5090/logs/5090/phase6/op4-nccl-channels-single-v1-1x-50steps-20261102-105103-438654",
+    "--op3-build",
+    "/workspace/Load-5090/logs/5090/phase6/op3-two-arm-v1-2x-50steps-20261102-022324-519378/build"
+  ]
+}

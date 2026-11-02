@@ -1,0 +1,89 @@
+{
+  "protocol": "rtx5090-op5-shm-ce-probe-v2",
+  "run_id": "a68152377ded465c9eb01404e61e30bc",
+  "rank": 0,
+  "completed": false,
+  "settings": {
+    "input_elements": 1048576,
+    "dtype": "bfloat16",
+    "world": 8,
+    "correctness_iterations": 3,
+    "warmup": 20,
+    "timed_calls": 100,
+    "profile_calls": 10,
+    "alltoall": {
+      "peer_bytes": 1114112,
+      "wire_bytes": 7798784,
+      "dtype": "uint8",
+      "self_split": 0
+    }
+  },
+  "stage": "allgather-correctness-0",
+  "alltoall": {
+    "settings": {
+      "peer_bytes": 1114112,
+      "wire_bytes": 7798784,
+      "dtype": "uint8",
+      "self_split": 0
+    },
+    "input_split_sizes": [
+      0,
+      1114112,
+      1114112,
+      1114112,
+      1114112,
+      1114112,
+      1114112,
+      1114112
+    ],
+    "output_split_sizes": [
+      0,
+      1114112,
+      1114112,
+      1114112,
+      1114112,
+      1114112,
+      1114112,
+      1114112
+    ],
+    "iterations": 3,
+    "verified_peers_per_iteration": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    ],
+    "bitwise_correct": true,
+    "non_default_stream": true,
+    "reused_buffers": true,
+    "delayed_rank": 7,
+    "gpu_us": 987.2361755371094,
+    "wall_us": 987.8211654722691,
+    "profile_complete": true,
+    "async_work_waits": 133
+  },
+  "error": "ValueError: BF16 AllGather corrupted rank 1, iteration 0"
+}

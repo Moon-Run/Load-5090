@@ -1,0 +1,497 @@
+{
+  "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+  "completed": true,
+  "trials": 1,
+  "blocks": 1,
+  "arms": [
+    "flux-bf16",
+    "flux-int8",
+    "flux-int8-interleaved"
+  ],
+  "model": {
+    "layers": 32,
+    "hidden": 4096,
+    "ffn": 16384,
+    "heads": 32,
+    "sequence": 2048,
+    "micro_batch": 1,
+    "global_batch": 4,
+    "tp": 8,
+    "dp": 1,
+    "sm_count": 170,
+    "seed": 1234,
+    "token_seed": 4321,
+    "vocab": 32768
+  },
+  "timing": {
+    "warmup_steps": 10,
+    "timed_steps": 50,
+    "smoke_warmup_steps": 2,
+    "smoke_steps": 3
+  },
+  "comparisons": {
+    "compare1": {
+      "arms": {
+        "flux-bf16": {
+          "mean_ms": 1097.5812966749072,
+          "median_ms": 1097.5812966749072,
+          "min_ms": 1097.5812966749072,
+          "max_ms": 1097.5812966749072,
+          "tokens_per_second": 7463.684033991324,
+          "reduction_vs_bf16_percent": 0.0,
+          "max_peak_allocated_gib": 17.49083375930786,
+          "max_peak_reserved_gib": 17.6484375,
+          "max_peak_allocated_plus_native_gib": 17.49083375930786
+        },
+        "flux-int8": {
+          "mean_ms": 1062.7544233761728,
+          "median_ms": 1062.7544233761728,
+          "min_ms": 1062.7544233761728,
+          "max_ms": 1062.7544233761728,
+          "tokens_per_second": 7708.271845131957,
+          "reduction_vs_bf16_percent": 3.173056374433625,
+          "max_peak_allocated_gib": 18.41820192337036,
+          "max_peak_reserved_gib": 18.609375,
+          "max_peak_allocated_plus_native_gib": 18.41820192337036
+        },
+        "flux-int8-interleaved": {
+          "mean_ms": 1063.2172414660454,
+          "median_ms": 1063.2172414660454,
+          "min_ms": 1063.2172414660454,
+          "max_ms": 1063.2172414660454,
+          "tokens_per_second": 7704.916437118949,
+          "reduction_vs_bf16_percent": 3.1308892847360603,
+          "max_peak_allocated_gib": 18.41820192337036,
+          "max_peak_reserved_gib": 18.609375,
+          "max_peak_allocated_plus_native_gib": 18.41820192337036
+        }
+      },
+      "pairs": {
+        "flux-int8/flux-bf16": {
+          "percent": 3.173056374433625,
+          "ci95": null,
+          "paired_blocks": 1,
+          "mean_reduction_percent": 3.173056374433625,
+          "faster_blocks": 1
+        },
+        "flux-int8-interleaved/flux-int8": {
+          "percent": -0.04354892152811374,
+          "ci95": null,
+          "paired_blocks": 1,
+          "mean_reduction_percent": -0.04354892152811374,
+          "faster_blocks": 0
+        },
+        "flux-int8-interleaved/flux-bf16": {
+          "percent": 3.1308892847360603,
+          "ci95": null,
+          "paired_blocks": 1,
+          "mean_reduction_percent": 3.1308892847360603,
+          "faster_blocks": 1
+        }
+      }
+    }
+  },
+  "all_samples": [
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 0,
+      "arm": "flux-int8",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-int8",
+      "ms_per_step": 1062.7544233761728,
+      "peak_allocated_gib": 18.41820192337036,
+      "peak_reserved_gib": 18.609375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 18.41820192337036
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 1,
+      "arm": "flux-int8-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-int8-interleaved",
+      "ms_per_step": 1063.2172414660454,
+      "peak_allocated_gib": 18.41820192337036,
+      "peak_reserved_gib": 18.609375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 18.41820192337036
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 2,
+      "arm": "flux-bf16",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-bf16",
+      "ms_per_step": 1097.5812966749072,
+      "peak_allocated_gib": 17.49083375930786,
+      "peak_reserved_gib": 17.6484375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 17.49083375930786
+    }
+  ],
+  "timing_windows": 3,
+  "timing_rank_records": 24,
+  "formal_optimizer_steps": 150,
+  "balanced_order": false,
+  "exploratory": true,
+  "all_windows_retained": true,
+  "arrival": false,
+  "selective": false,
+  "original_peer_overlap_preserved": false,
+  "limitation": "Fixed synthetic GPT6.7B workload. BF16 uses NCCL ReduceScatter; INT8 uses byte AllToAll and source-ordered BF16 reduction. INT8/BF16 is a whole-path comparison. Interleaving changes GEMM CTA mapping and can reassign StreamK reductions; no bitwise trajectory equivalence is claimed. No tile-arrival overlap, arrival policy, selective quantization or convergence claim. Payload bytes are not measured NCCL link traffic. CI only with >=6 blocks; comparisons unadjusted.",
+  "run_id": "7b9ec7610ed84c438bba14bc0de9ab38",
+  "correctness_passed": true,
+  "execution_path_validated": true,
+  "numerical_comparisons": {
+    "flux-bf16/flux-int8": {
+      "max_loss_abs_difference": 3.243269443511963,
+      "max_grad_norm_abs_difference": 103.18728425808041,
+      "final_parameter_fingerprints_equal": false
+    },
+    "flux-bf16/flux-int8-interleaved": {
+      "max_loss_abs_difference": 4.364758849143982,
+      "max_grad_norm_abs_difference": 94.28909093738278,
+      "final_parameter_fingerprints_equal": false
+    },
+    "flux-int8/flux-int8-interleaved": {
+      "max_loss_abs_difference": 3.5260531902313232,
+      "max_grad_norm_abs_difference": 109.68704489481858,
+      "final_parameter_fingerprints_equal": false
+    }
+  },
+  "operator_measurements": {
+    "flux-bf16": {
+      "attn": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.06616832017898559,
+          "mean_max_rank_wall_ms": 0.06916021928191185,
+          "max_peak_allocated_gib": 0.0313725471496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.5550022411346436,
+          "mean_max_rank_wall_ms": 0.5577223375439644,
+          "max_peak_allocated_gib": 0.0333256721496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 2097152
+        }
+      },
+      "mlp": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.2198963212966919,
+          "mean_max_rank_wall_ms": 0.22256873548030853,
+          "max_peak_allocated_gib": 0.048462867736816406,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.6677452754974366,
+          "mean_max_rank_wall_ms": 0.6696132197976112,
+          "max_peak_allocated_gib": 0.050415992736816406,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 2097152
+        }
+      }
+    },
+    "flux-int8": {
+      "attn": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.06907839894294739,
+          "mean_max_rank_wall_ms": 0.07497554644942284,
+          "max_peak_allocated_gib": 0.0450444221496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.5447686481475831,
+          "mean_max_rank_wall_ms": 0.5470197089016438,
+          "max_peak_allocated_gib": 0.0469975471496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 2097152
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.042869759798049925,
+          "mean_max_rank_wall_ms": 0.046872664242982864,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.31148864269256593,
+          "mean_max_rank_wall_ms": 0.31388482078909874,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.03296640038490296,
+          "mean_max_rank_wall_ms": 0.035912636667490005,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.05050368070602417,
+          "mean_max_rank_wall_ms": 0.05350060760974884,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        }
+      },
+      "mlp": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.22209919929504396,
+          "mean_max_rank_wall_ms": 0.22626517340540886,
+          "max_peak_allocated_gib": 0.0633249282836914,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.5397990417480468,
+          "mean_max_rank_wall_ms": 0.5423217825591564,
+          "max_peak_allocated_gib": 0.0656437873840332,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 2489856
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.0336710399389267,
+          "mean_max_rank_wall_ms": 0.03687862306833267,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.3639827251434326,
+          "mean_max_rank_wall_ms": 0.366644486784935,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.027710720300674438,
+          "mean_max_rank_wall_ms": 0.030314438045024872,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.045416959524154664,
+          "mean_max_rank_wall_ms": 0.0525684654712677,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        }
+      }
+    },
+    "flux-int8-interleaved": {
+      "attn": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.06872767925262452,
+          "mean_max_rank_wall_ms": 0.07469387724995613,
+          "max_peak_allocated_gib": 0.0450444221496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.4204550361633301,
+          "mean_max_rank_wall_ms": 0.4234412871301174,
+          "max_peak_allocated_gib": 0.0469975471496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 2097152
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.03518976032733917,
+          "mean_max_rank_wall_ms": 0.03859585151076317,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.31479488372802733,
+          "mean_max_rank_wall_ms": 0.31723175197839737,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.03318144023418426,
+          "mean_max_rank_wall_ms": 0.036749932914972305,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.05008512079715729,
+          "mean_max_rank_wall_ms": 0.05296358838677406,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        }
+      },
+      "mlp": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.2203283166885376,
+          "mean_max_rank_wall_ms": 0.22251056507229805,
+          "max_peak_allocated_gib": 0.0633249282836914,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.538789119720459,
+          "mean_max_rank_wall_ms": 0.5410154536366463,
+          "max_peak_allocated_gib": 0.0656437873840332,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 2489856
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.03467200040817261,
+          "mean_max_rank_wall_ms": 0.03777362406253815,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.29739328384399416,
+          "mean_max_rank_wall_ms": 0.2994662709534168,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.028105599880218508,
+          "mean_max_rank_wall_ms": 0.031041931360960007,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.04582080006599426,
+          "mean_max_rank_wall_ms": 0.048386771231889725,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        }
+      }
+    }
+  },
+  "evidence_files": {
+    "results/smoke-flux-bf16/rank0.json": "89fcfdd55bfba5ae46d6face90baec4b4d421cc7aac4a37336405a292697d8a5",
+    "results/smoke-flux-bf16/rank1.json": "116d5f0a3533cad3c22e9f47c2a389ed7a5adf4348b6211a3ec0a40b507e69c2",
+    "results/smoke-flux-bf16/rank2.json": "2da47ddb82f56787e4e36e6eb3fd0b2cffab65dce5e43168310fedede9780a90",
+    "results/smoke-flux-bf16/rank3.json": "9e85a28ed4141097da1bb00f130f94d0a1be5fa7ae8af840b9a69ccd4869931a",
+    "results/smoke-flux-bf16/rank4.json": "c12a52eba3182c18ea96261895c739ac2cd3f55e0d81411431c3a294393b6267",
+    "results/smoke-flux-bf16/rank5.json": "8dea0d4f2f15fbc2957f7500554aa2fccfad1a85b3b7aa95bad4f127e3e58eeb",
+    "results/smoke-flux-bf16/rank6.json": "a17c2a8100f8618d28d2e2c343681150a35d40b74b336af3b4b2cffacff23606",
+    "results/smoke-flux-bf16/rank7.json": "19dc1166fee9ee77d1de934e95d340063036e31f6f516d3708edb8224ad822ed",
+    "results/smoke-flux-int8/rank0.json": "53c5ae336d713e1699305c74f757d2678e7a47e0155ff0bf1024698ed5561eed",
+    "results/smoke-flux-int8/rank1.json": "c822b33f6cd5ecf14f9519f5583f9819bb993877aa4f17cd007db115fda8fa9c",
+    "results/smoke-flux-int8/rank2.json": "1aa569da703ba3c72a49907b2c7f41db2e4a4ecbf8ea072ecf816b5b4bd63118",
+    "results/smoke-flux-int8/rank3.json": "35bba1e1e7ec8ff300e67072fd25df419e48d716cb9f718b23e3606358cbca51",
+    "results/smoke-flux-int8/rank4.json": "26c2d653299d1a3c28b9cd6fab5317bea9ec7af692e01eff2c462c6fb596f2c2",
+    "results/smoke-flux-int8/rank5.json": "493fdbc4498b0357d59d67bc17cbe9d602406bd1db6384c64f503df04d77cc4e",
+    "results/smoke-flux-int8/rank6.json": "4f9cec838625f871e1842997deb316a7ae79490420bb2b830b0222cace234a54",
+    "results/smoke-flux-int8/rank7.json": "4bf8a8f0473e994ec66d0dbd0eaf7b9e8de54c0afab406538372e162d9dc89df",
+    "results/smoke-flux-int8-interleaved/rank0.json": "89415c212900baad78cf8d8c88e042f10c104c011d7526e990de9830042a1258",
+    "results/smoke-flux-int8-interleaved/rank1.json": "645b6c84b1d96bad0dd39419decd88b93583a47baa033be6ce0313d93f5f68b6",
+    "results/smoke-flux-int8-interleaved/rank2.json": "b23fad3797a70ecef4411ce741995d0ee5a1a53e584cfe29bff63ad0ab1fea4a",
+    "results/smoke-flux-int8-interleaved/rank3.json": "058c34fdf8e2b0f5a9b7b5b07701be027ba07d0b834b45dd41e93f583fc3740b",
+    "results/smoke-flux-int8-interleaved/rank4.json": "4535472547c32c3a9650f8af17231b7722d123a6e15c68ec83ca9d4043ca83a4",
+    "results/smoke-flux-int8-interleaved/rank5.json": "fd0db92592d32f78459745acdbe3a33995facff20e6ab4866dbe45986ccd7e25",
+    "results/smoke-flux-int8-interleaved/rank6.json": "eecbe66cc81b6fb8abf02a982da1bf01e6d74a0aa743907fdc8f347b1009e143",
+    "results/smoke-flux-int8-interleaved/rank7.json": "f7890b7f94950f2dcd63768c0d686debf890bdb6a6a902e3b1da4faafa324b95",
+    "results/profile-flux-bf16/rank0.json": "ef5d79a68fdad8c20cfc28495239c87fa38c154e8b34628fbd7994b5f4cd1d8b",
+    "results/profile-flux-bf16/rank0-profile.json.gz": "ffd2c6d3b54c447f6d6b75ef6c0f72eeb484d2b4cfa495237dba17c6122a64d8",
+    "results/profile-flux-bf16/rank1.json": "ef80b2a8acbd145d1609812f8a4c528cfa7e2b06c86e15f662ab232269964156",
+    "results/profile-flux-bf16/rank1-profile.json.gz": "7a0c70a4362075fbab664e21a807539be1cceabb2f97929512ef91d2b9126d65",
+    "results/profile-flux-bf16/rank2.json": "0cc4cdadeb8a2c2cf1a05c1ded96fc7ade4d6a0313ece056e599f65cb604fc9b",
+    "results/profile-flux-bf16/rank2-profile.json.gz": "1900c24a0a1fad1639f30113cf09deb3f16f8acb9e7ba5bab0498d9156264447",
+    "results/profile-flux-bf16/rank3.json": "6032c5066d54b000012ced0b4171e650b24b3c60e1c8bef1e7b9e108133cee83",
+    "results/profile-flux-bf16/rank3-profile.json.gz": "31988facd7fb61f2970f2d27774b318d3bb1c63b7f7ab436275a43c93aa6b5a1",
+    "results/profile-flux-bf16/rank4.json": "47cce52ced318603f93a321d5c56caed49133fa6b779b62c9082596a8e1c2901",
+    "results/profile-flux-bf16/rank4-profile.json.gz": "df460d0fefef5483d22443eb98011d88ca02f5b33550b4a21d62b2fb79df5dc9",
+    "results/profile-flux-bf16/rank5.json": "c3acdc5df9c2375637de726d96f06fc463b67867fc8f382448df2b6bfc8c5da4",
+    "results/profile-flux-bf16/rank5-profile.json.gz": "7771b3a029741f13f7a4c42393ffa0c6b697bb58d7fab4af065bf552fb25d8c6",
+    "results/profile-flux-bf16/rank6.json": "cfd565cd50a0db29202034b8aadcaf09eab472e2c6c7e235d82553ffddcde34c",
+    "results/profile-flux-bf16/rank6-profile.json.gz": "9c60c0f5c03e656833d031497a056facca95e24fe640f4a5934cc5a359315f63",
+    "results/profile-flux-bf16/rank7.json": "75b537c6126f2dded05ddef3ef2e30073c0cb662a9fb486a04c69d9b17a03121",
+    "results/profile-flux-bf16/rank7-profile.json.gz": "1dddd984ff7698ea4f71963f726d78d01602e4b71e8aa368a87bc53d9e42c031",
+    "results/profile-flux-int8/rank0.json": "e12345c5bf4267954573bfb30c2dfe4aa957ce822259ea5c5964d8626dcb1fbe",
+    "results/profile-flux-int8/rank0-profile.json.gz": "e507a58d4ed5f998f4dd75b5d950491e185a2908165b2b7cf37340ee3c509d44",
+    "results/profile-flux-int8/rank1.json": "61b5d0924d7f4fe6506be6dbe3d975e1571bb038e638927f6022072d4596e665",
+    "results/profile-flux-int8/rank1-profile.json.gz": "19e51e4fe3c2d89b3e15ecc29885d099e1f6f3781a60cbd7f9cfa99c607780cd",
+    "results/profile-flux-int8/rank2.json": "89c8a34207c447dab96db7487249516b41f0f9dc7434f026e98874e0f4438771",
+    "results/profile-flux-int8/rank2-profile.json.gz": "3868c7ad615691c374f86040b44517f41f79534f84c6be4f0710740bf96eddaa",
+    "results/profile-flux-int8/rank3.json": "d276a4fc402e919955074c93726c53d00fe532c6f64b65dfb654b211a3958999",
+    "results/profile-flux-int8/rank3-profile.json.gz": "004de94d93830728a480a6a31425e72423c556ad75515f2157265067163cd4b5",
+    "results/profile-flux-int8/rank4.json": "7922e8e05c8cffa241af6c208e6eda3ec2117ded502474d52a84886cfcee5209",
+    "results/profile-flux-int8/rank4-profile.json.gz": "7702e9944d5567932d0ab52f1f0d186d1197f3507e656819ebec42e2e7338724",
+    "results/profile-flux-int8/rank5.json": "67f5fce8625b9c963cedf9e1bb1d96ab8c4dd7b97e28ce8035f4f2071b76b968",
+    "results/profile-flux-int8/rank5-profile.json.gz": "af6c89787c9f0623a53b78866d96c7cccd3ca3d22e3aca9fa8bf81ea78bc6253",
+    "results/profile-flux-int8/rank6.json": "76cdc7de094fb057ccdd1ca900def6cf6e25d82e9cf1baccc8b2d22ff42acb62",
+    "results/profile-flux-int8/rank6-profile.json.gz": "96316933ac4ffa80f10cb8a0eb8c349c21a1f17a8645d3af2e9562f2ce2f004e",
+    "results/profile-flux-int8/rank7.json": "7e7d67deac4ba3b19df4277382727241c408933f9c41797e7ae21f2d5b9ecc9f",
+    "results/profile-flux-int8/rank7-profile.json.gz": "6044672a40800f13af43d88f8d1b488cd070f4fc73f0e7c4c8eb75a1c98b2cfa",
+    "results/profile-flux-int8-interleaved/rank0.json": "558779756f4f8c2c48562847842a8a61377851cfdc5518790942a61615799a8f",
+    "results/profile-flux-int8-interleaved/rank0-profile.json.gz": "01063fe9154d168888ee90343b52473d18e05c260cb636b3c8b0814440cfef86",
+    "results/profile-flux-int8-interleaved/rank1.json": "ee96ffbbc648ceebcd1994e65346434bcb21b097f42ec19a7019236f8d84b084",
+    "results/profile-flux-int8-interleaved/rank1-profile.json.gz": "5134d51f6ce8ff4fbb0d823b14b0001741b528919275cb64682b9af370ac0d82",
+    "results/profile-flux-int8-interleaved/rank2.json": "194eac4ae07f8da1eb70526bf1d373d447be7dfdf9d554425422034f48d4d590",
+    "results/profile-flux-int8-interleaved/rank2-profile.json.gz": "c79708df53342c439470edb5fe49f605c142e210a16f3f01e627fe9cce4ad070",
+    "results/profile-flux-int8-interleaved/rank3.json": "9925f7453692fe1052d71cff666cfee55884142cc1b58d38a31f8a7590475513",
+    "results/profile-flux-int8-interleaved/rank3-profile.json.gz": "788474a7c541eabbcf8eb69e99accb09fa6b5b8f62536a722e00ba8a05e3cea6",
+    "results/profile-flux-int8-interleaved/rank4.json": "c238c38e516358ba26805ee51c599a9f29e5720eb5f6c5ed8c39412e145f8f48",
+    "results/profile-flux-int8-interleaved/rank4-profile.json.gz": "f9ecd2a21e6f01d80633840c3643fbabeb7ec75da0e6fcb671cd8fa0e902dbe1",
+    "results/profile-flux-int8-interleaved/rank5.json": "2ba8af5a46815346a523a1ee5b112e03b3b93aea4488b3245e265ba8386a6105",
+    "results/profile-flux-int8-interleaved/rank5-profile.json.gz": "97468a80ab1ca2129e7e3cf81d14786cf582424e58596c3cba55814cc863510e",
+    "results/profile-flux-int8-interleaved/rank6.json": "155f70bcc25be741bd6a206aac7b988faa87fa9ded212a9e6b798eb1afa6c6d3",
+    "results/profile-flux-int8-interleaved/rank6-profile.json.gz": "c0046e71516e69d2d847194e8a46a19531a4e27c441ebfcee26d76619da0f3e5",
+    "results/profile-flux-int8-interleaved/rank7.json": "0e3819f552b8d2bc5ae45b644094af7b48ef2f4f018a1ffc09f5493d317aec90",
+    "results/profile-flux-int8-interleaved/rank7-profile.json.gz": "767a3815aa381634da2f1cbaeb26847ee32ca8e247c85e2994e5feb5aab10d66",
+    "results/compare1/block00-flux-int8/rank0.json": "04401a94cbcb4b22b674142470a9877cff403f7ede9080696ed6af88dbe295d2",
+    "results/compare1/block00-flux-int8/rank1.json": "ed871fe5dbfd137196e301b09f3db089a3f593a44844344f047f7dd733af0d07",
+    "results/compare1/block00-flux-int8/rank2.json": "88cbfa45c4decff546aae1c1536e0f5caee949109c8de39f12c150fe30fd3df7",
+    "results/compare1/block00-flux-int8/rank3.json": "0495f59cb3297214061e20b2fb99414cc721b0d22cb51c4049a513d80b6f0b4f",
+    "results/compare1/block00-flux-int8/rank4.json": "cdfb9de0fba2d9a63888ae5b5764bbeef87cfb92018ce02d3463f29ddcbc962e",
+    "results/compare1/block00-flux-int8/rank5.json": "20e9eb17c9a327ecba986548aa1787c6e683136393775282845a33bd5f3d8f1e",
+    "results/compare1/block00-flux-int8/rank6.json": "76d85fb5073d40d2f2415a815b09984fccde363e5f4ec8739d5e474a54f08472",
+    "results/compare1/block00-flux-int8/rank7.json": "c6c1f474a06bab357916c2b52bc8bd9a5de4b908f2853897c11f3cb12a788205",
+    "results/compare1/block00-flux-int8-interleaved/rank0.json": "47eb0143efc8b61b364cc22127acf123f41342460c53ab2a71ca89330e6dba72",
+    "results/compare1/block00-flux-int8-interleaved/rank1.json": "3e55f4903f7d8716971492155bf062b8f3892ad8ed9ff270a794e008ca74555d",
+    "results/compare1/block00-flux-int8-interleaved/rank2.json": "fd7b597c696e0427d310e9c429fa4e2940a22b2220baa05e55898aea4f3893d0",
+    "results/compare1/block00-flux-int8-interleaved/rank3.json": "085de691951f1288e000e9cb1e06f14713727a107f63cbcef0a691c03fcf4904",
+    "results/compare1/block00-flux-int8-interleaved/rank4.json": "bfd63d4ccf7170310cf68902f3b0f9d2d68b77dc0ecb85914b3fbe29794aa2d7",
+    "results/compare1/block00-flux-int8-interleaved/rank5.json": "92e5fa9f223698fceac4128687f21ba46d24d776d59373b158fe0e9537f6bdc8",
+    "results/compare1/block00-flux-int8-interleaved/rank6.json": "65a09c0ab2ca41ea76fae7e9767c71cc133ae9558939840c0c4c8b5da56f7da2",
+    "results/compare1/block00-flux-int8-interleaved/rank7.json": "42e9aa168446763298b46cadb1ff65862372f38f36e9bea3a53b5996ef8519a7",
+    "results/compare1/block00-flux-bf16/rank0.json": "d9f7d28ecd3fd7a4b92af14066132c6193158ac534cd77441c0a077681d88daa",
+    "results/compare1/block00-flux-bf16/rank1.json": "1b69a635620aed01b47f73939dac9bab9020d18189ef978b0348b4cf2c99544d",
+    "results/compare1/block00-flux-bf16/rank2.json": "7a2988d79cb1b2da199d245104a1acdb46e2fd3578591f1cc054c6df64e27806",
+    "results/compare1/block00-flux-bf16/rank3.json": "638f3b3d26bfc7c4af3a867fd178421694957027c70baf670bd641f9f8eedbde",
+    "results/compare1/block00-flux-bf16/rank4.json": "747b8d0c29169d5b7036032895f9e748fb6810af14219f68e2c9ea99b8be6717",
+    "results/compare1/block00-flux-bf16/rank5.json": "1a32dfe434687f0c4465f137290902efad97f5d00f7c0c941768ff80743d2354",
+    "results/compare1/block00-flux-bf16/rank6.json": "8fdf97e740019d9c9d0dd087fdd4243730d04f0770a8b454f00427d20025d0f8",
+    "results/compare1/block00-flux-bf16/rank7.json": "59178b672eeffd91b47359683f87bfc5ac6c180c527d2f8c0f4cdd1492f9a5be"
+  },
+  "operator_summary_sha256": "08f396fba855e52b165fa2f929436b929888d8b9d74348144b572a028504d562",
+  "plan_sha256": "410e8bf1460b974644f64aeac6ec6c7db4988d737f9d596c9d8510fc2d38d945",
+  "build": {
+    "root": "/workspace/Load-5090/logs/5090/phase6/open-compress-int8-v1-1x-1blocks-20261102-160417-713647/build",
+    "manifest_sha256": "dfc1028db1f5b9547c9e7b73c28c49e755cf5221907f8b1bf9524bf1926588b9"
+  },
+  "environment": {
+    "torch": "2.8.0a0+5228986c39.nv25.06",
+    "cuda": "12.9",
+    "nccl": [
+      2,
+      27,
+      3
+    ],
+    "python": "/workspace/venvs/tempname-5090/bin/python",
+    "python_version": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+    "cxx11_abi": true
+  }
+}
