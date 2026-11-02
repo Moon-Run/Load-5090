@@ -1,0 +1,1005 @@
+{
+  "protocol": "rtx5090-op5-shm-ce-probe-v1",
+  "run_id": "40555ead10064d1287dbf8eceeab379a",
+  "completed": true,
+  "settings": {
+    "input_elements": 1048576,
+    "dtype": "bfloat16",
+    "world": 8,
+    "correctness_iterations": 3,
+    "warmup": 20,
+    "timed_calls": 100,
+    "profile_calls": 10
+  },
+  "actual_transport": {
+    "transport": "SHM/direct/CE",
+    "ranks": 8,
+    "connections": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        3,
+        4
+      ],
+      [
+        0,
+        4,
+        5
+      ],
+      [
+        0,
+        5,
+        6
+      ],
+      [
+        0,
+        6,
+        7
+      ],
+      [
+        0,
+        7,
+        0
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        2
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        3,
+        4
+      ],
+      [
+        1,
+        4,
+        5
+      ],
+      [
+        1,
+        5,
+        6
+      ],
+      [
+        1,
+        6,
+        7
+      ],
+      [
+        1,
+        7,
+        0
+      ],
+      [
+        2,
+        0,
+        1
+      ],
+      [
+        2,
+        1,
+        2
+      ],
+      [
+        2,
+        2,
+        3
+      ],
+      [
+        2,
+        3,
+        4
+      ],
+      [
+        2,
+        4,
+        5
+      ],
+      [
+        2,
+        5,
+        6
+      ],
+      [
+        2,
+        6,
+        7
+      ],
+      [
+        2,
+        7,
+        0
+      ],
+      [
+        3,
+        0,
+        1
+      ],
+      [
+        3,
+        1,
+        2
+      ],
+      [
+        3,
+        2,
+        3
+      ],
+      [
+        3,
+        3,
+        4
+      ],
+      [
+        3,
+        4,
+        5
+      ],
+      [
+        3,
+        5,
+        6
+      ],
+      [
+        3,
+        6,
+        7
+      ],
+      [
+        3,
+        7,
+        0
+      ],
+      [
+        4,
+        0,
+        1
+      ],
+      [
+        4,
+        1,
+        2
+      ],
+      [
+        4,
+        2,
+        3
+      ],
+      [
+        4,
+        3,
+        4
+      ],
+      [
+        4,
+        4,
+        5
+      ],
+      [
+        4,
+        5,
+        6
+      ],
+      [
+        4,
+        6,
+        7
+      ],
+      [
+        4,
+        7,
+        0
+      ],
+      [
+        5,
+        0,
+        1
+      ],
+      [
+        5,
+        1,
+        2
+      ],
+      [
+        5,
+        2,
+        3
+      ],
+      [
+        5,
+        3,
+        4
+      ],
+      [
+        5,
+        4,
+        5
+      ],
+      [
+        5,
+        5,
+        6
+      ],
+      [
+        5,
+        6,
+        7
+      ],
+      [
+        5,
+        7,
+        0
+      ],
+      [
+        6,
+        0,
+        1
+      ],
+      [
+        6,
+        1,
+        2
+      ],
+      [
+        6,
+        2,
+        3
+      ],
+      [
+        6,
+        3,
+        4
+      ],
+      [
+        6,
+        4,
+        5
+      ],
+      [
+        6,
+        5,
+        6
+      ],
+      [
+        6,
+        6,
+        7
+      ],
+      [
+        6,
+        7,
+        0
+      ],
+      [
+        7,
+        0,
+        1
+      ],
+      [
+        7,
+        1,
+        2
+      ],
+      [
+        7,
+        2,
+        3
+      ],
+      [
+        7,
+        3,
+        4
+      ],
+      [
+        7,
+        4,
+        5
+      ],
+      [
+        7,
+        5,
+        6
+      ],
+      [
+        7,
+        6,
+        7
+      ],
+      [
+        7,
+        7,
+        0
+      ],
+      [
+        8,
+        0,
+        1
+      ],
+      [
+        8,
+        1,
+        2
+      ],
+      [
+        8,
+        2,
+        3
+      ],
+      [
+        8,
+        3,
+        4
+      ],
+      [
+        8,
+        4,
+        5
+      ],
+      [
+        8,
+        5,
+        6
+      ],
+      [
+        8,
+        6,
+        7
+      ],
+      [
+        8,
+        7,
+        0
+      ],
+      [
+        9,
+        0,
+        1
+      ],
+      [
+        9,
+        1,
+        2
+      ],
+      [
+        9,
+        2,
+        3
+      ],
+      [
+        9,
+        3,
+        4
+      ],
+      [
+        9,
+        4,
+        5
+      ],
+      [
+        9,
+        5,
+        6
+      ],
+      [
+        9,
+        6,
+        7
+      ],
+      [
+        9,
+        7,
+        0
+      ],
+      [
+        10,
+        0,
+        1
+      ],
+      [
+        10,
+        1,
+        2
+      ],
+      [
+        10,
+        2,
+        3
+      ],
+      [
+        10,
+        3,
+        4
+      ],
+      [
+        10,
+        4,
+        5
+      ],
+      [
+        10,
+        5,
+        6
+      ],
+      [
+        10,
+        6,
+        7
+      ],
+      [
+        10,
+        7,
+        0
+      ],
+      [
+        11,
+        0,
+        1
+      ],
+      [
+        11,
+        1,
+        2
+      ],
+      [
+        11,
+        2,
+        3
+      ],
+      [
+        11,
+        3,
+        4
+      ],
+      [
+        11,
+        4,
+        5
+      ],
+      [
+        11,
+        5,
+        6
+      ],
+      [
+        11,
+        6,
+        7
+      ],
+      [
+        11,
+        7,
+        0
+      ],
+      [
+        12,
+        0,
+        1
+      ],
+      [
+        12,
+        1,
+        2
+      ],
+      [
+        12,
+        2,
+        3
+      ],
+      [
+        12,
+        3,
+        4
+      ],
+      [
+        12,
+        4,
+        5
+      ],
+      [
+        12,
+        5,
+        6
+      ],
+      [
+        12,
+        6,
+        7
+      ],
+      [
+        12,
+        7,
+        0
+      ],
+      [
+        13,
+        0,
+        1
+      ],
+      [
+        13,
+        1,
+        2
+      ],
+      [
+        13,
+        2,
+        3
+      ],
+      [
+        13,
+        3,
+        4
+      ],
+      [
+        13,
+        4,
+        5
+      ],
+      [
+        13,
+        5,
+        6
+      ],
+      [
+        13,
+        6,
+        7
+      ],
+      [
+        13,
+        7,
+        0
+      ],
+      [
+        14,
+        0,
+        1
+      ],
+      [
+        14,
+        1,
+        2
+      ],
+      [
+        14,
+        2,
+        3
+      ],
+      [
+        14,
+        3,
+        4
+      ],
+      [
+        14,
+        4,
+        5
+      ],
+      [
+        14,
+        5,
+        6
+      ],
+      [
+        14,
+        6,
+        7
+      ],
+      [
+        14,
+        7,
+        0
+      ],
+      [
+        15,
+        0,
+        1
+      ],
+      [
+        15,
+        1,
+        2
+      ],
+      [
+        15,
+        2,
+        3
+      ],
+      [
+        15,
+        3,
+        4
+      ],
+      [
+        15,
+        4,
+        5
+      ],
+      [
+        15,
+        5,
+        6
+      ],
+      [
+        15,
+        6,
+        7
+      ],
+      [
+        15,
+        7,
+        0
+      ]
+    ]
+  },
+  "profiles": [
+    {
+      "rank": 0,
+      "allgather_calls": 10,
+      "ce_covered_calls": 10,
+      "expected_remote_bytes_per_call": 14680064,
+      "contained_htod_bytes_range": [
+        11010048,
+        18350080
+      ],
+      "contained_htod_bytes_per_call": [
+        16777216,
+        13762560,
+        13434880,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064
+      ],
+      "htod_copies": 2239,
+      "htod_bytes": 146735104,
+      "excluded_cross_boundary_copies_per_call": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "attribution": "same-device complete containment in nonoverlapping AllGather kernels",
+      "attribution_limitation": "Temporal containment does not prove copy ownership or complete payload coverage",
+      "memcpy_time_is_not_additive": true
+    },
+    {
+      "rank": 1,
+      "allgather_calls": 10,
+      "ce_covered_calls": 10,
+      "expected_remote_bytes_per_call": 14680064,
+      "contained_htod_bytes_range": [
+        11010048,
+        18350080
+      ],
+      "contained_htod_bytes_per_call": [
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14745600,
+        15663104,
+        14155776,
+        14221312,
+        14483456,
+        14680064
+      ],
+      "htod_copies": 2238,
+      "htod_bytes": 146669568,
+      "excluded_cross_boundary_copies_per_call": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "attribution": "same-device complete containment in nonoverlapping AllGather kernels",
+      "attribution_limitation": "Temporal containment does not prove copy ownership or complete payload coverage",
+      "memcpy_time_is_not_additive": true
+    },
+    {
+      "rank": 2,
+      "allgather_calls": 10,
+      "ce_covered_calls": 10,
+      "expected_remote_bytes_per_call": 14680064,
+      "contained_htod_bytes_range": [
+        11010048,
+        18350080
+      ],
+      "contained_htod_bytes_per_call": [
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        16121856,
+        15204352,
+        14614528,
+        13762560,
+        13500416
+      ],
+      "htod_copies": 2237,
+      "htod_bytes": 146604032,
+      "excluded_cross_boundary_copies_per_call": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "attribution": "same-device complete containment in nonoverlapping AllGather kernels",
+      "attribution_limitation": "Temporal containment does not prove copy ownership or complete payload coverage",
+      "memcpy_time_is_not_additive": true
+    },
+    {
+      "rank": 3,
+      "allgather_calls": 10,
+      "ce_covered_calls": 10,
+      "expected_remote_bytes_per_call": 14680064,
+      "contained_htod_bytes_range": [
+        11010048,
+        18350080
+      ],
+      "contained_htod_bytes_per_call": [
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064
+      ],
+      "htod_copies": 2240,
+      "htod_bytes": 146800640,
+      "excluded_cross_boundary_copies_per_call": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "attribution": "same-device complete containment in nonoverlapping AllGather kernels",
+      "attribution_limitation": "Temporal containment does not prove copy ownership or complete payload coverage",
+      "memcpy_time_is_not_additive": true
+    },
+    {
+      "rank": 4,
+      "allgather_calls": 10,
+      "ce_covered_calls": 10,
+      "expected_remote_bytes_per_call": 14680064,
+      "contained_htod_bytes_range": [
+        11010048,
+        18350080
+      ],
+      "contained_htod_bytes_per_call": [
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064
+      ],
+      "htod_copies": 2240,
+      "htod_bytes": 146800640,
+      "excluded_cross_boundary_copies_per_call": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "attribution": "same-device complete containment in nonoverlapping AllGather kernels",
+      "attribution_limitation": "Temporal containment does not prove copy ownership or complete payload coverage",
+      "memcpy_time_is_not_additive": true
+    },
+    {
+      "rank": 5,
+      "allgather_calls": 10,
+      "ce_covered_calls": 10,
+      "expected_remote_bytes_per_call": 14680064,
+      "contained_htod_bytes_range": [
+        11010048,
+        18350080
+      ],
+      "contained_htod_bytes_per_call": [
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064
+      ],
+      "htod_copies": 2240,
+      "htod_bytes": 146800640,
+      "excluded_cross_boundary_copies_per_call": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "attribution": "same-device complete containment in nonoverlapping AllGather kernels",
+      "attribution_limitation": "Temporal containment does not prove copy ownership or complete payload coverage",
+      "memcpy_time_is_not_additive": true
+    },
+    {
+      "rank": 6,
+      "allgather_calls": 10,
+      "ce_covered_calls": 10,
+      "expected_remote_bytes_per_call": 14680064,
+      "contained_htod_bytes_range": [
+        11010048,
+        18350080
+      ],
+      "contained_htod_bytes_per_call": [
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064
+      ],
+      "htod_copies": 2240,
+      "htod_bytes": 146800640,
+      "excluded_cross_boundary_copies_per_call": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "attribution": "same-device complete containment in nonoverlapping AllGather kernels",
+      "attribution_limitation": "Temporal containment does not prove copy ownership or complete payload coverage",
+      "memcpy_time_is_not_additive": true
+    },
+    {
+      "rank": 7,
+      "allgather_calls": 10,
+      "ce_covered_calls": 10,
+      "expected_remote_bytes_per_call": 14680064,
+      "contained_htod_bytes_range": [
+        11010048,
+        18350080
+      ],
+      "contained_htod_bytes_per_call": [
+        14876672,
+        14483456,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064,
+        14680064
+      ],
+      "htod_copies": 2240,
+      "htod_bytes": 146800640,
+      "excluded_cross_boundary_copies_per_call": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "attribution": "same-device complete containment in nonoverlapping AllGather kernels",
+      "attribution_limitation": "Temporal containment does not prove copy ownership or complete payload coverage",
+      "memcpy_time_is_not_additive": true
+    }
+  ],
+  "gpu_us": 3372.0669555664062,
+  "wall_us": 3373.440559953451,
+  "bitwise_correct": true,
+  "evidence_files": {
+    "environment-preflight.json": "025bf346837984971257b0ace725d37cea9fd98f092877356937f1bc3818737c",
+    "preflight-communication.json": "8b6c9a611179387226f8e427802d0865948d56bd78b67996b7f165d82ca6ecba",
+    "command.json": "c81e79c738010d49421bb3f3097c742451bee70e9d97b65f45118721cf977e05",
+    "process.log": "32cd80552701360bca8fb8e30b983fa5196a1e4ed633ef16f3a710344a43d26a",
+    "rank0-profile.json.gz": "0a8add5f6373a56932fd5c42a5daaae9f47f0f707643e696d48e00625dca565a",
+    "rank0.json": "c7b1d741d8f1558081b5b5118410e90b9a0ad968a8b491819be724e867452776",
+    "rank1-profile.json.gz": "2cb7749b48b7d7b61ddc93a01249e94b2fc9b5303b7902fe589aaf3f36283a01",
+    "rank1.json": "33465cf3e133269778d6a39572f8b0bce1f4714f7d049efebfe3bb6381afb008",
+    "rank2-profile.json.gz": "65a5e2de001bc1e74f90d97947a7e0f4d5594c687dc45d3527727011e61fa210",
+    "rank2.json": "2c330db7bd91c52f2338c5b882031f5cd90f1e28db0248a6f72895e131a899ff",
+    "rank3-profile.json.gz": "c63e5e9e49547889509c6133869aaf744748ca15318fee07268755822c0b77d2",
+    "rank3.json": "761e2606fc88eda661cc6bfe05b4f1740b4c2fa1db224823f2b1a79fa0907742",
+    "rank4-profile.json.gz": "27fe1c79cc24caf897e16aec8f1b8ebfba7bacb93671aee09a202f2bec3a9c54",
+    "rank4.json": "9af95530fa2c43ba4a7922d161b296582127eddc7de15157587a494ae8c22c93",
+    "rank5-profile.json.gz": "9b1c75211fdb2fff7d7efa1a9883c8301718945f036d5600c817ea011d028b8e",
+    "rank5.json": "58d50960aa357e3ec309bf2a4d00ceb7aab99b359ce275b13697427ae2c9ebef",
+    "rank6-profile.json.gz": "688b9432616006371e41b25b38dd3fed1c2357ff81bfcb52637cd36a52dbaa19",
+    "rank6.json": "4d2a3be8e7ff8e4eb27b7241c3c904767e063343f2e6024f9fd2404b5feda776",
+    "rank7-profile.json.gz": "e2bdb24dd77745b406195e79b713347702214c486d597cfa7abcd4cc8328d127",
+    "rank7.json": "eb1560d4f6f4d13271247190031d07047e4f04f846ccf23fc14b54b66e9e7eea"
+  },
+  "full_step_measured": false,
+  "diagnostic_debug_only": {
+    "NCCL_DEBUG": "INFO",
+    "NCCL_DEBUG_SUBSYS": "INIT,SHM"
+  },
+  "training_debug": "WARN"
+}

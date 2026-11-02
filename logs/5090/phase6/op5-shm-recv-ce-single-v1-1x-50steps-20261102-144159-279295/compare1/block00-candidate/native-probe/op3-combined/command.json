@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/workspace/venvs/tempname-5090/bin/python",
+    "-m",
+    "torch.distributed.run",
+    "--standalone",
+    "--nproc-per-node=8",
+    "--max-restarts=0",
+    "/workspace/TempName-New/tools/5090/phase6/op3_probe.py",
+    "--build",
+    "/workspace/Load-5090/logs/5090/phase6/op3-two-arm-v1-2x-50steps-20261102-022324-519378/build",
+    "--arm",
+    "op3-combined",
+    "--out",
+    "/workspace/Load-5090/logs/5090/phase6/op5-shm-recv-ce-single-v1-1x-50steps-20261102-144159-279295/compare1/block00-candidate/native-probe/op3-combined",
+    "--execute"
+  ]
+}
