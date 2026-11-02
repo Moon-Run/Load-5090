@@ -1,0 +1,30 @@
+STAGE prepare-baseline-build
+STAGE compile-baseline-build
+Compile RTX5090 native arm: ma11
+Compile RTX5090 native arm: ma89
+Compile RTX5090 native arm: cr3
+Compile RTX5090 native arm: r
+Compile RTX5090 native arm: c
+Compile RTX5090 native arm: a
+Compile RTX5090 native arm: flux-basic
+STAGE prepare-abc-build
+STAGE compile-abc-build
+Compile RTX5090 OP1 variant: a
+Compile RTX5090 OP1 variant: flux-basic-interleaved
+Compile RTX5090 Flux baseline variant: a
+Compile RTX5090 Flux baseline variant: c
+Traceback (most recent call last):
+  File "/workspace/TempName-New/tools/5090/phase6/op6.py", line 431, in <module>
+    main()
+  File "/workspace/TempName-New/tools/5090/phase6/op6.py", line 401, in main
+    return supervise(args)
+           ^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op6.py", line 321, in supervise
+    op3.base.verify_controllers(root)
+  File "/workspace/TempName-New/tools/5090/phase6/baseline.py", line 81, in verify_controllers
+    verify_files(REPO, files)
+  File "/workspace/TempName-New/tools/5090/phase6/baseline.py", line 64, in verify_files
+    require(path.is_file() and sha(path) == expected, 'Missing/changed evidence: ' + str(path))
+  File "/workspace/TempName-New/tools/5090/phase6/baseline_protocol.py", line 37, in require
+    raise ValueError(message)
+ValueError: Missing/changed evidence: /workspace/TempName-New/tools/5090/phase6/op5.py

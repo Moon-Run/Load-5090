@@ -1,0 +1,6 @@
+{
+  "protocol": "rtx5090-phase6-op6-local-attention-graph-paired-v1",
+  "status": "failed",
+  "stage": "compile-abc-build",
+  "error": "ValueError: Missing/changed evidence: /workspace/TempName-New/tools/5090/phase6/op5.py"
+}

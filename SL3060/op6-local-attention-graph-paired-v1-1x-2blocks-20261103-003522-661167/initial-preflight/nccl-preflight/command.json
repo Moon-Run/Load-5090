@@ -1,0 +1,19 @@
+{
+  "protocol": "rtx5090-nccl-staged-collectives-v2",
+  "run_id": "72f15a250fa74489a0898b6eb5124a5d",
+  "command": [
+    "/workspace/venvs/tempname-5090/bin/python",
+    "-m",
+    "torch.distributed.run",
+    "--standalone",
+    "--nproc-per-node=8",
+    "--max-restarts=0",
+    "/workspace/TempName-New/tools/5090/phase6/baseline_collectives.py",
+    "--out",
+    "/workspace/Load-5090/SL3060/op6-local-attention-graph-paired-v1-1x-2blocks-20261103-003522-661167/initial-preflight/nccl-preflight",
+    "--run-id",
+    "72f15a250fa74489a0898b6eb5124a5d",
+    "--communication",
+    "/workspace/Load-5090/SL3060/op6-local-attention-graph-paired-v1-1x-2blocks-20261103-003522-661167/initial-preflight/preflight-communication.json"
+  ]
+}

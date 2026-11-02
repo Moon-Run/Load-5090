@@ -1,0 +1,4 @@
+Batch: /workspace/Load-5090/SL3060/op6-local-attention-graph-paired-v1-1x-2blocks-20261103-003522-661167/initial-preflight
+STAGE worker-source-preflight
+STAGE hardware-preflight
+PREFLIGHT PASSED /workspace/Load-5090/SL3060/op6-local-attention-graph-paired-v1-1x-2blocks-20261103-003522-661167/initial-preflight/environment-preflight.json
