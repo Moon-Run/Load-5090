@@ -1,0 +1,1 @@
+from open_compress_megatron import Adapter
