@@ -1,0 +1,116 @@
+{
+  "megatron_commit": "3ea68ad6042cc1204386ae9364358f7c4de1bc37",
+  "policies": [
+    "flux-fused"
+  ],
+  "orders": [],
+  "cases": [
+    {
+      "name": "rtx5090-phase6",
+      "hidden": 4096,
+      "ffn": 16384,
+      "heads": 32,
+      "sequence": 2048,
+      "tp": 8,
+      "dp": 1
+    }
+  ],
+  "common": {
+    "layers": 32,
+    "micro_batch": 1,
+    "global_batch": 4,
+    "seed": 1234,
+    "token_seed": 4321,
+    "vocab": 32768
+  },
+  "warmup_steps": 10,
+  "timed_steps": 50,
+  "smoke_warmup_steps": 2,
+  "smoke_steps": 3,
+  "profile_steps": 1,
+  "repetitions": 1,
+  "ring_reduction": true,
+  "scope": "RTX5090 original-order Flux quantization comparison; no calibration or selective masks",
+  "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+  "transport": "rtx5090-nccl-staged-v2",
+  "scope_definition": {
+    "policy": "flux-fused",
+    "family": "candidate",
+    "scope": "attn_mlp",
+    "roles": [
+      "attn",
+      "mlp"
+    ],
+    "implementation": "rtx5090-flux-fused-v1",
+    "workspace": "single",
+    "output_clone": true,
+    "base": "original",
+    "order": "original",
+    "arrival": false,
+    "interleaved": false,
+    "quantization": "all_remote",
+    "experiment": {
+      "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+      "original_arm": "a",
+      "quantization": "all_remote",
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "calibration_used": false,
+      "cta_order": "original-Flux-rank-offset",
+      "decoder": "original-A-scalar",
+      "collective": "NCCL-byte-AllToAll",
+      "workspaces": 1,
+      "owns_configuration": false,
+      "owns_output": false,
+      "packet_layout": "staged-tile",
+      "op1_direct_wire": false,
+      "gemm_submission_cache": false,
+      "original_peer_overlap_preserved": false
+    }
+  },
+  "arm": "flux-fused",
+  "graph_forward": false,
+  "double_buffered": false,
+  "role_plan_sha256": {
+    "flux-fused": {
+      "attn": null,
+      "mlp": null
+    }
+  },
+  "communication": {
+    "environment": {
+      "NCCL_VERSION": "2.27.3",
+      "TORCH_NCCL_USE_COMM_NONBLOCKING": "0",
+      "NCCL_NVLS_ENABLE": "0",
+      "NCCL_DEBUG": "WARN",
+      "TORCH_NCCL_ASYNC_ERROR_HANDLING": "1",
+      "NCCL_P2P_DISABLE": "1",
+      "NCCL_SHM_DISABLE": "0"
+    },
+    "config_files": {
+      "/etc/nccl.conf": null,
+      "/root/.nccl.conf": null
+    },
+    "nvls_request": "0"
+  },
+  "flux_implementation": {
+    "protocol": "rtx5090-phase6-flux-quant-four-arm-v1",
+    "original_arm": "a",
+    "quantization": "all_remote",
+    "interleaved": false,
+    "arrival": false,
+    "selective": false,
+    "calibration_used": false,
+    "cta_order": "original-Flux-rank-offset",
+    "decoder": "original-A-scalar",
+    "collective": "NCCL-byte-AllToAll",
+    "workspaces": 1,
+    "owns_configuration": false,
+    "owns_output": false,
+    "packet_layout": "staged-tile",
+    "op1_direct_wire": false,
+    "gemm_submission_cache": false,
+    "original_peer_overlap_preserved": false
+  }
+}

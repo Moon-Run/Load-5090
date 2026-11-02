@@ -1,7 +1,0 @@
-{
-  "protocol": "rtx5090-open-compress-int8-six-arm-v2",
-  "status": "completed",
-  "stage": "done",
-  "gpu_benchmark_completed": true,
-  "report": "/workspace/Load-5090/SL3061/open-compress-int8-six-arm-v2-1x-4blocks-20261102-192218-942919/report.md"
-}

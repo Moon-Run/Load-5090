@@ -1,0 +1,41 @@
+[
+  {
+    "trial": 1,
+    "block": 0,
+    "index": 0,
+    "arm": "flux-bf16",
+    "mode": "timing",
+    "directory": "compare1/block00-flux-bf16",
+    "ms_per_step": 986.3146679103374,
+    "peak_allocated_gib": 17.49083375930786,
+    "peak_reserved_gib": 17.6484375,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_taco_workspace_gib": 17.49083375930786
+  },
+  {
+    "trial": 1,
+    "block": 0,
+    "index": 1,
+    "arm": "flux-improved",
+    "mode": "timing",
+    "directory": "compare1/block00-flux-improved",
+    "ms_per_step": 985.9175932779908,
+    "peak_allocated_gib": 17.67808961868286,
+    "peak_reserved_gib": 17.880859375,
+    "native_workspace_gib": 2.656341552734375,
+    "peak_allocated_plus_taco_workspace_gib": 20.334431171417236
+  },
+  {
+    "trial": 1,
+    "block": 0,
+    "index": 2,
+    "arm": "flux-basic",
+    "mode": "timing",
+    "directory": "compare1/block00-flux-basic",
+    "ms_per_step": 968.2457988522947,
+    "peak_allocated_gib": 17.47325563430786,
+    "peak_reserved_gib": 17.634765625,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_taco_workspace_gib": 17.47325563430786
+  }
+]

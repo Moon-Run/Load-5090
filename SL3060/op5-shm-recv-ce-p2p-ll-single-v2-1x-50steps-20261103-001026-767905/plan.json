@@ -1,0 +1,78 @@
+{
+  "protocol": "rtx5090-phase6-op5-shm-recv-ce-p2p-ll-single-v2",
+  "run_id": "ebae7a97183141acb78b9f530e20cd7c",
+  "trials": 1,
+  "blocks": 1,
+  "model": {
+    "layers": 32,
+    "hidden": 4096,
+    "ffn": 16384,
+    "heads": 32,
+    "sequence": 2048,
+    "micro_batch": 1,
+    "global_batch": 4,
+    "tp": 8,
+    "dp": 1,
+    "sm_count": 170,
+    "seed": 1234,
+    "token_seed": 4321,
+    "vocab": 32768
+  },
+  "target_ms": 50.0,
+  "nccl_overrides": {
+    "candidate": {
+      "NCCL_MIN_NCHANNELS": "16",
+      "NCCL_MAX_NCHANNELS": "16",
+      "NCCL_SHM_USE_CUDA_MEMCPY": "1",
+      "NCCL_SHM_MEMCPY_MODE": "2",
+      "NCCL_SHM_LOCALITY": "2",
+      "NCCL_P2P_LL_THRESHOLD": "2097152"
+    }
+  },
+  "operator_only": false,
+  "reference": {
+    "root": "/workspace/Load-5090/SL3060/op4-nccl-channels-single-v1-1x-50steps-20261102-105103-438654",
+    "report_sha256": "1dac9e96c2d719a6f46ef0698fadc2fa2dfd9b48fe7585703987ca74754d2d17",
+    "evidence_sha256": "32d2181a81b5b11eec242dfb01eeb3db26cc09a17ac18ffb92e055f4a7b6e43c",
+    "historical_mean_ms": 832.2487896867096,
+    "timing_windows": 2,
+    "all_ms": [
+      833.4861183352768,
+      831.0114610381424
+    ],
+    "children": [
+      {
+        "directory": "compare1/block00-candidate",
+        "root": "/workspace/Load-5090/SL3060/op4-nccl-channels-single-v1-1x-50steps-20261102-105103-438654/compare1/block00-candidate",
+        "report_sha256": "80dad6029d67fdec4c812335190a603c995693ae30d5c6a5a51ae1b2d6a907ad",
+        "operator_report_sha256": "fa15d7785ea106894a33d284b1561f08f33bc14946f0edff840f9259c1c57682",
+        "evidence_sha256": "80024f17145d7c7ef511ff331aac41d49c15592fbbf02bb1314c0129cee4759e",
+        "historical_mean_ms": 833.4861183352768,
+        "read_only": true,
+        "reference_gpu_jobs": 0
+      },
+      {
+        "directory": "compare1/block01-candidate",
+        "root": "/workspace/Load-5090/SL3060/op4-nccl-channels-single-v1-1x-50steps-20261102-105103-438654/compare1/block01-candidate",
+        "report_sha256": "f8cedef9079fbc31ac8417a66e1ac18d766b6cabdb33ad23c31ea2fc8d1ed28b",
+        "operator_report_sha256": "63b99e81a146c0935b40c900ec4889a32af263cb00eee023db3f7789b8d42b72",
+        "evidence_sha256": "66a2a98a30545b68024af2a39ae7193c301ed1c53a3fe5f2b8db1d89c42ed20c",
+        "historical_mean_ms": 831.0114610381424,
+        "read_only": true,
+        "reference_gpu_jobs": 0
+      }
+    ],
+    "numerical_reference_directory": "compare1/block00-candidate",
+    "read_only": true,
+    "reference_gpu_jobs": 0,
+    "historical_binaries_revalidated": false
+  },
+  "schedule": [
+    {
+      "trial": 1,
+      "block": 0,
+      "arm": "candidate",
+      "directory": "compare1/block00-candidate"
+    }
+  ]
+}

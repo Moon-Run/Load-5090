@@ -1,0 +1,6 @@
+{
+  "protocol": "rtx5090-phase6-op5-shm-recv-ce-p2p-ll-single-v2",
+  "status": "failed",
+  "stage": "transport-probe",
+  "error": "CalledProcessError: Command '['/workspace/venvs/tempname-5090/bin/python', '/workspace/TempName-New/tools/5090/phase6/op5_probe.py', '--out', '/workspace/Load-5090/SL3060/op5-shm-recv-ce-p2p-ll-single-v2-1x-50steps-20261103-001026-767905/transport-probe', '--python', '/workspace/venvs/tempname-5090/bin/python', '--cuda-home', '/usr/local/cuda-12.9', '--build-cuda-home', '/usr/local/cuda-12.9']' returned non-zero exit status 1."
+}

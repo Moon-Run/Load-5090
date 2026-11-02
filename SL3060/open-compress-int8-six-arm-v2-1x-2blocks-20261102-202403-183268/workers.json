@@ -1,0 +1,1338 @@
+{
+  "flux-bf16": {
+    "root": "/workspace/Load-5090/SL3060/open-compress-int8-six-arm-v2-1x-2blocks-20261102-202403-183268/workers/flux-bf16/scripts",
+    "config": {
+      "megatron_commit": "3ea68ad6042cc1204386ae9364358f7c4de1bc37",
+      "policies": [
+        "flux-bf16"
+      ],
+      "orders": [],
+      "cases": [
+        {
+          "name": "rtx5090-open-compress",
+          "hidden": 4096,
+          "ffn": 16384,
+          "heads": 32,
+          "sequence": 2048,
+          "tp": 8,
+          "dp": 1
+        }
+      ],
+      "common": {
+        "layers": 32,
+        "micro_batch": 1,
+        "global_batch": 4,
+        "seed": 1234,
+        "token_seed": 4321,
+        "vocab": 32768
+      },
+      "warmup_steps": 10,
+      "timed_steps": 50,
+      "smoke_warmup_steps": 2,
+      "smoke_steps": 3,
+      "profile_steps": 1,
+      "repetitions": 1,
+      "ring_reduction": true,
+      "scope": "RTX5090 TP8 full GPT6.7B step; open block INT8; no arrival or selective quantization",
+      "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+      "transport": "rtx5090-nccl-staged-v2",
+      "scope_definition": {
+        "policy": "flux-bf16",
+        "family": "flux_tensor",
+        "scope": "attn_mlp",
+        "roles": [
+          "attn",
+          "mlp"
+        ],
+        "implementation": "rtx5090-open-compress-flux-bf16",
+        "workspace": "tensor",
+        "output_clone": false,
+        "base": "original",
+        "order": "original",
+        "arrival": false,
+        "interleaved": false,
+        "quantization": "none",
+        "experiment": {
+          "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+          "producer": "flux-gemmonly-sm89-v2-sm120",
+          "gemm_schedule": "StreamkSK",
+          "quantization": "none",
+          "interleaved": false,
+          "remote_first": false,
+          "arrival": false,
+          "selective": false,
+          "calibration_used": false,
+          "cta_order": "original-Flux-GemmOnly",
+          "may_change_streamk_reduction_assignment": false,
+          "collective": "NCCL-BF16-ReduceScatter",
+          "receiver": "NCCL",
+          "owns_output": true,
+          "owns_configuration": true,
+          "taco_runtime": false,
+          "original_peer_overlap_preserved": false,
+          "native_row_forward": false,
+          "native_linear_backward": false,
+          "native_rs_backward": false
+        }
+      },
+      "arm": "flux-bf16",
+      "graph_forward": false,
+      "double_buffered": false,
+      "role_plan_sha256": {
+        "flux-bf16": {
+          "attn": null,
+          "mlp": null
+        }
+      },
+      "communication": {
+        "environment": {
+          "NCCL_VERSION": "2.27.3",
+          "TORCH_NCCL_USE_COMM_NONBLOCKING": "0",
+          "NCCL_NVLS_ENABLE": "0",
+          "NCCL_DEBUG": "WARN",
+          "TORCH_NCCL_ASYNC_ERROR_HANDLING": "1",
+          "NCCL_P2P_DISABLE": "1",
+          "NCCL_SHM_DISABLE": "0"
+        },
+        "config_files": {
+          "/etc/nccl.conf": null,
+          "/root/.nccl.conf": null
+        },
+        "nvls_request": "0"
+      },
+      "codec_identity": {
+        "implementation": "none-nccl-bf16",
+        "source_sha256": "97e8de0f5e47a3d0e82f8fa8c630e0192e9c9638ecdb6a4e106dda0f56aefbf9",
+        "reference_sha256": "5e5384f79854dea5bfb3d984392a9652097f654675f3259db149fc7f39feefd2",
+        "cuda_source_sha256": null,
+        "taco_runtime": false
+      },
+      "codec_library": null,
+      "open_compress_implementation": {
+        "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+        "producer": "flux-gemmonly-sm89-v2-sm120",
+        "gemm_schedule": "StreamkSK",
+        "quantization": "none",
+        "interleaved": false,
+        "remote_first": false,
+        "arrival": false,
+        "selective": false,
+        "calibration_used": false,
+        "cta_order": "original-Flux-GemmOnly",
+        "may_change_streamk_reduction_assignment": false,
+        "collective": "NCCL-BF16-ReduceScatter",
+        "receiver": "NCCL",
+        "owns_output": true,
+        "owns_configuration": true,
+        "taco_runtime": false,
+        "original_peer_overlap_preserved": false,
+        "native_row_forward": false,
+        "native_linear_backward": false,
+        "native_rs_backward": false
+      }
+    },
+    "definition": {
+      "policy": "flux-bf16",
+      "family": "flux_tensor",
+      "scope": "attn_mlp",
+      "roles": [
+        "attn",
+        "mlp"
+      ],
+      "implementation": "rtx5090-open-compress-flux-bf16",
+      "workspace": "tensor",
+      "output_clone": false,
+      "base": "original",
+      "order": "original",
+      "arrival": false,
+      "interleaved": false,
+      "quantization": "none",
+      "experiment": {
+        "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+        "producer": "flux-gemmonly-sm89-v2-sm120",
+        "gemm_schedule": "StreamkSK",
+        "quantization": "none",
+        "interleaved": false,
+        "remote_first": false,
+        "arrival": false,
+        "selective": false,
+        "calibration_used": false,
+        "cta_order": "original-Flux-GemmOnly",
+        "may_change_streamk_reduction_assignment": false,
+        "collective": "NCCL-BF16-ReduceScatter",
+        "receiver": "NCCL",
+        "owns_output": true,
+        "owns_configuration": true,
+        "taco_runtime": false,
+        "original_peer_overlap_preserved": false,
+        "native_row_forward": false,
+        "native_linear_backward": false,
+        "native_rs_backward": false
+      }
+    },
+    "libraries": {
+      "libflux_cuda.so": {
+        "path": "/workspace/Load-5090/SL3060/open-compress-int8-six-arm-v2-1x-4blocks-20261102-185333-783385/build/flux-original/python/flux/lib/libflux_cuda.so",
+        "sha256": "feb0ba3a8e0bd44313ed664002aa1ac98c2dab1f4f543373fcd0948ac7249aaa"
+      },
+      "libflux_cuda_ths_op.so": {
+        "path": "/workspace/Load-5090/SL3060/open-compress-int8-six-arm-v2-1x-4blocks-20261102-185333-783385/build/flux-original/python/flux/lib/libflux_cuda_ths_op.so",
+        "sha256": "ea14e59ad8bc03749396151834f11b938d59c8ad28ea8be73ed982811e82e183"
+      }
+    },
+    "selection": {
+      "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+      "calibration_used": false,
+      "roles": {
+        "attn": {
+          "role": "attn",
+          "shape": [
+            2048,
+            4096,
+            4096
+          ],
+          "K_local": 512
+        },
+        "mlp": {
+          "role": "mlp",
+          "shape": [
+            2048,
+            4096,
+            16384
+          ],
+          "K_local": 2048
+        }
+      }
+    },
+    "files": {
+      "worker.py": "2e6c5901d0d98876b86318dd4275ce2936606f59978c78c2ab77d084c6ceadaa",
+      "adapter.py": "99fd5d7769502cdb975278ac06c22901ba24035494ae39319e9711e6f7e29aab",
+      "taco_support.py": "e87593c830027b6228e5aee29d2d3a2e381a0c104744e2626518d99fc8c9ba19",
+      "runtime.py": "86acd49fb058e45007b1da0c7e57f4cf101afbe4709110f85ed18f04f38a87b7",
+      "routing.py": "6fda2e79bcda585123e052e82639318716ea0af325a03ef1e568a9e5a5624b80",
+      "megatron_taco.py": "97e8de0f5e47a3d0e82f8fa8c630e0192e9c9638ecdb6a4e106dda0f56aefbf9",
+      "reference.py": "5e5384f79854dea5bfb3d984392a9652097f654675f3259db149fc7f39feefd2",
+      "ablation4_protocol.py": "49096ce304742939908eb7ada80b37f75179b59478e14ddb4119b4055833e473",
+      "communication.py": "b9fa09b17f66fe89fbe7d894959a90ccff9dc4a9e04eb1364f35509d069ab330",
+      "flux_tensor_taco.py": "13c60ba8459eff6a98d411b5f5df78574b900345240819cb8ab1676de7ace4fb",
+      "common.py": "5fd90ba9f70618ffd05ab3afb4739f19eeec640f5d6b4807bcd782d90072ae2e",
+      "selection-plan.json": "98d6a5296a166f2deed19e9032411f52505bf542f6724da43596ee9512bfd863",
+      "config.json": "dd90f3d13803e051a823be8fabfb1a39fd49b0ca7e989cdc722dec9eb03fcf70"
+    },
+    "plan_sha256": "24366175e48002e51383bb678686165dc5d7f97d157755e29ea5fa7fd6593405"
+  },
+  "flux-int8": {
+    "root": "/workspace/Load-5090/SL3060/open-compress-int8-six-arm-v2-1x-2blocks-20261102-202403-183268/workers/flux-int8/scripts",
+    "config": {
+      "megatron_commit": "3ea68ad6042cc1204386ae9364358f7c4de1bc37",
+      "policies": [
+        "flux-int8"
+      ],
+      "orders": [],
+      "cases": [
+        {
+          "name": "rtx5090-open-compress",
+          "hidden": 4096,
+          "ffn": 16384,
+          "heads": 32,
+          "sequence": 2048,
+          "tp": 8,
+          "dp": 1
+        }
+      ],
+      "common": {
+        "layers": 32,
+        "micro_batch": 1,
+        "global_batch": 4,
+        "seed": 1234,
+        "token_seed": 4321,
+        "vocab": 32768
+      },
+      "warmup_steps": 10,
+      "timed_steps": 50,
+      "smoke_warmup_steps": 2,
+      "smoke_steps": 3,
+      "profile_steps": 1,
+      "repetitions": 1,
+      "ring_reduction": true,
+      "scope": "RTX5090 TP8 full GPT6.7B step; open block INT8; no arrival or selective quantization",
+      "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+      "transport": "rtx5090-nccl-staged-v2",
+      "scope_definition": {
+        "policy": "flux-int8",
+        "family": "flux_tensor",
+        "scope": "attn_mlp",
+        "roles": [
+          "attn",
+          "mlp"
+        ],
+        "implementation": "rtx5090-open-compress-flux-int8",
+        "workspace": "tensor",
+        "output_clone": false,
+        "base": "original",
+        "order": "original",
+        "arrival": false,
+        "interleaved": false,
+        "quantization": "all_remote",
+        "experiment": {
+          "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+          "producer": "flux-gemmonly-sm89-v2-sm120",
+          "gemm_schedule": "StreamkSK",
+          "quantization": "all_remote_block_int8_128_fp32_scale",
+          "interleaved": false,
+          "remote_first": false,
+          "arrival": false,
+          "selective": false,
+          "calibration_used": false,
+          "cta_order": "original-Flux-GemmOnly",
+          "may_change_streamk_reduction_assignment": false,
+          "collective": "NCCL-byte-AllToAll",
+          "receiver": "block-int8-decode-source-ordered-bf16-fold",
+          "owns_output": true,
+          "owns_configuration": true,
+          "taco_runtime": false,
+          "original_peer_overlap_preserved": false,
+          "native_row_forward": false,
+          "native_linear_backward": false,
+          "native_rs_backward": false
+        }
+      },
+      "arm": "flux-int8",
+      "graph_forward": false,
+      "double_buffered": false,
+      "role_plan_sha256": {
+        "flux-int8": {
+          "attn": null,
+          "mlp": null
+        }
+      },
+      "communication": {
+        "environment": {
+          "NCCL_VERSION": "2.27.3",
+          "TORCH_NCCL_USE_COMM_NONBLOCKING": "0",
+          "NCCL_NVLS_ENABLE": "0",
+          "NCCL_DEBUG": "WARN",
+          "TORCH_NCCL_ASYNC_ERROR_HANDLING": "1",
+          "NCCL_P2P_DISABLE": "1",
+          "NCCL_SHM_DISABLE": "0"
+        },
+        "config_files": {
+          "/etc/nccl.conf": null,
+          "/root/.nccl.conf": null
+        },
+        "nvls_request": "0"
+      },
+      "codec_identity": {
+        "implementation": "open-block-int8-128-fp32-scale-v1",
+        "source_sha256": "deaa5306a777b7066991ff18811d3a2150af31fc17d913c6a4f4008333a53dff",
+        "reference_sha256": "7677eac9ec0c87f92984ee148dca0babb19c31cafb6f21ab30c67360b0871f9c",
+        "cuda_source_sha256": "2f6f928d43be75ae42c5fa846d9b67e612ad0d46732373ece39aa7eec4eb6a38",
+        "taco_runtime": false
+      },
+      "codec_library": {
+        "path": "/workspace/Load-5090/SL3060/open-compress-int8-six-arm-v2-1x-4blocks-20261102-185333-783385/build/codec/libopen_compress.so",
+        "sha256": "5d2a0204925cd00935ff46e6830be29f49f15c64c993b413dde6d4e702e32378"
+      },
+      "open_compress_implementation": {
+        "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+        "producer": "flux-gemmonly-sm89-v2-sm120",
+        "gemm_schedule": "StreamkSK",
+        "quantization": "all_remote_block_int8_128_fp32_scale",
+        "interleaved": false,
+        "remote_first": false,
+        "arrival": false,
+        "selective": false,
+        "calibration_used": false,
+        "cta_order": "original-Flux-GemmOnly",
+        "may_change_streamk_reduction_assignment": false,
+        "collective": "NCCL-byte-AllToAll",
+        "receiver": "block-int8-decode-source-ordered-bf16-fold",
+        "owns_output": true,
+        "owns_configuration": true,
+        "taco_runtime": false,
+        "original_peer_overlap_preserved": false,
+        "native_row_forward": false,
+        "native_linear_backward": false,
+        "native_rs_backward": false
+      }
+    },
+    "definition": {
+      "policy": "flux-int8",
+      "family": "flux_tensor",
+      "scope": "attn_mlp",
+      "roles": [
+        "attn",
+        "mlp"
+      ],
+      "implementation": "rtx5090-open-compress-flux-int8",
+      "workspace": "tensor",
+      "output_clone": false,
+      "base": "original",
+      "order": "original",
+      "arrival": false,
+      "interleaved": false,
+      "quantization": "all_remote",
+      "experiment": {
+        "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+        "producer": "flux-gemmonly-sm89-v2-sm120",
+        "gemm_schedule": "StreamkSK",
+        "quantization": "all_remote_block_int8_128_fp32_scale",
+        "interleaved": false,
+        "remote_first": false,
+        "arrival": false,
+        "selective": false,
+        "calibration_used": false,
+        "cta_order": "original-Flux-GemmOnly",
+        "may_change_streamk_reduction_assignment": false,
+        "collective": "NCCL-byte-AllToAll",
+        "receiver": "block-int8-decode-source-ordered-bf16-fold",
+        "owns_output": true,
+        "owns_configuration": true,
+        "taco_runtime": false,
+        "original_peer_overlap_preserved": false,
+        "native_row_forward": false,
+        "native_linear_backward": false,
+        "native_rs_backward": false
+      }
+    },
+    "libraries": {
+      "libflux_cuda.so": {
+        "path": "/workspace/Load-5090/SL3060/open-compress-int8-six-arm-v2-1x-4blocks-20261102-185333-783385/build/flux-original/python/flux/lib/libflux_cuda.so",
+        "sha256": "feb0ba3a8e0bd44313ed664002aa1ac98c2dab1f4f543373fcd0948ac7249aaa"
+      },
+      "libflux_cuda_ths_op.so": {
+        "path": "/workspace/Load-5090/SL3060/open-compress-int8-six-arm-v2-1x-4blocks-20261102-185333-783385/build/flux-original/python/flux/lib/libflux_cuda_ths_op.so",
+        "sha256": "ea14e59ad8bc03749396151834f11b938d59c8ad28ea8be73ed982811e82e183"
+      }
+    },
+    "selection": {
+      "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+      "calibration_used": false,
+      "roles": {
+        "attn": {
+          "role": "attn",
+          "shape": [
+            2048,
+            4096,
+            4096
+          ],
+          "K_local": 512
+        },
+        "mlp": {
+          "role": "mlp",
+          "shape": [
+            2048,
+            4096,
+            16384
+          ],
+          "K_local": 2048
+        }
+      }
+    },
+    "files": {
+      "worker.py": "2e6c5901d0d98876b86318dd4275ce2936606f59978c78c2ab77d084c6ceadaa",
+      "adapter.py": "99fd5d7769502cdb975278ac06c22901ba24035494ae39319e9711e6f7e29aab",
+      "taco_support.py": "e87593c830027b6228e5aee29d2d3a2e381a0c104744e2626518d99fc8c9ba19",
+      "runtime.py": "86acd49fb058e45007b1da0c7e57f4cf101afbe4709110f85ed18f04f38a87b7",
+      "routing.py": "6fda2e79bcda585123e052e82639318716ea0af325a03ef1e568a9e5a5624b80",
+      "megatron_taco.py": "deaa5306a777b7066991ff18811d3a2150af31fc17d913c6a4f4008333a53dff",
+      "reference.py": "7677eac9ec0c87f92984ee148dca0babb19c31cafb6f21ab30c67360b0871f9c",
+      "ablation4_protocol.py": "49096ce304742939908eb7ada80b37f75179b59478e14ddb4119b4055833e473",
+      "communication.py": "b9fa09b17f66fe89fbe7d894959a90ccff9dc4a9e04eb1364f35509d069ab330",
+      "flux_tensor_taco.py": "13c60ba8459eff6a98d411b5f5df78574b900345240819cb8ab1676de7ace4fb",
+      "common.py": "5fd90ba9f70618ffd05ab3afb4739f19eeec640f5d6b4807bcd782d90072ae2e",
+      "selection-plan.json": "98d6a5296a166f2deed19e9032411f52505bf542f6724da43596ee9512bfd863",
+      "config.json": "01c9aef70c80cff4dc162076775ebac3eb4362512d297b52be2a60faac2e5c22"
+    },
+    "plan_sha256": "24366175e48002e51383bb678686165dc5d7f97d157755e29ea5fa7fd6593405"
+  },
+  "flux-int8-interleaved": {
+    "root": "/workspace/Load-5090/SL3060/open-compress-int8-six-arm-v2-1x-2blocks-20261102-202403-183268/workers/flux-int8-interleaved/scripts",
+    "config": {
+      "megatron_commit": "3ea68ad6042cc1204386ae9364358f7c4de1bc37",
+      "policies": [
+        "flux-int8-interleaved"
+      ],
+      "orders": [],
+      "cases": [
+        {
+          "name": "rtx5090-open-compress",
+          "hidden": 4096,
+          "ffn": 16384,
+          "heads": 32,
+          "sequence": 2048,
+          "tp": 8,
+          "dp": 1
+        }
+      ],
+      "common": {
+        "layers": 32,
+        "micro_batch": 1,
+        "global_batch": 4,
+        "seed": 1234,
+        "token_seed": 4321,
+        "vocab": 32768
+      },
+      "warmup_steps": 10,
+      "timed_steps": 50,
+      "smoke_warmup_steps": 2,
+      "smoke_steps": 3,
+      "profile_steps": 1,
+      "repetitions": 1,
+      "ring_reduction": true,
+      "scope": "RTX5090 TP8 full GPT6.7B step; open block INT8; no arrival or selective quantization",
+      "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+      "transport": "rtx5090-nccl-staged-v2",
+      "scope_definition": {
+        "policy": "flux-int8-interleaved",
+        "family": "flux_tensor",
+        "scope": "attn_mlp",
+        "roles": [
+          "attn",
+          "mlp"
+        ],
+        "implementation": "rtx5090-open-compress-flux-int8-interleaved",
+        "workspace": "tensor",
+        "output_clone": false,
+        "base": "original",
+        "order": "interleaved",
+        "arrival": false,
+        "interleaved": true,
+        "quantization": "all_remote",
+        "experiment": {
+          "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+          "producer": "flux-gemmonly-sm89-v2-sm120",
+          "gemm_schedule": "StreamkSK",
+          "quantization": "all_remote_block_int8_128_fp32_scale",
+          "interleaved": true,
+          "remote_first": false,
+          "arrival": false,
+          "selective": false,
+          "calibration_used": false,
+          "cta_order": "rank-rotated-destination-interleaved",
+          "may_change_streamk_reduction_assignment": true,
+          "collective": "NCCL-byte-AllToAll",
+          "receiver": "block-int8-decode-source-ordered-bf16-fold",
+          "owns_output": true,
+          "owns_configuration": true,
+          "taco_runtime": false,
+          "original_peer_overlap_preserved": false,
+          "native_row_forward": false,
+          "native_linear_backward": false,
+          "native_rs_backward": false
+        }
+      },
+      "arm": "flux-int8-interleaved",
+      "graph_forward": false,
+      "double_buffered": false,
+      "role_plan_sha256": {
+        "flux-int8-interleaved": {
+          "attn": null,
+          "mlp": null
+        }
+      },
+      "communication": {
+        "environment": {
+          "NCCL_VERSION": "2.27.3",
+          "TORCH_NCCL_USE_COMM_NONBLOCKING": "0",
+          "NCCL_NVLS_ENABLE": "0",
+          "NCCL_DEBUG": "WARN",
+          "TORCH_NCCL_ASYNC_ERROR_HANDLING": "1",
+          "NCCL_P2P_DISABLE": "1",
+          "NCCL_SHM_DISABLE": "0"
+        },
+        "config_files": {
+          "/etc/nccl.conf": null,
+          "/root/.nccl.conf": null
+        },
+        "nvls_request": "0"
+      },
+      "codec_identity": {
+        "implementation": "open-block-int8-128-fp32-scale-v1",
+        "source_sha256": "deaa5306a777b7066991ff18811d3a2150af31fc17d913c6a4f4008333a53dff",
+        "reference_sha256": "7677eac9ec0c87f92984ee148dca0babb19c31cafb6f21ab30c67360b0871f9c",
+        "cuda_source_sha256": "2f6f928d43be75ae42c5fa846d9b67e612ad0d46732373ece39aa7eec4eb6a38",
+        "taco_runtime": false
+      },
+      "codec_library": {
+        "path": "/workspace/Load-5090/SL3060/open-compress-int8-six-arm-v2-1x-4blocks-20261102-185333-783385/build/codec/libopen_compress.so",
+        "sha256": "5d2a0204925cd00935ff46e6830be29f49f15c64c993b413dde6d4e702e32378"
+      },
+      "open_compress_implementation": {
+        "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+        "producer": "flux-gemmonly-sm89-v2-sm120",
+        "gemm_schedule": "StreamkSK",
+        "quantization": "all_remote_block_int8_128_fp32_scale",
+        "interleaved": true,
+        "remote_first": false,
+        "arrival": false,
+        "selective": false,
+        "calibration_used": false,
+        "cta_order": "rank-rotated-destination-interleaved",
+        "may_change_streamk_reduction_assignment": true,
+        "collective": "NCCL-byte-AllToAll",
+        "receiver": "block-int8-decode-source-ordered-bf16-fold",
+        "owns_output": true,
+        "owns_configuration": true,
+        "taco_runtime": false,
+        "original_peer_overlap_preserved": false,
+        "native_row_forward": false,
+        "native_linear_backward": false,
+        "native_rs_backward": false
+      }
+    },
+    "definition": {
+      "policy": "flux-int8-interleaved",
+      "family": "flux_tensor",
+      "scope": "attn_mlp",
+      "roles": [
+        "attn",
+        "mlp"
+      ],
+      "implementation": "rtx5090-open-compress-flux-int8-interleaved",
+      "workspace": "tensor",
+      "output_clone": false,
+      "base": "original",
+      "order": "interleaved",
+      "arrival": false,
+      "interleaved": true,
+      "quantization": "all_remote",
+      "experiment": {
+        "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+        "producer": "flux-gemmonly-sm89-v2-sm120",
+        "gemm_schedule": "StreamkSK",
+        "quantization": "all_remote_block_int8_128_fp32_scale",
+        "interleaved": true,
+        "remote_first": false,
+        "arrival": false,
+        "selective": false,
+        "calibration_used": false,
+        "cta_order": "rank-rotated-destination-interleaved",
+        "may_change_streamk_reduction_assignment": true,
+        "collective": "NCCL-byte-AllToAll",
+        "receiver": "block-int8-decode-source-ordered-bf16-fold",
+        "owns_output": true,
+        "owns_configuration": true,
+        "taco_runtime": false,
+        "original_peer_overlap_preserved": false,
+        "native_row_forward": false,
+        "native_linear_backward": false,
+        "native_rs_backward": false
+      }
+    },
+    "libraries": {
+      "libflux_cuda.so": {
+        "path": "/workspace/Load-5090/SL3060/open-compress-int8-six-arm-v2-1x-4blocks-20261102-185333-783385/build/flux-interleaved/python/flux/lib/libflux_cuda.so",
+        "sha256": "a1373850db67d073cd810e56231dddd712543d5dd464530f3ee7beccaf22df8a"
+      },
+      "libflux_cuda_ths_op.so": {
+        "path": "/workspace/Load-5090/SL3060/open-compress-int8-six-arm-v2-1x-4blocks-20261102-185333-783385/build/flux-interleaved/python/flux/lib/libflux_cuda_ths_op.so",
+        "sha256": "b66f8d2decf1a4cbf62b4aa1d4a11271333944548c9bfcfc7ee9dbf997da997c"
+      }
+    },
+    "selection": {
+      "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+      "calibration_used": false,
+      "roles": {
+        "attn": {
+          "role": "attn",
+          "shape": [
+            2048,
+            4096,
+            4096
+          ],
+          "K_local": 512
+        },
+        "mlp": {
+          "role": "mlp",
+          "shape": [
+            2048,
+            4096,
+            16384
+          ],
+          "K_local": 2048
+        }
+      }
+    },
+    "files": {
+      "worker.py": "2e6c5901d0d98876b86318dd4275ce2936606f59978c78c2ab77d084c6ceadaa",
+      "adapter.py": "99fd5d7769502cdb975278ac06c22901ba24035494ae39319e9711e6f7e29aab",
+      "taco_support.py": "e87593c830027b6228e5aee29d2d3a2e381a0c104744e2626518d99fc8c9ba19",
+      "runtime.py": "86acd49fb058e45007b1da0c7e57f4cf101afbe4709110f85ed18f04f38a87b7",
+      "routing.py": "6fda2e79bcda585123e052e82639318716ea0af325a03ef1e568a9e5a5624b80",
+      "megatron_taco.py": "deaa5306a777b7066991ff18811d3a2150af31fc17d913c6a4f4008333a53dff",
+      "reference.py": "7677eac9ec0c87f92984ee148dca0babb19c31cafb6f21ab30c67360b0871f9c",
+      "ablation4_protocol.py": "49096ce304742939908eb7ada80b37f75179b59478e14ddb4119b4055833e473",
+      "communication.py": "b9fa09b17f66fe89fbe7d894959a90ccff9dc4a9e04eb1364f35509d069ab330",
+      "flux_tensor_taco.py": "13c60ba8459eff6a98d411b5f5df78574b900345240819cb8ab1676de7ace4fb",
+      "common.py": "5fd90ba9f70618ffd05ab3afb4739f19eeec640f5d6b4807bcd782d90072ae2e",
+      "selection-plan.json": "98d6a5296a166f2deed19e9032411f52505bf542f6724da43596ee9512bfd863",
+      "config.json": "7c52d54b7e2a4ceb4063a934e59b982617cded52096936b68ced346c4d1cb9fe"
+    },
+    "plan_sha256": "24366175e48002e51383bb678686165dc5d7f97d157755e29ea5fa7fd6593405"
+  },
+  "megatron-bf16": {
+    "root": "/workspace/Load-5090/SL3060/open-compress-int8-six-arm-v2-1x-2blocks-20261102-202403-183268/workers/megatron-bf16/scripts",
+    "config": {
+      "megatron_commit": "3ea68ad6042cc1204386ae9364358f7c4de1bc37",
+      "policies": [
+        "megatron-bf16"
+      ],
+      "orders": [],
+      "cases": [
+        {
+          "name": "rtx5090-open-compress",
+          "hidden": 4096,
+          "ffn": 16384,
+          "heads": 32,
+          "sequence": 2048,
+          "tp": 8,
+          "dp": 1
+        }
+      ],
+      "common": {
+        "layers": 32,
+        "micro_batch": 1,
+        "global_batch": 4,
+        "seed": 1234,
+        "token_seed": 4321,
+        "vocab": 32768
+      },
+      "warmup_steps": 10,
+      "timed_steps": 50,
+      "smoke_warmup_steps": 2,
+      "smoke_steps": 3,
+      "profile_steps": 1,
+      "repetitions": 1,
+      "ring_reduction": false,
+      "scope": "RTX5090 TP8 full GPT6.7B step; open block INT8; no arrival or selective quantization",
+      "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+      "transport": "rtx5090-nccl-staged-v2",
+      "scope_definition": {
+        "policy": "megatron-bf16",
+        "family": "megatron",
+        "scope": "attn_mlp",
+        "roles": [
+          "attn",
+          "mlp"
+        ],
+        "implementation": "rtx5090-open-compress-megatron-bf16",
+        "workspace": "tensor",
+        "output_clone": false,
+        "base": "original",
+        "order": "original",
+        "arrival": false,
+        "interleaved": false,
+        "quantization": "none",
+        "experiment": {
+          "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+          "producer": "native-megatron-linear",
+          "gemm_schedule": "original-Megatron",
+          "quantization": "none",
+          "interleaved": false,
+          "remote_first": false,
+          "arrival": false,
+          "selective": false,
+          "calibration_used": false,
+          "cta_order": "original-Megatron",
+          "may_change_streamk_reduction_assignment": false,
+          "collective": "NCCL-BF16-ReduceScatter",
+          "receiver": "NCCL",
+          "owns_output": true,
+          "owns_configuration": true,
+          "taco_runtime": false,
+          "original_peer_overlap_preserved": false,
+          "native_row_forward": true,
+          "native_linear_backward": true,
+          "native_rs_backward": true
+        }
+      },
+      "arm": "megatron-bf16",
+      "graph_forward": false,
+      "double_buffered": false,
+      "role_plan_sha256": {
+        "megatron-bf16": {
+          "attn": null,
+          "mlp": null
+        }
+      },
+      "communication": {
+        "environment": {
+          "NCCL_VERSION": "2.27.3",
+          "TORCH_NCCL_USE_COMM_NONBLOCKING": "0",
+          "NCCL_NVLS_ENABLE": "0",
+          "NCCL_DEBUG": "WARN",
+          "TORCH_NCCL_ASYNC_ERROR_HANDLING": "1",
+          "NCCL_P2P_DISABLE": "1",
+          "NCCL_SHM_DISABLE": "0"
+        },
+        "config_files": {
+          "/etc/nccl.conf": null,
+          "/root/.nccl.conf": null
+        },
+        "nvls_request": "0"
+      },
+      "codec_identity": {
+        "implementation": "none-nccl-bf16",
+        "source_sha256": "97e8de0f5e47a3d0e82f8fa8c630e0192e9c9638ecdb6a4e106dda0f56aefbf9",
+        "reference_sha256": "5e5384f79854dea5bfb3d984392a9652097f654675f3259db149fc7f39feefd2",
+        "cuda_source_sha256": null,
+        "taco_runtime": false
+      },
+      "codec_library": null,
+      "open_compress_implementation": {
+        "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+        "producer": "native-megatron-linear",
+        "gemm_schedule": "original-Megatron",
+        "quantization": "none",
+        "interleaved": false,
+        "remote_first": false,
+        "arrival": false,
+        "selective": false,
+        "calibration_used": false,
+        "cta_order": "original-Megatron",
+        "may_change_streamk_reduction_assignment": false,
+        "collective": "NCCL-BF16-ReduceScatter",
+        "receiver": "NCCL",
+        "owns_output": true,
+        "owns_configuration": true,
+        "taco_runtime": false,
+        "original_peer_overlap_preserved": false,
+        "native_row_forward": true,
+        "native_linear_backward": true,
+        "native_rs_backward": true
+      },
+      "native_source_sha256": {
+        "layers.py": "d20bf5a85610b995799d5a9372600cdf9ad32a6763d6a68e804a6b0f15ef4e8b",
+        "mappings.py": "20ab665e7d847f5521d8ba81ff9f54e902ddc82486854d15c159d1156e73ce1e"
+      }
+    },
+    "definition": {
+      "policy": "megatron-bf16",
+      "family": "megatron",
+      "scope": "attn_mlp",
+      "roles": [
+        "attn",
+        "mlp"
+      ],
+      "implementation": "rtx5090-open-compress-megatron-bf16",
+      "workspace": "tensor",
+      "output_clone": false,
+      "base": "original",
+      "order": "original",
+      "arrival": false,
+      "interleaved": false,
+      "quantization": "none",
+      "experiment": {
+        "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+        "producer": "native-megatron-linear",
+        "gemm_schedule": "original-Megatron",
+        "quantization": "none",
+        "interleaved": false,
+        "remote_first": false,
+        "arrival": false,
+        "selective": false,
+        "calibration_used": false,
+        "cta_order": "original-Megatron",
+        "may_change_streamk_reduction_assignment": false,
+        "collective": "NCCL-BF16-ReduceScatter",
+        "receiver": "NCCL",
+        "owns_output": true,
+        "owns_configuration": true,
+        "taco_runtime": false,
+        "original_peer_overlap_preserved": false,
+        "native_row_forward": true,
+        "native_linear_backward": true,
+        "native_rs_backward": true
+      }
+    },
+    "libraries": {},
+    "selection": {
+      "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+      "calibration_used": false,
+      "roles": {
+        "attn": {
+          "role": "attn",
+          "shape": [
+            2048,
+            4096,
+            4096
+          ],
+          "K_local": 512
+        },
+        "mlp": {
+          "role": "mlp",
+          "shape": [
+            2048,
+            4096,
+            16384
+          ],
+          "K_local": 2048
+        }
+      }
+    },
+    "files": {
+      "worker.py": "2e6c5901d0d98876b86318dd4275ce2936606f59978c78c2ab77d084c6ceadaa",
+      "adapter.py": "fd184ef84b536f3b77d39d883f57a717d87fe6c1516750ed2d93717e8257a15e",
+      "taco_support.py": "e87593c830027b6228e5aee29d2d3a2e381a0c104744e2626518d99fc8c9ba19",
+      "runtime.py": "86acd49fb058e45007b1da0c7e57f4cf101afbe4709110f85ed18f04f38a87b7",
+      "routing.py": "6fda2e79bcda585123e052e82639318716ea0af325a03ef1e568a9e5a5624b80",
+      "megatron_taco.py": "97e8de0f5e47a3d0e82f8fa8c630e0192e9c9638ecdb6a4e106dda0f56aefbf9",
+      "reference.py": "5e5384f79854dea5bfb3d984392a9652097f654675f3259db149fc7f39feefd2",
+      "ablation4_protocol.py": "49096ce304742939908eb7ada80b37f75179b59478e14ddb4119b4055833e473",
+      "communication.py": "b9fa09b17f66fe89fbe7d894959a90ccff9dc4a9e04eb1364f35509d069ab330",
+      "flux_tensor_taco.py": "13c60ba8459eff6a98d411b5f5df78574b900345240819cb8ab1676de7ace4fb",
+      "common.py": "5fd90ba9f70618ffd05ab3afb4739f19eeec640f5d6b4807bcd782d90072ae2e",
+      "selection-plan.json": "98d6a5296a166f2deed19e9032411f52505bf542f6724da43596ee9512bfd863",
+      "open_compress_megatron.py": "267d20e2d6b1f889b066bc628bbd96bd194a76be0ccc979cdb3df46e75a96935",
+      "config.json": "7d5814d4ea7f4f4bcf7afd0a7ebaf4a6b307c1158f4a113c1e30930252f55e02"
+    },
+    "plan_sha256": "24366175e48002e51383bb678686165dc5d7f97d157755e29ea5fa7fd6593405"
+  },
+  "megatron-int8": {
+    "root": "/workspace/Load-5090/SL3060/open-compress-int8-six-arm-v2-1x-2blocks-20261102-202403-183268/workers/megatron-int8/scripts",
+    "config": {
+      "megatron_commit": "3ea68ad6042cc1204386ae9364358f7c4de1bc37",
+      "policies": [
+        "megatron-int8"
+      ],
+      "orders": [],
+      "cases": [
+        {
+          "name": "rtx5090-open-compress",
+          "hidden": 4096,
+          "ffn": 16384,
+          "heads": 32,
+          "sequence": 2048,
+          "tp": 8,
+          "dp": 1
+        }
+      ],
+      "common": {
+        "layers": 32,
+        "micro_batch": 1,
+        "global_batch": 4,
+        "seed": 1234,
+        "token_seed": 4321,
+        "vocab": 32768
+      },
+      "warmup_steps": 10,
+      "timed_steps": 50,
+      "smoke_warmup_steps": 2,
+      "smoke_steps": 3,
+      "profile_steps": 1,
+      "repetitions": 1,
+      "ring_reduction": false,
+      "scope": "RTX5090 TP8 full GPT6.7B step; open block INT8; no arrival or selective quantization",
+      "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+      "transport": "rtx5090-nccl-staged-v2",
+      "scope_definition": {
+        "policy": "megatron-int8",
+        "family": "megatron",
+        "scope": "attn_mlp",
+        "roles": [
+          "attn",
+          "mlp"
+        ],
+        "implementation": "rtx5090-open-compress-megatron-int8",
+        "workspace": "tensor",
+        "output_clone": false,
+        "base": "original",
+        "order": "original",
+        "arrival": false,
+        "interleaved": false,
+        "quantization": "all_remote",
+        "experiment": {
+          "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+          "producer": "native-megatron-linear",
+          "gemm_schedule": "original-Megatron",
+          "quantization": "all_remote_block_int8_128_fp32_scale",
+          "interleaved": false,
+          "remote_first": false,
+          "arrival": false,
+          "selective": false,
+          "calibration_used": false,
+          "cta_order": "original-Megatron",
+          "may_change_streamk_reduction_assignment": false,
+          "collective": "NCCL-byte-AllToAll",
+          "receiver": "block-int8-decode-source-ordered-bf16-fold",
+          "owns_output": true,
+          "owns_configuration": true,
+          "taco_runtime": false,
+          "original_peer_overlap_preserved": false,
+          "native_row_forward": true,
+          "native_linear_backward": true,
+          "native_rs_backward": true
+        }
+      },
+      "arm": "megatron-int8",
+      "graph_forward": false,
+      "double_buffered": false,
+      "role_plan_sha256": {
+        "megatron-int8": {
+          "attn": null,
+          "mlp": null
+        }
+      },
+      "communication": {
+        "environment": {
+          "NCCL_VERSION": "2.27.3",
+          "TORCH_NCCL_USE_COMM_NONBLOCKING": "0",
+          "NCCL_NVLS_ENABLE": "0",
+          "NCCL_DEBUG": "WARN",
+          "TORCH_NCCL_ASYNC_ERROR_HANDLING": "1",
+          "NCCL_P2P_DISABLE": "1",
+          "NCCL_SHM_DISABLE": "0"
+        },
+        "config_files": {
+          "/etc/nccl.conf": null,
+          "/root/.nccl.conf": null
+        },
+        "nvls_request": "0"
+      },
+      "codec_identity": {
+        "implementation": "open-block-int8-128-fp32-scale-v1",
+        "source_sha256": "deaa5306a777b7066991ff18811d3a2150af31fc17d913c6a4f4008333a53dff",
+        "reference_sha256": "7677eac9ec0c87f92984ee148dca0babb19c31cafb6f21ab30c67360b0871f9c",
+        "cuda_source_sha256": "2f6f928d43be75ae42c5fa846d9b67e612ad0d46732373ece39aa7eec4eb6a38",
+        "taco_runtime": false
+      },
+      "codec_library": {
+        "path": "/workspace/Load-5090/SL3060/open-compress-int8-six-arm-v2-1x-4blocks-20261102-185333-783385/build/codec/libopen_compress.so",
+        "sha256": "5d2a0204925cd00935ff46e6830be29f49f15c64c993b413dde6d4e702e32378"
+      },
+      "open_compress_implementation": {
+        "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+        "producer": "native-megatron-linear",
+        "gemm_schedule": "original-Megatron",
+        "quantization": "all_remote_block_int8_128_fp32_scale",
+        "interleaved": false,
+        "remote_first": false,
+        "arrival": false,
+        "selective": false,
+        "calibration_used": false,
+        "cta_order": "original-Megatron",
+        "may_change_streamk_reduction_assignment": false,
+        "collective": "NCCL-byte-AllToAll",
+        "receiver": "block-int8-decode-source-ordered-bf16-fold",
+        "owns_output": true,
+        "owns_configuration": true,
+        "taco_runtime": false,
+        "original_peer_overlap_preserved": false,
+        "native_row_forward": true,
+        "native_linear_backward": true,
+        "native_rs_backward": true
+      },
+      "native_source_sha256": {
+        "layers.py": "d20bf5a85610b995799d5a9372600cdf9ad32a6763d6a68e804a6b0f15ef4e8b",
+        "mappings.py": "20ab665e7d847f5521d8ba81ff9f54e902ddc82486854d15c159d1156e73ce1e"
+      }
+    },
+    "definition": {
+      "policy": "megatron-int8",
+      "family": "megatron",
+      "scope": "attn_mlp",
+      "roles": [
+        "attn",
+        "mlp"
+      ],
+      "implementation": "rtx5090-open-compress-megatron-int8",
+      "workspace": "tensor",
+      "output_clone": false,
+      "base": "original",
+      "order": "original",
+      "arrival": false,
+      "interleaved": false,
+      "quantization": "all_remote",
+      "experiment": {
+        "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+        "producer": "native-megatron-linear",
+        "gemm_schedule": "original-Megatron",
+        "quantization": "all_remote_block_int8_128_fp32_scale",
+        "interleaved": false,
+        "remote_first": false,
+        "arrival": false,
+        "selective": false,
+        "calibration_used": false,
+        "cta_order": "original-Megatron",
+        "may_change_streamk_reduction_assignment": false,
+        "collective": "NCCL-byte-AllToAll",
+        "receiver": "block-int8-decode-source-ordered-bf16-fold",
+        "owns_output": true,
+        "owns_configuration": true,
+        "taco_runtime": false,
+        "original_peer_overlap_preserved": false,
+        "native_row_forward": true,
+        "native_linear_backward": true,
+        "native_rs_backward": true
+      }
+    },
+    "libraries": {},
+    "selection": {
+      "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+      "calibration_used": false,
+      "roles": {
+        "attn": {
+          "role": "attn",
+          "shape": [
+            2048,
+            4096,
+            4096
+          ],
+          "K_local": 512
+        },
+        "mlp": {
+          "role": "mlp",
+          "shape": [
+            2048,
+            4096,
+            16384
+          ],
+          "K_local": 2048
+        }
+      }
+    },
+    "files": {
+      "worker.py": "2e6c5901d0d98876b86318dd4275ce2936606f59978c78c2ab77d084c6ceadaa",
+      "adapter.py": "fd184ef84b536f3b77d39d883f57a717d87fe6c1516750ed2d93717e8257a15e",
+      "taco_support.py": "e87593c830027b6228e5aee29d2d3a2e381a0c104744e2626518d99fc8c9ba19",
+      "runtime.py": "86acd49fb058e45007b1da0c7e57f4cf101afbe4709110f85ed18f04f38a87b7",
+      "routing.py": "6fda2e79bcda585123e052e82639318716ea0af325a03ef1e568a9e5a5624b80",
+      "megatron_taco.py": "deaa5306a777b7066991ff18811d3a2150af31fc17d913c6a4f4008333a53dff",
+      "reference.py": "7677eac9ec0c87f92984ee148dca0babb19c31cafb6f21ab30c67360b0871f9c",
+      "ablation4_protocol.py": "49096ce304742939908eb7ada80b37f75179b59478e14ddb4119b4055833e473",
+      "communication.py": "b9fa09b17f66fe89fbe7d894959a90ccff9dc4a9e04eb1364f35509d069ab330",
+      "flux_tensor_taco.py": "13c60ba8459eff6a98d411b5f5df78574b900345240819cb8ab1676de7ace4fb",
+      "common.py": "5fd90ba9f70618ffd05ab3afb4739f19eeec640f5d6b4807bcd782d90072ae2e",
+      "selection-plan.json": "98d6a5296a166f2deed19e9032411f52505bf542f6724da43596ee9512bfd863",
+      "open_compress_megatron.py": "267d20e2d6b1f889b066bc628bbd96bd194a76be0ccc979cdb3df46e75a96935",
+      "config.json": "d531552f86e6cf505b9a957597ea42b02c9dc88f6e87e5944454d169a2956d4f"
+    },
+    "plan_sha256": "24366175e48002e51383bb678686165dc5d7f97d157755e29ea5fa7fd6593405"
+  },
+  "flux-int8-remote-first": {
+    "root": "/workspace/Load-5090/SL3060/open-compress-int8-six-arm-v2-1x-2blocks-20261102-202403-183268/workers/flux-int8-remote-first/scripts",
+    "config": {
+      "megatron_commit": "3ea68ad6042cc1204386ae9364358f7c4de1bc37",
+      "policies": [
+        "flux-int8-remote-first"
+      ],
+      "orders": [],
+      "cases": [
+        {
+          "name": "rtx5090-open-compress",
+          "hidden": 4096,
+          "ffn": 16384,
+          "heads": 32,
+          "sequence": 2048,
+          "tp": 8,
+          "dp": 1
+        }
+      ],
+      "common": {
+        "layers": 32,
+        "micro_batch": 1,
+        "global_batch": 4,
+        "seed": 1234,
+        "token_seed": 4321,
+        "vocab": 32768
+      },
+      "warmup_steps": 10,
+      "timed_steps": 50,
+      "smoke_warmup_steps": 2,
+      "smoke_steps": 3,
+      "profile_steps": 1,
+      "repetitions": 1,
+      "ring_reduction": true,
+      "scope": "RTX5090 TP8 full GPT6.7B step; open block INT8; no arrival or selective quantization",
+      "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+      "transport": "rtx5090-nccl-staged-v2",
+      "scope_definition": {
+        "policy": "flux-int8-remote-first",
+        "family": "flux_tensor",
+        "scope": "attn_mlp",
+        "roles": [
+          "attn",
+          "mlp"
+        ],
+        "implementation": "rtx5090-open-compress-flux-int8-remote-first",
+        "workspace": "tensor",
+        "output_clone": false,
+        "base": "original",
+        "order": "remote-first",
+        "arrival": false,
+        "interleaved": false,
+        "quantization": "all_remote",
+        "experiment": {
+          "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+          "producer": "flux-gemmonly-sm89-v2-sm120",
+          "gemm_schedule": "StreamkSK",
+          "quantization": "all_remote_block_int8_128_fp32_scale",
+          "interleaved": false,
+          "remote_first": true,
+          "arrival": false,
+          "selective": false,
+          "calibration_used": false,
+          "cta_order": "remote-first-local-last",
+          "may_change_streamk_reduction_assignment": true,
+          "collective": "NCCL-byte-AllToAll",
+          "receiver": "block-int8-decode-source-ordered-bf16-fold",
+          "owns_output": true,
+          "owns_configuration": true,
+          "taco_runtime": false,
+          "original_peer_overlap_preserved": false,
+          "native_row_forward": false,
+          "native_linear_backward": false,
+          "native_rs_backward": false
+        }
+      },
+      "arm": "flux-int8-remote-first",
+      "graph_forward": false,
+      "double_buffered": false,
+      "role_plan_sha256": {
+        "flux-int8-remote-first": {
+          "attn": null,
+          "mlp": null
+        }
+      },
+      "communication": {
+        "environment": {
+          "NCCL_VERSION": "2.27.3",
+          "TORCH_NCCL_USE_COMM_NONBLOCKING": "0",
+          "NCCL_NVLS_ENABLE": "0",
+          "NCCL_DEBUG": "WARN",
+          "TORCH_NCCL_ASYNC_ERROR_HANDLING": "1",
+          "NCCL_P2P_DISABLE": "1",
+          "NCCL_SHM_DISABLE": "0"
+        },
+        "config_files": {
+          "/etc/nccl.conf": null,
+          "/root/.nccl.conf": null
+        },
+        "nvls_request": "0"
+      },
+      "codec_identity": {
+        "implementation": "open-block-int8-128-fp32-scale-v1",
+        "source_sha256": "deaa5306a777b7066991ff18811d3a2150af31fc17d913c6a4f4008333a53dff",
+        "reference_sha256": "7677eac9ec0c87f92984ee148dca0babb19c31cafb6f21ab30c67360b0871f9c",
+        "cuda_source_sha256": "2f6f928d43be75ae42c5fa846d9b67e612ad0d46732373ece39aa7eec4eb6a38",
+        "taco_runtime": false
+      },
+      "codec_library": {
+        "path": "/workspace/Load-5090/SL3060/open-compress-int8-six-arm-v2-1x-4blocks-20261102-185333-783385/build/codec/libopen_compress.so",
+        "sha256": "5d2a0204925cd00935ff46e6830be29f49f15c64c993b413dde6d4e702e32378"
+      },
+      "open_compress_implementation": {
+        "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+        "producer": "flux-gemmonly-sm89-v2-sm120",
+        "gemm_schedule": "StreamkSK",
+        "quantization": "all_remote_block_int8_128_fp32_scale",
+        "interleaved": false,
+        "remote_first": true,
+        "arrival": false,
+        "selective": false,
+        "calibration_used": false,
+        "cta_order": "remote-first-local-last",
+        "may_change_streamk_reduction_assignment": true,
+        "collective": "NCCL-byte-AllToAll",
+        "receiver": "block-int8-decode-source-ordered-bf16-fold",
+        "owns_output": true,
+        "owns_configuration": true,
+        "taco_runtime": false,
+        "original_peer_overlap_preserved": false,
+        "native_row_forward": false,
+        "native_linear_backward": false,
+        "native_rs_backward": false
+      }
+    },
+    "definition": {
+      "policy": "flux-int8-remote-first",
+      "family": "flux_tensor",
+      "scope": "attn_mlp",
+      "roles": [
+        "attn",
+        "mlp"
+      ],
+      "implementation": "rtx5090-open-compress-flux-int8-remote-first",
+      "workspace": "tensor",
+      "output_clone": false,
+      "base": "original",
+      "order": "remote-first",
+      "arrival": false,
+      "interleaved": false,
+      "quantization": "all_remote",
+      "experiment": {
+        "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+        "producer": "flux-gemmonly-sm89-v2-sm120",
+        "gemm_schedule": "StreamkSK",
+        "quantization": "all_remote_block_int8_128_fp32_scale",
+        "interleaved": false,
+        "remote_first": true,
+        "arrival": false,
+        "selective": false,
+        "calibration_used": false,
+        "cta_order": "remote-first-local-last",
+        "may_change_streamk_reduction_assignment": true,
+        "collective": "NCCL-byte-AllToAll",
+        "receiver": "block-int8-decode-source-ordered-bf16-fold",
+        "owns_output": true,
+        "owns_configuration": true,
+        "taco_runtime": false,
+        "original_peer_overlap_preserved": false,
+        "native_row_forward": false,
+        "native_linear_backward": false,
+        "native_rs_backward": false
+      }
+    },
+    "libraries": {
+      "libflux_cuda.so": {
+        "path": "/workspace/Load-5090/SL3060/open-compress-int8-six-arm-v2-1x-4blocks-20261102-185333-783385/build/flux-remote-first/python/flux/lib/libflux_cuda.so",
+        "sha256": "fa5c878dcdc576bb812c4d6fb776b146265f438f0ff8894f0212392009958be5"
+      },
+      "libflux_cuda_ths_op.so": {
+        "path": "/workspace/Load-5090/SL3060/open-compress-int8-six-arm-v2-1x-4blocks-20261102-185333-783385/build/flux-remote-first/python/flux/lib/libflux_cuda_ths_op.so",
+        "sha256": "37bc77d5c5edd91ff73b27040650f47d0b237eabf52cfab6f2e16f08911e0ac2"
+      }
+    },
+    "selection": {
+      "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+      "calibration_used": false,
+      "roles": {
+        "attn": {
+          "role": "attn",
+          "shape": [
+            2048,
+            4096,
+            4096
+          ],
+          "K_local": 512
+        },
+        "mlp": {
+          "role": "mlp",
+          "shape": [
+            2048,
+            4096,
+            16384
+          ],
+          "K_local": 2048
+        }
+      }
+    },
+    "files": {
+      "worker.py": "2e6c5901d0d98876b86318dd4275ce2936606f59978c78c2ab77d084c6ceadaa",
+      "adapter.py": "99fd5d7769502cdb975278ac06c22901ba24035494ae39319e9711e6f7e29aab",
+      "taco_support.py": "e87593c830027b6228e5aee29d2d3a2e381a0c104744e2626518d99fc8c9ba19",
+      "runtime.py": "86acd49fb058e45007b1da0c7e57f4cf101afbe4709110f85ed18f04f38a87b7",
+      "routing.py": "6fda2e79bcda585123e052e82639318716ea0af325a03ef1e568a9e5a5624b80",
+      "megatron_taco.py": "deaa5306a777b7066991ff18811d3a2150af31fc17d913c6a4f4008333a53dff",
+      "reference.py": "7677eac9ec0c87f92984ee148dca0babb19c31cafb6f21ab30c67360b0871f9c",
+      "ablation4_protocol.py": "49096ce304742939908eb7ada80b37f75179b59478e14ddb4119b4055833e473",
+      "communication.py": "b9fa09b17f66fe89fbe7d894959a90ccff9dc4a9e04eb1364f35509d069ab330",
+      "flux_tensor_taco.py": "13c60ba8459eff6a98d411b5f5df78574b900345240819cb8ab1676de7ace4fb",
+      "common.py": "5fd90ba9f70618ffd05ab3afb4739f19eeec640f5d6b4807bcd782d90072ae2e",
+      "selection-plan.json": "98d6a5296a166f2deed19e9032411f52505bf542f6724da43596ee9512bfd863",
+      "config.json": "35b3f62e47e88684b57b6aecae34b1bd0d13ac1cea82a77649262909a01c6454"
+    },
+    "plan_sha256": "24366175e48002e51383bb678686165dc5d7f97d157755e29ea5fa7fd6593405"
+  }
+}

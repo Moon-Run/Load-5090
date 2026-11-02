@@ -1,0 +1,10 @@
+{
+  "completed": true,
+  "evidence_files": {
+    "mapping/flux-improved-attn.log": "966f8e39189e0fdc363a176030aa3dae7fac1724430410fd1fcff073b7a22b04",
+    "mapping/flux-improved-mlp.log": "e0516d5b6b89f465544f247c686217efb1cfb31ec100da67c676e8bd6481a1a6",
+    "mapping/flux-fused-attn.log": "4a70195466453786a0b446019a0ade499a33532de209c3c3054bf4a1a0959d1a",
+    "mapping/flux-fused-mlp.log": "77a8a14b526dc3a0b7d209950cf8262f44aae03bdd18f55c663c3b404d5baa02"
+  },
+  "build_manifest_sha256": "c92aa10c81d3772453d489456b1d94f5b61f884658fd961937a8c373ccc82816"
+}

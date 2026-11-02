@@ -1,0 +1,14 @@
+STAGE transport-probe
+Traceback (most recent call last):
+  File "/workspace/TempName-New/tools/5090/phase6/op5.py", line 429, in <module>
+    main()
+  File "/workspace/TempName-New/tools/5090/phase6/op5.py", line 399, in main
+    return supervise(args)
+           ^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op5.py", line 305, in supervise
+    run_child(command, env, root/'handoff/transport-probe.log')
+  File "/workspace/TempName-New/tools/5090/phase6/op4.py", line 121, in run_child
+    subprocess.run(command, cwd=REPO, env=env, stdin=subprocess.DEVNULL,
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/workspace/venvs/tempname-5090/bin/python', '/workspace/TempName-New/tools/5090/phase6/op5_probe.py', '--out', '/workspace/Load-5090/SL3060/op5-shm-recv-ce-p2p-ll-single-v2-1x-50steps-20261103-001026-767905/transport-probe', '--python', '/workspace/venvs/tempname-5090/bin/python', '--cuda-home', '/usr/local/cuda-12.9', '--build-cuda-home', '/usr/local/cuda-12.9']' returned non-zero exit status 1.
