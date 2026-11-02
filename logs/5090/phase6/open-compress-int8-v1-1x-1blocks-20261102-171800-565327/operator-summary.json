@@ -1,0 +1,272 @@
+{
+  "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+  "run_id": "1b00fad836644490810700f781c7a899",
+  "completed": true,
+  "evidence_files": {
+    "operator/flux-bf16/rank0.json": "8f6e3995c8dc267466d86ffcf569143b5673c7c706d6d272196796de00c1eeb3",
+    "operator/flux-bf16/rank0-profile.json.gz": "f79a81e450e728c1ca0c44a8c20d283ce30dc4772b47f159b0a44dd84b2e9614",
+    "operator/flux-bf16/rank1.json": "bf3787ef5ed4d053b3407adc15daec4a56add9d9beddea87ed11da2d02d76840",
+    "operator/flux-bf16/rank1-profile.json.gz": "68052d45eab6fb6b3a27c50e109e71e15d79ba634e4f1e4ea451776691d6e487",
+    "operator/flux-bf16/rank2.json": "261bae5c73c87af9e9f348dd341bd28a33bf5aaa12e0255380ccd352ed3e404f",
+    "operator/flux-bf16/rank2-profile.json.gz": "e0a1db9439813156b4abc3f8d04ea4847cb6432e57c757484b7a0a7b3e6d81d8",
+    "operator/flux-bf16/rank3.json": "2579008db8e6ccbf15b92e70641f8220b0864bb9cf522050aa4c3295bb3d7d51",
+    "operator/flux-bf16/rank3-profile.json.gz": "67d4b04a19c717c5c89c99ebe3e6773cbd909192501c94531e8603c0b1637c71",
+    "operator/flux-bf16/rank4.json": "ebe42ed8e04ced0cabd9bca6d9d45d0b2237546309754530171b99711d48b1ed",
+    "operator/flux-bf16/rank4-profile.json.gz": "dd4accc2350d3008043a5a6f84749b8554ee088ae8e20ae422a17a9ce5e0dcc1",
+    "operator/flux-bf16/rank5.json": "e89f1ec3d852d9e32bdeb6882d3c9b50b0730b5a96b85c8ad3f15d9a22b82953",
+    "operator/flux-bf16/rank5-profile.json.gz": "9d243f71e7538e0bbd76e9265c26b27c898318cc734a8eadd45dce12f4ade724",
+    "operator/flux-bf16/rank6.json": "4ac3b020b018ea3e7816f603af3d7b6814d826d87f035c3240bb7f0107c5e20e",
+    "operator/flux-bf16/rank6-profile.json.gz": "8cd95833f6c0e4b3a336f77fa48bbaeafcf9058d73d4c17a5e99691a8dd64021",
+    "operator/flux-bf16/rank7.json": "b9341dcb58d6ed1d2a45f3b26221f51680947ad3455031b54c9ca547c1a606a5",
+    "operator/flux-bf16/rank7-profile.json.gz": "e1d73a7cd3034984ad7a50d3057d981836b90257346a9fa0cc174971741c2e73",
+    "operator/flux-int8/rank0.json": "c55b7b062d51ad1225cd817c18673b862a70970064f2014341ce3d9cee139452",
+    "operator/flux-int8/rank0-profile.json.gz": "03527c7ff697d721a9b0b503e486e7571fa7efe9440f68c033850923ab8fe234",
+    "operator/flux-int8/rank1.json": "40b9fbf307275146a760a3e5302893f8a19d72d1037ec38304ba8f38b16b0779",
+    "operator/flux-int8/rank1-profile.json.gz": "77c9fa4057341860f8aaf719a85bef5deaa210d3a7445123388533d03682619b",
+    "operator/flux-int8/rank2.json": "ff09e1f390b7fabcda5e5df9525d7d65c30bc6556ed89ed3d96167d56e699428",
+    "operator/flux-int8/rank2-profile.json.gz": "db615e5d409738034166a1a839a4aeee24975dd80a81c0e38a4d6c9cdcca733f",
+    "operator/flux-int8/rank3.json": "7f86c43690c03061bc689be6307210425cb255e75a30d93c7d58e2d0fdda9bf9",
+    "operator/flux-int8/rank3-profile.json.gz": "818b9146a03969326fde37c7570b239992a8ef144e33d1055bc19450b960b27a",
+    "operator/flux-int8/rank4.json": "92889929d9d7fc390bc48206445957e39b5a0ff86cc7c47bc3d5ef80052ea0cf",
+    "operator/flux-int8/rank4-profile.json.gz": "3a70f6f272bcb2ebce263fcf19c0023a46f61856c5d3930e8d4bc8a7d0eb7645",
+    "operator/flux-int8/rank5.json": "7d61c4f051f2f198322f3196959ceeb91dc44dc3c56d7cc9cfd8d87bb0b97919",
+    "operator/flux-int8/rank5-profile.json.gz": "808806f3623eed67846a840e25609d031f35b93b550b6edb8a046bd1f934132f",
+    "operator/flux-int8/rank6.json": "8efcacd1d288c82d1883d8bb6f8cd672a7e8f5ed623c86081ea554b7f3465b8b",
+    "operator/flux-int8/rank6-profile.json.gz": "b8f4ab8f93735ecaa47669492dbfc32339188547f7177ef44e5492e55269fa32",
+    "operator/flux-int8/rank7.json": "a99fc7c3b0dd9b40c850818f911fe2ce005472987c40af53d9ce762030d9bbd8",
+    "operator/flux-int8/rank7-profile.json.gz": "d295df38cb8bea97142518cb163ee6edbc04b42870106f7c5947c9dedda1d7d3",
+    "operator/flux-int8-interleaved/rank0.json": "888ef181cf9720aa095d0f9ff099ec92558a0ff3fbc3d15369cd73cb76075b96",
+    "operator/flux-int8-interleaved/rank0-profile.json.gz": "6360a3fe65bfbcbedb51e2b1928aecc0e827afb77802ccf2aa86c122ad6fe24f",
+    "operator/flux-int8-interleaved/rank1.json": "4fe41f970d9ffdc4cc136d119f15b1ebdb2aac48f08a5f1873b2832ba4971a6a",
+    "operator/flux-int8-interleaved/rank1-profile.json.gz": "82e081c9e6c81189ab48f3f88c74af2bb30f3a5130112efd9fa90cd421a099bb",
+    "operator/flux-int8-interleaved/rank2.json": "ef17f3b047cf3b8f2213e790ae3c2a9a61473bea1d49c94ccacb1a442aa8a0e0",
+    "operator/flux-int8-interleaved/rank2-profile.json.gz": "67d0a19769003613418d36b3b68a0c521ae3cd94e7bf32989c91e41d127405a6",
+    "operator/flux-int8-interleaved/rank3.json": "9bab37b35bf72a07280c465b01faab9a7903ddd1cc9c359980ccbf0309f44db5",
+    "operator/flux-int8-interleaved/rank3-profile.json.gz": "fb0e1af9a2fc22695dfc86062be589fb5b409945622ffb5d25f73350985d6b32",
+    "operator/flux-int8-interleaved/rank4.json": "f11b04bae4827ac1cd434bb03e0d9f1b867afa58ff0398809fdd94d88414dd93",
+    "operator/flux-int8-interleaved/rank4-profile.json.gz": "8728a8f03535b6349b9a9e214fca8b5f3c0ef10fa8ed93c34a6e630d24ea7771",
+    "operator/flux-int8-interleaved/rank5.json": "8a71c5812657d5c6b556c2235893961abd6f4632e642123038c7128313ba6af0",
+    "operator/flux-int8-interleaved/rank5-profile.json.gz": "83471de0b6181e2fe5f663d4e46bb5e3f5e89f451032dd3dc4b0858858e56cdf",
+    "operator/flux-int8-interleaved/rank6.json": "0ab57084c1d7ca4fd984521f5cf70fbe995cce6d237acdf02c14116e103bacd4",
+    "operator/flux-int8-interleaved/rank6-profile.json.gz": "751c4fbaa2b55cdb6ed41a2bb22d7a566e84a4878b60f2b480cc17dc6043d71f",
+    "operator/flux-int8-interleaved/rank7.json": "5d660b3e8e9a6b11a72b7d9c2bb4314c34de527246193c0a4fede728482b6a86",
+    "operator/flux-int8-interleaved/rank7-profile.json.gz": "85cd4bfc7cb4996df5962864399e3f51d6672b08d406bdbb2cad1ac8c1098370"
+  },
+  "measurements": {
+    "flux-bf16": {
+      "attn": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.06939136147499085,
+          "mean_max_rank_wall_ms": 0.07645620033144951,
+          "max_peak_allocated_gib": 0.0313725471496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.5544787216186523,
+          "mean_max_rank_wall_ms": 0.5564199760556221,
+          "max_peak_allocated_gib": 0.0333256721496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 2097152
+        }
+      },
+      "mlp": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.2201414394378662,
+          "mean_max_rank_wall_ms": 0.22252094000577927,
+          "max_peak_allocated_gib": 0.048462867736816406,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.692599687576294,
+          "mean_max_rank_wall_ms": 0.6944364309310913,
+          "max_peak_allocated_gib": 0.050415992736816406,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 2097152
+        }
+      }
+    },
+    "flux-int8": {
+      "attn": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.06637823939323426,
+          "mean_max_rank_wall_ms": 0.06982969120144844,
+          "max_peak_allocated_gib": 0.0450444221496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.41311743736267087,
+          "mean_max_rank_wall_ms": 0.41488002985715866,
+          "max_peak_allocated_gib": 0.0469975471496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 2097152
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.042306560277938846,
+          "mean_max_rank_wall_ms": 0.04612106829881668,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.316243839263916,
+          "mean_max_rank_wall_ms": 0.3178546391427517,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.0461843204498291,
+          "mean_max_rank_wall_ms": 0.05044382065534592,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.07158592224121094,
+          "mean_max_rank_wall_ms": 0.11349491775035858,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        }
+      },
+      "mlp": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.22090432167053223,
+          "mean_max_rank_wall_ms": 0.22352982312440872,
+          "max_peak_allocated_gib": 0.0633249282836914,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.5199071884155273,
+          "mean_max_rank_wall_ms": 0.5216877348721027,
+          "max_peak_allocated_gib": 0.0656437873840332,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 2489856
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.02861440062522888,
+          "mean_max_rank_wall_ms": 0.03132736310362816,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.2923008012771606,
+          "mean_max_rank_wall_ms": 0.2940009906888008,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.02380928009748459,
+          "mean_max_rank_wall_ms": 0.025934316217899323,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.0369241601228714,
+          "mean_max_rank_wall_ms": 0.039075613021850586,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        }
+      }
+    },
+    "flux-int8-interleaved": {
+      "attn": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.0685702395439148,
+          "mean_max_rank_wall_ms": 0.07407525554299355,
+          "max_peak_allocated_gib": 0.0450444221496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.45156288146972656,
+          "mean_max_rank_wall_ms": 0.453538503497839,
+          "max_peak_allocated_gib": 0.0469975471496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 2097152
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.051837438344955446,
+          "mean_max_rank_wall_ms": 0.056867580860853195,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.3247519969940186,
+          "mean_max_rank_wall_ms": 0.3264130838215351,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.04026047945022583,
+          "mean_max_rank_wall_ms": 0.043841488659381866,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.05988927960395813,
+          "mean_max_rank_wall_ms": 0.06319612264633179,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        }
+      },
+      "mlp": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.22506304264068602,
+          "mean_max_rank_wall_ms": 0.23043561726808548,
+          "max_peak_allocated_gib": 0.0633249282836914,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.557662706375122,
+          "mean_max_rank_wall_ms": 0.5597996339201927,
+          "max_peak_allocated_gib": 0.0656437873840332,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 2489856
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.038000640273094174,
+          "mean_max_rank_wall_ms": 0.04163812845945358,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.3031283187866211,
+          "mean_max_rank_wall_ms": 0.30505113303661346,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.03174399971961975,
+          "mean_max_rank_wall_ms": 0.03464350476861,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.045308160781860354,
+          "mean_max_rank_wall_ms": 0.048257820308208466,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        }
+      }
+    }
+  },
+  "limitation": "Components timed separately; their sums do not predict integrated latency. Operator process is independent of full-model process. Peaks include live operator buffers. Wall time includes Python and synchronization; CUDA events cover caller stream with NCCL wait dependencies."
+}

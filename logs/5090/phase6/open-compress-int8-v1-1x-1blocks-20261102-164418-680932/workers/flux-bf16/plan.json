@@ -1,0 +1,87 @@
+{
+  "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+  "transport": "rtx5090-nccl-staged-v2",
+  "run_id": "16be3faca55641d999387fd9ab933c45",
+  "arms": [
+    "flux-bf16",
+    "flux-int8",
+    "flux-int8-interleaved"
+  ],
+  "model": {
+    "layers": 32,
+    "hidden": 4096,
+    "ffn": 16384,
+    "heads": 32,
+    "sequence": 2048,
+    "micro_batch": 1,
+    "global_batch": 4,
+    "tp": 8,
+    "dp": 1,
+    "sm_count": 170,
+    "seed": 1234,
+    "token_seed": 4321,
+    "vocab": 32768
+  },
+  "trials": 1,
+  "blocks": 1,
+  "schedule": [
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 0,
+      "arm": "flux-int8",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-int8"
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 1,
+      "arm": "flux-int8-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-int8-interleaved"
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 2,
+      "arm": "flux-bf16",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-bf16"
+    }
+  ],
+  "communication": {
+    "environment": {
+      "NCCL_VERSION": "2.27.3",
+      "TORCH_NCCL_USE_COMM_NONBLOCKING": "0",
+      "NCCL_NVLS_ENABLE": "0",
+      "NCCL_DEBUG": "WARN",
+      "TORCH_NCCL_ASYNC_ERROR_HANDLING": "1",
+      "NCCL_P2P_DISABLE": "1",
+      "NCCL_SHM_DISABLE": "0"
+    },
+    "config_files": {
+      "/etc/nccl.conf": null,
+      "/root/.nccl.conf": null
+    },
+    "nvls_request": "0"
+  },
+  "environment": {
+    "torch": "2.8.0a0+5228986c39.nv25.06",
+    "cuda": "12.9",
+    "nccl": [
+      2,
+      27,
+      3
+    ],
+    "python": "/workspace/venvs/tempname-5090/bin/python",
+    "python_version": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+    "cxx11_abi": true
+  },
+  "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+  "preflight_sha256": "02a06aa5ece4456b33a1022a489f97546fa31773d9c98cf17f617d088254032b",
+  "build": {
+    "root": "/workspace/Load-5090/logs/5090/phase6/open-compress-int8-v1-1x-1blocks-20261102-160417-713647/build",
+    "manifest_sha256": "dfc1028db1f5b9547c9e7b73c28c49e755cf5221907f8b1bf9524bf1926588b9"
+  }
+}

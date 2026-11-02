@@ -1,0 +1,530 @@
+{
+  "flux-bf16/rank0": {
+    "trace_sha256": "a49651e09313ef61d5f6fc006eae1d672855f62e8c55679b5ab626dc20fe4feb",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-bf16",
+      "rank": 0,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.9448173065185547
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.758013671875
+        }
+      }
+    }
+  },
+  "flux-bf16/rank1": {
+    "trace_sha256": "469024570b4c100d12f3d9fc71c85b339caaa5358628947aa270a680b6aacc4d",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-bf16",
+      "rank": 1,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.9378451843261719
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.7551008872985839
+        }
+      }
+    }
+  },
+  "flux-bf16/rank2": {
+    "trace_sha256": "9feedcc3a991452e124a79b0f8f4a63d4d238159ac519a0256670e3cd6ef8cf3",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-bf16",
+      "rank": 2,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.7570615463256836
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.6708898811340333
+        }
+      }
+    }
+  },
+  "flux-bf16/rank3": {
+    "trace_sha256": "ab218005a25c55fcbc16a25e616da6761473bd05628075128bd35e6362bf59c2",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-bf16",
+      "rank": 3,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.7763317489624023
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.6728125762939453
+        }
+      }
+    }
+  },
+  "flux-bf16/rank4": {
+    "trace_sha256": "ce53d49f5f96bfdb6a2817637b195a2901a247109325cd5fffc91d81e7936598",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-bf16",
+      "rank": 4,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.7742560958862305
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.6717164649963379
+        }
+      }
+    }
+  },
+  "flux-bf16/rank5": {
+    "trace_sha256": "efe589a2089a34e825533e38674199c7b41ebcb50eef89166e63141207e5e43f",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-bf16",
+      "rank": 5,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.7833799133300782
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.6694112663269043
+        }
+      }
+    }
+  },
+  "flux-bf16/rank6": {
+    "trace_sha256": "773ec5c9cc6b1cd5beb296e667c1575c7dabe6fbb8f0628d606f5708572df281",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-bf16",
+      "rank": 6,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.6332812232971191
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.6558629837036133
+        }
+      }
+    }
+  },
+  "flux-bf16/rank7": {
+    "trace_sha256": "b011cfbff3fd1d1a281139db24858c13075fb6ae8c46a4dfcf5db1c877dd4b52",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-bf16",
+      "rank": 7,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.9426489181518555
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.754845344543457
+        }
+      }
+    }
+  },
+  "flux-int8/rank0": {
+    "trace_sha256": "ee5c7e819b083c9747421076c7acfd8b77c7b33f9fd6bfddd9f4ad810e61bfa8",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-int8",
+      "rank": 0,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.9291937675476074
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.6492727546691894
+        }
+      }
+    }
+  },
+  "flux-int8/rank1": {
+    "trace_sha256": "6154e13d52c902108750a86982f4bc58e6cce9cf8b16639f06b060d5f4595052",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-int8",
+      "rank": 1,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.9140712089538574
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.6346506004333496
+        }
+      }
+    }
+  },
+  "flux-int8/rank2": {
+    "trace_sha256": "1c7aa08daa6d81cacfc49f420865275991f495a0b1a1def7ebb6ad3c61785c67",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-int8",
+      "rank": 2,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.7376145858764649
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.5487785339355469
+        }
+      }
+    }
+  },
+  "flux-int8/rank3": {
+    "trace_sha256": "1a502373477ea7e416deb83bddcb7c5301b11ff349210909ae393214c0c3a0c4",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-int8",
+      "rank": 3,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.711725700378418
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.5301649169921875
+        }
+      }
+    }
+  },
+  "flux-int8/rank4": {
+    "trace_sha256": "ee88bafa887158186c51bf5a0aa0cddaf893a07e0f97c7f300efe813fba0fab2",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-int8",
+      "rank": 4,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.6039029273986817
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.533618537902832
+        }
+      }
+    }
+  },
+  "flux-int8/rank5": {
+    "trace_sha256": "0365c472d4717e275ac72dbcc0e6d27c51b835d3d903da69c2e95199b513a6c5",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-int8",
+      "rank": 5,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.6921512336730957
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.519334098815918
+        }
+      }
+    }
+  },
+  "flux-int8/rank6": {
+    "trace_sha256": "0d02bcacf193a0b7c9ca6c3c9b57f117bd493ae73457a7ed840afa7a47d61fca",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-int8",
+      "rank": 6,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.6795805130004883
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.5323228797912598
+        }
+      }
+    }
+  },
+  "flux-int8/rank7": {
+    "trace_sha256": "18b865804e852fcf0ef3466f7820ee74b2d150ae2cbf7ec9b21fdc2101a461f2",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-int8",
+      "rank": 7,
+      "execution_validated": true,
+      "interleaved": false,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.9034556846618652
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.6226379318237305
+        }
+      }
+    }
+  },
+  "flux-int8-interleaved/rank0": {
+    "trace_sha256": "4dce1b3425e161af4fb808d6e5dcffe5420e059e6c5405ffe9ace61386aa6e1e",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-int8-interleaved",
+      "rank": 0,
+      "execution_validated": true,
+      "interleaved": true,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.8501506843566895
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.5773581237792969
+        }
+      }
+    }
+  },
+  "flux-int8-interleaved/rank1": {
+    "trace_sha256": "a4bd8ad5deac65aed8748e6e56f1678b0e1818f3ee65b86c0eff95e2ba41b887",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-int8-interleaved",
+      "rank": 1,
+      "execution_validated": true,
+      "interleaved": true,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.9607456512451172
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.6095908012390137
+        }
+      }
+    }
+  },
+  "flux-int8-interleaved/rank2": {
+    "trace_sha256": "e7db2e3f3dd1b150d5665bd9a1b5cb4c8012906b3f4f2363bb8cc7a4e76357a5",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-int8-interleaved",
+      "rank": 2,
+      "execution_validated": true,
+      "interleaved": true,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.8355147552490234
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.5663663215637207
+        }
+      }
+    }
+  },
+  "flux-int8-interleaved/rank3": {
+    "trace_sha256": "68246f6bd31085b7b8b45bd01110300b0a347ccf6a259446ae420a32ee1e0333",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-int8-interleaved",
+      "rank": 3,
+      "execution_validated": true,
+      "interleaved": true,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.8368574104309082
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.5633176994323731
+        }
+      }
+    }
+  },
+  "flux-int8-interleaved/rank4": {
+    "trace_sha256": "c59e0f2ab7d8d21526449df87ec573a0127357fb2750aea8a5506fb09c29c563",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-int8-interleaved",
+      "rank": 4,
+      "execution_validated": true,
+      "interleaved": true,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.8090138854980469
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.544130241394043
+        }
+      }
+    }
+  },
+  "flux-int8-interleaved/rank5": {
+    "trace_sha256": "1a65fa76cce6ca9cea318686ff9de441323928b98afadd79515f269d43bd1f24",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-int8-interleaved",
+      "rank": 5,
+      "execution_validated": true,
+      "interleaved": true,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.7406821365356445
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.539607780456543
+        }
+      }
+    }
+  },
+  "flux-int8-interleaved/rank6": {
+    "trace_sha256": "c6dddd80ffa40289bee3913c329c09bc8dab920577d1ed4358a5f1b0dd38b54b",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-int8-interleaved",
+      "rank": 6,
+      "execution_validated": true,
+      "interleaved": true,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.7232352981567383
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.5436290855407715
+        }
+      }
+    }
+  },
+  "flux-int8-interleaved/rank7": {
+    "trace_sha256": "9f6e2f2951dc7bc60f56a452fa45abfb9858053a5bef3b0cced440f59fb2f88e",
+    "analysis": {
+      "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+      "arm": "flux-int8-interleaved",
+      "rank": 7,
+      "execution_validated": true,
+      "interleaved": true,
+      "arrival": false,
+      "selective": false,
+      "roles": {
+        "attn": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.8770569763183593
+        },
+        "mlp": {
+          "calls": 128,
+          "mean_profile_span_ms": 0.5564757919311524
+        }
+      }
+    }
+  }
+}

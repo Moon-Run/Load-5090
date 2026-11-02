@@ -1,0 +1,41 @@
+[
+  {
+    "trial": 1,
+    "block": 0,
+    "index": 0,
+    "arm": "flux-int8",
+    "mode": "timing",
+    "directory": "compare1/block00-flux-int8",
+    "ms_per_step": 943.1263186782598,
+    "peak_allocated_gib": 18.41820192337036,
+    "peak_reserved_gib": 18.609375,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_native_gib": 18.41820192337036
+  },
+  {
+    "trial": 1,
+    "block": 0,
+    "index": 1,
+    "arm": "flux-int8-interleaved",
+    "mode": "timing",
+    "directory": "compare1/block00-flux-int8-interleaved",
+    "ms_per_step": 947.041416503489,
+    "peak_allocated_gib": 18.41820192337036,
+    "peak_reserved_gib": 18.609375,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_native_gib": 18.41820192337036
+  },
+  {
+    "trial": 1,
+    "block": 0,
+    "index": 2,
+    "arm": "flux-bf16",
+    "mode": "timing",
+    "directory": "compare1/block00-flux-bf16",
+    "ms_per_step": 985.73680896312,
+    "peak_allocated_gib": 17.49083375930786,
+    "peak_reserved_gib": 17.6484375,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_native_gib": 17.49083375930786
+  }
+]

@@ -1,0 +1,379 @@
+{
+  "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+  "arm": "flux-bf16",
+  "rank": 2,
+  "run_id": "16be3faca55641d999387fd9ab933c45",
+  "completed": true,
+  "entrypoint_sha256": "98aa5b84c95da0d65c0ac17847d08dab922bd6fb2c29543b6424968ed8970e9a",
+  "build_manifest_sha256": "dfc1028db1f5b9547c9e7b73c28c49e755cf5221907f8b1bf9524bf1926588b9",
+  "gpu_uuid": "01353343-54aa-25f3-79ef-3ddb242fedc4",
+  "torch": "2.8.0a0+5228986c39.nv25.06",
+  "cuda": "12.9",
+  "nccl": [
+    2,
+    27,
+    3
+  ],
+  "matmul_settings": {
+    "allow_tf32": false,
+    "allow_bf16_reduced_precision_reduction": false
+  },
+  "stream": 168954224,
+  "default_stream": 0,
+  "roles": {
+    "attn": {
+      "k_local": 512,
+      "mapping": null,
+      "cases": {
+        "zero": {
+          "input_sha256": "5647f05ec18958947d32874eeb788fa396a05d0bab7c1b71f112ceb7e9b31eee",
+          "weight_sha256": "9d11387e3a78b7ba0811dcbcae19017266138bdf73ad40033fc56cacfd5f9935",
+          "finite_partial": true,
+          "gemm_relative_l2": 0.0,
+          "relative_l2_vs_bf16": 0.0,
+          "passed": true
+        },
+        "random": {
+          "input_sha256": "e91f25e9844058920beca8032d95ffabcf8e1dff5518d69af1576209c4e2b698",
+          "weight_sha256": "9d11387e3a78b7ba0811dcbcae19017266138bdf73ad40033fc56cacfd5f9935",
+          "finite_partial": true,
+          "gemm_relative_l2": 2.8509198273241054e-06,
+          "relative_l2_vs_bf16": 0.0,
+          "passed": true
+        },
+        "outlier": {
+          "input_sha256": "b3bf13f84125fecfa572925b0730abe9ddaf5e0e047df8450a1bb9a7d2288cc6",
+          "weight_sha256": "9d11387e3a78b7ba0811dcbcae19017266138bdf73ad40033fc56cacfd5f9935",
+          "finite_partial": true,
+          "gemm_relative_l2": 2.043681433860911e-06,
+          "relative_l2_vs_bf16": 0.0,
+          "passed": true
+        }
+      },
+      "retention_passed": true,
+      "retained_outputs": 6,
+      "reuse_calls": 7,
+      "changed_call_output_different": true,
+      "delayed_rank": 7,
+      "delay_seconds": 0.02,
+      "transport": {
+        "quantization": "none",
+        "collective": "reduce_scatter_tensor",
+        "dtype": "bfloat16",
+        "calls": 10,
+        "encode_calls": 0,
+        "decode_calls": 0,
+        "all_to_all_calls": 0,
+        "owns_output": true,
+        "logical_remote_bytes": 14680064
+      },
+      "timings": {
+        "gemm": {
+          "iterations": 10,
+          "warmup": 3,
+          "samples": [
+            {
+              "cuda_ms": 0.06616320013999939,
+              "wall_ms": 0.07335981354117393,
+              "peak_allocated_gib": 0.0313725471496582,
+              "peak_reserved_gib": 0.056640625,
+              "incremental_allocated_bytes": 0,
+              "baseline_allocated_bytes": 33686016,
+              "device_free_before_bytes": 32726450176,
+              "device_total_bytes": 33670758400
+            },
+            {
+              "cuda_ms": 0.06504319906234741,
+              "wall_ms": 0.06811022758483887,
+              "peak_allocated_gib": 0.0313725471496582,
+              "peak_reserved_gib": 0.056640625,
+              "incremental_allocated_bytes": 0,
+              "baseline_allocated_bytes": 33686016,
+              "device_free_before_bytes": 32726450176,
+              "device_total_bytes": 33670758400
+            },
+            {
+              "cuda_ms": 0.06562560200691223,
+              "wall_ms": 0.06892550736665726,
+              "peak_allocated_gib": 0.0313725471496582,
+              "peak_reserved_gib": 0.056640625,
+              "incremental_allocated_bytes": 0,
+              "baseline_allocated_bytes": 33686016,
+              "device_free_before_bytes": 32726450176,
+              "device_total_bytes": 33670758400
+            },
+            {
+              "cuda_ms": 0.06619840264320373,
+              "wall_ms": 0.07030777633190155,
+              "peak_allocated_gib": 0.0313725471496582,
+              "peak_reserved_gib": 0.056640625,
+              "incremental_allocated_bytes": 0,
+              "baseline_allocated_bytes": 33686016,
+              "device_free_before_bytes": 32726450176,
+              "device_total_bytes": 33670758400
+            },
+            {
+              "cuda_ms": 0.06553599834442139,
+              "wall_ms": 0.06824443116784096,
+              "peak_allocated_gib": 0.0313725471496582,
+              "peak_reserved_gib": 0.056640625,
+              "incremental_allocated_bytes": 0,
+              "baseline_allocated_bytes": 33686016,
+              "device_free_before_bytes": 32726450176,
+              "device_total_bytes": 33670758400
+            }
+          ]
+        },
+        "operator": {
+          "iterations": 10,
+          "warmup": 3,
+          "samples": [
+            {
+              "cuda_ms": 0.5236927986145019,
+              "wall_ms": 0.5271242000162601,
+              "peak_allocated_gib": 0.0333256721496582,
+              "peak_reserved_gib": 0.056640625,
+              "incremental_allocated_bytes": 2097152,
+              "baseline_allocated_bytes": 33686016,
+              "device_free_before_bytes": 32726450176,
+              "device_total_bytes": 33670758400
+            },
+            {
+              "cuda_ms": 0.5548319816589355,
+              "wall_ms": 0.558291282504797,
+              "peak_allocated_gib": 0.0333256721496582,
+              "peak_reserved_gib": 0.056640625,
+              "incremental_allocated_bytes": 2097152,
+              "baseline_allocated_bytes": 33686016,
+              "device_free_before_bytes": 32726450176,
+              "device_total_bytes": 33670758400
+            },
+            {
+              "cuda_ms": 0.52674241065979,
+              "wall_ms": 0.5294273607432842,
+              "peak_allocated_gib": 0.0333256721496582,
+              "peak_reserved_gib": 0.056640625,
+              "incremental_allocated_bytes": 2097152,
+              "baseline_allocated_bytes": 33686016,
+              "device_free_before_bytes": 32726450176,
+              "device_total_bytes": 33670758400
+            },
+            {
+              "cuda_ms": 0.5111072063446045,
+              "wall_ms": 0.5137399770319462,
+              "peak_allocated_gib": 0.0333256721496582,
+              "peak_reserved_gib": 0.056640625,
+              "incremental_allocated_bytes": 2097152,
+              "baseline_allocated_bytes": 33686016,
+              "device_free_before_bytes": 32726450176,
+              "device_total_bytes": 33670758400
+            },
+            {
+              "cuda_ms": 0.5094111919403076,
+              "wall_ms": 0.5119959823787212,
+              "peak_allocated_gib": 0.0333256721496582,
+              "peak_reserved_gib": 0.056640625,
+              "incremental_allocated_bytes": 2097152,
+              "baseline_allocated_bytes": 33686016,
+              "device_free_before_bytes": 32726450176,
+              "device_total_bytes": 33670758400
+            }
+          ]
+        }
+      }
+    },
+    "mlp": {
+      "k_local": 2048,
+      "mapping": null,
+      "cases": {
+        "zero": {
+          "input_sha256": "2daeb1f36095b44b318410b3f4e8b5d989dcc7bb023d1426c492dab0a3053e74",
+          "weight_sha256": "709c10ca286c52df653b673e03ba46ed6eba23cfb2cd406ba85282a5184d04f3",
+          "finite_partial": true,
+          "gemm_relative_l2": 0.0,
+          "relative_l2_vs_bf16": 0.0,
+          "passed": true
+        },
+        "random": {
+          "input_sha256": "de4c8e3c653d0ff9ecd8564953454b67d9e2c4639040cafcdbcfadde8ee85e6f",
+          "weight_sha256": "709c10ca286c52df653b673e03ba46ed6eba23cfb2cd406ba85282a5184d04f3",
+          "finite_partial": true,
+          "gemm_relative_l2": 6.721188583469484e-06,
+          "relative_l2_vs_bf16": 0.0,
+          "passed": true
+        },
+        "outlier": {
+          "input_sha256": "ded27a9df224e7d2a1917534d49d635253d2c9bd877425784eda3b7f1936d073",
+          "weight_sha256": "709c10ca286c52df653b673e03ba46ed6eba23cfb2cd406ba85282a5184d04f3",
+          "finite_partial": true,
+          "gemm_relative_l2": 4.826546046388103e-06,
+          "relative_l2_vs_bf16": 0.0,
+          "passed": true
+        }
+      },
+      "retention_passed": true,
+      "retained_outputs": 6,
+      "reuse_calls": 7,
+      "changed_call_output_different": true,
+      "delayed_rank": 7,
+      "delay_seconds": 0.02,
+      "transport": {
+        "quantization": "none",
+        "collective": "reduce_scatter_tensor",
+        "dtype": "bfloat16",
+        "calls": 10,
+        "encode_calls": 0,
+        "decode_calls": 0,
+        "all_to_all_calls": 0,
+        "owns_output": true,
+        "logical_remote_bytes": 14680064
+      },
+      "timings": {
+        "gemm": {
+          "iterations": 10,
+          "warmup": 3,
+          "samples": [
+            {
+              "cuda_ms": 0.21831679344177246,
+              "wall_ms": 0.22147037088871002,
+              "peak_allocated_gib": 0.048462867736816406,
+              "peak_reserved_gib": 0.072265625,
+              "incremental_allocated_bytes": 0,
+              "baseline_allocated_bytes": 52036608,
+              "device_free_before_bytes": 32709672960,
+              "device_total_bytes": 33670758400
+            },
+            {
+              "cuda_ms": 0.21898560523986815,
+              "wall_ms": 0.22147707641124725,
+              "peak_allocated_gib": 0.048462867736816406,
+              "peak_reserved_gib": 0.072265625,
+              "incremental_allocated_bytes": 0,
+              "baseline_allocated_bytes": 52036608,
+              "device_free_before_bytes": 32709672960,
+              "device_total_bytes": 33670758400
+            },
+            {
+              "cuda_ms": 0.21868159770965576,
+              "wall_ms": 0.22105369716882706,
+              "peak_allocated_gib": 0.048462867736816406,
+              "peak_reserved_gib": 0.072265625,
+              "incremental_allocated_bytes": 0,
+              "baseline_allocated_bytes": 52036608,
+              "device_free_before_bytes": 32709672960,
+              "device_total_bytes": 33670758400
+            },
+            {
+              "cuda_ms": 0.21744000911712646,
+              "wall_ms": 0.21954746916890144,
+              "peak_allocated_gib": 0.048462867736816406,
+              "peak_reserved_gib": 0.072265625,
+              "incremental_allocated_bytes": 0,
+              "baseline_allocated_bytes": 52036608,
+              "device_free_before_bytes": 32709672960,
+              "device_total_bytes": 33670758400
+            },
+            {
+              "cuda_ms": 0.21852800846099854,
+              "wall_ms": 0.2206658013164997,
+              "peak_allocated_gib": 0.048462867736816406,
+              "peak_reserved_gib": 0.072265625,
+              "incremental_allocated_bytes": 0,
+              "baseline_allocated_bytes": 52036608,
+              "device_free_before_bytes": 32709672960,
+              "device_total_bytes": 33670758400
+            }
+          ]
+        },
+        "operator": {
+          "iterations": 10,
+          "warmup": 3,
+          "samples": [
+            {
+              "cuda_ms": 0.6756639957427979,
+              "wall_ms": 0.6781173869967461,
+              "peak_allocated_gib": 0.050415992736816406,
+              "peak_reserved_gib": 0.072265625,
+              "incremental_allocated_bytes": 2097152,
+              "baseline_allocated_bytes": 52036608,
+              "device_free_before_bytes": 32709672960,
+              "device_total_bytes": 33670758400
+            },
+            {
+              "cuda_ms": 0.7774464130401612,
+              "wall_ms": 0.7801146246492863,
+              "peak_allocated_gib": 0.050415992736816406,
+              "peak_reserved_gib": 0.072265625,
+              "incremental_allocated_bytes": 2097152,
+              "baseline_allocated_bytes": 52036608,
+              "device_free_before_bytes": 32709672960,
+              "device_total_bytes": 33670758400
+            },
+            {
+              "cuda_ms": 0.6603871822357178,
+              "wall_ms": 0.6628556177020073,
+              "peak_allocated_gib": 0.050415992736816406,
+              "peak_reserved_gib": 0.072265625,
+              "incremental_allocated_bytes": 2097152,
+              "baseline_allocated_bytes": 52036608,
+              "device_free_before_bytes": 32709672960,
+              "device_total_bytes": 33670758400
+            },
+            {
+              "cuda_ms": 0.6626527786254883,
+              "wall_ms": 0.6651857867836952,
+              "peak_allocated_gib": 0.050415992736816406,
+              "peak_reserved_gib": 0.072265625,
+              "incremental_allocated_bytes": 2097152,
+              "baseline_allocated_bytes": 52036608,
+              "device_free_before_bytes": 32709672960,
+              "device_total_bytes": 33670758400
+            },
+            {
+              "cuda_ms": 0.6543776035308838,
+              "wall_ms": 0.6563179194927216,
+              "peak_allocated_gib": 0.050415992736816406,
+              "peak_reserved_gib": 0.072265625,
+              "incremental_allocated_bytes": 2097152,
+              "baseline_allocated_bytes": 52036608,
+              "device_free_before_bytes": 32709672960,
+              "device_total_bytes": 33670758400
+            }
+          ]
+        }
+      }
+    }
+  },
+  "codec_cases": null,
+  "profile": {
+    "protocol": "rtx5090-open-compress-int8-three-arm-v1",
+    "arm": "flux-bf16",
+    "rank": 2,
+    "execution_validated": true,
+    "interleaved": false,
+    "arrival": false,
+    "selective": false,
+    "roles": {
+      "attn": {
+        "calls": 1,
+        "mean_profile_span_ms": 1.143052734375
+      },
+      "mlp": {
+        "calls": 1,
+        "mean_profile_span_ms": 0.7608515625
+      }
+    }
+  },
+  "profile_sha256": "6e608f90067401c3f945370b7a6c4e41b982aefa78e1966e161687366e19c0df",
+  "libraries": {
+    "libflux_cuda.so": {
+      "path": "/workspace/Load-5090/logs/5090/phase6/open-compress-int8-v1-1x-1blocks-20261102-160417-713647/build/flux-original/python/flux/lib/libflux_cuda.so",
+      "sha256": "5c3d572308c1782cb6c740a1ce5cdb853fae6525c71e707b5ef2f7ff8b6c3e68"
+    },
+    "libflux_cuda_ths_op.so": {
+      "path": "/workspace/Load-5090/logs/5090/phase6/open-compress-int8-v1-1x-1blocks-20261102-160417-713647/build/flux-original/python/flux/lib/libflux_cuda_ths_op.so",
+      "sha256": "924bca9513592256e4cccea7fc48e02d1c8c47cfbf69c61dd8cf830af7edb978"
+    }
+  },
+  "codec_library": null
+}
