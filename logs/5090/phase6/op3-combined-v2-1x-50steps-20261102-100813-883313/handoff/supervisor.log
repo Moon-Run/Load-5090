@@ -1,0 +1,15 @@
+STAGE worker-source-preflight
+STAGE hardware-preflight
+STAGE verify-op3-build
+STAGE compile-ma9-compat
+STAGE compile-ma11-compat
+STAGE ma11-compat-preflight
+STAGE prepare-workers
+STAGE native-reference-wire-and-mapping-probes
+NATIVE PROBE op3-combined
+STAGE operator-correctness-latency-profile
+STAGE smoke-op3-combined
+STAGE profile-op3-combined
+STAGE compare1/block00-op3-combined
+STAGE replay-report
+COMPLETED /workspace/Load-5090/logs/5090/phase6/op3-combined-v2-1x-50steps-20261102-100813-883313/report.md
