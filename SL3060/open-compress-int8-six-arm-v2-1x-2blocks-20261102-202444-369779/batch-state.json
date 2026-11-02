@@ -1,6 +1,0 @@
-{
-  "protocol": "rtx5090-open-compress-int8-six-arm-v2",
-  "status": "failed",
-  "stage": "operator-flux-bf16",
-  "error": "KeyboardInterrupt: "
-}
