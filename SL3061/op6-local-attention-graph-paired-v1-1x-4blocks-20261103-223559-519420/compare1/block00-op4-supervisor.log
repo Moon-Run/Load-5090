@@ -1,0 +1,38 @@
+Batch: /workspace/Load-5090/SL3061/op6-local-attention-graph-paired-v1-1x-4blocks-20261103-223559-519420/compare1/block00-op4
+STAGE worker-source-preflight
+STAGE hardware-preflight
+STAGE prepare-op3-build
+STAGE compile-op3-build
+STAGE compile-ma9-compat
+STAGE compile-ma11-compat
+STAGE ma11-compat-preflight
+STAGE prepare-workers
+STAGE native-reference-wire-and-mapping-probes
+NATIVE PROBE op3-combined
+STAGE operator-correctness-latency-profile
+STAGE smoke-op3-combined
+STAGE profile-op3-combined
+Traceback (most recent call last):
+  File "/workspace/TempName-New/tools/5090/phase6/op6_child.py", line 87, in <module>
+    main()
+  File "/workspace/TempName-New/tools/5090/phase6/op6_child.py", line 81, in main
+    op3.main(remaining)
+  File "/workspace/TempName-New/tools/5090/phase6/op3.py", line 408, in main
+    return supervise(args)
+           ^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op6_child.py", line 75, in supervise
+    return original_supervise(child_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op3.py", line 309, in supervise
+    run_process(command, builder.base_root(build)/'megatron',
+  File "/workspace/TempName-New/tools/5090/phase6/op6_memory.py", line 257, in run
+    return reservation.run(previous_run, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op6_memory.py", line 227, in run
+    result = callback(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/h100/phase6/tp8_dp2_train.py", line 104, in run_process
+    require(process.returncode==0,f'Child exited {process.returncode}; see {log}')
+  File "/workspace/TempName-New/tools/h100/phase6/tp8_dp2_protocol.py", line 24, in require
+    raise ValueError(message)
+ValueError: Child exited 1; see /workspace/Load-5090/SL3061/op6-local-attention-graph-paired-v1-1x-4blocks-20261103-223559-519420/compare1/block00-op4/results/profile-op3-combined/process.log

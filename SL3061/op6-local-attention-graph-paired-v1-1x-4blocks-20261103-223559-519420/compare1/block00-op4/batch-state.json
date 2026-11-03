@@ -1,0 +1,6 @@
+{
+  "protocol": "rtx5090-phase6-op3-combined-v2",
+  "status": "failed",
+  "stage": "profile-op3-combined",
+  "error": "ValueError: Child exited 1; see /workspace/Load-5090/SL3061/op6-local-attention-graph-paired-v1-1x-4blocks-20261103-223559-519420/compare1/block00-op4/results/profile-op3-combined/process.log"
+}
