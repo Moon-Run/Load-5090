@@ -1,0 +1,1404 @@
+{
+  "protocol": "rtx5090-open-compress-int8-six-arm-v2",
+  "completed": true,
+  "trials": 1,
+  "blocks": 4,
+  "arms": [
+    "flux-bf16",
+    "flux-int8",
+    "flux-int8-interleaved",
+    "megatron-bf16",
+    "megatron-int8",
+    "flux-int8-remote-first"
+  ],
+  "model": {
+    "layers": 32,
+    "hidden": 4096,
+    "ffn": 16384,
+    "heads": 32,
+    "sequence": 2048,
+    "micro_batch": 1,
+    "global_batch": 4,
+    "tp": 8,
+    "dp": 1,
+    "sm_count": 170,
+    "seed": 1234,
+    "token_seed": 4321,
+    "vocab": 32768
+  },
+  "timing": {
+    "warmup_steps": 10,
+    "timed_steps": 50,
+    "smoke_warmup_steps": 2,
+    "smoke_steps": 3
+  },
+  "comparisons": {
+    "compare1": {
+      "arms": {
+        "flux-bf16": {
+          "mean_ms": 868.8316506519914,
+          "median_ms": 869.5812928490341,
+          "min_ms": 865.0581856723875,
+          "max_ms": 871.1058312375098,
+          "tokens_per_second": 9428.754113472425,
+          "reduction_vs_bf16_percent": 0.0,
+          "max_peak_allocated_gib": 17.49083375930786,
+          "max_peak_reserved_gib": 17.6484375,
+          "max_peak_allocated_plus_native_gib": 17.49083375930786
+        },
+        "flux-int8": {
+          "mean_ms": 868.987382389605,
+          "median_ms": 869.9552137358114,
+          "min_ms": 858.1491249799728,
+          "max_ms": 877.8899771068245,
+          "tokens_per_second": 9427.064380926959,
+          "reduction_vs_bf16_percent": -0.017924270771763062,
+          "max_peak_allocated_gib": 18.41820192337036,
+          "max_peak_reserved_gib": 18.609375,
+          "max_peak_allocated_plus_native_gib": 18.41820192337036
+        },
+        "flux-int8-interleaved": {
+          "mean_ms": 875.6001931289211,
+          "median_ms": 871.0088375303894,
+          "min_ms": 865.9707568585873,
+          "max_ms": 894.4123405963182,
+          "tokens_per_second": 9355.868196792222,
+          "reduction_vs_bf16_percent": -0.7790395840034714,
+          "max_peak_allocated_gib": 18.41820192337036,
+          "max_peak_reserved_gib": 18.609375,
+          "max_peak_allocated_plus_native_gib": 18.41820192337036
+        },
+        "megatron-bf16": {
+          "mean_ms": 876.3011297304183,
+          "median_ms": 875.590606671758,
+          "min_ms": 872.028798982501,
+          "max_ms": 881.9945065956563,
+          "tokens_per_second": 9348.38461582282,
+          "reduction_vs_bf16_percent": -0.8597153513942191,
+          "max_peak_allocated_gib": 16.36595582962036,
+          "max_peak_reserved_gib": 16.52734375,
+          "max_peak_allocated_plus_native_gib": 16.36595582962036
+        },
+        "megatron-int8": {
+          "mean_ms": 895.4376773932017,
+          "median_ms": 898.7969661550596,
+          "min_ms": 878.9036742597818,
+          "max_ms": 905.2531030029058,
+          "tokens_per_second": 9148.598732017343,
+          "reduction_vs_bf16_percent": -3.0622764169841776,
+          "max_peak_allocated_gib": 17.27843141555786,
+          "max_peak_reserved_gib": 17.52734375,
+          "max_peak_allocated_plus_native_gib": 17.27843141555786
+        },
+        "flux-int8-remote-first": {
+          "mean_ms": 883.896974073723,
+          "median_ms": 884.3877878785133,
+          "min_ms": 868.9932213816792,
+          "max_ms": 897.819099156186,
+          "tokens_per_second": 9268.048472034629,
+          "reduction_vs_bf16_percent": -1.7339749778252367,
+          "max_peak_allocated_gib": 18.41820192337036,
+          "max_peak_reserved_gib": 18.609375,
+          "max_peak_allocated_plus_native_gib": 18.41820192337036
+        }
+      },
+      "pairs": {
+        "flux-int8/flux-bf16": {
+          "percent": -0.014389802182357414,
+          "ci95": null,
+          "paired_blocks": 4,
+          "mean_reduction_percent": -0.017924270771763062,
+          "faster_blocks": 2
+        },
+        "flux-int8-interleaved/flux-int8": {
+          "percent": -0.7568226160851177,
+          "ci95": null,
+          "paired_blocks": 4,
+          "mean_reduction_percent": -0.7609789133107503,
+          "faster_blocks": 1
+        },
+        "flux-int8-remote-first/flux-int8": {
+          "percent": -1.7126780210803494,
+          "ci95": null,
+          "paired_blocks": 4,
+          "mean_reduction_percent": -1.7157431726014805,
+          "faster_blocks": 1
+        },
+        "flux-int8-remote-first/flux-int8-interleaved": {
+          "percent": -0.9486756133997298,
+          "ci95": null,
+          "paired_blocks": 4,
+          "mean_reduction_percent": -0.9475535763821208,
+          "faster_blocks": 1
+        },
+        "megatron-int8/megatron-bf16": {
+          "percent": -2.1784809679713524,
+          "ci95": null,
+          "paired_blocks": 4,
+          "mean_reduction_percent": -2.1837867159512303,
+          "faster_blocks": 0
+        },
+        "flux-bf16/megatron-bf16": {
+          "percent": 0.8517823581445261,
+          "ci95": null,
+          "paired_blocks": 4,
+          "mean_reduction_percent": 0.8523872473752081,
+          "faster_blocks": 4
+        },
+        "flux-int8/megatron-int8": {
+          "percent": 2.951694001670735,
+          "ci95": null,
+          "paired_blocks": 4,
+          "mean_reduction_percent": 2.953895694963249,
+          "faster_blocks": 4
+        },
+        "flux-bf16/flux-int8-interleaved": {
+          "percent": 0.7654174951902681,
+          "ci95": null,
+          "paired_blocks": 4,
+          "mean_reduction_percent": 0.7730174719060567,
+          "faster_blocks": 2
+        },
+        "flux-bf16/megatron-int8": {
+          "percent": 2.9656570516699565,
+          "ci95": null,
+          "paired_blocks": 4,
+          "mean_reduction_percent": 2.9712873841388765,
+          "faster_blocks": 4
+        },
+        "flux-bf16/flux-int8-remote-first": {
+          "percent": 1.6979847414288152,
+          "ci95": null,
+          "paired_blocks": 4,
+          "mean_reduction_percent": 1.7044207485288898,
+          "faster_blocks": 3
+        },
+        "flux-int8/megatron-bf16": {
+          "percent": 0.8375151257585256,
+          "ci95": null,
+          "paired_blocks": 4,
+          "mean_reduction_percent": 0.8346157608016824,
+          "faster_blocks": 2
+        },
+        "flux-int8-interleaved/megatron-bf16": {
+          "percent": 0.0870310135582697,
+          "ci95": null,
+          "paired_blocks": 4,
+          "mean_reduction_percent": 0.07998809743778867,
+          "faster_blocks": 3
+        },
+        "flux-int8-interleaved/megatron-int8": {
+          "percent": 2.217210473347875,
+          "ci95": null,
+          "paired_blocks": 4,
+          "mean_reduction_percent": 2.2153953050123576,
+          "faster_blocks": 3
+        },
+        "megatron-bf16/flux-int8-remote-first": {
+          "percent": 0.8534721081330576,
+          "ci95": null,
+          "paired_blocks": 4,
+          "mean_reduction_percent": 0.8593585639621315,
+          "faster_blocks": 3
+        },
+        "megatron-int8/flux-int8-remote-first": {
+          "percent": -1.3064161323956824,
+          "ci95": null,
+          "paired_blocks": 4,
+          "mean_reduction_percent": -1.3056615938269012,
+          "faster_blocks": 0
+        }
+      }
+    }
+  },
+  "all_samples": [
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 0,
+      "arm": "megatron-bf16",
+      "mode": "timing",
+      "directory": "compare1/block00-megatron-bf16",
+      "ms_per_step": 872.028798982501,
+      "peak_allocated_gib": 16.36595582962036,
+      "peak_reserved_gib": 16.52734375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 16.36595582962036
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 1,
+      "arm": "megatron-int8",
+      "mode": "timing",
+      "directory": "compare1/block00-megatron-int8",
+      "ms_per_step": 905.2531030029058,
+      "peak_allocated_gib": 17.27843141555786,
+      "peak_reserved_gib": 17.52734375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 17.27843141555786
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 2,
+      "arm": "flux-int8-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-int8-interleaved",
+      "ms_per_step": 865.9707568585873,
+      "peak_allocated_gib": 18.41820192337036,
+      "peak_reserved_gib": 18.609375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 18.41820192337036
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 3,
+      "arm": "flux-int8-remote-first",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-int8-remote-first",
+      "ms_per_step": 887.3422367591411,
+      "peak_allocated_gib": 18.41820192337036,
+      "peak_reserved_gib": 18.609375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 18.41820192337036
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 4,
+      "arm": "flux-int8",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-int8",
+      "ms_per_step": 874.3623861670494,
+      "peak_allocated_gib": 18.41820192337036,
+      "peak_reserved_gib": 18.609375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 18.41820192337036
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 5,
+      "arm": "flux-bf16",
+      "mode": "timing",
+      "directory": "compare1/block00-flux-bf16",
+      "ms_per_step": 868.2120445556939,
+      "peak_allocated_gib": 17.49083375930786,
+      "peak_reserved_gib": 17.6484375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 17.49083375930786
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 6,
+      "arm": "flux-int8-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-int8-interleaved",
+      "ms_per_step": 873.2121685612947,
+      "peak_allocated_gib": 18.41820192337036,
+      "peak_reserved_gib": 18.609375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 18.41820192337036
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 7,
+      "arm": "megatron-bf16",
+      "mode": "timing",
+      "directory": "compare1/block01-megatron-bf16",
+      "ms_per_step": 881.9945065956563,
+      "peak_allocated_gib": 16.36595582962036,
+      "peak_reserved_gib": 16.52734375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 16.36595582962036
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 8,
+      "arm": "flux-int8",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-int8",
+      "ms_per_step": 858.1491249799728,
+      "peak_allocated_gib": 18.41820192337036,
+      "peak_reserved_gib": 18.609375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 18.41820192337036
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 9,
+      "arm": "megatron-int8",
+      "mode": "timing",
+      "directory": "compare1/block01-megatron-int8",
+      "ms_per_step": 900.0431602448225,
+      "peak_allocated_gib": 17.27843141555786,
+      "peak_reserved_gib": 17.52734375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 17.27843141555786
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 10,
+      "arm": "flux-bf16",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-bf16",
+      "ms_per_step": 865.0581856723875,
+      "peak_allocated_gib": 17.49083375930786,
+      "peak_reserved_gib": 17.6484375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 17.49083375930786
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 11,
+      "arm": "flux-int8-remote-first",
+      "mode": "timing",
+      "directory": "compare1/block01-flux-int8-remote-first",
+      "ms_per_step": 897.819099156186,
+      "peak_allocated_gib": 18.41820192337036,
+      "peak_reserved_gib": 18.609375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 18.41820192337036
+    },
+    {
+      "trial": 1,
+      "block": 2,
+      "index": 12,
+      "arm": "flux-int8-remote-first",
+      "mode": "timing",
+      "directory": "compare1/block02-flux-int8-remote-first",
+      "ms_per_step": 868.9932213816792,
+      "peak_allocated_gib": 18.41820192337036,
+      "peak_reserved_gib": 18.609375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 18.41820192337036
+    },
+    {
+      "trial": 1,
+      "block": 2,
+      "index": 13,
+      "arm": "flux-bf16",
+      "mode": "timing",
+      "directory": "compare1/block02-flux-bf16",
+      "ms_per_step": 870.9505411423743,
+      "peak_allocated_gib": 17.49083375930786,
+      "peak_reserved_gib": 17.6484375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 17.49083375930786
+    },
+    {
+      "trial": 1,
+      "block": 2,
+      "index": 14,
+      "arm": "megatron-int8",
+      "mode": "timing",
+      "directory": "compare1/block02-megatron-int8",
+      "ms_per_step": 878.9036742597818,
+      "peak_allocated_gib": 17.27843141555786,
+      "peak_reserved_gib": 17.52734375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 17.27843141555786
+    },
+    {
+      "trial": 1,
+      "block": 2,
+      "index": 15,
+      "arm": "flux-int8",
+      "mode": "timing",
+      "directory": "compare1/block02-flux-int8",
+      "ms_per_step": 877.8899771068245,
+      "peak_allocated_gib": 18.41820192337036,
+      "peak_reserved_gib": 18.609375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 18.41820192337036
+    },
+    {
+      "trial": 1,
+      "block": 2,
+      "index": 16,
+      "arm": "megatron-bf16",
+      "mode": "timing",
+      "directory": "compare1/block02-megatron-bf16",
+      "ms_per_step": 873.2890828419477,
+      "peak_allocated_gib": 16.36595582962036,
+      "peak_reserved_gib": 16.52734375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 16.36595582962036
+    },
+    {
+      "trial": 1,
+      "block": 2,
+      "index": 17,
+      "arm": "flux-int8-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block02-flux-int8-interleaved",
+      "ms_per_step": 894.4123405963182,
+      "peak_allocated_gib": 18.41820192337036,
+      "peak_reserved_gib": 18.609375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 18.41820192337036
+    },
+    {
+      "trial": 1,
+      "block": 3,
+      "index": 18,
+      "arm": "megatron-int8",
+      "mode": "timing",
+      "directory": "compare1/block03-megatron-int8",
+      "ms_per_step": 897.5507720652968,
+      "peak_allocated_gib": 17.27843141555786,
+      "peak_reserved_gib": 17.52734375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 17.27843141555786
+    },
+    {
+      "trial": 1,
+      "block": 3,
+      "index": 19,
+      "arm": "flux-int8-remote-first",
+      "mode": "timing",
+      "directory": "compare1/block03-flux-int8-remote-first",
+      "ms_per_step": 881.4333389978856,
+      "peak_allocated_gib": 18.41820192337036,
+      "peak_reserved_gib": 18.609375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 18.41820192337036
+    },
+    {
+      "trial": 1,
+      "block": 3,
+      "index": 20,
+      "arm": "megatron-bf16",
+      "mode": "timing",
+      "directory": "compare1/block03-megatron-bf16",
+      "ms_per_step": 877.8921305015683,
+      "peak_allocated_gib": 16.36595582962036,
+      "peak_reserved_gib": 16.52734375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 16.36595582962036
+    },
+    {
+      "trial": 1,
+      "block": 3,
+      "index": 21,
+      "arm": "flux-bf16",
+      "mode": "timing",
+      "directory": "compare1/block03-flux-bf16",
+      "ms_per_step": 871.1058312375098,
+      "peak_allocated_gib": 17.49083375930786,
+      "peak_reserved_gib": 17.6484375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 17.49083375930786
+    },
+    {
+      "trial": 1,
+      "block": 3,
+      "index": 22,
+      "arm": "flux-int8-interleaved",
+      "mode": "timing",
+      "directory": "compare1/block03-flux-int8-interleaved",
+      "ms_per_step": 868.8055064994842,
+      "peak_allocated_gib": 18.41820192337036,
+      "peak_reserved_gib": 18.609375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 18.41820192337036
+    },
+    {
+      "trial": 1,
+      "block": 3,
+      "index": 23,
+      "arm": "flux-int8",
+      "mode": "timing",
+      "directory": "compare1/block03-flux-int8",
+      "ms_per_step": 865.5480413045734,
+      "peak_allocated_gib": 18.41820192337036,
+      "peak_reserved_gib": 18.609375,
+      "native_workspace_gib": 0.0,
+      "peak_allocated_plus_native_gib": 18.41820192337036
+    }
+  ],
+  "timing_windows": 24,
+  "timing_rank_records": 192,
+  "formal_optimizer_steps": 1200,
+  "balanced_order": false,
+  "exploratory": true,
+  "all_windows_retained": true,
+  "arrival": false,
+  "selective": false,
+  "original_peer_overlap_preserved": false,
+  "limitation": "Fixed synthetic GPT6.7B workload. BF16 uses NCCL ReduceScatter; INT8 uses byte AllToAll and source-ordered BF16 reduction. Native Megatron retains its RowParallelLinear forward and linear/collective backward; only the INT8 forward ReduceScatter boundary is substituted. INT8/BF16 is a whole-path comparison. Interleaving and remote-first change GEMM CTA mapping and can reassign StreamK reductions; no bitwise trajectory equivalence is claimed. No tile-arrival overlap, arrival policy, selective quantization or convergence claim. Payload bytes are not measured NCCL link traffic. CI only with >=6 blocks; comparisons unadjusted.",
+  "run_id": "e350d62d613d4fe1a0a5e795a8839662",
+  "correctness_passed": true,
+  "execution_path_validated": true,
+  "numerical_comparisons": {
+    "flux-bf16/flux-int8": {
+      "max_loss_abs_difference": 3.243269443511963,
+      "max_grad_norm_abs_difference": 103.18728425808041,
+      "final_parameter_fingerprints_equal": false
+    },
+    "flux-bf16/flux-int8-interleaved": {
+      "max_loss_abs_difference": 4.364758849143982,
+      "max_grad_norm_abs_difference": 94.28909093738278,
+      "final_parameter_fingerprints_equal": false
+    },
+    "flux-bf16/megatron-bf16": {
+      "max_loss_abs_difference": 2.1668440103530884,
+      "max_grad_norm_abs_difference": 43.78578526209964,
+      "final_parameter_fingerprints_equal": false
+    },
+    "flux-bf16/megatron-int8": {
+      "max_loss_abs_difference": 2.0883006751537323,
+      "max_grad_norm_abs_difference": 41.8080656906004,
+      "final_parameter_fingerprints_equal": false
+    },
+    "flux-bf16/flux-int8-remote-first": {
+      "max_loss_abs_difference": 3.7602345943450928,
+      "max_grad_norm_abs_difference": 94.18920917189259,
+      "final_parameter_fingerprints_equal": false
+    },
+    "flux-int8/flux-int8-interleaved": {
+      "max_loss_abs_difference": 3.5260531902313232,
+      "max_grad_norm_abs_difference": 109.68704489481858,
+      "final_parameter_fingerprints_equal": false
+    },
+    "flux-int8/megatron-bf16": {
+      "max_loss_abs_difference": 3.2755011469125748,
+      "max_grad_norm_abs_difference": 113.85827370879291,
+      "final_parameter_fingerprints_equal": false
+    },
+    "flux-int8/megatron-int8": {
+      "max_loss_abs_difference": 3.2387479841709137,
+      "max_grad_norm_abs_difference": 112.64483618458604,
+      "final_parameter_fingerprints_equal": false
+    },
+    "flux-int8/flux-int8-remote-first": {
+      "max_loss_abs_difference": 3.309047110378742,
+      "max_grad_norm_abs_difference": 108.14212747782625,
+      "final_parameter_fingerprints_equal": false
+    },
+    "flux-int8-interleaved/megatron-bf16": {
+      "max_loss_abs_difference": 3.578382194042206,
+      "max_grad_norm_abs_difference": 84.23286972639018,
+      "final_parameter_fingerprints_equal": false
+    },
+    "flux-int8-interleaved/megatron-int8": {
+      "max_loss_abs_difference": 3.2757391929626465,
+      "max_grad_norm_abs_difference": 81.4297119149485,
+      "final_parameter_fingerprints_equal": false
+    },
+    "flux-int8-interleaved/flux-int8-remote-first": {
+      "max_loss_abs_difference": 4.1295086145401,
+      "max_grad_norm_abs_difference": 60.42055193863669,
+      "final_parameter_fingerprints_equal": false
+    },
+    "megatron-bf16/megatron-int8": {
+      "max_loss_abs_difference": 1.196032702922821,
+      "max_grad_norm_abs_difference": 18.426346544446048,
+      "final_parameter_fingerprints_equal": false
+    },
+    "megatron-bf16/flux-int8-remote-first": {
+      "max_loss_abs_difference": 3.5929014682769775,
+      "max_grad_norm_abs_difference": 50.40342390979295,
+      "final_parameter_fingerprints_equal": false
+    },
+    "megatron-int8/flux-int8-remote-first": {
+      "max_loss_abs_difference": 3.40531325340271,
+      "max_grad_norm_abs_difference": 52.381143481292185,
+      "final_parameter_fingerprints_equal": false
+    }
+  },
+  "operator_measurements": {
+    "flux-bf16": {
+      "attn": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.04963904023170471,
+          "mean_max_rank_wall_ms": 0.05486197769641876,
+          "max_peak_allocated_gib": 0.0313725471496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.49739840507507327,
+          "mean_max_rank_wall_ms": 0.49938132986426353,
+          "max_peak_allocated_gib": 0.0333256721496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 2097152
+        }
+      },
+      "mlp": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.15611583709716798,
+          "mean_max_rank_wall_ms": 0.15929370187222958,
+          "max_peak_allocated_gib": 0.048462867736816406,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.5967251110076904,
+          "mean_max_rank_wall_ms": 0.5991046410053968,
+          "max_peak_allocated_gib": 0.050415992736816406,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 2097152
+        }
+      }
+    },
+    "flux-int8": {
+      "attn": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.0512966388463974,
+          "mean_max_rank_wall_ms": 0.058726053684949875,
+          "max_peak_allocated_gib": 0.0450444221496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.7509184074401856,
+          "mean_max_rank_wall_ms": 0.7535945530980825,
+          "max_peak_allocated_gib": 0.0469975471496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 2097152
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.0339219206571579,
+          "mean_max_rank_wall_ms": 0.03711013123393059,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.3376025629043579,
+          "mean_max_rank_wall_ms": 0.33953397534787655,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.025130880475044252,
+          "mean_max_rank_wall_ms": 0.027476530522108078,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.04224703967571258,
+          "mean_max_rank_wall_ms": 0.04473653621971607,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        }
+      },
+      "mlp": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.15712192058563235,
+          "mean_max_rank_wall_ms": 0.16180681064724922,
+          "max_peak_allocated_gib": 0.0633249282836914,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.8587564754486084,
+          "mean_max_rank_wall_ms": 0.8611486479640007,
+          "max_peak_allocated_gib": 0.0656437873840332,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 2489856
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.03268224060535431,
+          "mean_max_rank_wall_ms": 0.035883327946066856,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.5258944034576416,
+          "mean_max_rank_wall_ms": 0.5279061291366816,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.023123839497566225,
+          "mean_max_rank_wall_ms": 0.025443201884627342,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.036097280383110046,
+          "mean_max_rank_wall_ms": 0.038244156166911125,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        }
+      }
+    },
+    "flux-int8-interleaved": {
+      "attn": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.04943423986434936,
+          "mean_max_rank_wall_ms": 0.05449211224913597,
+          "max_peak_allocated_gib": 0.0450444221496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.7261574459075928,
+          "mean_max_rank_wall_ms": 0.7286206725984812,
+          "max_peak_allocated_gib": 0.0469975471496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 2097152
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.034069119691848754,
+          "mean_max_rank_wall_ms": 0.03770758397877216,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.2966278457641602,
+          "mean_max_rank_wall_ms": 0.2984936162829399,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.024915840327739715,
+          "mean_max_rank_wall_ms": 0.027227504178881645,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.03955327987670899,
+          "mean_max_rank_wall_ms": 0.04190346226096153,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        }
+      },
+      "mlp": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.1574886393547058,
+          "mean_max_rank_wall_ms": 0.1603016722947359,
+          "max_peak_allocated_gib": 0.0633249282836914,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.8358054542541504,
+          "mean_max_rank_wall_ms": 0.8383474871516228,
+          "max_peak_allocated_gib": 0.0656437873840332,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 2489856
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.029914880394935606,
+          "mean_max_rank_wall_ms": 0.03273875452578068,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.5187468767166138,
+          "mean_max_rank_wall_ms": 0.5267875175923109,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.02475775957107544,
+          "mean_max_rank_wall_ms": 0.02716127783060074,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.03801151990890503,
+          "mean_max_rank_wall_ms": 0.040109092369675636,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        }
+      }
+    },
+    "megatron-bf16": {
+      "attn": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.21251904249191286,
+          "mean_max_rank_wall_ms": 0.22872270084917545,
+          "max_peak_allocated_gib": 0.0450444221496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 16777216
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.518209924697876,
+          "mean_max_rank_wall_ms": 0.5227921903133392,
+          "max_peak_allocated_gib": 0.0450444221496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 16777216
+        }
+      },
+      "mlp": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.20676992416381837,
+          "mean_max_rank_wall_ms": 0.2119785826653242,
+          "max_peak_allocated_gib": 0.0626225471496582,
+          "max_peak_reserved_gib": 0.087890625,
+          "max_incremental_allocated_bytes": 16777216
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.6449228858947754,
+          "mean_max_rank_wall_ms": 0.6472396291792393,
+          "max_peak_allocated_gib": 0.0626225471496582,
+          "max_peak_reserved_gib": 0.087890625,
+          "max_incremental_allocated_bytes": 16777216
+        }
+      }
+    },
+    "megatron-int8": {
+      "attn": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.14678528070449828,
+          "mean_max_rank_wall_ms": 0.1546313427388668,
+          "max_peak_allocated_gib": 0.0591435432434082,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 16777216
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.7833036708831788,
+          "mean_max_rank_wall_ms": 0.7879399135708809,
+          "max_peak_allocated_gib": 0.0591435432434082,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 16777216
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.03362687945365906,
+          "mean_max_rank_wall_ms": 0.03698012791574001,
+          "max_peak_allocated_gib": 0.0591435432434082,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.4936678409576416,
+          "mean_max_rank_wall_ms": 0.49620654433965683,
+          "max_peak_allocated_gib": 0.0591435432434082,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.02380416005849838,
+          "mean_max_rank_wall_ms": 0.02616286277770996,
+          "max_peak_allocated_gib": 0.0591435432434082,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.037987199425697324,
+          "mean_max_rank_wall_ms": 0.0402608048170805,
+          "max_peak_allocated_gib": 0.0591435432434082,
+          "max_peak_reserved_gib": 0.072265625,
+          "max_incremental_allocated_bytes": 0
+        }
+      },
+      "mlp": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.20659711837768555,
+          "mean_max_rank_wall_ms": 0.2112245373427868,
+          "max_peak_allocated_gib": 0.0908207893371582,
+          "max_peak_reserved_gib": 0.126953125,
+          "max_incremental_allocated_bytes": 16777216
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.5994355201721191,
+          "mean_max_rank_wall_ms": 0.6017524842172861,
+          "max_peak_allocated_gib": 0.0908207893371582,
+          "max_peak_reserved_gib": 0.123046875,
+          "max_incremental_allocated_bytes": 16777216
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.03693567991256714,
+          "mean_max_rank_wall_ms": 0.04036246798932552,
+          "max_peak_allocated_gib": 0.0908207893371582,
+          "max_peak_reserved_gib": 0.123046875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.29487680435180663,
+          "mean_max_rank_wall_ms": 0.29685371555387974,
+          "max_peak_allocated_gib": 0.0908207893371582,
+          "max_peak_reserved_gib": 0.123046875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.028044800162315368,
+          "mean_max_rank_wall_ms": 0.030653756111860275,
+          "max_peak_allocated_gib": 0.0908207893371582,
+          "max_peak_reserved_gib": 0.123046875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.04400704085826874,
+          "mean_max_rank_wall_ms": 0.046581514179706573,
+          "max_peak_allocated_gib": 0.0908207893371582,
+          "max_peak_reserved_gib": 0.123046875,
+          "max_incremental_allocated_bytes": 0
+        }
+      }
+    },
+    "flux-int8-remote-first": {
+      "attn": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.049418879747390745,
+          "mean_max_rank_wall_ms": 0.054562510922551155,
+          "max_peak_allocated_gib": 0.0450444221496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.763831033706665,
+          "mean_max_rank_wall_ms": 0.7665298040956259,
+          "max_peak_allocated_gib": 0.0469975471496582,
+          "max_peak_reserved_gib": 0.056640625,
+          "max_incremental_allocated_bytes": 2097152
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.030826879739761354,
+          "mean_max_rank_wall_ms": 0.03383507952094078,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.3305177593231201,
+          "mean_max_rank_wall_ms": 0.3324979729950428,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.02351488023996353,
+          "mean_max_rank_wall_ms": 0.025783414021134377,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.037747200131416324,
+          "mean_max_rank_wall_ms": 0.0400727242231369,
+          "max_peak_allocated_gib": 0.0606694221496582,
+          "max_peak_reserved_gib": 0.0703125,
+          "max_incremental_allocated_bytes": 0
+        }
+      },
+      "mlp": {
+        "gemm": {
+          "mean_max_rank_cuda_ms": 0.15700479984283447,
+          "mean_max_rank_wall_ms": 0.16075070947408676,
+          "max_peak_allocated_gib": 0.0633249282836914,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "operator": {
+          "mean_max_rank_cuda_ms": 0.8394457530975342,
+          "mean_max_rank_wall_ms": 0.8419659361243248,
+          "max_peak_allocated_gib": 0.0656437873840332,
+          "max_peak_reserved_gib": 0.091796875,
+          "max_incremental_allocated_bytes": 2489856
+        },
+        "encode": {
+          "mean_max_rank_cuda_ms": 0.03012224018573761,
+          "mean_max_rank_wall_ms": 0.032985592260956764,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "exchange": {
+          "mean_max_rank_cuda_ms": 0.5234329652786255,
+          "mean_max_rank_wall_ms": 0.5254725087434053,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode": {
+          "mean_max_rank_cuda_ms": 0.023122559785842895,
+          "mean_max_rank_wall_ms": 0.025386018678545952,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        },
+        "decode_reduce": {
+          "mean_max_rank_cuda_ms": 0.03703231990337372,
+          "mean_max_rank_wall_ms": 0.039314478635787964,
+          "max_peak_allocated_gib": 0.0793156623840332,
+          "max_peak_reserved_gib": 0.10546875,
+          "max_incremental_allocated_bytes": 0
+        }
+      }
+    }
+  },
+  "evidence_files": {
+    "results/smoke-flux-bf16/rank0.json": "5032b86cad6053c5933d71cfb0879878a04038fe3cfec769f186f4609148093c",
+    "results/smoke-flux-bf16/rank1.json": "5a77d1bc2e0f2ca9c97372fbf96467192f0d950df08f124d5a2b37926b50ae2c",
+    "results/smoke-flux-bf16/rank2.json": "5947f7b7ac6aaa0df48b2e0ce1e42289fd1bb2a0281e6a71aa2f68fa57970a27",
+    "results/smoke-flux-bf16/rank3.json": "5a2a394a798ecbe6699a936b4d97ffdd158e7eb8666e223d21fe1056decb121a",
+    "results/smoke-flux-bf16/rank4.json": "7fb14967d81c5df059f571bb8a174ae5b6f8dbbfd3171968d55a96141a1efc9d",
+    "results/smoke-flux-bf16/rank5.json": "2ccf49eba93fc3e084a699e71d6fb84919b9548db13487c27bb4d9af96caf0f2",
+    "results/smoke-flux-bf16/rank6.json": "fa55f68a153303c1295bcff733cc8f689399858f75b703cc7612bc99b0bd0ff5",
+    "results/smoke-flux-bf16/rank7.json": "3a01fbef6b67131c58b94656946348018f6f93b3062340a48017020558557c17",
+    "results/smoke-flux-int8/rank0.json": "059191ebdcf8fb983d60cbb8da7e4065e08c7c28d86402d7a9cbac51c11e3d18",
+    "results/smoke-flux-int8/rank1.json": "2d70d63adcfa88113efd75c2a7fe3165031eeb10ce0dc99147bc9a9403683d30",
+    "results/smoke-flux-int8/rank2.json": "734e5b1215d1eb4404e2c2883838702cd6f06b04c788f992d3f755ef84b10429",
+    "results/smoke-flux-int8/rank3.json": "32eea8819f9d3d54191431db48cc9b6dbe6322ed1f54aae1d8e746f9e3255ead",
+    "results/smoke-flux-int8/rank4.json": "67e5fb12b34fa1d189bb745c24b82731f218cf287d92f854f78b0b576b003b71",
+    "results/smoke-flux-int8/rank5.json": "558667e983fdf3fc586aed8b1fe42d84a0ae59d33f3ea46b8a6f845862c9d8b6",
+    "results/smoke-flux-int8/rank6.json": "693e6f2883769b66c1db6ac888a71365362c0787036d6ec4c4d8a3ec8121f9f5",
+    "results/smoke-flux-int8/rank7.json": "9abf4a230e92410afa45f8e1cf9460cd3e1caae08e228c89ba90ee571735655b",
+    "results/smoke-flux-int8-interleaved/rank0.json": "aaa7f7aba662df3cd93aa7e43c683802863c698198f3f58d2c69b192505276c4",
+    "results/smoke-flux-int8-interleaved/rank1.json": "067fbcf800ff08ac2857b0f1c13009d92b383d407a1c2a04bc2c28042b8f3892",
+    "results/smoke-flux-int8-interleaved/rank2.json": "cc9eb6dfe17981207e605dee6b738b6911dca558cded4a75b4ead1fc8202b9d4",
+    "results/smoke-flux-int8-interleaved/rank3.json": "8aa97501ca806c7670d2fcb546e328f13b99f05ae3e985236deffced362c32ef",
+    "results/smoke-flux-int8-interleaved/rank4.json": "3d2a546bfa0eada4060706d35276cb13a7025c04e845f97b235ab85b8ac2dadb",
+    "results/smoke-flux-int8-interleaved/rank5.json": "f67b7281ec705ebdf7a5f1a23e2ed971d6dcfa527cdd7a92d8eee5bc59275198",
+    "results/smoke-flux-int8-interleaved/rank6.json": "52d78dc1a88322f64e46267e52adf66976da41a5b9fbf99bf57b147dda450db8",
+    "results/smoke-flux-int8-interleaved/rank7.json": "182586a2f6a94bceb8a3e450106dfb7fbcc900888fc80809c8b97edcb0814a03",
+    "results/smoke-megatron-bf16/rank0.json": "1e4d928aeee5d3731a477199c1659cce5635699c33450036094bc63c6d08887b",
+    "results/smoke-megatron-bf16/rank1.json": "23ea2d461b2233bf66bbdfdd64c200eacd5071514064e01c4d5f35c94c5641a2",
+    "results/smoke-megatron-bf16/rank2.json": "c36aa57b634b7be71c7a554e922a35c27c7aed7b9c8bc5bd80ca7d36f063c5ea",
+    "results/smoke-megatron-bf16/rank3.json": "6a7050c28c42d6201a8d38b3a0eb7956741cc6993870e023034ff7c8069ceab3",
+    "results/smoke-megatron-bf16/rank4.json": "84938fb1410bf3ab9b4522843829a7e593fce1db064f11c0b310f5a1a84e0508",
+    "results/smoke-megatron-bf16/rank5.json": "d09fdb6e7da703310ed7a9b5d03b0784b477e50606415667987b1b06dc90d228",
+    "results/smoke-megatron-bf16/rank6.json": "d643ed2cd3e545aec089e6384d2db54514c24e65e9366424b5bbfea1b244a37b",
+    "results/smoke-megatron-bf16/rank7.json": "d81b6848452b42842dddcb582818f65c7fbc8010df08dec84f3caa1c11b43a82",
+    "results/smoke-megatron-int8/rank0.json": "c9ad7537543116d43f210d2c6d5b27ce93959aa4fb667d45b8744652a529378f",
+    "results/smoke-megatron-int8/rank1.json": "b04b1c11db9dd4247567e5c6b1c29ee96499b4857c5ecca4815d17f3da3026d9",
+    "results/smoke-megatron-int8/rank2.json": "afa56481c26860038ee07a1a93a60f67279e72fee3e452aa6f96b70cc670ffd3",
+    "results/smoke-megatron-int8/rank3.json": "6bab238853713b62f952af4c12eedf3a410c24d42ca0cca1c37c0726453204fa",
+    "results/smoke-megatron-int8/rank4.json": "b74c4b0a2d01fd2821caab753e9ebb59566a18f53c7f24b3f67d97c1cefefb4f",
+    "results/smoke-megatron-int8/rank5.json": "1b42b313dbbb555d747ad129d96a8c13eca1351bf0f4c081602565a5ffd669c2",
+    "results/smoke-megatron-int8/rank6.json": "999d4423fa4ec90e3ce594c753f7264ad9fede93df6ed71c38f7d8da9de6fd5a",
+    "results/smoke-megatron-int8/rank7.json": "12d20046b9ef7d753078e98c1c7d064d89c949f2d98ae7a3adbfebc8dfe41e0b",
+    "results/smoke-flux-int8-remote-first/rank0.json": "7def428111e597319c3b906b3f386568714ed7936ceac12e4516337d4da542d2",
+    "results/smoke-flux-int8-remote-first/rank1.json": "b714fbe39fa926d0ebf28e5c1784900ba74cf98474cecce0e1c5eed02123784f",
+    "results/smoke-flux-int8-remote-first/rank2.json": "a2586508c247704d4ca62f48209c6fffbc5f47c1cc54abc33ce03479fe6b0ae4",
+    "results/smoke-flux-int8-remote-first/rank3.json": "5c54a2df4fe977e4b780d870cd27026038977004cf495618b819c7ff2546582a",
+    "results/smoke-flux-int8-remote-first/rank4.json": "86d9d29444c0b9c3b72ddb4e93833cc4f4a3bde4fc122bc951741e0052e24d00",
+    "results/smoke-flux-int8-remote-first/rank5.json": "44755cefc4dd58ce55b372e4725b4e0b351a6de0b2ae8be342d2a5bee9a73e9c",
+    "results/smoke-flux-int8-remote-first/rank6.json": "8c1c9062399b9ff602cdf3048f3bf15db472736b6729ae6136b0caafcd2c18fd",
+    "results/smoke-flux-int8-remote-first/rank7.json": "668e8f88e74c3c7f41dfbfa221717b27cb904cfcdb1181fa4fcc5f6a8da10c28",
+    "results/profile-flux-bf16/rank0.json": "aaf13c6e7f5521742a59cd3d385020c0eff328af7e8151f59bcbbfaf0908f299",
+    "results/profile-flux-bf16/rank0-profile.json.gz": "917a7c7aeffec7478f8feb1b7b425d28f7dd581cede8ddaef33432e82e6f6aa3",
+    "results/profile-flux-bf16/rank1.json": "775c26448a6be6ad73894152f9424af3c8a64da9fad9a379d169f2f22cc3b812",
+    "results/profile-flux-bf16/rank1-profile.json.gz": "fec5222cfd35dd041dae3dac07d24c271f39ddbfa4c9f837d85caf54be28c8cf",
+    "results/profile-flux-bf16/rank2.json": "39fdca801f786bcc9dc0bb4ce368edfd4a27bcec9d27421965badffdefc8264e",
+    "results/profile-flux-bf16/rank2-profile.json.gz": "95d2b6840170f8cbf57b05614412ac7bd313239732ea6dbc71ad08e9c6c3123d",
+    "results/profile-flux-bf16/rank3.json": "5dc65b97b3f05b508d5595ee2b8c392a3e055b6af715f8f399fbcad16da717cc",
+    "results/profile-flux-bf16/rank3-profile.json.gz": "e69a2b7f1b402c969898756e9278ef92cafe8b50a67c4222ec1fc11a603d1208",
+    "results/profile-flux-bf16/rank4.json": "7075f98a55c39f191f7c0781e6f23138e9fac01c3ef89c5dc865d72dabb75be2",
+    "results/profile-flux-bf16/rank4-profile.json.gz": "53df68df52cb50aed3b0d4b56443e4ea0173fb98a35aa12fb7f71d95e801c164",
+    "results/profile-flux-bf16/rank5.json": "cdb34ba0945a761c721edb55471030a767014c83e2e7c8f97f01dbf3e9ed6e9a",
+    "results/profile-flux-bf16/rank5-profile.json.gz": "b93b59e0ee52fb8900b696a5b53b27b5357da03f4b4b01eae085c5ec2d655a93",
+    "results/profile-flux-bf16/rank6.json": "50aef8cdaf4e30ee2ccd5d8b640e0a2137836f32fef476c7bbc95347b81c2524",
+    "results/profile-flux-bf16/rank6-profile.json.gz": "c099d30a8d17fc3d5e836513e4f24655222b37667ae42a05e893528048164cdd",
+    "results/profile-flux-bf16/rank7.json": "fefcbdef77495f6bbb91748b187c982e70277bef005685bebd5981ed209d9851",
+    "results/profile-flux-bf16/rank7-profile.json.gz": "ae13526b14dd9a8ac7f703282f5f0d843942782720c24e9df089a70be3a90e2e",
+    "results/profile-flux-int8/rank0.json": "25bc117e9e2e502f9a83fa1024e695e32449d9f1ef4332b34674a9e6217fa978",
+    "results/profile-flux-int8/rank0-profile.json.gz": "51690c01d6cd2045aad177cec8a98233d6840ba799a54c06dc96ea3746bb7e88",
+    "results/profile-flux-int8/rank1.json": "7f7f4e819865998032835041bb0f4409df4522acb30d80a9894e4d3f17325ec1",
+    "results/profile-flux-int8/rank1-profile.json.gz": "aef6882de33a1b50d37e44a25cdd32684e438d7eee906f62520024d891d39ba3",
+    "results/profile-flux-int8/rank2.json": "fdc03fcf9a84dc5e2517d8bcfa95d1492aa565591088b61aa6cf3017bbc76ed3",
+    "results/profile-flux-int8/rank2-profile.json.gz": "d8995251557dccff473093c37db70353e5d0ee308517351aca7d3c4e65a2a6a1",
+    "results/profile-flux-int8/rank3.json": "6bd4b30ca3c289f6831ac08880ef9f8124aac2dfb9a465d0ed8999c69e3ea92c",
+    "results/profile-flux-int8/rank3-profile.json.gz": "c3222695057398f398c2245d5806767d5e3c743cd5d3c64c21718e461cb8e652",
+    "results/profile-flux-int8/rank4.json": "d76f9113e40e481ce8db234577408d78de45bc5a12b5b47d46f1469a9ed9479c",
+    "results/profile-flux-int8/rank4-profile.json.gz": "9ae39327892395c9a775e66149025e53f4757acb48481a92e52b8d7ed6058dac",
+    "results/profile-flux-int8/rank5.json": "d14cc26d705b9d6105e6970b80c0467a936ac12c1bde5075bc2fc9c8d26bf96f",
+    "results/profile-flux-int8/rank5-profile.json.gz": "25fa17e938cc8412b41cd3756e8e44e3eb531166bcb805a508359f7507e84e2e",
+    "results/profile-flux-int8/rank6.json": "641d4f0196e47cc7437bb65f476fc6cf209151cae8387b3c22b74852cd0aae5c",
+    "results/profile-flux-int8/rank6-profile.json.gz": "9c080602b9f74ffbaa41d3c13aa8bb0c4ef75f9b5349a92847305129f75b2c91",
+    "results/profile-flux-int8/rank7.json": "5da65bd2407df709c67284bb8d0e6b4e285fe43b530027cadcecd161a9460edd",
+    "results/profile-flux-int8/rank7-profile.json.gz": "e975fd167695ce0900b510533fce7b9bbc85248b00ff07d4786a794d7bf4bb48",
+    "results/profile-flux-int8-interleaved/rank0.json": "24f61be2a24ea201ba2ab86d78569a802909b2e5b7942192211ae2a8890d5fb1",
+    "results/profile-flux-int8-interleaved/rank0-profile.json.gz": "8a1513c91f3078d5ee8ea68287708c4749df86418a4bc66f9ed7ceaa445c6f08",
+    "results/profile-flux-int8-interleaved/rank1.json": "ba80ee837d6333f70f1508398b72603474ae15738ae385c808e7ea37ce60c0a3",
+    "results/profile-flux-int8-interleaved/rank1-profile.json.gz": "0ac844a146c3245619c15cda8e3b1a94d1b5b20ac57ee86a7ea4282b52d2d7b8",
+    "results/profile-flux-int8-interleaved/rank2.json": "bd40b6c787a116b516063f90c21667ff6e9592bc3cae3326e947c207d45879f9",
+    "results/profile-flux-int8-interleaved/rank2-profile.json.gz": "8c233485f23a2600d401b08794c72695dd44834ed9bda20cd8ee2135b09afab5",
+    "results/profile-flux-int8-interleaved/rank3.json": "ee53594585d7a6166fea8203ea8adde9d7694919e76f907b3df16d3025b49db6",
+    "results/profile-flux-int8-interleaved/rank3-profile.json.gz": "81ebd8d9da51f136e6db16d20bd8d7b51fa81e76e8f5fcaaaf3528a2f44885eb",
+    "results/profile-flux-int8-interleaved/rank4.json": "faf3d495ec434153e3a16a7c8554ceb0d23aa42f7994056189586a6cfd7415dc",
+    "results/profile-flux-int8-interleaved/rank4-profile.json.gz": "b7b0cac5725f5634777e81bac2024f6e6945cd2e25bf48c7b562db0e4bc5fc6b",
+    "results/profile-flux-int8-interleaved/rank5.json": "6e2c52aa7ce6d0c4938beea816b05c221b5e3ccedf3b30bf2a3b7fac954216ca",
+    "results/profile-flux-int8-interleaved/rank5-profile.json.gz": "4b4d86d0658cc86c9bc75a23bc6167aec5ab9b481b9ce626b31bd84b5ab1bbcf",
+    "results/profile-flux-int8-interleaved/rank6.json": "f5809607653672946773b6c3261567eed8658b97fc82db592b561daf64e5405d",
+    "results/profile-flux-int8-interleaved/rank6-profile.json.gz": "3120a79bc1adee5803d010d055692cbb2a2231ac7741f056c5346ccddca751f7",
+    "results/profile-flux-int8-interleaved/rank7.json": "9ef94e3235bae598e623b548647ba9a2b5cd5edbe01ad0ecee159224546bcf6d",
+    "results/profile-flux-int8-interleaved/rank7-profile.json.gz": "db0f629ed1cbd7f86de91ef69f7fcd8a311f15dc995a263f35b48e31d4de2000",
+    "results/profile-megatron-bf16/rank0.json": "c3b990fefdab3dec1bbaac4dbd1495c42dca4a65706ca2b7a78d8cab12b037b1",
+    "results/profile-megatron-bf16/rank0-profile.json.gz": "5c348ad4432d3d768dbd0e265474ae61cda695455b3e7ced987c82d251c01e71",
+    "results/profile-megatron-bf16/rank1.json": "164864a5012ffc5ca49482995da54d98cf0ce0e5594b3accf585bbda6aa2b399",
+    "results/profile-megatron-bf16/rank1-profile.json.gz": "7ea19778bbef9883ecf8e991b341a74108f67b953f398729d041bbec2771f4ec",
+    "results/profile-megatron-bf16/rank2.json": "f16b7b7364fb66e4f86b91580676b0842c480c81b8e547e8098cada6dcd4a422",
+    "results/profile-megatron-bf16/rank2-profile.json.gz": "51e46524c32254f2f5b1add0cfe0f93be772997dc02fbe67cf72dc720f86d0a7",
+    "results/profile-megatron-bf16/rank3.json": "1239dff7fe341b5580f62787efbdcda76eb2d86cc69b784132398ab0a012d57c",
+    "results/profile-megatron-bf16/rank3-profile.json.gz": "1a7264221a1f38d06e4f9f6a2dd0f8f61d340a926059857be351f39867b87aa1",
+    "results/profile-megatron-bf16/rank4.json": "2cdd68a422bb08982454f36fd9baf466cd3d9f82e1aff3ce13cf48f5b847faff",
+    "results/profile-megatron-bf16/rank4-profile.json.gz": "d276a3a2f5b5b6d00fe9a98065acd1f75f65271154c5923e0c2b828d9e91019a",
+    "results/profile-megatron-bf16/rank5.json": "a8bb502d589b8de7904e9e1e924f8dd92ba3f33fe7381e01a74cc323ba718ec1",
+    "results/profile-megatron-bf16/rank5-profile.json.gz": "f43b524f119fbb2b7b93254bb7f784fa5b0d8432932eaa0c35520cef1fdf5ac1",
+    "results/profile-megatron-bf16/rank6.json": "54ac52f5c2c2228d6a2a76273f9ac39d5133e2a43ed9c5868bad91b6383d89ff",
+    "results/profile-megatron-bf16/rank6-profile.json.gz": "8f5d8bce08b001b211af2104d95353e3618eb7174fe307bdb6a703bf8924ad32",
+    "results/profile-megatron-bf16/rank7.json": "49f4f4f2c7db9f8eb3bcf70a8a3a9ffd51c2d15bfa6b2dedcbaca663d6ee4911",
+    "results/profile-megatron-bf16/rank7-profile.json.gz": "e6390c412e5c838a42bfba956b5a1d9a3721f6daa3ebde0c151a31109b71ada6",
+    "results/profile-megatron-int8/rank0.json": "ae73ba59a5987b15a9f985ce1c0aba33e9c2b8ee8bc2233da4301f0fad205624",
+    "results/profile-megatron-int8/rank0-profile.json.gz": "62dde85bebb36bc83568c2aed0b15981ec027a200fe2e2eaedfeba51b09ee0a4",
+    "results/profile-megatron-int8/rank1.json": "e326324366fd050f1924a234d4ba32a1d83745fcb6842a571808cf86d1acd02b",
+    "results/profile-megatron-int8/rank1-profile.json.gz": "43f30b486f122aca25b854cb56ebfa288367db981ea6be7939f428a473a00c33",
+    "results/profile-megatron-int8/rank2.json": "7b59a737cf634f4186e734603f7bbdfbfef08b50f3be2307d726a12ac0c3f23e",
+    "results/profile-megatron-int8/rank2-profile.json.gz": "b14495843494a934c39b2c19e6522356e65b80add7623b00f21afb367ea7a4f8",
+    "results/profile-megatron-int8/rank3.json": "796232370517d29193df0a08159b6da69f8d0f37a48fc46e152ef16cbc9e8b3f",
+    "results/profile-megatron-int8/rank3-profile.json.gz": "571c9f04830c2d756b694688d862d96911ddcac67a407eb3226171125e67eb4c",
+    "results/profile-megatron-int8/rank4.json": "b0ad659d4f8c342f20754ef05f8e72114b6df3d65e5ba90ad52db85bd9d4b0f7",
+    "results/profile-megatron-int8/rank4-profile.json.gz": "17849639b62872f14d5f9b76eb0d05c6f82b2e4b6e88452cb57a7ab1e281c48b",
+    "results/profile-megatron-int8/rank5.json": "334b9c73104e53bc40e86fb17896c6280c93ff5e91b9b0afc7f8859b561bf01a",
+    "results/profile-megatron-int8/rank5-profile.json.gz": "0c23ced351b78905c45fcf8558c1eeafbd381142d0bb135ace25cac159a270e9",
+    "results/profile-megatron-int8/rank6.json": "4d79f67d83392ff1db61c0e98a8b90c6a8e84bf85bf75338c377a74a09d89aab",
+    "results/profile-megatron-int8/rank6-profile.json.gz": "c01230e93a3aa49f50b46f75a263db12e6995fd4c173a858905eff6c38c406db",
+    "results/profile-megatron-int8/rank7.json": "d612fa0e6be90fd1d613b61c0ec831a8f22bdf23a4a2293117ae3c16e1fac9d9",
+    "results/profile-megatron-int8/rank7-profile.json.gz": "54f21a92cdaf7dd2e0c1f01869f5f494165de19bf9bb198b38e7d54d5d914577",
+    "results/profile-flux-int8-remote-first/rank0.json": "be33425ea2cacce3c1940ed9be4810a49844cb024cbf13754d3ee123d637bd16",
+    "results/profile-flux-int8-remote-first/rank0-profile.json.gz": "0d0fbd9486a07a67447e2113ef9d74f527a2dc812cedbfd9ef6471e90eb3f3ab",
+    "results/profile-flux-int8-remote-first/rank1.json": "779a461b9a5e2baa1cb20c9a26a0b83bbf4aec1411d1bf5e82101a2964b0ea73",
+    "results/profile-flux-int8-remote-first/rank1-profile.json.gz": "040c64d8ea057b87f200f2217155826687a3e9663f7be31755d082c03bb7997b",
+    "results/profile-flux-int8-remote-first/rank2.json": "1cf7c4bf87564c25739754d6c7fee3e00f33e2181d53aba8e8569327786ace9a",
+    "results/profile-flux-int8-remote-first/rank2-profile.json.gz": "ff344a0112eb93f3730b18a82093c37a6e2422aec88cb82f2aa9f9be0336dcba",
+    "results/profile-flux-int8-remote-first/rank3.json": "6d57bbc5bfaa706485f02c23f0e8d675dc415fa628c4e994db52b903000d76e3",
+    "results/profile-flux-int8-remote-first/rank3-profile.json.gz": "ba2dbcbd4383ed680192e397bdabd01be20df762fd613432a95e1806ce8c45d6",
+    "results/profile-flux-int8-remote-first/rank4.json": "844d72789521099a1e9f3d93723cf53683d0dd92de78eb3477e43c1f6538aeb4",
+    "results/profile-flux-int8-remote-first/rank4-profile.json.gz": "6f06f4a4ee5e0186799a8a0d047877be44171df416e31fb4f92cd7b802dc644a",
+    "results/profile-flux-int8-remote-first/rank5.json": "eb372a615120b8edc6dacdb18f2415ac12dc88816b204ad0bccaca92364eef24",
+    "results/profile-flux-int8-remote-first/rank5-profile.json.gz": "cb94ae03f22fc758bc638d2424110dc35931d88a020db8e331429117a3834f53",
+    "results/profile-flux-int8-remote-first/rank6.json": "01b54b570cff1132b79c10555effe5a3001461dd11050a95489021977ebd4758",
+    "results/profile-flux-int8-remote-first/rank6-profile.json.gz": "2ff05c5fd9016ab3c9074a6bda15545176474e87363da243a1b946a819c67251",
+    "results/profile-flux-int8-remote-first/rank7.json": "bad126272a0e19da9c2b877f9bdcdf05392be7378320d032c54baa76be161d39",
+    "results/profile-flux-int8-remote-first/rank7-profile.json.gz": "11021af8ba6e71cb0e92cf88a6b0af3d2dfe7b1e158161d6e9885501a8aa64bd",
+    "results/compare1/block00-megatron-bf16/rank0.json": "6084c92e031f94749143b2c816d884859f1a3c8ce5506411075701e9f64ed196",
+    "results/compare1/block00-megatron-bf16/rank1.json": "9235f6d48d8a5c97e918db7040a15160e20749e43f63ccee7f39013f43f400c5",
+    "results/compare1/block00-megatron-bf16/rank2.json": "2cd3d2b1c062c0e06ab7fabd42e27b04919214bdd862223d7488030ae81ca20e",
+    "results/compare1/block00-megatron-bf16/rank3.json": "709477422f96e163e8e0e2c71c3f9d8a7d7ee546288b38c3040d5da018d63a9f",
+    "results/compare1/block00-megatron-bf16/rank4.json": "47819d44f96758a2ba58e3f2b8289fb6e3327bd73b052bc081ff9d91b569a13d",
+    "results/compare1/block00-megatron-bf16/rank5.json": "63b5dc6c5aabcf53c31f35c2f9aa75fd69c850d8d386fad3c14d0427d86c893a",
+    "results/compare1/block00-megatron-bf16/rank6.json": "3fea740fda51f81cc306f9decd4b5305bdc350bbfbfb2f83eea1f6223f3ecf07",
+    "results/compare1/block00-megatron-bf16/rank7.json": "5b332848fca38673f67c17b63d9e551ffedc576e190366fb58700edd6bb62e0a",
+    "results/compare1/block00-megatron-int8/rank0.json": "729ab3efa063bafbc2481b257a03dcf451a71e0c0dfdd1808eeb0b6ad1197fa5",
+    "results/compare1/block00-megatron-int8/rank1.json": "7bdf5d4b1b3a9985ea44e28556ecc3b65f85d8c6ec4ab2a138ce2fa78b0260b5",
+    "results/compare1/block00-megatron-int8/rank2.json": "f6cb12de3d7c3a55bbdea08191c95aa2aed8ed7ec1895ca4bf480bb5734516d6",
+    "results/compare1/block00-megatron-int8/rank3.json": "0298effa50645f292f4ff934a4c465c07d1be3b6a73dee51ede90c9ee6836bdb",
+    "results/compare1/block00-megatron-int8/rank4.json": "ce20d21764b86a6380990e68ab78427c5eba5587aa66ecd41cb0fcf38a5505f7",
+    "results/compare1/block00-megatron-int8/rank5.json": "6f9e3592da79624f246f0824718437150b5e1289ec68b6271e72f8623a34ec53",
+    "results/compare1/block00-megatron-int8/rank6.json": "e2d421351acccd2aa80337a3d2c50dcf9d914500008b0f966b88c6a1bf779689",
+    "results/compare1/block00-megatron-int8/rank7.json": "f572000e12bbb84349ea40e8dd1c84d8de5bb37d21d645b9af20ded580e0687f",
+    "results/compare1/block00-flux-int8-interleaved/rank0.json": "0836cb0c83fbf5b6888d069c3c2901f0431a762080b8a110c37a38b5ff02b8ee",
+    "results/compare1/block00-flux-int8-interleaved/rank1.json": "3e501e6787226b0eaf9afee85e8dd96228bc87b9c6d6b81293c9958e3ffc748e",
+    "results/compare1/block00-flux-int8-interleaved/rank2.json": "73f08487614e9087fa9bd9d32366ab5bdb4d07f5e9704d8997939c4fa27d007d",
+    "results/compare1/block00-flux-int8-interleaved/rank3.json": "27fc7bcd044fa180ab1a28677be509259b607b2f84515e4ecde99ce6f45ff2d9",
+    "results/compare1/block00-flux-int8-interleaved/rank4.json": "dcfec14f518a15fc0c0fc8988a10a680ccb0d9d16ae9d94608298f6ac6dc5792",
+    "results/compare1/block00-flux-int8-interleaved/rank5.json": "84232ec3f4504833b6fd69123af34c5a9851f9838f8dd6439e776f0dfc0a9c11",
+    "results/compare1/block00-flux-int8-interleaved/rank6.json": "c21fde42264765d59b60165dd8295fd66406ae144d75a062e8b0c22281d93f83",
+    "results/compare1/block00-flux-int8-interleaved/rank7.json": "4181758bb73a43a9781886bc5ced8cf41491618f88c0c962510a9a81786f477c",
+    "results/compare1/block00-flux-int8-remote-first/rank0.json": "a76d92b89cbbd55515e35e42f1133205cd5ed4708aa074ea1a13fe51c48be177",
+    "results/compare1/block00-flux-int8-remote-first/rank1.json": "77f5a65bef94310ed006951a6af37b79c7dc9ce382e8a18b9058bec01b2835f3",
+    "results/compare1/block00-flux-int8-remote-first/rank2.json": "2241e4c278cb7ac44db51c29f4cee6bf24e6cef2765217ad61860a4b9ef87084",
+    "results/compare1/block00-flux-int8-remote-first/rank3.json": "283bb768d421acd0a287290f5d62b4828637797def0e4d3e48fcd3cdfec79ebd",
+    "results/compare1/block00-flux-int8-remote-first/rank4.json": "e72b1fd15b8ce6643b751594f58e26bcd2981e1ec6504b75cbaaa8af77cafc2a",
+    "results/compare1/block00-flux-int8-remote-first/rank5.json": "bbf71a5491c27d9f19f0b6727320664681a874e24140ad43625ad0a042622b0a",
+    "results/compare1/block00-flux-int8-remote-first/rank6.json": "91231498f990a9f80b3b9a9f05b5ba78b9d6afd34bc916efac1b23788c67214e",
+    "results/compare1/block00-flux-int8-remote-first/rank7.json": "ed745dd77d7c5b39cfd647cdfeccbc2ab4095cd4f33ae50c965c5285e2e74b8e",
+    "results/compare1/block00-flux-int8/rank0.json": "570a099296ef7e52f1e12892b689a91fd0c5766224a7592e8863a4021f68f2ed",
+    "results/compare1/block00-flux-int8/rank1.json": "b59a49e1669c29383f4b00c87f439d4d5762af0c3757da929116c05e9b5239c8",
+    "results/compare1/block00-flux-int8/rank2.json": "b0fe86e790b2a404187148aec7bae31cdd3850b7ba79a356bb548da0633f7067",
+    "results/compare1/block00-flux-int8/rank3.json": "255c180a25755a21ae89514b6440dac2b9c28d3bdaa9807bf06d60abf4d9bd2f",
+    "results/compare1/block00-flux-int8/rank4.json": "460ddd872cafacfdad3a68b1f7e3337ad6ae06f51eb598b461d87e97a43907d0",
+    "results/compare1/block00-flux-int8/rank5.json": "9f1ead05f57b8013220cc3963db055d8acd0d152324f1c5d4183dc6b8b15692a",
+    "results/compare1/block00-flux-int8/rank6.json": "6249ec0710bd2fd6a97fa017f7b0d6c25c5ddf1bb2400360da1ccc0552a294e5",
+    "results/compare1/block00-flux-int8/rank7.json": "c820ff438a6d934f671b429fc6db920291fd13ac5fd80c6b3d514288a2131407",
+    "results/compare1/block00-flux-bf16/rank0.json": "a7a2de588a934e67a10c5fcc305a2a7ef00e58215d5f431303dce2ebe2b37ceb",
+    "results/compare1/block00-flux-bf16/rank1.json": "35ea3bc73662d117bfb532de65951fdf177f65435abaa10c8afad5ec4e8e613d",
+    "results/compare1/block00-flux-bf16/rank2.json": "c64aa44200ed1c3ac805139e7c00ae4bcbb6f7014f3bf822f26b861a0a1c0717",
+    "results/compare1/block00-flux-bf16/rank3.json": "159f8c46d5d4b5d1a3d62ed9b6d9943715f25c0adec32500941d7ba8bb1c03bb",
+    "results/compare1/block00-flux-bf16/rank4.json": "95c7032b8ea58379bcb7d42d145f2633606a008c7499737adb54e4724752f4a4",
+    "results/compare1/block00-flux-bf16/rank5.json": "9eec9c6a1d7696f4a8c52cecd0d8a2a9aba35fdfb03f6598eff5af58c31be5fe",
+    "results/compare1/block00-flux-bf16/rank6.json": "e088b4102f88644bd06181fedea0f5ca78605eb46f1910e54890ee277917a7b3",
+    "results/compare1/block00-flux-bf16/rank7.json": "6eb28fa5aceb3b200cba2414d56f4e06f384089e3fe1a3eba27f0f710c861cb7",
+    "results/compare1/block01-flux-int8-interleaved/rank0.json": "12ab7cdd90f93736538428d0d474e5a5e3b28b7795d48bd4e6a1431ae89435f2",
+    "results/compare1/block01-flux-int8-interleaved/rank1.json": "fd770e6160293de06c6440aca795629e5cb01942e34e57eeb7a73747f81878cc",
+    "results/compare1/block01-flux-int8-interleaved/rank2.json": "89da41b3d1d01c1baac5e33ad8dab2297d8f1307c74fb8fd3baa0dbcf8a4be00",
+    "results/compare1/block01-flux-int8-interleaved/rank3.json": "3eb28afd23b59d0fe4ffcacbe07d06e8c726995b2d85bd823e1ed1680f009067",
+    "results/compare1/block01-flux-int8-interleaved/rank4.json": "131e4ceee103f0ab717327171679fa526386ecba601cdb9a34377a9e39f0223a",
+    "results/compare1/block01-flux-int8-interleaved/rank5.json": "5fb26381db679b912f8a29873d5be887f1fa4dc749bb85d1947b8ce55d0840cc",
+    "results/compare1/block01-flux-int8-interleaved/rank6.json": "70fcd2cc81654cd4a070106346614d139adad4a7e1aee61d1f7f5c84bdb2a5b4",
+    "results/compare1/block01-flux-int8-interleaved/rank7.json": "bf106990cd2c9d0ecf445387360512aa110d9293bae7825cd99ccb4e1b733e51",
+    "results/compare1/block01-megatron-bf16/rank0.json": "28d1883be2f79520d1367962449faf318f332fb212fb0add7b064b88dd017e9c",
+    "results/compare1/block01-megatron-bf16/rank1.json": "a056a9dfcf5bc966c96365fd0b6342531738d9dab5cef48f903c3de34ca82a8a",
+    "results/compare1/block01-megatron-bf16/rank2.json": "1db9f810cd71bdf923cf04f4ac8801156b328ecc0b93146a4500e4ff799e1700",
+    "results/compare1/block01-megatron-bf16/rank3.json": "b523764973f0e26f39fbb874622054b872c8b7e6beaa15456714ce1fbce0ad6b",
+    "results/compare1/block01-megatron-bf16/rank4.json": "464031b5804bb8127f6a7146eeae607e812e6a48af5dfc5a333e22ed4e13324c",
+    "results/compare1/block01-megatron-bf16/rank5.json": "007ff057cbeed2c787e1f1e7b4840881eac07a72783ca634eb1dca2016b6fc0e",
+    "results/compare1/block01-megatron-bf16/rank6.json": "69e1112e07cabd132e859b712acf0f07662ab519efc7d3a2c4a31aea7f060148",
+    "results/compare1/block01-megatron-bf16/rank7.json": "bc92de88854b962ab5da9118cfd9cda90ab4a427cad34555484cb53f393273da",
+    "results/compare1/block01-flux-int8/rank0.json": "e5df102ff83c20c4cc1751586af623af58216aab89bb03ac21154fabc498a106",
+    "results/compare1/block01-flux-int8/rank1.json": "08709096a468b6729fd6de2861673fe3d0ac2a94fda80e1428b6fa74d79950ec",
+    "results/compare1/block01-flux-int8/rank2.json": "78c69b6c7eeeea5000817544244a899a8035f75f85e296dd19a9eade9a2678af",
+    "results/compare1/block01-flux-int8/rank3.json": "5bc689b3408aacfc055886af3ccb538b8f4bd81a1ece706e438702a62efc20b6",
+    "results/compare1/block01-flux-int8/rank4.json": "ae310a4f9a25f2683972921c90fe7b359738fd1c2ec5f5069d117662cf68ade5",
+    "results/compare1/block01-flux-int8/rank5.json": "e2d1bfd6f1f8f6cbc56921c9b7343bd5af71cf2e14861f51b12041bcc6f07096",
+    "results/compare1/block01-flux-int8/rank6.json": "f4b5297bd9f9a2adfebd9b14dab77ca8ef245448bf56ab0bcd75e7518040d0cc",
+    "results/compare1/block01-flux-int8/rank7.json": "5b7d0ed13ff0bc6131c09fdbedee789a0ac8df816a5fa9f9535912d15e1bb58a",
+    "results/compare1/block01-megatron-int8/rank0.json": "71443c5ac77ff24edd582d920b5b14d06e09ba59dfcf371240697296e9b5c783",
+    "results/compare1/block01-megatron-int8/rank1.json": "1eab25646a6eced6901bffe23bb9e1237d8bd678b1a162f6d057f9502926d6a3",
+    "results/compare1/block01-megatron-int8/rank2.json": "b53e0e968a07159cf1801f1887685d6a09f2022885c84cea249eb93490e02529",
+    "results/compare1/block01-megatron-int8/rank3.json": "7d812ba2a5274fd0c980f307ba06f9f08200d2368c7f85ab05e0aeb598102053",
+    "results/compare1/block01-megatron-int8/rank4.json": "31028c90f5537637f347dc04d99322e5f6cadd3ed4e03fe9a697e5e91dedab4e",
+    "results/compare1/block01-megatron-int8/rank5.json": "f0afd88a58ad945d52234641cad965f26e904bc53452616d32dcbf90a29c0344",
+    "results/compare1/block01-megatron-int8/rank6.json": "e095639e13a596ac86ff27250dc980b7592972171328fd9555cdf670ee32b44c",
+    "results/compare1/block01-megatron-int8/rank7.json": "af6742b062d7c48bc916fb4843f6b8020d7e6d55fb6b61c1521fabee84fe6eab",
+    "results/compare1/block01-flux-bf16/rank0.json": "17f8e0350b4668ea8707f7598355b206fd9d8dfea1de3d9c488484f67bd6915f",
+    "results/compare1/block01-flux-bf16/rank1.json": "f917e6aca5cc16bd46142ff7513baa6b8d7a9b3a1f518128a75b6f466a0ae192",
+    "results/compare1/block01-flux-bf16/rank2.json": "66f5c70b42444c8d3293c348a433c0f054c16afe902b820b14047a61f562a70d",
+    "results/compare1/block01-flux-bf16/rank3.json": "a0622655ae396b8884fb75cf80fe47c0035ba61f143a4a43f99e7af8072c74ad",
+    "results/compare1/block01-flux-bf16/rank4.json": "3a2a36c2d597043618cb018d14c853b54c2e635280ab83901b5fb9365640b429",
+    "results/compare1/block01-flux-bf16/rank5.json": "5f18fdf4087cf4634432586a2f2bfdccaacdee031a4793744ad3f8ac6f18263e",
+    "results/compare1/block01-flux-bf16/rank6.json": "5c0b500f6de443ae40c71dd477862e84c3249bc16e4935e045824687b0431d9d",
+    "results/compare1/block01-flux-bf16/rank7.json": "5c45b1b95a49e6cd84c03090a528e679926af3bd25fbc27def4cce3dcabeb873",
+    "results/compare1/block01-flux-int8-remote-first/rank0.json": "64b208e27fa6b1210aad81693749b5b3e41edc2559c7a4e03daa1331d910104c",
+    "results/compare1/block01-flux-int8-remote-first/rank1.json": "5ed09c4d55b7c05c82234412677649e6cc96ec6682d3ccd348fc75f060e2d570",
+    "results/compare1/block01-flux-int8-remote-first/rank2.json": "125a449c615799d38caf224a5719d86d371d119f1ca81516f54a56c96934161e",
+    "results/compare1/block01-flux-int8-remote-first/rank3.json": "b289a8ffe867e0142e29d880e1db50015bf1df0dac5d3bf7deb8a44d15710460",
+    "results/compare1/block01-flux-int8-remote-first/rank4.json": "443822425a00a864a1ed1379fd687d7de6968b8b583c486aa5fc2bedfdb73ee2",
+    "results/compare1/block01-flux-int8-remote-first/rank5.json": "326d60d078453a2a31f7c766168ecf8c5ae93d6bb4a0386363740c6d1ef018ee",
+    "results/compare1/block01-flux-int8-remote-first/rank6.json": "caf36e52143a5529f7310f47e3e5b5bf9f88ad9f3d8aa4330bc70f4d5fb10572",
+    "results/compare1/block01-flux-int8-remote-first/rank7.json": "b4d23cc9cc5fbafdcb2467f4d7b4d4e5c5b6c6b5e3c19d5697c97b722b3c1b25",
+    "results/compare1/block02-flux-int8-remote-first/rank0.json": "d48287e1907cc05c5138737fc2a1955f46085a3c1e397950af8b948347e4beea",
+    "results/compare1/block02-flux-int8-remote-first/rank1.json": "1a287e5fbe1bbfacd0fc1cef69a5003193bfc653191df6d39ec2c2b1c783ecd3",
+    "results/compare1/block02-flux-int8-remote-first/rank2.json": "af01fef679c158c0466c7fff38de1b69e3cabfd937101d89b576edf488989b5b",
+    "results/compare1/block02-flux-int8-remote-first/rank3.json": "e488b6005cc7738c0e4a864f60f87438471df6fbd649534f14c298b19966f949",
+    "results/compare1/block02-flux-int8-remote-first/rank4.json": "4fda0ae1b010ff59955d921fc886e3c50ceb4681081ae1add3b7e4d703487d69",
+    "results/compare1/block02-flux-int8-remote-first/rank5.json": "e76f4666a26f869cc86d6cdb3806d006090b1b3342c725ac078693483e8e3aac",
+    "results/compare1/block02-flux-int8-remote-first/rank6.json": "35b9c5e7bc3af2e2af6c6517e3ef78afb3a4bd1f7d8794407b9b88e21d40d46b",
+    "results/compare1/block02-flux-int8-remote-first/rank7.json": "4bc4c5b4c4d207ce20220e008cbed37862731645114d4ad913c6634461ffa7ce",
+    "results/compare1/block02-flux-bf16/rank0.json": "2f4089baeb95503b54ee7706afa5e7b339e2ff6048c545ec30cd7b9ccc59cd47",
+    "results/compare1/block02-flux-bf16/rank1.json": "417c11098e7cfb505402957f86a56f90beb874bcd1852f1868dcc4d1eec67810",
+    "results/compare1/block02-flux-bf16/rank2.json": "c8e11444530f257c5258582fee32f3973ebe995bed85277686351a215d1b681f",
+    "results/compare1/block02-flux-bf16/rank3.json": "e5a61cf6cff99b5ad8be7812af82728729a9e72538a8ef4659e1f0049528d0c5",
+    "results/compare1/block02-flux-bf16/rank4.json": "2011283a1902fc5d2131448f96a3314ca8f3913082d4e16fa3b9aac5b002b894",
+    "results/compare1/block02-flux-bf16/rank5.json": "b008ec47f0105342d0a95d8c22fc7c9edba3e35286062e0ac5a259fc297ba017",
+    "results/compare1/block02-flux-bf16/rank6.json": "e7188f6b108a7db25672c8609c912ec12b13634e7eb1ed714cfd07a5f81c05fe",
+    "results/compare1/block02-flux-bf16/rank7.json": "9aa95b6ce419d449882036bbac1cf6453867d99086f0a3becec9ec1c29a7645f",
+    "results/compare1/block02-megatron-int8/rank0.json": "9851321ca6847fd5195f08d8263232b60c827693348d92616c3616f738b3b05a",
+    "results/compare1/block02-megatron-int8/rank1.json": "0854322707dc47f1c49365acd2123f62f8a23bff8f8dd4af4732aa6bb2d35f3c",
+    "results/compare1/block02-megatron-int8/rank2.json": "9098fa06c1d448dedb147bf1a8bcd95d02fe895179d1fce7149868d78ed1f5b4",
+    "results/compare1/block02-megatron-int8/rank3.json": "483e86b2f81ac3e62ed5076931df36478fc1cc85b16bfcb5b5492c6de64e1607",
+    "results/compare1/block02-megatron-int8/rank4.json": "f53efd67592e581c0241c4a2e683870d5b89fe2e58e14ea112e61d8a430a247c",
+    "results/compare1/block02-megatron-int8/rank5.json": "a040d97481d489eca45e5c74d3cc6d2ace4e7f632ff231524426af8d7ca73ecb",
+    "results/compare1/block02-megatron-int8/rank6.json": "ae4ccb72e60cc667a1068fdec13e19eb68b2c9386e383a1199932ca8e26c3504",
+    "results/compare1/block02-megatron-int8/rank7.json": "45a93b3b84232b94503beff6b58f2a04ea5c1df9ee8867a1a24f50ec0cd394b7",
+    "results/compare1/block02-flux-int8/rank0.json": "bb056f70fe37f73b562a0ccb3cb321c2dd341f0a9daf20b0138d2e2c2e247da6",
+    "results/compare1/block02-flux-int8/rank1.json": "a5f0f348554683fe86fc9f25c8b7789ebdeac5409e08494207aea910c51322c7",
+    "results/compare1/block02-flux-int8/rank2.json": "88452afce46a2dd511e5d172a39d9500f1b0ee14d8cb8e2b7a7ad5ecb796ed7f",
+    "results/compare1/block02-flux-int8/rank3.json": "8338b6b7a29575d7b888142a3010ee15fdfc9a957bd5d5ca8812851aa12be69e",
+    "results/compare1/block02-flux-int8/rank4.json": "730520b6f7b808ef5dfa290b50350e11afc8676b6ee113618e6cb10ca09febe5",
+    "results/compare1/block02-flux-int8/rank5.json": "d6deb89d1f8ea6e3687a41dd1f33349239d96318fbe9bf3318dd4f8e3a1e7d28",
+    "results/compare1/block02-flux-int8/rank6.json": "588468bf7100d70f5ad4fa6f0b234931eeaa91beb5029d256e3c452ad821b1b8",
+    "results/compare1/block02-flux-int8/rank7.json": "7563eb3df16f00f0d27bad316b5a9c929e5bcc6337a79899bc6dfd03ed78ca45",
+    "results/compare1/block02-megatron-bf16/rank0.json": "ad61931e2a2fcbbe0f6027b692fbf02ab8d03dc3130230028c2a0675d460253e",
+    "results/compare1/block02-megatron-bf16/rank1.json": "e7a8c874c74f85e95d1e590d64ed61ecf1dd304574b9d252a9aa4b88c46e0bf5",
+    "results/compare1/block02-megatron-bf16/rank2.json": "44e13f74cc04692cc0fc3a0666595b4f3518721a359fd3acb634d046b9dff1f1",
+    "results/compare1/block02-megatron-bf16/rank3.json": "9ce460169bee5fb4c7b9a4eeb27fecb9cb4febc6e66c2cc6d247c3119072f57b",
+    "results/compare1/block02-megatron-bf16/rank4.json": "a08399edd584f18d501b9290361f34e581c9d74fcc583a9d9cf1954c7e98d5fc",
+    "results/compare1/block02-megatron-bf16/rank5.json": "0ad2e7a39c9ee556d72518a6a260a0d717032bf77cfd628214eb344699671ded",
+    "results/compare1/block02-megatron-bf16/rank6.json": "2d0b8047ff3eacdf6370aa177cf6cb15c0e3a36daf3f9f19278c788e7f5324c9",
+    "results/compare1/block02-megatron-bf16/rank7.json": "2e3cbc8b020984d901a477837bc7bfcdd9de7aab65fd1e2306c8f4636bb15a7a",
+    "results/compare1/block02-flux-int8-interleaved/rank0.json": "f40fe16b161a3a18b3eb4774b242dc889594cfda5e959a7fae58181002117838",
+    "results/compare1/block02-flux-int8-interleaved/rank1.json": "1572c15381076aa781dd691b0110264b19696c6cb3b02ab549148e50607d14e2",
+    "results/compare1/block02-flux-int8-interleaved/rank2.json": "f0574824926a380bdd38c1328ed1b80851f5922f644eb2b1e3e105502b38ed40",
+    "results/compare1/block02-flux-int8-interleaved/rank3.json": "2b8ef9ce2526e49df083a5c28ebb96cf8654d40694e4e9b603c98163e7c581f8",
+    "results/compare1/block02-flux-int8-interleaved/rank4.json": "5cb0e17bbd3111504c7387088da9b2962a1fcfb2f0b89f80fd9b54fe722660f2",
+    "results/compare1/block02-flux-int8-interleaved/rank5.json": "2aee93a77679eea5b37f131ce2712d79c756d4d59599c935cc6e7f21020a55e9",
+    "results/compare1/block02-flux-int8-interleaved/rank6.json": "895b388f9ff1792de205b1b15469cea1b1e1bbbd52fccadbee085835efe1c436",
+    "results/compare1/block02-flux-int8-interleaved/rank7.json": "253701437ab0cc8b7d243af950438fb568096c45b74dfc881eff889244a4d32a",
+    "results/compare1/block03-megatron-int8/rank0.json": "a49d11dbbd4e17164092ab69bfa2e148eeb769b1a9bfbd1957386e1ef07806ee",
+    "results/compare1/block03-megatron-int8/rank1.json": "1971815e72642a9e77db6eac498ae713f64de293e805bce492ccf408fad98b92",
+    "results/compare1/block03-megatron-int8/rank2.json": "da79ea082ebd24f281a99399f891b12e26df005587a70fcd8e0efc740943e7b2",
+    "results/compare1/block03-megatron-int8/rank3.json": "c94751043656495cea07e3c775c756c70f198a36ee7080d513ba9d28fdc26aea",
+    "results/compare1/block03-megatron-int8/rank4.json": "ee8e915fa45e7e6fc22d7d064aaf7ba2a8721ddadd0a3bba8b09bfa5e8099aa3",
+    "results/compare1/block03-megatron-int8/rank5.json": "99a5ff5285e4e3748b134df467742182dcc676ef7ca3eccfebf012c01243ce5f",
+    "results/compare1/block03-megatron-int8/rank6.json": "337a2190147b75d52c84a8d7b159163d09e663c1f50b1899ea9df18d6fb82e7a",
+    "results/compare1/block03-megatron-int8/rank7.json": "f85fee7cc3f37d811ae7b92aeb069904bf63d12de65393a294c97ad82f4a36bb",
+    "results/compare1/block03-flux-int8-remote-first/rank0.json": "627d2adde80fbfb1468a925c0837486bcfd752fc527e55a96855b8ef67076950",
+    "results/compare1/block03-flux-int8-remote-first/rank1.json": "4738014e7a92440f9c222120fabfaa1969ab898173734f0cd136795ff77c4149",
+    "results/compare1/block03-flux-int8-remote-first/rank2.json": "a72349e7ab646ce6c220c06633b59256568307ec07d173a27dc3f6e6149845ee",
+    "results/compare1/block03-flux-int8-remote-first/rank3.json": "5644c0804c65d396e2fd30c3c7e5d68370740cc987cd133019f8a86310d8673c",
+    "results/compare1/block03-flux-int8-remote-first/rank4.json": "3762f455156b2bd355171221979b0a9d3f2be2951d6d8425c13750de8d880376",
+    "results/compare1/block03-flux-int8-remote-first/rank5.json": "9dbdb02376be020705faab703a6981c0033a6ced4b5cb3a569989e6644c1a1ee",
+    "results/compare1/block03-flux-int8-remote-first/rank6.json": "d6b295613a1c41ea74d4c994e54202693e635086c31519b40b2ff19dffb420c6",
+    "results/compare1/block03-flux-int8-remote-first/rank7.json": "9b4e5a3c58b562d929e6324dd85e2249d6082b2ef9f764d476b44a2d3e1a8e2b",
+    "results/compare1/block03-megatron-bf16/rank0.json": "7ab2efad579e9ac3b5421b9c64fb629c101960602018eb0165a53e4d53060d35",
+    "results/compare1/block03-megatron-bf16/rank1.json": "96880f469cd7d1e2cfc26448b1f83d623738a16dfb6d6ac040eff5d6625e2229",
+    "results/compare1/block03-megatron-bf16/rank2.json": "d6fe908889840aa54832620569b1be2dc92a5e4f7d8ca01db4ba40096270b28b",
+    "results/compare1/block03-megatron-bf16/rank3.json": "e631e045588546ab8899c6aead01636210c30c18509190981030eae76effc698",
+    "results/compare1/block03-megatron-bf16/rank4.json": "c8f33f9c335b56f91ec44532a006f09b3479d793862ddb2a197f3d66ffc87ff7",
+    "results/compare1/block03-megatron-bf16/rank5.json": "adead7212441814b9b53c28b66a40bad6dbe2574f491849baaa90d2b2a72229a",
+    "results/compare1/block03-megatron-bf16/rank6.json": "07dc956e371db7664492ecc33131ba92cc59527b7d65590916b068ddf59a4bf4",
+    "results/compare1/block03-megatron-bf16/rank7.json": "fdc9f2e7113a51f54745232fb92fa9f3cc41d42b910cf30c62f3a4dc9c4ecd20",
+    "results/compare1/block03-flux-bf16/rank0.json": "391bb8314e5361bc20ce59e3ac9041eecfddd9074a18eb88d708658ad9244a34",
+    "results/compare1/block03-flux-bf16/rank1.json": "adccdb974ff76c47b69930000bc1189758ce6557030f62223bebbf81d81d6dd9",
+    "results/compare1/block03-flux-bf16/rank2.json": "1ecc447d5f20af7a1ddb04037fa1114b311ef83d3a13bc24de94671eefdf25a8",
+    "results/compare1/block03-flux-bf16/rank3.json": "e6a7e0e49706e9c83898d860ebd439a097bcbd925df99f1f6c27ef3b449172b8",
+    "results/compare1/block03-flux-bf16/rank4.json": "f666b1ed9f7433e5266826600dafa728eff1d7cf20927b996b9fdceebd3a77ee",
+    "results/compare1/block03-flux-bf16/rank5.json": "74426dd521774a421f98ca4c424b3bb4301ac9eee8e69128090c6eec0fd3e85c",
+    "results/compare1/block03-flux-bf16/rank6.json": "f79466fa8a3d31b73006fea9d55f0108ac159679d5ba44973a2a7ad95cd82bcd",
+    "results/compare1/block03-flux-bf16/rank7.json": "3f1183519774d98ebce24571a7f4d978a04fd73a7bb900cbca8ee0dcdf53a3a3",
+    "results/compare1/block03-flux-int8-interleaved/rank0.json": "d5e5b38a590842a19dcfe660117a01c4b86ca4467b2c84510c76f725fe3917bb",
+    "results/compare1/block03-flux-int8-interleaved/rank1.json": "7d0a82ceda0951831484855677e6b913b49b3641d7161e48cf4262e68afaf2f1",
+    "results/compare1/block03-flux-int8-interleaved/rank2.json": "c3237410782e8c8e2f743a8da141374be4ea1b419dd728aebbd17ed9603a0eca",
+    "results/compare1/block03-flux-int8-interleaved/rank3.json": "80700dbcdd135259242c5d0017e1070654faae440f88c199ee91ac6560a4f912",
+    "results/compare1/block03-flux-int8-interleaved/rank4.json": "ce88c6822cac522e2f6ab33334d94c26aa8bee8718fd7400edec91beebd18952",
+    "results/compare1/block03-flux-int8-interleaved/rank5.json": "f5ea74c0efa533745f51750c8c8c42e98fda0196d1f44ff0e3b7887e2c0b18a5",
+    "results/compare1/block03-flux-int8-interleaved/rank6.json": "54e1c23a4402472e37b012a4508fcaf5c9e509da994d926aee05a5fe23fcc4ca",
+    "results/compare1/block03-flux-int8-interleaved/rank7.json": "7de8c7ce7f4993f690f96b9b97e2818f82709dd8a564dbb18f2cb4c22587f565",
+    "results/compare1/block03-flux-int8/rank0.json": "11d13aeb986b892656f0e55e8060d29f72c80f8783a88524c40733e2a6225457",
+    "results/compare1/block03-flux-int8/rank1.json": "90dd4291e7f00c712c58292e23ce63d41c13bd733c7b2e127f6b00091200942d",
+    "results/compare1/block03-flux-int8/rank2.json": "20f360464e5c697848762015c4b54951b2eccad1ab7a011873cba24786ce9680",
+    "results/compare1/block03-flux-int8/rank3.json": "aba93c340f3439f0db4bed66d88522773c6b9b1f930e022a41c8812ce729fb86",
+    "results/compare1/block03-flux-int8/rank4.json": "0486af66ad3d2109228028d1be3a7495fd15cc5b5762bfdbb650d1a732454e74",
+    "results/compare1/block03-flux-int8/rank5.json": "3a56f831401d6c25917e6cbdf56df09f35e1e7651a6b235281ce24ada642d4b8",
+    "results/compare1/block03-flux-int8/rank6.json": "287fdf3c8c0955da606c56588b11e7d1188b6fe7cd2418b929a39525a3ac984d",
+    "results/compare1/block03-flux-int8/rank7.json": "c93e28dec5f0fee1588ae2ea66ee55055b7f13721730c6df476b7e8c9632a09a"
+  },
+  "operator_summary_sha256": "222214be74b8602401f605d1c7370fb8f9ad37cb59ab0241b6f690823e24207a",
+  "plan_sha256": "d925bd2a4ee0c7ff1d94367a6f13ee9032c65be93410170184be1c42f34b2fd8",
+  "build": {
+    "root": "/workspace/SL3061/open-compress-int8-six-arm-v2-1x-1blocks-20261102-171639-582516/build",
+    "manifest_sha256": "6b9fcd3d21f88bf4289f52c721ffd96e78454d841237658632386bc6d28d2915"
+  },
+  "environment": {
+    "torch": "2.8.0a0+5228986c39.nv25.06",
+    "cuda": "12.9",
+    "nccl": [
+      2,
+      27,
+      3
+    ],
+    "python": "/workspace/venvs/tempname-5090/bin/python",
+    "python_version": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+    "cxx11_abi": true
+  }
+}
