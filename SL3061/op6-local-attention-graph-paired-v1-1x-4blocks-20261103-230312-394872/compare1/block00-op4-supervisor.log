@@ -1,0 +1,29 @@
+Batch: /workspace/Load-5090/SL3061/op6-local-attention-graph-paired-v1-1x-4blocks-20261103-230312-394872/compare1/block00-op4
+STAGE worker-source-preflight
+STAGE hardware-preflight
+Traceback (most recent call last):
+  File "/workspace/TempName-New/tools/5090/phase6/op6_child.py", line 87, in <module>
+    main()
+  File "/workspace/TempName-New/tools/5090/phase6/op6_child.py", line 81, in main
+    op3.main(remaining)
+  File "/workspace/TempName-New/tools/5090/phase6/op3.py", line 408, in main
+    return supervise(args)
+           ^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op6_child.py", line 75, in supervise
+    return original_supervise(child_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op3.py", line 227, in supervise
+    hardware = base.hardware_preflight(args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/baseline.py", line 354, in hardware_preflight
+    run_process([args.python, HERE/'baseline_preflight.py', '--out', output,
+  File "/workspace/TempName-New/tools/5090/phase6/op6_memory.py", line 257, in run
+    return reservation.run(previous_run, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op6_memory.py", line 228, in run
+    self.acquire()
+  File "/workspace/TempName-New/tools/5090/phase6/op6_memory.py", line 187, in acquire
+    require(chunk, 'GPU memory reservation failed; see '+str(path))
+  File "/workspace/TempName-New/tools/5090/phase6/op6_memory.py", line 27, in require
+    raise RuntimeError(message)
+RuntimeError: GPU memory reservation failed; see /workspace/Load-5090/SL3061/op6-local-attention-graph-paired-v1-1x-4blocks-20261103-230312-394872/compare1/block00-op4/handoff/memory-holder.log
