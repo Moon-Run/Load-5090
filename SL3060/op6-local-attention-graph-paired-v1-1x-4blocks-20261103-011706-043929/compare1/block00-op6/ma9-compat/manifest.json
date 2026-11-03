@@ -1,0 +1,12 @@
+{
+  "protocol": "rtx5090-op2-ma9-standalone-sm120-v1",
+  "torch": "2.8.0a0+5228986c39.nv25.06",
+  "architecture": "sm_120",
+  "gpu_validated": false,
+  "source_sha256": "a907fb334a1a7c6f232943cb2c4fb3b3faf142bbe223b8b61699edfa0e0df84d",
+  "builder_sha256": "217a643b73f6767c65b304a7539714a14f0b205eda5462a6e2242db5643ce95a",
+  "nvcc_sha256": "df9974db233a0b7a6c6d59c0e5d74e011566104098bcb3553495ff1b95bdeaf6",
+  "library": "/workspace/Load-5090/SL3060/op6-local-attention-graph-paired-v1-1x-4blocks-20261103-011706-043929/compare1/block00-op6/ma9-compat/libop2_ma9_zero_count.so",
+  "library_sha256": "3a4bb01850921273d79efb953934b0ee439c545235eb85ca49493a75802bc27c",
+  "compile_log_sha256": "5f96a16c389c7672751af9650c5433d5e0cfbbecc4e945ee050d1f064d3048e6"
+}

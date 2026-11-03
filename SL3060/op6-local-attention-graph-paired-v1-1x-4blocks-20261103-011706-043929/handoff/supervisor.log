@@ -1,0 +1,15 @@
+STAGE compare1/block00-op4
+STAGE compare1/block00-op6
+Traceback (most recent call last):
+  File "/workspace/TempName-New/tools/5090/phase6/op6.py", line 432, in <module>
+    main()
+  File "/workspace/TempName-New/tools/5090/phase6/op6.py", line 402, in main
+    return supervise(args)
+           ^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op6.py", line 331, in supervise
+    run_child(command, child_environment(), child.with_name(child.name+'-supervisor.log'))
+  File "/workspace/TempName-New/tools/5090/phase6/op4.py", line 121, in run_child
+    subprocess.run(command, cwd=REPO, env=env, stdin=subprocess.DEVNULL,
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/workspace/venvs/tempname-5090/bin/python', '/workspace/TempName-New/tools/5090/phase6/op6_child.py', '--variant', 'op6', '--execute', '--foreground', '--out', '/workspace/Load-5090/SL3060/op6-local-attention-graph-paired-v1-1x-4blocks-20261103-011706-043929/compare1/block00-op6', '--trials', '1', '--blocks', '1', '--python', '/workspace/venvs/tempname-5090/bin/python', '--megatron', '/workspace/Megatron-LM', '--cuda-home', '/usr/local/cuda-12.9', '--build-cuda-home', '/usr/local/cuda-12.9', '--jobs', '128', '--worker-timeout', '3600', '--op3-build', '/workspace/Load-5090/SL3060/op6-local-attention-graph-paired-v1-1x-4blocks-20261103-011706-043929/compare1/block00-op4/build']' returned non-zero exit status 1.
