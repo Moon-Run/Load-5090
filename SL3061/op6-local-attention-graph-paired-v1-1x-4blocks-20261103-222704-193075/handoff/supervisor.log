@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/workspace/TempName-New/tools/5090/phase6/op6.py", line 459, in <module>
+    main()
+  File "/workspace/TempName-New/tools/5090/phase6/op6.py", line 429, in main
+    return supervise(args)
+           ^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op6.py", line 339, in supervise
+    reservation = resources.enter_context(op6_memory.session(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/contextlib.py", line 526, in enter_context
+    result = _enter(cm)
+             ^^^^^^^^^^
+  File "/usr/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op6_memory.py", line 237, in session
+    reservation.acquire()
+  File "/workspace/TempName-New/tools/5090/phase6/op6_memory.py", line 187, in acquire
+    require(chunk, 'GPU memory reservation failed; see '+str(path))
+  File "/workspace/TempName-New/tools/5090/phase6/op6_memory.py", line 27, in require
+    raise RuntimeError(message)
+RuntimeError: GPU memory reservation failed; see /workspace/Load-5090/SL3061/op6-local-attention-graph-paired-v1-1x-4blocks-20261103-222704-193075/handoff/memory-holder.log
