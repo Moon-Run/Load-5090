@@ -1,0 +1,6 @@
+{
+  "protocol": "rtx5090-phase6-op3-combined-v2",
+  "status": "failed",
+  "stage": "native-reference-wire-and-mapping-probes",
+  "error": "ValueError: Child exited 1; see /workspace/Load-5090/SL3061/op6-local-attention-graph-paired-v1-1x-4blocks-20261103-143056-057061/compare1/block00-op4/native-probe/op3-combined/process.log"
+}

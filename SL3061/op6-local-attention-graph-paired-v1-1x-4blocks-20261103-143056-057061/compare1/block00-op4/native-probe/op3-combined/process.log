@@ -1,0 +1,63 @@
+COMMAND ['/workspace/venvs/tempname-5090/bin/python', '-m', 'torch.distributed.run', '--standalone', '--nproc-per-node=8', '--max-restarts=0', '/workspace/TempName-New/tools/5090/phase6/op3_probe.py', '--build', '/workspace/Load-5090/SL3061/op6-local-attention-graph-paired-v1-1x-4blocks-20261103-143056-057061/compare1/block00-op4/build', '--arm', 'op3-combined', '--out', '/workspace/Load-5090/SL3061/op6-local-attention-graph-paired-v1-1x-4blocks-20261103-143056-057061/compare1/block00-op4/native-probe/op3-combined', '--execute']
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+Traceback (most recent call last):
+  File "/workspace/TempName-New/tools/5090/phase6/op3_probe.py", line 330, in <module>
+    main()
+  File "/workspace/TempName-New/tools/5090/phase6/op3_probe.py", line 326, in main
+    run(args)
+  File "/workspace/TempName-New/tools/5090/phase6/op3_probe.py", line 236, in run
+    torch.cuda.set_device(rank)
+  File "/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py", line 529, in set_device
+    torch._C._cuda_setDevice(device)
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+WARNING:root:Failed to load NVSHMEM libs
+W1103 07:08:20.215000 575929 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 575948 closing signal SIGTERM
+W1103 07:08:20.218000 575929 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 575949 closing signal SIGTERM
+W1103 07:08:20.220000 575929 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 575950 closing signal SIGTERM
+W1103 07:08:20.222000 575929 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 575951 closing signal SIGTERM
+W1103 07:08:20.224000 575929 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 575952 closing signal SIGTERM
+W1103 07:08:20.227000 575929 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 575953 closing signal SIGTERM
+W1103 07:08:20.229000 575929 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 575955 closing signal SIGTERM
+E1103 07:08:21.162000 575929 torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 1) local_rank: 6 (pid: 575954) of binary: /workspace/venvs/tempname-5090/bin/python
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 896, in <module>
+    main()
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 892, in main
+    run(args)
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/run.py", line 883, in run
+    elastic_launch(
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/launcher/api.py", line 139, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/distributed/launcher/api.py", line 270, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/workspace/TempName-New/tools/5090/phase6/op3_probe.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-11-03_07:08:20
+  host      : SL3061
+  rank      : 6 (local_rank: 6)
+  exitcode  : 1 (pid: 575954)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

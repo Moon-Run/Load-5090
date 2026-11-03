@@ -1,0 +1,84 @@
+{
+  "protocol": "rtx5090-phase6-op6-local-attention-graph-paired-v1",
+  "run_id": "aa2c808e482b406a8b7732a43c6f9670",
+  "trials": 1,
+  "blocks": 4,
+  "model": {
+    "layers": 32,
+    "hidden": 4096,
+    "ffn": 16384,
+    "heads": 32,
+    "sequence": 2048,
+    "micro_batch": 1,
+    "global_batch": 4,
+    "tp": 8,
+    "dp": 1,
+    "sm_count": 170,
+    "seed": 1234,
+    "token_seed": 4321,
+    "vocab": 32768
+  },
+  "target_ms": 800.0,
+  "nccl_overrides": {
+    "NCCL_MIN_NCHANNELS": "16",
+    "NCCL_MAX_NCHANNELS": "16"
+  },
+  "schedule": [
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 0,
+      "arm": "op4",
+      "directory": "compare1/block00-op4"
+    },
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 1,
+      "arm": "op6",
+      "directory": "compare1/block00-op6"
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 0,
+      "arm": "op6",
+      "directory": "compare1/block01-op6"
+    },
+    {
+      "trial": 1,
+      "block": 1,
+      "index": 1,
+      "arm": "op4",
+      "directory": "compare1/block01-op4"
+    },
+    {
+      "trial": 1,
+      "block": 2,
+      "index": 0,
+      "arm": "op4",
+      "directory": "compare1/block02-op4"
+    },
+    {
+      "trial": 1,
+      "block": 2,
+      "index": 1,
+      "arm": "op6",
+      "directory": "compare1/block02-op6"
+    },
+    {
+      "trial": 1,
+      "block": 3,
+      "index": 0,
+      "arm": "op6",
+      "directory": "compare1/block03-op6"
+    },
+    {
+      "trial": 1,
+      "block": 3,
+      "index": 1,
+      "arm": "op4",
+      "directory": "compare1/block03-op4"
+    }
+  ]
+}

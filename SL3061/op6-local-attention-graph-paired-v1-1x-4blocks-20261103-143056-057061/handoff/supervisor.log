@@ -1,0 +1,29 @@
+STAGE prepare-baseline-build
+STAGE compile-baseline-build
+Compile RTX5090 native arm: ma11
+Compile RTX5090 native arm: ma89
+Compile RTX5090 native arm: cr3
+Compile RTX5090 native arm: r
+Compile RTX5090 native arm: c
+Compile RTX5090 native arm: a
+Compile RTX5090 native arm: flux-basic
+STAGE prepare-abc-build
+STAGE compile-abc-build
+Compile RTX5090 OP1 variant: a
+Compile RTX5090 OP1 variant: flux-basic-interleaved
+Compile RTX5090 Flux baseline variant: a
+Compile RTX5090 Flux baseline variant: c
+STAGE compare1/block00-op4
+Traceback (most recent call last):
+  File "/workspace/TempName-New/tools/5090/phase6/op6.py", line 432, in <module>
+    main()
+  File "/workspace/TempName-New/tools/5090/phase6/op6.py", line 402, in main
+    return supervise(args)
+           ^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op6.py", line 331, in supervise
+    run_child(command, child_environment(), child.with_name(child.name+'-supervisor.log'))
+  File "/workspace/TempName-New/tools/5090/phase6/op4.py", line 121, in run_child
+    subprocess.run(command, cwd=REPO, env=env, stdin=subprocess.DEVNULL,
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/workspace/venvs/tempname-5090/bin/python', '/workspace/TempName-New/tools/5090/phase6/op6_child.py', '--variant', 'op4', '--execute', '--foreground', '--out', '/workspace/Load-5090/SL3061/op6-local-attention-graph-paired-v1-1x-4blocks-20261103-143056-057061/compare1/block00-op4', '--trials', '1', '--blocks', '1', '--python', '/workspace/venvs/tempname-5090/bin/python', '--megatron', '/workspace/Megatron-LM', '--cuda-home', '/usr/local/cuda-12.9', '--build-cuda-home', '/usr/local/cuda-12.9', '--jobs', '128', '--worker-timeout', '3600', '--abc-build', '/workspace/Load-5090/SL3061/op6-local-attention-graph-paired-v1-1x-4blocks-20261103-143056-057061/dependencies/abc']' returned non-zero exit status 1.

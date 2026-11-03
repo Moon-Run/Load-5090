@@ -1,0 +1,5 @@
+{
+  "protocol": "rtx5090-phase6-op3-combined-v2",
+  "status": "running",
+  "stage": "operator-correctness-latency-profile"
+}

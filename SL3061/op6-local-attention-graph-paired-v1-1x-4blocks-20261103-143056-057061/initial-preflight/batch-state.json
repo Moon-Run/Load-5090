@@ -1,0 +1,6 @@
+{
+  "protocol": "rtx5090-phase6-op3-combined-v2",
+  "status": "preflight_completed",
+  "stage": "done",
+  "gpu_benchmark_completed": false
+}

@@ -1,0 +1,20 @@
+{
+  "out": "/workspace/Load-5090/SL3061/op6-local-attention-graph-paired-v1-1x-4blocks-20261103-143056-057061/compare1/block00-op4",
+  "python": "/workspace/venvs/tempname-5090/bin/python",
+  "megatron": "/workspace/Megatron-LM",
+  "cuda_home": "/usr/local/cuda-12.9",
+  "build_cuda_home": "/usr/local/cuda-12.9",
+  "abc_build": "/workspace/Load-5090/SL3061/op6-local-attention-graph-paired-v1-1x-4blocks-20261103-143056-057061/dependencies/abc",
+  "op3_build": null,
+  "trials": 1,
+  "blocks": 1,
+  "jobs": 128,
+  "worker_timeout": 3600,
+  "execute": true,
+  "foreground": true,
+  "preflight_only": false,
+  "transport_smoke_only": false,
+  "operator_only": false,
+  "report": false,
+  "inside": false
+}
