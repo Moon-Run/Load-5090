@@ -1,0 +1,102 @@
+{
+  "protocol": "rtx5090-phase6-op3-combined-v2",
+  "transport": "rtx5090-nccl-staged-v2",
+  "run_id": "f34652092a0947299f3f70fe6045418b",
+  "arms": [
+    "op3-combined"
+  ],
+  "model": {
+    "layers": 32,
+    "hidden": 4096,
+    "ffn": 16384,
+    "heads": 32,
+    "sequence": 2048,
+    "micro_batch": 1,
+    "global_batch": 4,
+    "tp": 8,
+    "dp": 1,
+    "sm_count": 170,
+    "seed": 1234,
+    "token_seed": 4321,
+    "vocab": 32768
+  },
+  "trials": 1,
+  "blocks": 1,
+  "operator_only": false,
+  "schedule": [
+    {
+      "trial": 1,
+      "block": 0,
+      "index": 0,
+      "arm": "op3-combined",
+      "mode": "timing",
+      "directory": "compare1/block00-op3-combined"
+    }
+  ],
+  "communication": {
+    "environment": {
+      "NCCL_VERSION": "2.27.3",
+      "TORCH_NCCL_USE_COMM_NONBLOCKING": "0",
+      "NCCL_MIN_NCHANNELS": "16",
+      "NCCL_MAX_NCHANNELS": "16",
+      "NCCL_NVLS_ENABLE": "0",
+      "NCCL_DEBUG": "WARN",
+      "TORCH_NCCL_ASYNC_ERROR_HANDLING": "1",
+      "NCCL_P2P_DISABLE": "1",
+      "NCCL_SHM_DISABLE": "0"
+    },
+    "config_files": {
+      "/etc/nccl.conf": null,
+      "/root/.nccl.conf": null
+    },
+    "nvls_request": "0"
+  },
+  "environment": {
+    "torch": "2.8.0a0+5228986c39.nv25.06",
+    "cuda": "12.9",
+    "nccl": [
+      2,
+      27,
+      3
+    ],
+    "python": "/workspace/venvs/tempname-5090/bin/python",
+    "python_version": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]",
+    "cxx11_abi": true
+  },
+  "cuda_visible_devices": "0,1,2,3,4,5,6,7",
+  "preflight_sha256": "71354a47c83865be934ec1f097cf6ff16bdd9b6f4363fafd523c8f81f0f0e9c6",
+  "ma9_compat": {
+    "protocol": "rtx5090-op2-ma9-standalone-sm120-v1",
+    "torch": "2.8.0a0+5228986c39.nv25.06",
+    "architecture": "sm_120",
+    "gpu_validated": false,
+    "source_sha256": "a907fb334a1a7c6f232943cb2c4fb3b3faf142bbe223b8b61699edfa0e0df84d",
+    "builder_sha256": "217a643b73f6767c65b304a7539714a14f0b205eda5462a6e2242db5643ce95a",
+    "nvcc_sha256": "df9974db233a0b7a6c6d59c0e5d74e011566104098bcb3553495ff1b95bdeaf6",
+    "library": "/workspace/Load-5090/SL3060/op6-local-attention-graph-paired-v1-1x-4blocks-20261104-104108-810625/compare1/block00-op4/ma9-compat/libop2_ma9_zero_count.so",
+    "library_sha256": "3cc76f4acc34c3c79f5823eae28ae7c4a6bda01f9b00ab92e7e552a2d2a8c538",
+    "compile_log_sha256": "5d6837d96ac8926d053d5201958b66eb9eeb119921a1fc893543a5a810319d49"
+  },
+  "ma11_compat": {
+    "protocol": "rtx5090-ma11-pytorch-280-softmax-v1",
+    "torch": "2.8.0a0+5228986c39.nv25.06",
+    "source_sha256": "ca5429acf22076e7f7caf44204df3558d882507fbdef5afd95d13d5bd8c10552",
+    "builder_sha256": "02d4ddf25f91a2596b49bca1a584d074231f4c5f845cbb6ef1c4c0b42e03a915",
+    "nvcc_sha256": "df9974db233a0b7a6c6d59c0e5d74e011566104098bcb3553495ff1b95bdeaf6",
+    "library": "/workspace/Load-5090/SL3060/op6-local-attention-graph-paired-v1-1x-4blocks-20261104-104108-810625/compare1/block00-op4/ma11-compat/libma11_softmax_5090.so",
+    "library_sha256": "e3dbebc454d3b9dffa5f29b1a6826fb8ad760c425622b291ec971590503acb01",
+    "compile_log_sha256": "1dd69240f337c3668affb60a4f2d372bfc178b87dca7a452b5377a5dfdde34e1",
+    "architecture": "sm_120",
+    "gpu_validated": false
+  },
+  "ma11_probe": {
+    "result_sha256": "bc7a16eff312ee45db28e94505fb012e965f290c7406de12f6b9aa6552e6dea4"
+  },
+  "build": {
+    "root": "/workspace/Load-5090/SL3060/op6-local-attention-graph-paired-v1-1x-4blocks-20261104-104108-810625/compare1/block00-op4/build",
+    "manifest_sha256": "528370b4ba617ca5fe9189f37015c5a1537ed7cc47f4dd69e302c38075c9368f"
+  },
+  "op6_variant": "op4",
+  "op6_protocol": "rtx5090-phase6-op6-local-attention-graph-paired-v1",
+  "op6_reserve_mib": 0
+}
