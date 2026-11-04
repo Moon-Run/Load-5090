@@ -1,0 +1,524 @@
+{
+  "protocol": "rtx5090-op3-combined-operator-v1",
+  "arm": "op3-combined",
+  "rank": 0,
+  "completed": true,
+  "settings": {
+    "warmup": 20,
+    "iterations": 100,
+    "windows": 1,
+    "profile_calls": 10,
+    "gradient_steps": 3
+  },
+  "run_id": "33f389d341a34bf7b03d892beba416a6",
+  "entrypoint_sha256": "28e583e995f6802ffd2dd4d2d3caf3275c8335c5bf86359158d7adafee324e73",
+  "build_manifest_sha256": "084b9517210cc0663369e6dd9098af388a5258cf9970c5334541ef991b006634",
+  "roles": {
+    "attn": {
+      "shape": [
+        2048,
+        4096,
+        512
+      ],
+      "gradient_checks": [
+        {
+          "step": 0,
+          "output_bitwise": true,
+          "inputs_unchanged": true,
+          "output_sha256": "ab6cc6e2f9c4d2f2fb5ff8223dbf7c94271c4a640d32e6505259de59fb4f6725",
+          "reference_output_sha256": "ab6cc6e2f9c4d2f2fb5ff8223dbf7c94271c4a640d32e6505259de59fb4f6725",
+          "gradients": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "d327db90f807f93a5ff6ac938e64aa0417bbcc6b0a54f1bb0ce62b7f8e46bf63",
+              "reference_sha256": "d327db90f807f93a5ff6ac938e64aa0417bbcc6b0a54f1bb0ce62b7f8e46bf63"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "5f95722dc85e1c973a422f6b677786aedd25977f42e0ec06e4d3d8979af98e8d",
+              "reference_sha256": "5f95722dc85e1c973a422f6b677786aedd25977f42e0ec06e4d3d8979af98e8d"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "e53f697fd2fa77bbe82ccb2438774a7db804967ecc13763f65b9b3ac26e69bb0",
+              "reference_sha256": "e53f697fd2fa77bbe82ccb2438774a7db804967ecc13763f65b9b3ac26e69bb0"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "2e9f58774cdb4aaff103db297ba5f683c3ec6942a108920529c01061d667df70",
+              "reference_sha256": "2e9f58774cdb4aaff103db297ba5f683c3ec6942a108920529c01061d667df70"
+            }
+          },
+          "updates": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "2c3f9c6b008777bc66c4c24f99791989e1ff7db56d8bd86dac2525b1a44b541d",
+              "reference_sha256": "2c3f9c6b008777bc66c4c24f99791989e1ff7db56d8bd86dac2525b1a44b541d"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "ae4685be22dc39b29b109a0ccf5ce88485bba1b0be99c3044d8550179addf79b",
+              "reference_sha256": "ae4685be22dc39b29b109a0ccf5ce88485bba1b0be99c3044d8550179addf79b"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "7e478c8b3fec5f0444d9c1b90b2d814622b46d248e4c778810d2045e19493f36",
+              "reference_sha256": "7e478c8b3fec5f0444d9c1b90b2d814622b46d248e4c778810d2045e19493f36"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "1d54188363afdea0ce8278e623c2d599cc764be37b96cfec676f83d6612c92d5",
+              "reference_sha256": "1d54188363afdea0ce8278e623c2d599cc764be37b96cfec676f83d6612c92d5"
+            }
+          }
+        },
+        {
+          "step": 1,
+          "output_bitwise": true,
+          "inputs_unchanged": true,
+          "output_sha256": "92b822819b59353d8bfdb665912ed27f33ee29520f47d0317cf6eeb8e3a61569",
+          "reference_output_sha256": "92b822819b59353d8bfdb665912ed27f33ee29520f47d0317cf6eeb8e3a61569",
+          "gradients": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "dc1ec224341db1f5d159158f37f7377b572281601a795f416b7af3e1f93320fe",
+              "reference_sha256": "dc1ec224341db1f5d159158f37f7377b572281601a795f416b7af3e1f93320fe"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "9cbba88cd7d3cd231fc356c4180aac3deb7cb3a96a0356ded7c651af75da7c45",
+              "reference_sha256": "9cbba88cd7d3cd231fc356c4180aac3deb7cb3a96a0356ded7c651af75da7c45"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "241843705905563be908beac2508aebcfffb63ea978c46e2d70721214197cd00",
+              "reference_sha256": "241843705905563be908beac2508aebcfffb63ea978c46e2d70721214197cd00"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "69a822236c021e2bf243a63ce6af40d9d3433ad5780888ccd53ca2b30c6d4dcb",
+              "reference_sha256": "69a822236c021e2bf243a63ce6af40d9d3433ad5780888ccd53ca2b30c6d4dcb"
+            }
+          },
+          "updates": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "169888c62fbc545db98389086b5ae2f0d1fecacbe73f8cfa90fea1d1b44aed39",
+              "reference_sha256": "169888c62fbc545db98389086b5ae2f0d1fecacbe73f8cfa90fea1d1b44aed39"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "38173a1a43e6d91b8da8a56d7f924ef3a513d14ed89481aed74336630076ee7b",
+              "reference_sha256": "38173a1a43e6d91b8da8a56d7f924ef3a513d14ed89481aed74336630076ee7b"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "27e1e213374875f0e75fe980a7ab319df52d545480702149ac550a5ee938d0b9",
+              "reference_sha256": "27e1e213374875f0e75fe980a7ab319df52d545480702149ac550a5ee938d0b9"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "2c835b0befd0f9a27096d31856a8ddb9f6de2d5c1412ebbc5cfd2bb735526975",
+              "reference_sha256": "2c835b0befd0f9a27096d31856a8ddb9f6de2d5c1412ebbc5cfd2bb735526975"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "output_bitwise": true,
+          "inputs_unchanged": true,
+          "output_sha256": "e580c6c61d55deea7ae35e5f39f109a2c9d85ac3fdefa204ecadaadbffbadfbe",
+          "reference_output_sha256": "e580c6c61d55deea7ae35e5f39f109a2c9d85ac3fdefa204ecadaadbffbadfbe",
+          "gradients": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "8a46070555dff0a3bb075c163f241c241d417ed67f4fa6a0087a4b15814be9d4",
+              "reference_sha256": "8a46070555dff0a3bb075c163f241c241d417ed67f4fa6a0087a4b15814be9d4"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "02d9d5af93a4d291c29e5eeb92405c7ee8ca2bbc1d9a52211bd67f0325a878c0",
+              "reference_sha256": "02d9d5af93a4d291c29e5eeb92405c7ee8ca2bbc1d9a52211bd67f0325a878c0"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "0918c87194b920dfe5cd8496385a00ff81804c1d8b1b69215180edfdbc12513e",
+              "reference_sha256": "0918c87194b920dfe5cd8496385a00ff81804c1d8b1b69215180edfdbc12513e"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "5d1cbba456b03518171ada88881ca6e09a73cac9f6225de8c9a4df9d99ae7bf0",
+              "reference_sha256": "5d1cbba456b03518171ada88881ca6e09a73cac9f6225de8c9a4df9d99ae7bf0"
+            }
+          },
+          "updates": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "6ed93c97a0a8ea3d72b20da89dbfce091d639d93ec4fd2295b05e96f8c171933",
+              "reference_sha256": "6ed93c97a0a8ea3d72b20da89dbfce091d639d93ec4fd2295b05e96f8c171933"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "cd48c341e1b61502873afeb28979e371e921efdfd048f0d169b44c1587c08d58",
+              "reference_sha256": "cd48c341e1b61502873afeb28979e371e921efdfd048f0d169b44c1587c08d58"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "5786c11617deb9ae351ff5ff34acda45ec1142b78daf06b466d5cfd468547b88",
+              "reference_sha256": "5786c11617deb9ae351ff5ff34acda45ec1142b78daf06b466d5cfd468547b88"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "bcee64f706bcfe124fe39edf9c33cfdbd830a825435aad57bc1a2593c395e4ec",
+              "reference_sha256": "bcee64f706bcfe124fe39edf9c33cfdbd830a825435aad57bc1a2593c395e4ec"
+            }
+          }
+        }
+      ],
+      "windows": [
+        {
+          "index": 0,
+          "iterations": 100,
+          "gpu_us": 636.5030288696289,
+          "wall_us": 636.9424518197775
+        }
+      ],
+      "state": {
+        "protocol": "rtx5090-op3-direct-h128-v1",
+        "arm": "op3-combined",
+        "calls": 136,
+        "chunks": [
+          {
+            "index": 0,
+            "begin": 0,
+            "count": 8192,
+            "raw_groups": 0,
+            "peer_bytes": 1114112
+          }
+        ],
+        "transport": "NCCL-byte-AllToAll",
+        "arrival_trigger": "whole-exchange",
+        "selection": "all-remote",
+        "wire_bytes_per_rank": 7798784,
+        "bf16_wire_bytes_per_rank": 14680064,
+        "encode_calls": 136,
+        "exchange_calls": 136,
+        "decode_calls": 136,
+        "fused_consumer_calls": 133,
+        "projection_calls": 3,
+        "join_calls": 0,
+        "wait_calls": 136,
+        "independent_output": true,
+        "fixed_source_order": "rank+1-through-rank",
+        "pending_exchange": false,
+        "device": 0,
+        "caller_stream": 186758720,
+        "comm_stream": 186758720,
+        "decode_stream": 186758720,
+        "send_split_bytes": [
+          [
+            0,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112
+          ]
+        ],
+        "receive_split_bytes": [
+          [
+            0,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112
+          ]
+        ],
+        "tx_ptrs": [
+          139881649012736
+        ],
+        "rx_ptrs": [
+          139881656811520
+        ],
+        "packet_layout": "H128-AoS-136",
+        "calibration_used": false,
+        "encoder": "warp-owned-four-groups",
+        "decoder": "r-packed-source-prefetch",
+        "consumer_fusion": true,
+        "original_peer_overlap_preserved": false,
+        "failed": false
+      },
+      "trace_sha256": "b4527ef4009af83fe7335cd640ca9633c67095898a718b50bbccbefd1ea83777"
+    },
+    "mlp": {
+      "shape": [
+        2048,
+        4096,
+        2048
+      ],
+      "gradient_checks": [
+        {
+          "step": 0,
+          "output_bitwise": true,
+          "inputs_unchanged": true,
+          "output_sha256": "7f8c9f64f43c0b5ee0130544aa7ff6d77437ab62c2c9df433ffb2b23f9a5ae79",
+          "reference_output_sha256": "7f8c9f64f43c0b5ee0130544aa7ff6d77437ab62c2c9df433ffb2b23f9a5ae79",
+          "gradients": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "d10593e0a407b4a2262ad5b98c5605d46e1320808e9f14fb80a12ee44cc5fa46",
+              "reference_sha256": "d10593e0a407b4a2262ad5b98c5605d46e1320808e9f14fb80a12ee44cc5fa46"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "9cc7b0d860e5226081e9e31dee817d2a74bb532fa97cedfbc515ed1e865b5ac7",
+              "reference_sha256": "9cc7b0d860e5226081e9e31dee817d2a74bb532fa97cedfbc515ed1e865b5ac7"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "23caf75d7e45aa6d87fc822c3008b56b562e41ccc785b99ba26c3d4051103ba5",
+              "reference_sha256": "23caf75d7e45aa6d87fc822c3008b56b562e41ccc785b99ba26c3d4051103ba5"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "2b0d40748d2ab5ea3f3a0cbfbd29dd3506d4887cceb6763040b4814f2359aa25",
+              "reference_sha256": "2b0d40748d2ab5ea3f3a0cbfbd29dd3506d4887cceb6763040b4814f2359aa25"
+            }
+          },
+          "updates": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "7434ee5a67b914b2cf286b092cd3284f7883e9319ba0170fec72d00da6a8d5ee",
+              "reference_sha256": "7434ee5a67b914b2cf286b092cd3284f7883e9319ba0170fec72d00da6a8d5ee"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "b47af439f95859301ac532c3d0ce44f917d755983b5e04ea47bfcb2d6320a375",
+              "reference_sha256": "b47af439f95859301ac532c3d0ce44f917d755983b5e04ea47bfcb2d6320a375"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "1f42598d9725366aaf38ecedbc5049d5871c7fddc99e796d8528f91505efb395",
+              "reference_sha256": "1f42598d9725366aaf38ecedbc5049d5871c7fddc99e796d8528f91505efb395"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "4753257fb58fc96f6dcf406409ac1096a405d3915dd11173b4724b61b04869a4",
+              "reference_sha256": "4753257fb58fc96f6dcf406409ac1096a405d3915dd11173b4724b61b04869a4"
+            }
+          }
+        },
+        {
+          "step": 1,
+          "output_bitwise": true,
+          "inputs_unchanged": true,
+          "output_sha256": "86febbfc652f32642af265ba4c9985f4b2e9fdff8a6ca68d4912353244bd5a38",
+          "reference_output_sha256": "86febbfc652f32642af265ba4c9985f4b2e9fdff8a6ca68d4912353244bd5a38",
+          "gradients": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "fcf122cbfb80ba1afa9572384b3a4568279c073bae2d9ced303ae238ca375e79",
+              "reference_sha256": "fcf122cbfb80ba1afa9572384b3a4568279c073bae2d9ced303ae238ca375e79"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "b0bc09c095065ef52a346cbeb77143ece9c61885ef5632713c14f09f0a5d201c",
+              "reference_sha256": "b0bc09c095065ef52a346cbeb77143ece9c61885ef5632713c14f09f0a5d201c"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "e2711a426dab106ce434ec0a0623a1b9e61e65823e35bb1eb7df07c15acddd17",
+              "reference_sha256": "e2711a426dab106ce434ec0a0623a1b9e61e65823e35bb1eb7df07c15acddd17"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "79e987455fea7e65fd8867225d73d1f3aab85a8a1ec381c7eac6187f97d60978",
+              "reference_sha256": "79e987455fea7e65fd8867225d73d1f3aab85a8a1ec381c7eac6187f97d60978"
+            }
+          },
+          "updates": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "159374c10fe8844ff3115270639aa1ec184114e74c93e76a488ca51e05a4d2e1",
+              "reference_sha256": "159374c10fe8844ff3115270639aa1ec184114e74c93e76a488ca51e05a4d2e1"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "2f91c0152db70e704613046bd7c92d41e5ef1345feca6c5f1768048de57062e7",
+              "reference_sha256": "2f91c0152db70e704613046bd7c92d41e5ef1345feca6c5f1768048de57062e7"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "f1b080d9e35136d52ddb3ce4ae5eeb8ec9e953467a9f42cb02a55beedfb802d7",
+              "reference_sha256": "f1b080d9e35136d52ddb3ce4ae5eeb8ec9e953467a9f42cb02a55beedfb802d7"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "02a522db1c9051aea86676d3c7c0a7f07984ef494fe65b6fc616c25326c0a3a9",
+              "reference_sha256": "02a522db1c9051aea86676d3c7c0a7f07984ef494fe65b6fc616c25326c0a3a9"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "output_bitwise": true,
+          "inputs_unchanged": true,
+          "output_sha256": "2d23482c0e6e5a97ef27314c0880aa3a66344dc0e8bcb5d87792469402fe0a10",
+          "reference_output_sha256": "2d23482c0e6e5a97ef27314c0880aa3a66344dc0e8bcb5d87792469402fe0a10",
+          "gradients": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "ff2d88153e2c5a418387936245b515884e6ba5b5ca747ff2b69c818951a2c218",
+              "reference_sha256": "ff2d88153e2c5a418387936245b515884e6ba5b5ca747ff2b69c818951a2c218"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "9e9dcc35732005baad57a74c5e29d2a587b46a115b93a96358a51eae3f6550c3",
+              "reference_sha256": "9e9dcc35732005baad57a74c5e29d2a587b46a115b93a96358a51eae3f6550c3"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "abc70d5e743b68b2b222ea8416f6376c1957bf4340253d896129b8f7401ee507",
+              "reference_sha256": "abc70d5e743b68b2b222ea8416f6376c1957bf4340253d896129b8f7401ee507"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "c86a1b2fa6224765afa0b3633dedb58d2a9cee346fe34c519a90d47f4e68726f",
+              "reference_sha256": "c86a1b2fa6224765afa0b3633dedb58d2a9cee346fe34c519a90d47f4e68726f"
+            }
+          },
+          "updates": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "e9a4fd0ee93eb078e68331ed734a7e4d417b0cabacb7e4a5d7300f8d0acabf5c",
+              "reference_sha256": "e9a4fd0ee93eb078e68331ed734a7e4d417b0cabacb7e4a5d7300f8d0acabf5c"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "0bfd2820adfaeed5727a955c500b6557429f523616bfb9e3fc1113b9c51b98f4",
+              "reference_sha256": "0bfd2820adfaeed5727a955c500b6557429f523616bfb9e3fc1113b9c51b98f4"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "5df4ed221d6a6d7a3f960ea0cee47c0edb7643e931fd7739a53d8ebd8238828f",
+              "reference_sha256": "5df4ed221d6a6d7a3f960ea0cee47c0edb7643e931fd7739a53d8ebd8238828f"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "b60bd1b60a2cede22b81ec7c4ee85ce7fd8ee2c85ba8e7cd9fbbcaedaaff2f83",
+              "reference_sha256": "b60bd1b60a2cede22b81ec7c4ee85ce7fd8ee2c85ba8e7cd9fbbcaedaaff2f83"
+            }
+          }
+        }
+      ],
+      "windows": [
+        {
+          "index": 0,
+          "iterations": 100,
+          "gpu_us": 646.6262054443359,
+          "wall_us": 646.8973495066166
+        }
+      ],
+      "state": {
+        "protocol": "rtx5090-op3-direct-h128-v1",
+        "arm": "op3-combined",
+        "calls": 136,
+        "chunks": [
+          {
+            "index": 0,
+            "begin": 0,
+            "count": 8192,
+            "raw_groups": 0,
+            "peer_bytes": 1114112
+          }
+        ],
+        "transport": "NCCL-byte-AllToAll",
+        "arrival_trigger": "whole-exchange",
+        "selection": "all-remote",
+        "wire_bytes_per_rank": 7798784,
+        "bf16_wire_bytes_per_rank": 14680064,
+        "encode_calls": 136,
+        "exchange_calls": 136,
+        "decode_calls": 136,
+        "fused_consumer_calls": 133,
+        "projection_calls": 3,
+        "join_calls": 0,
+        "wait_calls": 136,
+        "independent_output": true,
+        "fixed_source_order": "rank+1-through-rank",
+        "pending_exchange": false,
+        "device": 0,
+        "caller_stream": 186758720,
+        "comm_stream": 186758720,
+        "decode_stream": 186758720,
+        "send_split_bytes": [
+          [
+            0,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112
+          ]
+        ],
+        "receive_split_bytes": [
+          [
+            0,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112
+          ]
+        ],
+        "tx_ptrs": [
+          139881416359936
+        ],
+        "rx_ptrs": [
+          139881428811776
+        ],
+        "packet_layout": "H128-AoS-136",
+        "calibration_used": false,
+        "encoder": "warp-owned-four-groups",
+        "decoder": "r-packed-source-prefetch",
+        "consumer_fusion": true,
+        "original_peer_overlap_preserved": false,
+        "failed": false
+      },
+      "trace_sha256": "c42878ebf9fcc261e3b2bc15c246000fa8223adc01134de10bd85b45d15358ff"
+    }
+  },
+  "gpu_uuid": "4eaa69af-8d93-18a4-4204-f0d489eac16d",
+  "torch": "2.8.0a0+5228986c39.nv25.06",
+  "cuda": "12.9",
+  "nccl": [
+    2,
+    27,
+    3
+  ],
+  "libraries": {
+    "libflux_cuda.so": {
+      "path": "/workspace/Load-5090/SL3061/op6-local-attention-graph-paired-v1-1x-4blocks-20261103-143056-057061/dependencies/abc/interleaved/flux-basic-interleaved/python/flux/lib/libflux_cuda.so",
+      "sha256": "223c5cdc5297e852809880c9d12d5f8c87ef8b01599462c6166171213c7da3d3"
+    },
+    "libflux_cuda_ths_op.so": {
+      "path": "/workspace/Load-5090/SL3061/op6-local-attention-graph-paired-v1-1x-4blocks-20261103-143056-057061/dependencies/abc/interleaved/flux-basic-interleaved/python/flux/lib/libflux_cuda_ths_op.so",
+      "sha256": "14ec57f5402563904854ceb9c12c592999647679b2dab1bd882d0e8d2322f036"
+    }
+  },
+  "stream": 186758720,
+  "default_stream": 0,
+  "codec_library": {
+    "path": "/workspace/Load-5090/SL3061/op6-local-attention-graph-paired-v1-1x-4blocks-20261104-103031-413009/compare1/block00-op4/build/codec/libop3_codec.so",
+    "sha256": "fb04226b8970f78e4b93c4855e4866fd63349587396bc28c4d83a3ecac03124b"
+  }
+}

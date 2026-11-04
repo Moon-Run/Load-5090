@@ -1,0 +1,8 @@
+{
+  "protocol": "rtx5090-phase6-op3-combined-v2",
+  "status": "completed",
+  "stage": "done",
+  "timing_windows": 1,
+  "formal_optimizer_steps": 50,
+  "report": "/workspace/Load-5090/SL3061/op6-local-attention-graph-paired-v1-1x-4blocks-20261104-103031-413009/compare1/block00-op4/report.md"
+}
