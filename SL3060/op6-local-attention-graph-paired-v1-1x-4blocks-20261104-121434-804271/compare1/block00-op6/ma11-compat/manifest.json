@@ -1,0 +1,12 @@
+{
+  "protocol": "rtx5090-ma11-pytorch-280-softmax-v1",
+  "torch": "2.8.0a0+5228986c39.nv25.06",
+  "source_sha256": "ca5429acf22076e7f7caf44204df3558d882507fbdef5afd95d13d5bd8c10552",
+  "builder_sha256": "02d4ddf25f91a2596b49bca1a584d074231f4c5f845cbb6ef1c4c0b42e03a915",
+  "nvcc_sha256": "df9974db233a0b7a6c6d59c0e5d74e011566104098bcb3553495ff1b95bdeaf6",
+  "library": "/workspace/Load-5090/SL3060/op6-local-attention-graph-paired-v1-1x-4blocks-20261104-121434-804271/compare1/block00-op6/ma11-compat/libma11_softmax_5090.so",
+  "library_sha256": "c6bf98465836c4baec853e8cf1bc275503c161943d8fc5cf876000d3c282d1ba",
+  "compile_log_sha256": "83e573b8d506e64d392a0db8d0aab1cc6a5e636093de7b1604cfc73583b79e5d",
+  "architecture": "sm_120",
+  "gpu_validated": false
+}

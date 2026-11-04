@@ -1,0 +1,524 @@
+{
+  "protocol": "rtx5090-op3-combined-operator-v1",
+  "arm": "op3-combined",
+  "rank": 7,
+  "completed": true,
+  "settings": {
+    "warmup": 20,
+    "iterations": 100,
+    "windows": 1,
+    "profile_calls": 10,
+    "gradient_steps": 3
+  },
+  "run_id": "edad430fa764460f8d0086bafbc42bdc",
+  "entrypoint_sha256": "28e583e995f6802ffd2dd4d2d3caf3275c8335c5bf86359158d7adafee324e73",
+  "build_manifest_sha256": "2d87b03aa6f38d392985b8e2ef5db10b598d32e6f190c92f9f2b8d2d92c59135",
+  "roles": {
+    "attn": {
+      "shape": [
+        2048,
+        4096,
+        512
+      ],
+      "gradient_checks": [
+        {
+          "step": 0,
+          "output_bitwise": true,
+          "inputs_unchanged": true,
+          "output_sha256": "2feacf956c683dbd0c3658513b0ed5b40664c38e125a63ead2ddea2379b61010",
+          "reference_output_sha256": "2feacf956c683dbd0c3658513b0ed5b40664c38e125a63ead2ddea2379b61010",
+          "gradients": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "d8f3505fd54db75daead81f8ba9933aa92f41bf1f92d684ef43f25f75ba82cd6",
+              "reference_sha256": "d8f3505fd54db75daead81f8ba9933aa92f41bf1f92d684ef43f25f75ba82cd6"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "f0cb1f97f5561876930c8c799568943accac7e89473674c39b5c482e37085cc1",
+              "reference_sha256": "f0cb1f97f5561876930c8c799568943accac7e89473674c39b5c482e37085cc1"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "6a18d438b23956693f325b72008ed8d44d2f211d7e983b02409ffb282f5e5e61",
+              "reference_sha256": "6a18d438b23956693f325b72008ed8d44d2f211d7e983b02409ffb282f5e5e61"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "78d4835a5b710bdee9d0c6776c281e4221edf094dfeb6ab4895333bf37b98de0",
+              "reference_sha256": "78d4835a5b710bdee9d0c6776c281e4221edf094dfeb6ab4895333bf37b98de0"
+            }
+          },
+          "updates": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "5b8bc3b0eec81a15519d8154848d81722ab5375c62c2c065c7ce8f1eb6230534",
+              "reference_sha256": "5b8bc3b0eec81a15519d8154848d81722ab5375c62c2c065c7ce8f1eb6230534"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "b2126582e6c59677f1dfb7e111868b18e447749e928fd38f488bc0dafeee077d",
+              "reference_sha256": "b2126582e6c59677f1dfb7e111868b18e447749e928fd38f488bc0dafeee077d"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "3b78950a9078bb0f38863b7de483cdd4e24801a5081a3e3d294c19729e7932f7",
+              "reference_sha256": "3b78950a9078bb0f38863b7de483cdd4e24801a5081a3e3d294c19729e7932f7"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "5d2a983fdd6b3bd68f0c215fcaf897e2a2dec084c2439d77f590afc909492f11",
+              "reference_sha256": "5d2a983fdd6b3bd68f0c215fcaf897e2a2dec084c2439d77f590afc909492f11"
+            }
+          }
+        },
+        {
+          "step": 1,
+          "output_bitwise": true,
+          "inputs_unchanged": true,
+          "output_sha256": "8ac4cffe5501880c9b174d753e6b9f7e4c4537877efa47f59917c5ebf64595ca",
+          "reference_output_sha256": "8ac4cffe5501880c9b174d753e6b9f7e4c4537877efa47f59917c5ebf64595ca",
+          "gradients": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "aaf81639beae676c50e5029e6db9a6deb9bf6152270cb1b1ceba87674d394df4",
+              "reference_sha256": "aaf81639beae676c50e5029e6db9a6deb9bf6152270cb1b1ceba87674d394df4"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "5c56e984f75d75be8079ba7e1425a421ad9bd7cb003da2c7dd283a00f45ee04c",
+              "reference_sha256": "5c56e984f75d75be8079ba7e1425a421ad9bd7cb003da2c7dd283a00f45ee04c"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "e250bd4091d3dbd9d72ee8ef36804808e7ddad3bc1b4c0c8d807bb9cbe3ee1e5",
+              "reference_sha256": "e250bd4091d3dbd9d72ee8ef36804808e7ddad3bc1b4c0c8d807bb9cbe3ee1e5"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "6a1220f5a35a5bcff3f5e55d9822f4d8103891154a609e467c690bd36999245e",
+              "reference_sha256": "6a1220f5a35a5bcff3f5e55d9822f4d8103891154a609e467c690bd36999245e"
+            }
+          },
+          "updates": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "7bb1d8bcc5f23e8d98496f32bab3b20e2edff6f25b9b4c1e79c7ca84e7eba9f7",
+              "reference_sha256": "7bb1d8bcc5f23e8d98496f32bab3b20e2edff6f25b9b4c1e79c7ca84e7eba9f7"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "958cd756fb7fc8b3c54320a87551135d03d28a31f7d3dda5d343e5904ea8782f",
+              "reference_sha256": "958cd756fb7fc8b3c54320a87551135d03d28a31f7d3dda5d343e5904ea8782f"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "e644872211de544aaf83b285976725fcd1ea8b57f0e6785040da0d5609c2f72c",
+              "reference_sha256": "e644872211de544aaf83b285976725fcd1ea8b57f0e6785040da0d5609c2f72c"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "d6b872a5b52ebe562c510741383b2e67dd3c7af16e88fb93081eb20219577d19",
+              "reference_sha256": "d6b872a5b52ebe562c510741383b2e67dd3c7af16e88fb93081eb20219577d19"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "output_bitwise": true,
+          "inputs_unchanged": true,
+          "output_sha256": "4c2ea4a31d05c1c3f2e810cc15b65f28d7c620b1a729ca4c8a1c8792d3d1e288",
+          "reference_output_sha256": "4c2ea4a31d05c1c3f2e810cc15b65f28d7c620b1a729ca4c8a1c8792d3d1e288",
+          "gradients": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "b4bfef10721c114314f8e9fa7770f7d1d9b1504805021d284468412f6fe37344",
+              "reference_sha256": "b4bfef10721c114314f8e9fa7770f7d1d9b1504805021d284468412f6fe37344"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "11e675c688571639271d9f4b92116f5d89335cdd6b626f09e774f2300a0351fc",
+              "reference_sha256": "11e675c688571639271d9f4b92116f5d89335cdd6b626f09e774f2300a0351fc"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "4cc2b825662c1f11ef7804dacfcc73e48142c7d90751591778552ddc02d41625",
+              "reference_sha256": "4cc2b825662c1f11ef7804dacfcc73e48142c7d90751591778552ddc02d41625"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "d35bb7b8a7455921256601d7976cc24cec65f2af461cd8f7dcfab0ab7543756b",
+              "reference_sha256": "d35bb7b8a7455921256601d7976cc24cec65f2af461cd8f7dcfab0ab7543756b"
+            }
+          },
+          "updates": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "015cdb9c8bd8f85c03fdad0b538fc3008fb557a32f6a8f3b420a609fb7a71ebe",
+              "reference_sha256": "015cdb9c8bd8f85c03fdad0b538fc3008fb557a32f6a8f3b420a609fb7a71ebe"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "84f642e267e4ebeb6ef21d8a60882719050df1dea84a5a1083380010259096c8",
+              "reference_sha256": "84f642e267e4ebeb6ef21d8a60882719050df1dea84a5a1083380010259096c8"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "608e54f168b70627fb1aff06c34d472ffd477e5bc7e596acea91af3fa4f52980",
+              "reference_sha256": "608e54f168b70627fb1aff06c34d472ffd477e5bc7e596acea91af3fa4f52980"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "c17448fa82d476eda01acbcd9566146e7828b090eef9a2ba90d2befe4e4da65e",
+              "reference_sha256": "c17448fa82d476eda01acbcd9566146e7828b090eef9a2ba90d2befe4e4da65e"
+            }
+          }
+        }
+      ],
+      "windows": [
+        {
+          "index": 0,
+          "iterations": 100,
+          "gpu_us": 390.1193618774414,
+          "wall_us": 391.01448841392994
+        }
+      ],
+      "state": {
+        "protocol": "rtx5090-op3-direct-h128-v1",
+        "arm": "op3-combined",
+        "calls": 136,
+        "chunks": [
+          {
+            "index": 0,
+            "begin": 0,
+            "count": 8192,
+            "raw_groups": 0,
+            "peer_bytes": 1114112
+          }
+        ],
+        "transport": "NCCL-byte-AllToAll",
+        "arrival_trigger": "whole-exchange",
+        "selection": "all-remote",
+        "wire_bytes_per_rank": 7798784,
+        "bf16_wire_bytes_per_rank": 14680064,
+        "encode_calls": 136,
+        "exchange_calls": 136,
+        "decode_calls": 136,
+        "fused_consumer_calls": 133,
+        "projection_calls": 3,
+        "join_calls": 0,
+        "wait_calls": 136,
+        "independent_output": true,
+        "fixed_source_order": "rank+1-through-rank",
+        "pending_exchange": false,
+        "device": 7,
+        "caller_stream": 216795824,
+        "comm_stream": 216795824,
+        "decode_stream": 216795824,
+        "send_split_bytes": [
+          [
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            0
+          ]
+        ],
+        "receive_split_bytes": [
+          [
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            0
+          ]
+        ],
+        "tx_ptrs": [
+          140117201125376
+        ],
+        "rx_ptrs": [
+          140117208924160
+        ],
+        "packet_layout": "H128-AoS-136",
+        "calibration_used": false,
+        "encoder": "warp-owned-four-groups",
+        "decoder": "r-packed-source-prefetch",
+        "consumer_fusion": true,
+        "original_peer_overlap_preserved": false,
+        "failed": false
+      },
+      "trace_sha256": "70381cf0f18db15d12c8975693386059b3e202988d84f2ce017679b2cbc40c1b"
+    },
+    "mlp": {
+      "shape": [
+        2048,
+        4096,
+        2048
+      ],
+      "gradient_checks": [
+        {
+          "step": 0,
+          "output_bitwise": true,
+          "inputs_unchanged": true,
+          "output_sha256": "97f2f15ba471f8f12dfc5172e26118be906d6fd2c708c369dfcdb108b667793d",
+          "reference_output_sha256": "97f2f15ba471f8f12dfc5172e26118be906d6fd2c708c369dfcdb108b667793d",
+          "gradients": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "4320858d1a4a49d0b7a580921eda701360052ada5b1bfa91c548bfc37fcb110e",
+              "reference_sha256": "4320858d1a4a49d0b7a580921eda701360052ada5b1bfa91c548bfc37fcb110e"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "130c920eec1f03a54eaf8535cbbea6fbf34912b9fdf9ee98fab8e791754fde65",
+              "reference_sha256": "130c920eec1f03a54eaf8535cbbea6fbf34912b9fdf9ee98fab8e791754fde65"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "d00a094536320a13b3ff0a5c2c990e5cd09e1c033b349b1d53437a9492fc0cee",
+              "reference_sha256": "d00a094536320a13b3ff0a5c2c990e5cd09e1c033b349b1d53437a9492fc0cee"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "d8fa6aab3b440468ce01ee301dc30e68f07676acd70151f7da2e068c224de362",
+              "reference_sha256": "d8fa6aab3b440468ce01ee301dc30e68f07676acd70151f7da2e068c224de362"
+            }
+          },
+          "updates": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "480d4fc47125e46de8c00c258f69bb4d7bec23a12f513812f66247c54621bd79",
+              "reference_sha256": "480d4fc47125e46de8c00c258f69bb4d7bec23a12f513812f66247c54621bd79"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "944b1a235366e03eca0ed93e3f6cbaa47502d2ad26ba2e1ee9aa99d8846397eb",
+              "reference_sha256": "944b1a235366e03eca0ed93e3f6cbaa47502d2ad26ba2e1ee9aa99d8846397eb"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "a365f325103e289a9c8c8494c912f0bd5fffeb5d67a5d59723e2e55622e5de43",
+              "reference_sha256": "a365f325103e289a9c8c8494c912f0bd5fffeb5d67a5d59723e2e55622e5de43"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "c1e7ae3e96ad77791ec08b0e164a651ed46c1177b8248c563457489009fc8ab1",
+              "reference_sha256": "c1e7ae3e96ad77791ec08b0e164a651ed46c1177b8248c563457489009fc8ab1"
+            }
+          }
+        },
+        {
+          "step": 1,
+          "output_bitwise": true,
+          "inputs_unchanged": true,
+          "output_sha256": "00203fb84439ee66d63f2d049900a65a7a9b73ec177b77011fe06694daa7fa60",
+          "reference_output_sha256": "00203fb84439ee66d63f2d049900a65a7a9b73ec177b77011fe06694daa7fa60",
+          "gradients": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "60df4313406ba8fe73e3e5f7aa104cbff8ec8880a60fa9b83ea7e6ffc8dbef72",
+              "reference_sha256": "60df4313406ba8fe73e3e5f7aa104cbff8ec8880a60fa9b83ea7e6ffc8dbef72"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "55c21053b0adfeca76824203889a9f4ecef101894c387754acd99eeda68c06c2",
+              "reference_sha256": "55c21053b0adfeca76824203889a9f4ecef101894c387754acd99eeda68c06c2"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "d5cc82c552964b9203612eb61d51250580c232a1ec624b40778e959d997df13d",
+              "reference_sha256": "d5cc82c552964b9203612eb61d51250580c232a1ec624b40778e959d997df13d"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "f82199b54a009bacc9170afc77e4cb5e89953ca638bb02b3ae64ed6b8100fc59",
+              "reference_sha256": "f82199b54a009bacc9170afc77e4cb5e89953ca638bb02b3ae64ed6b8100fc59"
+            }
+          },
+          "updates": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "6bb0efe8bd0a031d7cba0de6af4da74e789ff5406b9d388da97ad3ea5671af42",
+              "reference_sha256": "6bb0efe8bd0a031d7cba0de6af4da74e789ff5406b9d388da97ad3ea5671af42"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "8c2da70e086c5ec2139c9370d78e1c74f4705bb6efe0de0ef820dfeb03687841",
+              "reference_sha256": "8c2da70e086c5ec2139c9370d78e1c74f4705bb6efe0de0ef820dfeb03687841"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "38204e7f7ff2cce0cf8c529290fff8ce12368cf1456ea0923d9fc8b683e90447",
+              "reference_sha256": "38204e7f7ff2cce0cf8c529290fff8ce12368cf1456ea0923d9fc8b683e90447"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "303a9ca4d8db01878d4651fe557ce7bdbb4d25be985d21f3b8441ec11f0cf6c1",
+              "reference_sha256": "303a9ca4d8db01878d4651fe557ce7bdbb4d25be985d21f3b8441ec11f0cf6c1"
+            }
+          }
+        },
+        {
+          "step": 2,
+          "output_bitwise": true,
+          "inputs_unchanged": true,
+          "output_sha256": "198100d7e0c887ac2177293183759b1fe57f4bc18e4d75636c73e23ed2367a34",
+          "reference_output_sha256": "198100d7e0c887ac2177293183759b1fe57f4bc18e4d75636c73e23ed2367a34",
+          "gradients": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "ae9325e4e0fb86bf4b26b628580feca08ac53ffe2a02697d9615db8dd9eba33c",
+              "reference_sha256": "ae9325e4e0fb86bf4b26b628580feca08ac53ffe2a02697d9615db8dd9eba33c"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "12b4e4c72f5156c0cef240d00ec47410732b40e13e9e4ede11e198e675359903",
+              "reference_sha256": "12b4e4c72f5156c0cef240d00ec47410732b40e13e9e4ede11e198e675359903"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "960c5ab5c802b004fbe6e13072a99a6abe26528749cafbdeb6013a2d6cfdc8ba",
+              "reference_sha256": "960c5ab5c802b004fbe6e13072a99a6abe26528749cafbdeb6013a2d6cfdc8ba"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "1e55b2aa01c8771e1e6f14dcc4b06aea8b6753fe2aadbe5fb5bb56795dbafeb4",
+              "reference_sha256": "1e55b2aa01c8771e1e6f14dcc4b06aea8b6753fe2aadbe5fb5bb56795dbafeb4"
+            }
+          },
+          "updates": {
+            "input": {
+              "bitwise": true,
+              "actual_sha256": "dc5522bfabf24bba57192d3cffbbbacdd4c4d5001a07e5e6ed1ccba456797d3c",
+              "reference_sha256": "dc5522bfabf24bba57192d3cffbbbacdd4c4d5001a07e5e6ed1ccba456797d3c"
+            },
+            "weight": {
+              "bitwise": true,
+              "actual_sha256": "2b39da09182ab1db4dcbcf97c4e15de81eade96a60945d9402e69e5a805de0a3",
+              "reference_sha256": "2b39da09182ab1db4dcbcf97c4e15de81eade96a60945d9402e69e5a805de0a3"
+            },
+            "bias": {
+              "bitwise": true,
+              "actual_sha256": "cc7c52c0051f5c29933b40bb504003128a7a899f5f502b2703baa12c64cbbe1c",
+              "reference_sha256": "cc7c52c0051f5c29933b40bb504003128a7a899f5f502b2703baa12c64cbbe1c"
+            },
+            "residual": {
+              "bitwise": true,
+              "actual_sha256": "4b3ba081beeefcb8052406aa2fd224d75d985a9cc93a72a63034d2b5352a2f1d",
+              "reference_sha256": "4b3ba081beeefcb8052406aa2fd224d75d985a9cc93a72a63034d2b5352a2f1d"
+            }
+          }
+        }
+      ],
+      "windows": [
+        {
+          "index": 0,
+          "iterations": 100,
+          "gpu_us": 522.1587371826172,
+          "wall_us": 522.3889276385307
+        }
+      ],
+      "state": {
+        "protocol": "rtx5090-op3-direct-h128-v1",
+        "arm": "op3-combined",
+        "calls": 136,
+        "chunks": [
+          {
+            "index": 0,
+            "begin": 0,
+            "count": 8192,
+            "raw_groups": 0,
+            "peer_bytes": 1114112
+          }
+        ],
+        "transport": "NCCL-byte-AllToAll",
+        "arrival_trigger": "whole-exchange",
+        "selection": "all-remote",
+        "wire_bytes_per_rank": 7798784,
+        "bf16_wire_bytes_per_rank": 14680064,
+        "encode_calls": 136,
+        "exchange_calls": 136,
+        "decode_calls": 136,
+        "fused_consumer_calls": 133,
+        "projection_calls": 3,
+        "join_calls": 0,
+        "wait_calls": 136,
+        "independent_output": true,
+        "fixed_source_order": "rank+1-through-rank",
+        "pending_exchange": false,
+        "device": 7,
+        "caller_stream": 216795824,
+        "comm_stream": 216795824,
+        "decode_stream": 216795824,
+        "send_split_bytes": [
+          [
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            0
+          ]
+        ],
+        "receive_split_bytes": [
+          [
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            1114112,
+            0
+          ]
+        ],
+        "tx_ptrs": [
+          140117035581440
+        ],
+        "rx_ptrs": [
+          140117048033280
+        ],
+        "packet_layout": "H128-AoS-136",
+        "calibration_used": false,
+        "encoder": "warp-owned-four-groups",
+        "decoder": "r-packed-source-prefetch",
+        "consumer_fusion": true,
+        "original_peer_overlap_preserved": false,
+        "failed": false
+      },
+      "trace_sha256": "d7ccece8bb8dbda802040e98d08831421d7e9b85895b183803539fc9b336ce4e"
+    }
+  },
+  "gpu_uuid": "dbbd3446-128e-286b-1c04-0aa14c474949",
+  "torch": "2.8.0a0+5228986c39.nv25.06",
+  "cuda": "12.9",
+  "nccl": [
+    2,
+    27,
+    3
+  ],
+  "libraries": {
+    "libflux_cuda.so": {
+      "path": "/workspace/Load-5090/SL3060/op6-local-attention-graph-paired-v1-1x-2blocks-20261103-003522-661167/dependencies/abc/interleaved/flux-basic-interleaved/python/flux/lib/libflux_cuda.so",
+      "sha256": "97a74fee75d6fc3e2989f0a40bff368db117f3569f7a3909ffac0a21c5e3f0f8"
+    },
+    "libflux_cuda_ths_op.so": {
+      "path": "/workspace/Load-5090/SL3060/op6-local-attention-graph-paired-v1-1x-2blocks-20261103-003522-661167/dependencies/abc/interleaved/flux-basic-interleaved/python/flux/lib/libflux_cuda_ths_op.so",
+      "sha256": "b9c07117b96d0fbb2210354554044748d613197926b96dfe4afc44f36e7203f1"
+    }
+  },
+  "stream": 216795824,
+  "default_stream": 0,
+  "codec_library": {
+    "path": "/workspace/Load-5090/SL3060/op6-local-attention-graph-paired-v1-1x-4blocks-20261104-121434-804271/compare1/block00-op4/build/codec/libop3_codec.so",
+    "sha256": "7d89dc2200ccbaefd0f529f3e7fb7a8926fb2e3615b83f33553bf18f5b9d20e1"
+  }
+}

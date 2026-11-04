@@ -1,0 +1,617 @@
+{
+  "protocol": "rtx5090-op3-combined-operator-v1",
+  "completed": true,
+  "arm": "op3-combined",
+  "settings": {
+    "warmup": 20,
+    "iterations": 100,
+    "windows": 1,
+    "profile_calls": 10,
+    "gradient_steps": 3
+  },
+  "roles": {
+    "attn": {
+      "shape": [
+        2048,
+        4096,
+        512
+      ],
+      "all_windows": [
+        {
+          "index": 0,
+          "gpu_us": 668.0111694335938,
+          "wall_us": 668.431706726551
+        }
+      ],
+      "gpu_us": {
+        "mean": 668.0111694335938,
+        "median": 668.0111694335938,
+        "minimum": 668.0111694335938,
+        "maximum": 668.0111694335938
+      },
+      "wall_us": {
+        "mean": 668.431706726551,
+        "median": 668.431706726551,
+        "minimum": 668.431706726551,
+        "maximum": 668.431706726551
+      },
+      "profile_median_us": {
+        "gemm_us": 59.687749999999994,
+        "encode_us": 39.39975,
+        "nccl_us": 687.80375,
+        "decode_us": 13.67975,
+        "cpu_us": 874.6995,
+        "gpu_span_us": 804.613037109375
+      }
+    },
+    "mlp": {
+      "shape": [
+        2048,
+        4096,
+        2048
+      ],
+      "all_windows": [
+        {
+          "index": 0,
+          "gpu_us": 532.4361419677734,
+          "wall_us": 532.8297428786755
+        }
+      ],
+      "gpu_us": {
+        "mean": 532.4361419677734,
+        "median": 532.4361419677734,
+        "minimum": 532.4361419677734,
+        "maximum": 532.4361419677734
+      },
+      "wall_us": {
+        "mean": 532.8297428786755,
+        "median": 532.8297428786755,
+        "minimum": 532.8297428786755,
+        "maximum": 532.8297428786755
+      },
+      "profile_median_us": {
+        "gemm_us": 213.29475000000002,
+        "encode_us": 38.567499999999995,
+        "nccl_us": 355.77425,
+        "decode_us": 13.45625,
+        "cpu_us": 369.95025,
+        "gpu_span_us": 625.1673583984375
+      }
+    }
+  },
+  "operator_gradients_validated": true,
+  "source_order_preserved": true,
+  "timed_arms": [
+    "op3-combined"
+  ],
+  "full_step_measured": false,
+  "speedup_evaluated": false,
+  "latency_scope": "GemmOnly + warp H128 encode + completed NCCL exchange + R decode + BF16 bias/residual",
+  "limitation": "Preallocated inputs and one persistent operator per role. No LayerNorm, backward, optimizer, MA8/MA9/MA11 work or CUDA Graph in the timing interval. Forward/backward and three updates are separately checked against unfused autograd. Profile kernel times are diagnostics, not additive full-step savings.",
+  "run_id": "bd954e4e54174148bc86f155db4d2e26",
+  "profiles": {
+    "attn/rank0": {
+      "protocol": "rtx5090-op3-combined-operator-v1",
+      "arm": "op3-combined",
+      "rank": 0,
+      "role": "attn",
+      "execution_validated": true,
+      "forward": {
+        "calls": 10,
+        "chunks_per_call": 1,
+        "fused_consumer": true,
+        "consumer_add_kernels": 0,
+        "encode_kernels": 10,
+        "decode_kernels": 10,
+        "all_to_all_calls": 10,
+        "independent_decode_stream": false,
+        "original_peer_overlap_preserved": false,
+        "gemm_communication_overlap": false,
+        "calls_with_observed_decode_communication_overlap": 0,
+        "median_decode_communication_overlap_us": 0.0,
+        "median_decode_to_consumer_us": 8.73583984375,
+        "median_stage_us": {
+          "gemm_us": 40.9925,
+          "encode_us": 26.432,
+          "nccl_us": 727.904,
+          "decode_us": 8.736,
+          "cpu_us": 862.9565,
+          "gpu_span_us": 807.83984375
+        },
+        "nccl_kernels": 10
+      }
+    },
+    "mlp/rank0": {
+      "protocol": "rtx5090-op3-combined-operator-v1",
+      "arm": "op3-combined",
+      "rank": 0,
+      "role": "mlp",
+      "execution_validated": true,
+      "forward": {
+        "calls": 10,
+        "chunks_per_call": 1,
+        "fused_consumer": true,
+        "consumer_add_kernels": 0,
+        "encode_kernels": 10,
+        "decode_kernels": 10,
+        "all_to_all_calls": 10,
+        "independent_decode_stream": false,
+        "original_peer_overlap_preserved": false,
+        "gemm_communication_overlap": false,
+        "calls_with_observed_decode_communication_overlap": 0,
+        "median_decode_communication_overlap_us": 0.0,
+        "median_decode_to_consumer_us": 8.76806640625,
+        "median_stage_us": {
+          "gemm_us": 151.2955,
+          "encode_us": 26.4805,
+          "nccl_us": 434.928,
+          "decode_us": 8.768,
+          "cpu_us": 362.16700000000003,
+          "gpu_span_us": 625.135986328125
+        },
+        "nccl_kernels": 10
+      }
+    },
+    "attn/rank1": {
+      "protocol": "rtx5090-op3-combined-operator-v1",
+      "arm": "op3-combined",
+      "rank": 1,
+      "role": "attn",
+      "execution_validated": true,
+      "forward": {
+        "calls": 10,
+        "chunks_per_call": 1,
+        "fused_consumer": true,
+        "consumer_add_kernels": 0,
+        "encode_kernels": 10,
+        "decode_kernels": 10,
+        "all_to_all_calls": 10,
+        "independent_decode_stream": false,
+        "original_peer_overlap_preserved": false,
+        "gemm_communication_overlap": false,
+        "calls_with_observed_decode_communication_overlap": 0,
+        "median_decode_communication_overlap_us": 0.0,
+        "median_decode_to_consumer_us": 8.73583984375,
+        "median_stage_us": {
+          "gemm_us": 41.072,
+          "encode_us": 26.704,
+          "nccl_us": 722.8164999999999,
+          "decode_us": 8.736,
+          "cpu_us": 940.228,
+          "gpu_span_us": 803.90380859375
+        },
+        "nccl_kernels": 10
+      }
+    },
+    "mlp/rank1": {
+      "protocol": "rtx5090-op3-combined-operator-v1",
+      "arm": "op3-combined",
+      "rank": 1,
+      "role": "mlp",
+      "execution_validated": true,
+      "forward": {
+        "calls": 10,
+        "chunks_per_call": 1,
+        "fused_consumer": true,
+        "consumer_add_kernels": 0,
+        "encode_kernels": 10,
+        "decode_kernels": 10,
+        "all_to_all_calls": 10,
+        "independent_decode_stream": false,
+        "original_peer_overlap_preserved": false,
+        "gemm_communication_overlap": false,
+        "calls_with_observed_decode_communication_overlap": 0,
+        "median_decode_communication_overlap_us": 0.0,
+        "median_decode_to_consumer_us": 8.783935546875,
+        "median_stage_us": {
+          "gemm_us": 152.1915,
+          "encode_us": 26.368,
+          "nccl_us": 435.8555,
+          "decode_us": 8.783999999999999,
+          "cpu_us": 366.0675,
+          "gpu_span_us": 626.3349609375
+        },
+        "nccl_kernels": 10
+      }
+    },
+    "attn/rank2": {
+      "protocol": "rtx5090-op3-combined-operator-v1",
+      "arm": "op3-combined",
+      "rank": 2,
+      "role": "attn",
+      "execution_validated": true,
+      "forward": {
+        "calls": 10,
+        "chunks_per_call": 1,
+        "fused_consumer": true,
+        "consumer_add_kernels": 0,
+        "encode_kernels": 10,
+        "decode_kernels": 10,
+        "all_to_all_calls": 10,
+        "independent_decode_stream": false,
+        "original_peer_overlap_preserved": false,
+        "gemm_communication_overlap": false,
+        "calls_with_observed_decode_communication_overlap": 0,
+        "median_decode_communication_overlap_us": 0.0,
+        "median_decode_to_consumer_us": 13.8720703125,
+        "median_stage_us": {
+          "gemm_us": 60.159499999999994,
+          "encode_us": 39.5835,
+          "nccl_us": 687.595,
+          "decode_us": 13.872,
+          "cpu_us": 1000.15,
+          "gpu_span_us": 804.79345703125
+        },
+        "nccl_kernels": 10
+      }
+    },
+    "mlp/rank2": {
+      "protocol": "rtx5090-op3-combined-operator-v1",
+      "arm": "op3-combined",
+      "rank": 2,
+      "role": "mlp",
+      "execution_validated": true,
+      "forward": {
+        "calls": 10,
+        "chunks_per_call": 1,
+        "fused_consumer": true,
+        "consumer_add_kernels": 0,
+        "encode_kernels": 10,
+        "decode_kernels": 10,
+        "all_to_all_calls": 10,
+        "independent_decode_stream": false,
+        "original_peer_overlap_preserved": false,
+        "gemm_communication_overlap": false,
+        "calls_with_observed_decode_communication_overlap": 0,
+        "median_decode_communication_overlap_us": 0.0,
+        "median_decode_to_consumer_us": 13.600341796875,
+        "median_stage_us": {
+          "gemm_us": 213.93400000000003,
+          "encode_us": 38.9755,
+          "nccl_us": 354.2205,
+          "decode_us": 13.6005,
+          "cpu_us": 429.7285,
+          "gpu_span_us": 624.8583984375
+        },
+        "nccl_kernels": 10
+      }
+    },
+    "attn/rank3": {
+      "protocol": "rtx5090-op3-combined-operator-v1",
+      "arm": "op3-combined",
+      "rank": 3,
+      "role": "attn",
+      "execution_validated": true,
+      "forward": {
+        "calls": 10,
+        "chunks_per_call": 1,
+        "fused_consumer": true,
+        "consumer_add_kernels": 0,
+        "encode_kernels": 10,
+        "decode_kernels": 10,
+        "all_to_all_calls": 10,
+        "independent_decode_stream": false,
+        "original_peer_overlap_preserved": false,
+        "gemm_communication_overlap": false,
+        "calls_with_observed_decode_communication_overlap": 0,
+        "median_decode_communication_overlap_us": 0.0,
+        "median_decode_to_consumer_us": 13.98388671875,
+        "median_stage_us": {
+          "gemm_us": 61.184,
+          "encode_us": 39.568,
+          "nccl_us": 685.2135000000001,
+          "decode_us": 13.984,
+          "cpu_us": 886.4425,
+          "gpu_span_us": 803.644775390625
+        },
+        "nccl_kernels": 10
+      }
+    },
+    "mlp/rank3": {
+      "protocol": "rtx5090-op3-combined-operator-v1",
+      "arm": "op3-combined",
+      "rank": 3,
+      "role": "mlp",
+      "execution_validated": true,
+      "forward": {
+        "calls": 10,
+        "chunks_per_call": 1,
+        "fused_consumer": true,
+        "consumer_add_kernels": 0,
+        "encode_kernels": 10,
+        "decode_kernels": 10,
+        "all_to_all_calls": 10,
+        "independent_decode_stream": false,
+        "original_peer_overlap_preserved": false,
+        "gemm_communication_overlap": false,
+        "calls_with_observed_decode_communication_overlap": 0,
+        "median_decode_communication_overlap_us": 0.0,
+        "median_decode_to_consumer_us": 13.64794921875,
+        "median_stage_us": {
+          "gemm_us": 215.7745,
+          "encode_us": 38.6715,
+          "nccl_us": 357.31,
+          "decode_us": 13.648,
+          "cpu_us": 369.54999999999995,
+          "gpu_span_us": 627.5810546875
+        },
+        "nccl_kernels": 10
+      }
+    },
+    "attn/rank4": {
+      "protocol": "rtx5090-op3-combined-operator-v1",
+      "arm": "op3-combined",
+      "rank": 4,
+      "role": "attn",
+      "execution_validated": true,
+      "forward": {
+        "calls": 10,
+        "chunks_per_call": 1,
+        "fused_consumer": true,
+        "consumer_add_kernels": 0,
+        "encode_kernels": 10,
+        "decode_kernels": 10,
+        "all_to_all_calls": 10,
+        "independent_decode_stream": false,
+        "original_peer_overlap_preserved": false,
+        "gemm_communication_overlap": false,
+        "calls_with_observed_decode_communication_overlap": 0,
+        "median_decode_communication_overlap_us": 0.0,
+        "median_decode_to_consumer_us": 13.88818359375,
+        "median_stage_us": {
+          "gemm_us": 60.592,
+          "encode_us": 39.28,
+          "nccl_us": 687.3285000000001,
+          "decode_us": 13.888,
+          "cpu_us": 931.0565,
+          "gpu_span_us": 804.4326171875
+        },
+        "nccl_kernels": 10
+      }
+    },
+    "mlp/rank4": {
+      "protocol": "rtx5090-op3-combined-operator-v1",
+      "arm": "op3-combined",
+      "rank": 4,
+      "role": "mlp",
+      "execution_validated": true,
+      "forward": {
+        "calls": 10,
+        "chunks_per_call": 1,
+        "fused_consumer": true,
+        "consumer_add_kernels": 0,
+        "encode_kernels": 10,
+        "decode_kernels": 10,
+        "all_to_all_calls": 10,
+        "independent_decode_stream": false,
+        "original_peer_overlap_preserved": false,
+        "gemm_communication_overlap": false,
+        "calls_with_observed_decode_communication_overlap": 0,
+        "median_decode_communication_overlap_us": 0.0,
+        "median_decode_to_consumer_us": 13.680419921875,
+        "median_stage_us": {
+          "gemm_us": 217.0555,
+          "encode_us": 38.944,
+          "nccl_us": 350.864,
+          "decode_us": 13.680499999999999,
+          "cpu_us": 371.9575,
+          "gpu_span_us": 624.6552734375
+        },
+        "nccl_kernels": 10
+      }
+    },
+    "attn/rank5": {
+      "protocol": "rtx5090-op3-combined-operator-v1",
+      "arm": "op3-combined",
+      "rank": 5,
+      "role": "attn",
+      "execution_validated": true,
+      "forward": {
+        "calls": 10,
+        "chunks_per_call": 1,
+        "fused_consumer": true,
+        "consumer_add_kernels": 0,
+        "encode_kernels": 10,
+        "decode_kernels": 10,
+        "all_to_all_calls": 10,
+        "independent_decode_stream": false,
+        "original_peer_overlap_preserved": false,
+        "gemm_communication_overlap": false,
+        "calls_with_observed_decode_communication_overlap": 0,
+        "median_decode_communication_overlap_us": 0.0,
+        "median_decode_to_consumer_us": 13.487548828125,
+        "median_stage_us": {
+          "gemm_us": 59.216,
+          "encode_us": 39.551,
+          "nccl_us": 230.4475,
+          "decode_us": 13.4875,
+          "cpu_us": 787.7145,
+          "gpu_span_us": 655.310546875
+        },
+        "nccl_kernels": 10
+      }
+    },
+    "mlp/rank5": {
+      "protocol": "rtx5090-op3-combined-operator-v1",
+      "arm": "op3-combined",
+      "rank": 5,
+      "role": "mlp",
+      "execution_validated": true,
+      "forward": {
+        "calls": 10,
+        "chunks_per_call": 1,
+        "fused_consumer": true,
+        "consumer_add_kernels": 0,
+        "encode_kernels": 10,
+        "decode_kernels": 10,
+        "all_to_all_calls": 10,
+        "independent_decode_stream": false,
+        "original_peer_overlap_preserved": false,
+        "gemm_communication_overlap": false,
+        "calls_with_observed_decode_communication_overlap": 0,
+        "median_decode_communication_overlap_us": 0.0,
+        "median_decode_to_consumer_us": 13.31201171875,
+        "median_stage_us": {
+          "gemm_us": 212.65550000000002,
+          "encode_us": 38.463499999999996,
+          "nccl_us": 356.079,
+          "decode_us": 13.312,
+          "cpu_us": 369.314,
+          "gpu_span_us": 625.19873046875
+        },
+        "nccl_kernels": 10
+      }
+    },
+    "attn/rank6": {
+      "protocol": "rtx5090-op3-combined-operator-v1",
+      "arm": "op3-combined",
+      "rank": 6,
+      "role": "attn",
+      "execution_validated": true,
+      "forward": {
+        "calls": 10,
+        "chunks_per_call": 1,
+        "fused_consumer": true,
+        "consumer_add_kernels": 0,
+        "encode_kernels": 10,
+        "decode_kernels": 10,
+        "all_to_all_calls": 10,
+        "independent_decode_stream": false,
+        "original_peer_overlap_preserved": false,
+        "gemm_communication_overlap": false,
+        "calls_with_observed_decode_communication_overlap": 0,
+        "median_decode_communication_overlap_us": 0.0,
+        "median_decode_to_consumer_us": 13.8720703125,
+        "median_stage_us": {
+          "gemm_us": 60.304,
+          "encode_us": 39.5195,
+          "nccl_us": 688.0125,
+          "decode_us": 13.872,
+          "cpu_us": 810.722,
+          "gpu_span_us": 804.843994140625
+        },
+        "nccl_kernels": 10
+      }
+    },
+    "mlp/rank6": {
+      "protocol": "rtx5090-op3-combined-operator-v1",
+      "arm": "op3-combined",
+      "rank": 6,
+      "role": "mlp",
+      "execution_validated": true,
+      "forward": {
+        "calls": 10,
+        "chunks_per_call": 1,
+        "fused_consumer": true,
+        "consumer_add_kernels": 0,
+        "encode_kernels": 10,
+        "decode_kernels": 10,
+        "all_to_all_calls": 10,
+        "independent_decode_stream": false,
+        "original_peer_overlap_preserved": false,
+        "gemm_communication_overlap": false,
+        "calls_with_observed_decode_communication_overlap": 0,
+        "median_decode_communication_overlap_us": 0.0,
+        "median_decode_to_consumer_us": 13.775634765625,
+        "median_stage_us": {
+          "gemm_us": 214.095,
+          "encode_us": 39.328,
+          "nccl_us": 355.4695,
+          "decode_us": 13.775500000000001,
+          "cpu_us": 370.3505,
+          "gpu_span_us": 625.73974609375
+        },
+        "nccl_kernels": 10
+      }
+    },
+    "attn/rank7": {
+      "protocol": "rtx5090-op3-combined-operator-v1",
+      "arm": "op3-combined",
+      "rank": 7,
+      "role": "attn",
+      "execution_validated": true,
+      "forward": {
+        "calls": 10,
+        "chunks_per_call": 1,
+        "fused_consumer": true,
+        "consumer_add_kernels": 0,
+        "encode_kernels": 10,
+        "decode_kernels": 10,
+        "all_to_all_calls": 10,
+        "independent_decode_stream": false,
+        "original_peer_overlap_preserved": false,
+        "gemm_communication_overlap": false,
+        "calls_with_observed_decode_communication_overlap": 0,
+        "median_decode_communication_overlap_us": 0.0,
+        "median_decode_to_consumer_us": 8.73583984375,
+        "median_stage_us": {
+          "gemm_us": 40.976,
+          "encode_us": 26.7515,
+          "nccl_us": 727.1179999999999,
+          "decode_us": 8.736,
+          "cpu_us": 559.306,
+          "gpu_span_us": 806.68505859375
+        },
+        "nccl_kernels": 10
+      }
+    },
+    "mlp/rank7": {
+      "protocol": "rtx5090-op3-combined-operator-v1",
+      "arm": "op3-combined",
+      "rank": 7,
+      "role": "mlp",
+      "execution_validated": true,
+      "forward": {
+        "calls": 10,
+        "chunks_per_call": 1,
+        "fused_consumer": true,
+        "consumer_add_kernels": 0,
+        "encode_kernels": 10,
+        "decode_kernels": 10,
+        "all_to_all_calls": 10,
+        "independent_decode_stream": false,
+        "original_peer_overlap_preserved": false,
+        "gemm_communication_overlap": false,
+        "calls_with_observed_decode_communication_overlap": 0,
+        "median_decode_communication_overlap_us": 0.0,
+        "median_decode_to_consumer_us": 8.76806640625,
+        "median_stage_us": {
+          "gemm_us": 153.007,
+          "encode_us": 26.432,
+          "nccl_us": 230.8475,
+          "decode_us": 8.768,
+          "cpu_us": 618.8385000000001,
+          "gpu_span_us": 565.645263671875
+        },
+        "nccl_kernels": 10
+      }
+    }
+  },
+  "evidence_files": {
+    "rank0.json": "42a2571fa955d51f61d5567aadfd2e5052fee59deaf214e0502182d236c128a9",
+    "attn-rank0-profile.json.gz": "92f15a65d6f6784b9f6d8188289c2234eb20a3e9aea1bcfaeca0ea01d49c8845",
+    "mlp-rank0-profile.json.gz": "6a693f60c63a5ae7cef3f2585b75f1d081d98b4a74da5cf9f1f44186704ebe89",
+    "rank1.json": "5d52c4324027f76aa220b68fe2b11d5e4ec7aaa047e1bb32f1c1ac95395b1a83",
+    "attn-rank1-profile.json.gz": "d0609d8ffd5ed98429fb926c01e9837aade73fdf478acc332bfefeefd0342823",
+    "mlp-rank1-profile.json.gz": "ba4620bb2935585081eb4b0dbfb6f989d6bd067fd2473e95c134b434952eab07",
+    "rank2.json": "40663aad0f417d85e926b184af0f282e18669e3196b829d82eed17b6665bb955",
+    "attn-rank2-profile.json.gz": "117ac16e6e39f028521d4b06dde140a1df987499c8c53f0588a8accc27300fdb",
+    "mlp-rank2-profile.json.gz": "38e4f298f085e451c83492bac0a85a51f5293b3adf4d274c81a551711e43630e",
+    "rank3.json": "c45b0bce30a2a99ca5c8fa4645089149bb87450a2e188424072c5d3a6bd15b21",
+    "attn-rank3-profile.json.gz": "c9564a1b4c790d40a98be82f5e6a9690e45dba628234a49608cc2f42231dda84",
+    "mlp-rank3-profile.json.gz": "4d3a3e3abd090df0edb101f0faf5b4a4d63bf56d47b5a8b9097eed9a29e7f7c0",
+    "rank4.json": "8f29752c669bd1a77721041a9ae4298d73fcf2e6783588f283f71bd716a46b50",
+    "attn-rank4-profile.json.gz": "ba9b8b7c08473e602593a95112364b33d03f22381a80526eeb8c3911a90e17b4",
+    "mlp-rank4-profile.json.gz": "372e818d37940b22e3c4b1fc7c80a030433349ca2367b32c9e057a35355f426b",
+    "rank5.json": "8be18919abbd5ccd61f7f1023fde24e37715c6e354545dc2634e676f5e836af1",
+    "attn-rank5-profile.json.gz": "27114c9445ac181c0b2753bac8326796e2cc48b64bc76cfdeee983fadc003ead",
+    "mlp-rank5-profile.json.gz": "d1f2bdba9107a4a0e481b5e282a157df1ccda25cdc4268330c8480cf1b118f5b",
+    "rank6.json": "33ac26a924b9b60eba05995aa630aa191bc4e42c99f262b831953412ff0ea619",
+    "attn-rank6-profile.json.gz": "0458dab967056f23d11a11cb065305308000c645cb84e6e5b2d3d5a0ae1429dd",
+    "mlp-rank6-profile.json.gz": "8fe8e84bd97ee6e4fc9ab65ad402b28d93fb0f89e9316d6c32c338f8e81acf2b",
+    "rank7.json": "838eaf80ec0454e345159e4ec4859fb05a67bca9031463491c739fc3d1ff4208",
+    "attn-rank7-profile.json.gz": "ddc7c0e6c13fb5bfb5b2656dd3b446e488f71fc921448f13a1e7f65f8e9f6489",
+    "mlp-rank7-profile.json.gz": "b8fdb5eedff795624b8dac72d2d6b2da747111e4d3ece02a92c43bc6e533e5aa"
+  },
+  "build_manifest_sha256": "2d87b03aa6f38d392985b8e2ef5db10b598d32e6f190c92f9f2b8d2d92c59135"
+}

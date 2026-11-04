@@ -1,0 +1,15 @@
+[
+  {
+    "trial": 1,
+    "block": 0,
+    "index": 0,
+    "arm": "op3-combined",
+    "mode": "timing",
+    "directory": "compare1/block00-op3-combined",
+    "ms_per_step": 835.4203298315406,
+    "peak_allocated_gib": 19.422869205474854,
+    "peak_reserved_gib": 19.47265625,
+    "native_workspace_gib": 0.0,
+    "peak_allocated_plus_taco_workspace_gib": 19.422869205474854
+  }
+]

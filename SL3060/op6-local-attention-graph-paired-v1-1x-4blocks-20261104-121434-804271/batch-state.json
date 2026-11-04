@@ -1,0 +1,6 @@
+{
+  "protocol": "rtx5090-phase6-op6-local-attention-graph-paired-v1",
+  "status": "failed",
+  "stage": "compare1/block01-op6",
+  "error": "CalledProcessError: Command '['/workspace/venvs/tempname-5090/bin/python', '/workspace/TempName-New/tools/5090/phase6/op6_child.py', '--variant', 'op6', '--execute', '--foreground', '--out', '/workspace/Load-5090/SL3060/op6-local-attention-graph-paired-v1-1x-4blocks-20261104-121434-804271/compare1/block01-op6', '--trials', '1', '--blocks', '1', '--reserve-mib', '0', '--python', '/workspace/venvs/tempname-5090/bin/python', '--megatron', '/workspace/Megatron-LM', '--cuda-home', '/usr/local/cuda-12.9', '--build-cuda-home', '/usr/local/cuda-12.9', '--jobs', '128', '--worker-timeout', '3600', '--op3-build', '/workspace/Load-5090/SL3060/op6-local-attention-graph-paired-v1-1x-4blocks-20261104-121434-804271/compare1/block00-op4/build']' returned non-zero exit status 1."
+}

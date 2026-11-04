@@ -1,0 +1,28 @@
+Batch: /workspace/Load-5090/SL3060/op6-local-attention-graph-paired-v1-1x-4blocks-20261104-121434-804271/compare1/block01-op6
+STAGE worker-source-preflight
+STAGE hardware-preflight
+STAGE verify-op3-build
+nvcc fatal   : Could not open output file '/tmp/tmpxft_0002decb_0000000a'
+Traceback (most recent call last):
+  File "/workspace/TempName-New/tools/5090/phase6/op6_child.py", line 87, in <module>
+    main()
+  File "/workspace/TempName-New/tools/5090/phase6/op6_child.py", line 81, in main
+    op3.main(remaining)
+  File "/workspace/TempName-New/tools/5090/phase6/op3.py", line 408, in main
+    return supervise(args)
+           ^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op6_child.py", line 75, in supervise
+    return original_supervise(child_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/op3.py", line 237, in supervise
+    require(read(build/'op3-build.json')['environment'] == load('build').environment_identity(args.build_cuda_home),
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/TempName-New/tools/5090/phase6/baseline_build.py", line 232, in environment_identity
+    codes = subprocess.check_output([str(nvcc), '--list-gpu-code'], text=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/local/cuda-12.9/bin/nvcc', '--list-gpu-code']' returned non-zero exit status 1.

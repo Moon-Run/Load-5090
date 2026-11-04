@@ -1,0 +1,4765 @@
+{
+  "compare1/block00": {
+    "passed": true,
+    "concurrent_control_measured": true,
+    "child_correctness_replayed_by_controller": true,
+    "smoke_gradient_hash_equality_required": true,
+    "numerical_checks": [
+      {
+        "mode": "smoke",
+        "ranks": 8,
+        "initial_identity_equal": true,
+        "numerical_trajectory_identical": true,
+        "full_parameter_and_gradient_trajectory_checked": true,
+        "projection_hashes_checked": true,
+        "concurrent": true,
+        "smoke_gradient_hash_equality_required": true
+      },
+      {
+        "mode": "profile",
+        "ranks": 8,
+        "initial_identity_equal": true,
+        "numerical_trajectory_identical": true,
+        "full_parameter_and_gradient_trajectory_checked": false,
+        "projection_hashes_checked": false,
+        "concurrent": true,
+        "smoke_gradient_hash_equality_required": true
+      },
+      {
+        "mode": "timing",
+        "ranks": 8,
+        "initial_identity_equal": true,
+        "numerical_trajectory_identical": true,
+        "full_parameter_and_gradient_trajectory_checked": false,
+        "projection_hashes_checked": false,
+        "concurrent": true,
+        "smoke_gradient_hash_equality_required": true
+      }
+    ],
+    "profiles": [
+      {
+        "op4": {
+          "rank": 0,
+          "allgather_calls": 524,
+          "allgather_grid_channels": 16,
+          "algorithm_protocol_inferred_from_kernel_name": false,
+          "allgather_total_ms": 392.88628700000004,
+          "allgather_median_us": 696.3845,
+          "allgather_launches": [
+            {
+              "signature": {
+                "Collective name": "_allgather_base",
+                "Group size": 8,
+                "In msg nelems": 1048576,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllGather_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 524
+            }
+          ],
+          "other_nccl_launches": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[0, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[0, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  640,
+                  1,
+                  1
+                ],
+                "dtype": "Byte",
+                "grid": [
+                  15,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_SendRecv",
+                "shared memory": 83328
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 4
+            }
+          ],
+          "other_nccl_payloads": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL"
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[0, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[0, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Byte",
+                "name": "ncclDevKernel_SendRecv"
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL"
+              },
+              "calls": 4
+            }
+          ]
+        },
+        "op6": {
+          "rank": 0,
+          "allgather_calls": 524,
+          "allgather_grid_channels": 16,
+          "algorithm_protocol_inferred_from_kernel_name": false,
+          "allgather_total_ms": 378.899186,
+          "allgather_median_us": 614.922,
+          "allgather_launches": [
+            {
+              "signature": {
+                "Collective name": "_allgather_base",
+                "Group size": 8,
+                "In msg nelems": 1048576,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllGather_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 524
+            }
+          ],
+          "other_nccl_launches": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[0, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[0, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  640,
+                  1,
+                  1
+                ],
+                "dtype": "Byte",
+                "grid": [
+                  15,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_SendRecv",
+                "shared memory": 83328
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 4
+            }
+          ],
+          "other_nccl_payloads": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL"
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[0, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[0, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Byte",
+                "name": "ncclDevKernel_SendRecv"
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL"
+              },
+              "calls": 4
+            }
+          ]
+        }
+      },
+      {
+        "op4": {
+          "rank": 1,
+          "allgather_calls": 524,
+          "allgather_grid_channels": 16,
+          "algorithm_protocol_inferred_from_kernel_name": false,
+          "allgather_total_ms": 410.015815,
+          "allgather_median_us": 763.0405000000001,
+          "allgather_launches": [
+            {
+              "signature": {
+                "Collective name": "_allgather_base",
+                "Group size": 8,
+                "In msg nelems": 1048576,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllGather_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 524
+            }
+          ],
+          "other_nccl_launches": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 0, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 0, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  640,
+                  1,
+                  1
+                ],
+                "dtype": "Byte",
+                "grid": [
+                  15,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_SendRecv",
+                "shared memory": 83328
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 4
+            }
+          ],
+          "other_nccl_payloads": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL"
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 0, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 0, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Byte",
+                "name": "ncclDevKernel_SendRecv"
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL"
+              },
+              "calls": 4
+            }
+          ]
+        },
+        "op6": {
+          "rank": 1,
+          "allgather_calls": 524,
+          "allgather_grid_channels": 16,
+          "algorithm_protocol_inferred_from_kernel_name": false,
+          "allgather_total_ms": 421.16326899999996,
+          "allgather_median_us": 759.9935,
+          "allgather_launches": [
+            {
+              "signature": {
+                "Collective name": "_allgather_base",
+                "Group size": 8,
+                "In msg nelems": 1048576,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllGather_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 524
+            }
+          ],
+          "other_nccl_launches": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 0, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 0, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  640,
+                  1,
+                  1
+                ],
+                "dtype": "Byte",
+                "grid": [
+                  15,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_SendRecv",
+                "shared memory": 83328
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 4
+            }
+          ],
+          "other_nccl_payloads": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL"
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 0, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 0, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Byte",
+                "name": "ncclDevKernel_SendRecv"
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL"
+              },
+              "calls": 4
+            }
+          ]
+        }
+      },
+      {
+        "op4": {
+          "rank": 2,
+          "allgather_calls": 524,
+          "allgather_grid_channels": 16,
+          "algorithm_protocol_inferred_from_kernel_name": false,
+          "allgather_total_ms": 338.04972499999997,
+          "allgather_median_us": 425.885,
+          "allgather_launches": [
+            {
+              "signature": {
+                "Collective name": "_allgather_base",
+                "Group size": 8,
+                "In msg nelems": 1048576,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllGather_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 524
+            }
+          ],
+          "other_nccl_launches": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 0, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 0, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  640,
+                  1,
+                  1
+                ],
+                "dtype": "Byte",
+                "grid": [
+                  15,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_SendRecv",
+                "shared memory": 83328
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 4
+            }
+          ],
+          "other_nccl_payloads": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL"
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 0, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 0, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Byte",
+                "name": "ncclDevKernel_SendRecv"
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL"
+              },
+              "calls": 4
+            }
+          ]
+        },
+        "op6": {
+          "rank": 2,
+          "allgather_calls": 524,
+          "allgather_grid_channels": 16,
+          "algorithm_protocol_inferred_from_kernel_name": false,
+          "allgather_total_ms": 394.781309,
+          "allgather_median_us": 680.692,
+          "allgather_launches": [
+            {
+              "signature": {
+                "Collective name": "_allgather_base",
+                "Group size": 8,
+                "In msg nelems": 1048576,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllGather_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 524
+            }
+          ],
+          "other_nccl_launches": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 0, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 0, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  640,
+                  1,
+                  1
+                ],
+                "dtype": "Byte",
+                "grid": [
+                  15,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_SendRecv",
+                "shared memory": 83328
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 4
+            }
+          ],
+          "other_nccl_payloads": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL"
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 0, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 0, 1114112, 1114112, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Byte",
+                "name": "ncclDevKernel_SendRecv"
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL"
+              },
+              "calls": 4
+            }
+          ]
+        }
+      },
+      {
+        "op4": {
+          "rank": 3,
+          "allgather_calls": 524,
+          "allgather_grid_channels": 16,
+          "algorithm_protocol_inferred_from_kernel_name": false,
+          "allgather_total_ms": 306.16725199999996,
+          "allgather_median_us": 423.1665,
+          "allgather_launches": [
+            {
+              "signature": {
+                "Collective name": "_allgather_base",
+                "Group size": 8,
+                "In msg nelems": 1048576,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllGather_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 524
+            }
+          ],
+          "other_nccl_launches": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 0, 1114112, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 0, 1114112, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  640,
+                  1,
+                  1
+                ],
+                "dtype": "Byte",
+                "grid": [
+                  15,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_SendRecv",
+                "shared memory": 83328
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 4
+            }
+          ],
+          "other_nccl_payloads": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL"
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 0, 1114112, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 0, 1114112, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Byte",
+                "name": "ncclDevKernel_SendRecv"
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL"
+              },
+              "calls": 4
+            }
+          ]
+        },
+        "op6": {
+          "rank": 3,
+          "allgather_calls": 524,
+          "allgather_grid_channels": 16,
+          "algorithm_protocol_inferred_from_kernel_name": false,
+          "allgather_total_ms": 387.877918,
+          "allgather_median_us": 668.456,
+          "allgather_launches": [
+            {
+              "signature": {
+                "Collective name": "_allgather_base",
+                "Group size": 8,
+                "In msg nelems": 1048576,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllGather_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 524
+            }
+          ],
+          "other_nccl_launches": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 0, 1114112, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 0, 1114112, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  640,
+                  1,
+                  1
+                ],
+                "dtype": "Byte",
+                "grid": [
+                  15,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_SendRecv",
+                "shared memory": 83328
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 4
+            }
+          ],
+          "other_nccl_payloads": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL"
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 0, 1114112, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 0, 1114112, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Byte",
+                "name": "ncclDevKernel_SendRecv"
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL"
+              },
+              "calls": 4
+            }
+          ]
+        }
+      },
+      {
+        "op4": {
+          "rank": 4,
+          "allgather_calls": 524,
+          "allgather_grid_channels": 16,
+          "algorithm_protocol_inferred_from_kernel_name": false,
+          "allgather_total_ms": 407.223275,
+          "allgather_median_us": 757.313,
+          "allgather_launches": [
+            {
+              "signature": {
+                "Collective name": "_allgather_base",
+                "Group size": 8,
+                "In msg nelems": 1048576,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllGather_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 524
+            }
+          ],
+          "other_nccl_launches": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 1114112, 0, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 1114112, 0, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  640,
+                  1,
+                  1
+                ],
+                "dtype": "Byte",
+                "grid": [
+                  15,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_SendRecv",
+                "shared memory": 83328
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 4
+            }
+          ],
+          "other_nccl_payloads": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL"
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 1114112, 0, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 1114112, 0, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Byte",
+                "name": "ncclDevKernel_SendRecv"
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL"
+              },
+              "calls": 4
+            }
+          ]
+        },
+        "op6": {
+          "rank": 4,
+          "allgather_calls": 524,
+          "allgather_grid_channels": 16,
+          "algorithm_protocol_inferred_from_kernel_name": false,
+          "allgather_total_ms": 389.030762,
+          "allgather_median_us": 670.2815,
+          "allgather_launches": [
+            {
+              "signature": {
+                "Collective name": "_allgather_base",
+                "Group size": 8,
+                "In msg nelems": 1048576,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllGather_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 524
+            }
+          ],
+          "other_nccl_launches": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 1114112, 0, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 1114112, 0, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  640,
+                  1,
+                  1
+                ],
+                "dtype": "Byte",
+                "grid": [
+                  15,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_SendRecv",
+                "shared memory": 83328
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 4
+            }
+          ],
+          "other_nccl_payloads": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL"
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 1114112, 0, 1114112, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 1114112, 0, 1114112, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Byte",
+                "name": "ncclDevKernel_SendRecv"
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL"
+              },
+              "calls": 4
+            }
+          ]
+        }
+      },
+      {
+        "op4": {
+          "rank": 5,
+          "allgather_calls": 524,
+          "allgather_grid_channels": 16,
+          "algorithm_protocol_inferred_from_kernel_name": false,
+          "allgather_total_ms": 402.44252500000005,
+          "allgather_median_us": 744.287,
+          "allgather_launches": [
+            {
+              "signature": {
+                "Collective name": "_allgather_base",
+                "Group size": 8,
+                "In msg nelems": 1048576,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllGather_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 524
+            }
+          ],
+          "other_nccl_launches": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 0, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 0, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  640,
+                  1,
+                  1
+                ],
+                "dtype": "Byte",
+                "grid": [
+                  15,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_SendRecv",
+                "shared memory": 83328
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 4
+            }
+          ],
+          "other_nccl_payloads": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL"
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 0, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 0, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Byte",
+                "name": "ncclDevKernel_SendRecv"
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL"
+              },
+              "calls": 4
+            }
+          ]
+        },
+        "op6": {
+          "rank": 5,
+          "allgather_calls": 524,
+          "allgather_grid_channels": 16,
+          "algorithm_protocol_inferred_from_kernel_name": false,
+          "allgather_total_ms": 402.772745,
+          "allgather_median_us": 715.192,
+          "allgather_launches": [
+            {
+              "signature": {
+                "Collective name": "_allgather_base",
+                "Group size": 8,
+                "In msg nelems": 1048576,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllGather_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 524
+            }
+          ],
+          "other_nccl_launches": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 0, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 0, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  640,
+                  1,
+                  1
+                ],
+                "dtype": "Byte",
+                "grid": [
+                  15,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_SendRecv",
+                "shared memory": 83328
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 4
+            }
+          ],
+          "other_nccl_payloads": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL"
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 0, 1114112, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 0, 1114112, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Byte",
+                "name": "ncclDevKernel_SendRecv"
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL"
+              },
+              "calls": 4
+            }
+          ]
+        }
+      },
+      {
+        "op4": {
+          "rank": 6,
+          "allgather_calls": 524,
+          "allgather_grid_channels": 16,
+          "algorithm_protocol_inferred_from_kernel_name": false,
+          "allgather_total_ms": 360.02498599999996,
+          "allgather_median_us": 599.165,
+          "allgather_launches": [
+            {
+              "signature": {
+                "Collective name": "_allgather_base",
+                "Group size": 8,
+                "In msg nelems": 1048576,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllGather_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 524
+            }
+          ],
+          "other_nccl_launches": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 0, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 0, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  640,
+                  1,
+                  1
+                ],
+                "dtype": "Byte",
+                "grid": [
+                  15,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_SendRecv",
+                "shared memory": 83328
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 4
+            }
+          ],
+          "other_nccl_payloads": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL"
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 0, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 0, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Byte",
+                "name": "ncclDevKernel_SendRecv"
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL"
+              },
+              "calls": 4
+            }
+          ]
+        },
+        "op6": {
+          "rank": 6,
+          "allgather_calls": 524,
+          "allgather_grid_channels": 16,
+          "algorithm_protocol_inferred_from_kernel_name": false,
+          "allgather_total_ms": 401.97348700000003,
+          "allgather_median_us": 709.7825,
+          "allgather_launches": [
+            {
+              "signature": {
+                "Collective name": "_allgather_base",
+                "Group size": 8,
+                "In msg nelems": 1048576,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllGather_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 524
+            }
+          ],
+          "other_nccl_launches": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 0, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 0, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  640,
+                  1,
+                  1
+                ],
+                "dtype": "Byte",
+                "grid": [
+                  15,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_SendRecv",
+                "shared memory": 83328
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 4
+            }
+          ],
+          "other_nccl_payloads": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL"
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 0, 1114112]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 0, 1114112]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Byte",
+                "name": "ncclDevKernel_SendRecv"
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL"
+              },
+              "calls": 4
+            }
+          ]
+        }
+      },
+      {
+        "op4": {
+          "rank": 7,
+          "allgather_calls": 524,
+          "allgather_grid_channels": 16,
+          "algorithm_protocol_inferred_from_kernel_name": false,
+          "allgather_total_ms": 400.484561,
+          "allgather_median_us": 714.5260000000001,
+          "allgather_launches": [
+            {
+              "signature": {
+                "Collective name": "_allgather_base",
+                "Group size": 8,
+                "In msg nelems": 1048576,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllGather_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 524
+            }
+          ],
+          "other_nccl_launches": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 0]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 0]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  640,
+                  1,
+                  1
+                ],
+                "dtype": "Byte",
+                "grid": [
+                  15,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_SendRecv",
+                "shared memory": 83328
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 4
+            }
+          ],
+          "other_nccl_payloads": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL"
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 0]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 0]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Byte",
+                "name": "ncclDevKernel_SendRecv"
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL"
+              },
+              "calls": 4
+            }
+          ]
+        },
+        "op6": {
+          "rank": 7,
+          "allgather_calls": 524,
+          "allgather_grid_channels": 16,
+          "algorithm_protocol_inferred_from_kernel_name": false,
+          "allgather_total_ms": 232.413099,
+          "allgather_median_us": 420.267,
+          "allgather_launches": [
+            {
+              "signature": {
+                "Collective name": "_allgather_base",
+                "Group size": 8,
+                "In msg nelems": 1048576,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllGather_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 524
+            }
+          ],
+          "other_nccl_launches": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 0]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 0]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  640,
+                  1,
+                  1
+                ],
+                "dtype": "Byte",
+                "grid": [
+                  15,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_SendRecv",
+                "shared memory": 83328
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  128,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  1,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "Float",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "block": [
+                  544,
+                  1,
+                  1
+                ],
+                "dtype": "BFloat16",
+                "grid": [
+                  16,
+                  1,
+                  1
+                ],
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL",
+                "shared memory": 83328
+              },
+              "calls": 4
+            }
+          ],
+          "other_nccl_payloads": [
+            {
+              "signature": {
+                "Collective name": "_reduce_scatter_base",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 1048576,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_ReduceScatter_Sum_bf16_RING_LL"
+              },
+              "calls": 260
+            },
+            {
+              "signature": {
+                "Collective name": "all_to_allv",
+                "Group size": 8,
+                "In msg nelems": 7798784,
+                "In split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 0]",
+                "Out msg nelems": 7798784,
+                "Out split size": "[1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 1114112, 0]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Byte",
+                "name": "ncclDevKernel_SendRecv"
+              },
+              "calls": 256
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 1,
+                "In split size": "[]",
+                "Out msg nelems": 1,
+                "Out split size": "[]",
+                "Process Group Description": "MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 2
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 2048,
+                "In split size": "[]",
+                "Out msg nelems": 2048,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 12
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 794624,
+                "In split size": "[]",
+                "Out msg nelems": 794624,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "Float",
+                "name": "ncclDevKernel_AllReduce_Sum_f32_RING_LL"
+              },
+              "calls": 1
+            },
+            {
+              "signature": {
+                "Collective name": "allreduce",
+                "Group size": 8,
+                "In msg nelems": 8388608,
+                "In split size": "[]",
+                "Out msg nelems": 8388608,
+                "Out split size": "[]",
+                "Process Group Description": "TENSOR_MODEL_PARALLEL_GROUP",
+                "Process Group Ranks": "[0, 1, 2, 3, 4, 5, 6, 7]",
+                "dtype": "BFloat16",
+                "name": "ncclDevKernel_AllReduce_Sum_bf16_RING_LL"
+              },
+              "calls": 4
+            }
+          ]
+        }
+      }
+    ],
+    "evidence_files": {
+      "op4/plan.json": "ffe2d54e0f0704085a2663779af899518d57acb98f82bfebef09dd4d3f62930b",
+      "op4/report.json": "41e3f0fe8cc35d161820bc9a61f93d46e3fd07ba38ccb1e576ecf114ebf21bde",
+      "op4/batch-state.json": "538b629ebb7a3c9332c250217bee0bc2a4495c363041a421986fdd9d7484330d",
+      "op4/results/smoke-op3-combined/rank0.json": "8038d1213855c498d704d7077c1f48ed14e7281b7d7e687859a210b599205f26",
+      "op4/results/smoke-op3-combined/rank1.json": "78d20327a144a345cba482bf39004426b677158ebfd9aa1cfbda5bfaca7c6a4d",
+      "op4/results/smoke-op3-combined/rank2.json": "4684ad6ec1b39a1bb3a5a0ae24ddb3af3219cdc18580f2b98c56a30681343dba",
+      "op4/results/smoke-op3-combined/rank3.json": "14160855a5ebac7ff4a868cd3f6399a745a2ec04799f45727d9db1e58f60f35b",
+      "op4/results/smoke-op3-combined/rank4.json": "945176b1493ede4cac49784cbf4dbe813e098b76f3a08cc57d9fb1789ce79881",
+      "op4/results/smoke-op3-combined/rank5.json": "752362b903cfd22b1524cc171d349dc047e724abaeabbcc835286ee89d2b3e31",
+      "op4/results/smoke-op3-combined/rank6.json": "5e7cd5d2f1db350684d51726704a2bcdb7cfb42061a541895c7661a15f6cc448",
+      "op4/results/smoke-op3-combined/rank7.json": "7c89898bfe27c9cebd68f041b803896f241f2ae9dec0ce08b823d6d41fa43bb4",
+      "op4/results/profile-op3-combined/rank0.json": "f8d518970285e39d807607efe24bcd19f5b5d28a82b0294d2c80c840716b7558",
+      "op4/results/profile-op3-combined/rank1.json": "decb6709ebe2dfe44ad50bfe2ade671dd36f728857dfd7923a8054bc90f581da",
+      "op4/results/profile-op3-combined/rank2.json": "8fe29278a20ccca703c1cd8a4d5e2369790ecb9cffeaea8867020704bfe617f9",
+      "op4/results/profile-op3-combined/rank3.json": "13ebf430b60e1a22d93b3d950c8572f9192f391be14a7a562bccd37ffc7a511a",
+      "op4/results/profile-op3-combined/rank4.json": "918fc97a967114188920d35505f9f6bd9bd47da5f85da9b432dffac1bed6d019",
+      "op4/results/profile-op3-combined/rank5.json": "a07cdde263bb3946080c1eadb1c4b7ea9b0237feb87943f1baac087fa85a743c",
+      "op4/results/profile-op3-combined/rank6.json": "d4f2bc81e0b7db03fb956dd2975a1f44e57076188dcdac6eb5e27a3c5b5755f3",
+      "op4/results/profile-op3-combined/rank7.json": "c8bd5a763fcb57c4a40291894372bf5491e89c0a7531764ca94101290cd5592b",
+      "op4/results/compare1/block00-op3-combined/rank0.json": "25faa23188b8422bfddb9f10c7486c0495eeddb5d79a1f6af148625a223ae1bc",
+      "op4/results/compare1/block00-op3-combined/rank1.json": "716c0bc516fd0a7d0eecc65efd4eb9aec71de6f1f26388be31fc95814269472b",
+      "op4/results/compare1/block00-op3-combined/rank2.json": "707b65583d79325f9aeeacd553c9584b7f25361d8a984a5a88bda37b8d423508",
+      "op4/results/compare1/block00-op3-combined/rank3.json": "599c8f4a15166adc41f1d59e159a964349d096bd58dffa7ac396ecac267ab27c",
+      "op4/results/compare1/block00-op3-combined/rank4.json": "4198205dd310b1c26c09390eb13e0ec4afb98ea2eb75d23b9450e77e1fa4ee50",
+      "op4/results/compare1/block00-op3-combined/rank5.json": "9f3681c1e3f3814a95d75bfeb08289d7fc0f87d09c7bfebf4857e9993cef331b",
+      "op4/results/compare1/block00-op3-combined/rank6.json": "008042864739b95c638a1593f3516d58bcf9b3fb3becff77957fa29f94f427b4",
+      "op4/results/compare1/block00-op3-combined/rank7.json": "d630d196548872d067731ab63ee4dda5982ce3d508e7e085584428e5a0838be6",
+      "op4/profile-summary.json": "5a7dd233bbdbd8ea79f73e2d32c1369370ed2180b4585a595174926f56d0f859",
+      "op4/results/profile-op3-combined/rank0-profile.json.gz": "89118eee76ffecc971beed9361231ca3ca6adcbe8dddeaa203db31c0086c5f08",
+      "op4/results/profile-op3-combined/rank1-profile.json.gz": "a6b9c83fb865c37dadce96531de8367e6ea1c244a1bef4f7af4d7651fc3656d2",
+      "op4/results/profile-op3-combined/rank2-profile.json.gz": "4db2a03d38ea835267805851a9c192641bcd21e661367e2e397c7a629005709f",
+      "op4/results/profile-op3-combined/rank3-profile.json.gz": "04d940b3fdfe40b9ece0e6cea7d7b9d50ee9a864e00213e5316cd63ca01b1fb2",
+      "op4/results/profile-op3-combined/rank4-profile.json.gz": "063241c93b195175a348ff312c577777a1ae46aaf18583e2ea3208ec1028d97b",
+      "op4/results/profile-op3-combined/rank5-profile.json.gz": "05433a2f38f3be6444ef5b0486d75260f126ec0639b007d661d013a9d713e821",
+      "op4/results/profile-op3-combined/rank6-profile.json.gz": "153cb69224404891f50eb701e25c68d4d462accd1541fc42f1d95a83947824a5",
+      "op4/results/profile-op3-combined/rank7-profile.json.gz": "3c4bc6bb512c452eb188da9faa9797f9cddae21f9a8c99519d411be46350d3ea",
+      "op4/operator/report.json": "b9e5ffe6d36bf3d275f6019022f4fb13952b71431c12baf54beab52f027eaef0",
+      "op4/operator/rank0.json": "44aecc7f1b117cae6c089cba9061be298261ecf5b7e8bb708d111d5aab9fbf53",
+      "op4/operator/attn-rank0-profile.json.gz": "12b4d36946236af36ff4047937d9e59962d751e73f6138262232024f359fd436",
+      "op4/operator/mlp-rank0-profile.json.gz": "2ef875e5c65be1277477310b53cb05c3224adc9e0c07c7a4aaea05ded31eb8f6",
+      "op4/operator/rank1.json": "991ee4cd731e1707d58f3b215a732da302f3fa7f8892fb79118097acf0da97b0",
+      "op4/operator/attn-rank1-profile.json.gz": "2d0029b836419dee80edb0ad637f03c22c22fe5a576d5d873080854401a5e86b",
+      "op4/operator/mlp-rank1-profile.json.gz": "1d4c4b25529b33b0f16218ea18cc3cb45cd1f588fa6257d7acd46ff535635ec5",
+      "op4/operator/rank2.json": "d2acde265ab13c5323b242a89573589de3a88ca8b6fb3beff8613d9d36236eca",
+      "op4/operator/attn-rank2-profile.json.gz": "ce43c41ac88934f68c08bdda25792b25c6a552fb34714e1eb3a9b708d6d6c7cc",
+      "op4/operator/mlp-rank2-profile.json.gz": "8331cad6e1b10de946298f0c6d5ef20e8bd6a95e7c887109a394bbc48ba3503c",
+      "op4/operator/rank3.json": "c9f51ff9f5e46de4643ba096398ca3be242ecc465541900662662d182c004b51",
+      "op4/operator/attn-rank3-profile.json.gz": "cd70ab78c4230146158ecc9909d720fe89628e33bc87e0d90df24a760a1f93ef",
+      "op4/operator/mlp-rank3-profile.json.gz": "39ac60923b3a9055208b5bf99e3d55987e2600a3a0f40be98764a2e4e4e14e3d",
+      "op4/operator/rank4.json": "fbeb674fd5cba6d75ae458f848dc9c7d64297f3d308f6900774c1d2b3206d256",
+      "op4/operator/attn-rank4-profile.json.gz": "5d2d2ce352d379d7938a430a4df6c5e39b8b906fe5b73800a2c6bf73798459fc",
+      "op4/operator/mlp-rank4-profile.json.gz": "366bc563c6990b17d77bc6303afa70934fe77623638b7a0e315c72a9bf92ce1f",
+      "op4/operator/rank5.json": "5f8c751a5fce5adc546df995533a654d22a7be02fce423a76a682887b724cab2",
+      "op4/operator/attn-rank5-profile.json.gz": "22f9b150b9a9a3b84514c30091f94e7789d57e94705bede18fa645ebcce709b2",
+      "op4/operator/mlp-rank5-profile.json.gz": "3de3b25bf4f1e86c1e0dc687b06834bc2313074e1d2e825c08317a18d96d3b96",
+      "op4/operator/rank6.json": "d0bae0811288aaf9c2106cb5063a6c889caea91d370dfccfbd95cfe6d30a17ad",
+      "op4/operator/attn-rank6-profile.json.gz": "f4005d2720210a249c44ef92c988027c58adad63460698055593720ea799cf55",
+      "op4/operator/mlp-rank6-profile.json.gz": "82f0fb059ac8d6f9475df019c6e590d4245b9f64eddac4f86a2f0e354f9e7d08",
+      "op4/operator/rank7.json": "0c5e58744db2e2bdcb215c7f9efb2339474f18e5adeff7324ca07ff20f4fb82d",
+      "op4/operator/attn-rank7-profile.json.gz": "70381cf0f18db15d12c8975693386059b3e202988d84f2ce017679b2cbc40c1b",
+      "op4/operator/mlp-rank7-profile.json.gz": "d7ccece8bb8dbda802040e98d08831421d7e9b85895b183803539fc9b336ce4e",
+      "op6/plan.json": "393bdfc2bf6c721331dfc2426aae974240dc04fafdb287404b0fc934e6408d3d",
+      "op6/report.json": "f5441167f26ab959164babc98891b8fc3b32277a95c198ce4767f8221dfcb6d1",
+      "op6/batch-state.json": "35bd7cb6a56793feb83c1136dafa48c1d2f7da2add6273baef375ab0eb00dd60",
+      "op6/results/smoke-op3-combined/rank0.json": "22b212e849e55631fd218b4a02005e9cf464f328811905c2f93cb7e31998cc72",
+      "op6/results/smoke-op3-combined/rank1.json": "17361bc2ea63c1782b72a03f064a604025482fe9f70b1d78eeb72485ee5fa2ba",
+      "op6/results/smoke-op3-combined/rank2.json": "fb25e329cc4bfb878629a7ef560bbbfdd12f84a34afe2670f56038497e902937",
+      "op6/results/smoke-op3-combined/rank3.json": "5af9e924b57c02aaeea8387932a1fb0c00b3fe53226384a60e3b52020a182bda",
+      "op6/results/smoke-op3-combined/rank4.json": "fd6e23258b6e61977e364f806a492589436d5f7734ebb2d5ab9217e51dfaa4d6",
+      "op6/results/smoke-op3-combined/rank5.json": "01022e00736848bed0553ce755962923c3067e9871ae3e9846ab30442e5aa012",
+      "op6/results/smoke-op3-combined/rank6.json": "daba9a851d05f555e778c88c61a25baa7de83c6f0029037cb6fadf8df82af0df",
+      "op6/results/smoke-op3-combined/rank7.json": "b2f54a0a6af9d5951f56f03e5943694aa2abec7aa5c54d5e6601c3d44d4b7af6",
+      "op6/results/profile-op3-combined/rank0.json": "b8309846e9e3801f200549218693bfbf54fdce97a98cda461a0e1ea4c926b66f",
+      "op6/results/profile-op3-combined/rank1.json": "be5681c9da29ef745696744c543974e04862039a97ee45da5118f9e66db12911",
+      "op6/results/profile-op3-combined/rank2.json": "d358b50cb0b864f068e34c979ec4ceb5356e227886d5c8117f3efab74b8533a8",
+      "op6/results/profile-op3-combined/rank3.json": "a5d4c5bc79b82d334623909fd619013c7a1d00643f3149a6649eff12046c2feb",
+      "op6/results/profile-op3-combined/rank4.json": "27a6f446933e55b913e3637d02cf4ea84e2ef3dbd063bc6d8a91c70ad19a8909",
+      "op6/results/profile-op3-combined/rank5.json": "e5819f518f5b88764285c2ca82e1ba3d68cfe456833eedfffa9df3240a3edd18",
+      "op6/results/profile-op3-combined/rank6.json": "196dd0aa603ecd3081093ebedfc9cbcc1f763e6e9877a2711cde01ffca2797da",
+      "op6/results/profile-op3-combined/rank7.json": "26825ed35a30150ff26e440cf33ed5a8e32ac23f5cde2903497edd58731ee985",
+      "op6/results/compare1/block00-op3-combined/rank0.json": "5318d4a5d2ffcdbc2d69b6854682a93e59bda86a8b71eef8bd57871022c04f40",
+      "op6/results/compare1/block00-op3-combined/rank1.json": "55ce813dc1273a43e90c5d9ce39ea76c24506cad48ca1cdb770ec887542c6baf",
+      "op6/results/compare1/block00-op3-combined/rank2.json": "346de6cd09ab815adf3de64b120c8f1c2ab59abfd799f044bf1238787ce62602",
+      "op6/results/compare1/block00-op3-combined/rank3.json": "45eecacaeffee2959fa823310c14d7bf5c23c23ce56f2ed9771a086bc2612f84",
+      "op6/results/compare1/block00-op3-combined/rank4.json": "f5cbb4d31eb642c196e317892ff1a6a7a49c728c59e3beb2d08897f1f563e6c4",
+      "op6/results/compare1/block00-op3-combined/rank5.json": "d06e731b5e46333b7d5dffc741f75152d7d108e688788312d9a595a54643f82b",
+      "op6/results/compare1/block00-op3-combined/rank6.json": "10d583beb72dd9468aa1624f2575519617b0610baeb455cb5599d77c49575c51",
+      "op6/results/compare1/block00-op3-combined/rank7.json": "01d370686aacc4de5810e733c3b3d79f457fa04295cbbec0a81c84189630dcd5",
+      "op6/profile-summary.json": "31816cb16ec865b46e318604d4b6317786269fc4fbfa71965e08e004bb891e01",
+      "op6/results/profile-op3-combined/rank0-profile.json.gz": "3bb9e2afbb16f8635e30da71f4bf94cfd815c6bf4ae131dbc941af23e7425a0f",
+      "op6/results/profile-op3-combined/rank1-profile.json.gz": "4db95151b881a8f0f5cf4d39dc06c89b4d934197a9764923b131471ae8dfdf19",
+      "op6/results/profile-op3-combined/rank2-profile.json.gz": "c4fa2894055da88a865ca2f99abc9d38af682d6e6d2530de621da29f39e97678",
+      "op6/results/profile-op3-combined/rank3-profile.json.gz": "7d43cdf60640d5ba94dd512ae51675b776b83fc38a48c060b5db30cb9bbc4344",
+      "op6/results/profile-op3-combined/rank4-profile.json.gz": "e8cf23be5529d1cc6e98e8aacb3a7ec7e59d86f93c33f4ee718294eb01a6ff38",
+      "op6/results/profile-op3-combined/rank5-profile.json.gz": "a8ab3d2d85c83d7726856024476e9f468f680004907b8fd05d4bfe06174bf746",
+      "op6/results/profile-op3-combined/rank6-profile.json.gz": "0279696feaecad8e990f5b81f952b6b5caa3ab45eca7b622bae648b683905736",
+      "op6/results/profile-op3-combined/rank7-profile.json.gz": "ba12b36ddac908d41d9b22b485e670978860e35a708efdc81383c7da1602d7d1",
+      "op6/operator/report.json": "271855e5d2860191b16a8f4bf3f2dea0b91058daef6de09bc0fbcd6966871877",
+      "op6/operator/rank0.json": "42a2571fa955d51f61d5567aadfd2e5052fee59deaf214e0502182d236c128a9",
+      "op6/operator/attn-rank0-profile.json.gz": "92f15a65d6f6784b9f6d8188289c2234eb20a3e9aea1bcfaeca0ea01d49c8845",
+      "op6/operator/mlp-rank0-profile.json.gz": "6a693f60c63a5ae7cef3f2585b75f1d081d98b4a74da5cf9f1f44186704ebe89",
+      "op6/operator/rank1.json": "5d52c4324027f76aa220b68fe2b11d5e4ec7aaa047e1bb32f1c1ac95395b1a83",
+      "op6/operator/attn-rank1-profile.json.gz": "d0609d8ffd5ed98429fb926c01e9837aade73fdf478acc332bfefeefd0342823",
+      "op6/operator/mlp-rank1-profile.json.gz": "ba4620bb2935585081eb4b0dbfb6f989d6bd067fd2473e95c134b434952eab07",
+      "op6/operator/rank2.json": "40663aad0f417d85e926b184af0f282e18669e3196b829d82eed17b6665bb955",
+      "op6/operator/attn-rank2-profile.json.gz": "117ac16e6e39f028521d4b06dde140a1df987499c8c53f0588a8accc27300fdb",
+      "op6/operator/mlp-rank2-profile.json.gz": "38e4f298f085e451c83492bac0a85a51f5293b3adf4d274c81a551711e43630e",
+      "op6/operator/rank3.json": "c45b0bce30a2a99ca5c8fa4645089149bb87450a2e188424072c5d3a6bd15b21",
+      "op6/operator/attn-rank3-profile.json.gz": "c9564a1b4c790d40a98be82f5e6a9690e45dba628234a49608cc2f42231dda84",
+      "op6/operator/mlp-rank3-profile.json.gz": "4d3a3e3abd090df0edb101f0faf5b4a4d63bf56d47b5a8b9097eed9a29e7f7c0",
+      "op6/operator/rank4.json": "8f29752c669bd1a77721041a9ae4298d73fcf2e6783588f283f71bd716a46b50",
+      "op6/operator/attn-rank4-profile.json.gz": "ba9b8b7c08473e602593a95112364b33d03f22381a80526eeb8c3911a90e17b4",
+      "op6/operator/mlp-rank4-profile.json.gz": "372e818d37940b22e3c4b1fc7c80a030433349ca2367b32c9e057a35355f426b",
+      "op6/operator/rank5.json": "8be18919abbd5ccd61f7f1023fde24e37715c6e354545dc2634e676f5e836af1",
+      "op6/operator/attn-rank5-profile.json.gz": "27114c9445ac181c0b2753bac8326796e2cc48b64bc76cfdeee983fadc003ead",
+      "op6/operator/mlp-rank5-profile.json.gz": "d1f2bdba9107a4a0e481b5e282a157df1ccda25cdc4268330c8480cf1b118f5b",
+      "op6/operator/rank6.json": "33ac26a924b9b60eba05995aa630aa191bc4e42c99f262b831953412ff0ea619",
+      "op6/operator/attn-rank6-profile.json.gz": "0458dab967056f23d11a11cb065305308000c645cb84e6e5b2d3d5a0ae1429dd",
+      "op6/operator/mlp-rank6-profile.json.gz": "8fe8e84bd97ee6e4fc9ab65ad402b28d93fb0f89e9316d6c32c338f8e81acf2b",
+      "op6/operator/rank7.json": "838eaf80ec0454e345159e4ec4859fb05a67bca9031463491c739fc3d1ff4208",
+      "op6/operator/attn-rank7-profile.json.gz": "ddc7c0e6c13fb5bfb5b2656dd3b446e488f71fc921448f13a1e7f65f8e9f6489",
+      "op6/operator/mlp-rank7-profile.json.gz": "b8fdb5eedff795624b8dac72d2d6b2da747111e4d3ece02a92c43bc6e533e5aa"
+    },
+    "build": {
+      "root": "/workspace/Load-5090/SL3060/op6-local-attention-graph-paired-v1-1x-4blocks-20261104-121434-804271/compare1/block00-op4/build",
+      "manifest_sha256": "2d87b03aa6f38d392985b8e2ef5db10b598d32e6f190c92f9f2b8d2d92c59135"
+    },
+    "sole_intervention": "local attention forward/backward CUDA Graph submission",
+    "nccl_configuration_and_launches_equal": true,
+    "profile_durations_are_formal_speedups": false
+  }
+}
